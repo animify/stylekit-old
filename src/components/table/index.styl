@@ -1,21 +1,21 @@
 importThemeFile(getFilename(), $theme);
-$background-color = $color-white;
-$border-color = $color-border;
-$border-width = 1px;
+$stripedBackgroundColor = $color-grey-light;
+$borderColor = $color-border;
+$borderWidth = 1px;
 
 .table
-    border: $border-width solid $border-color;
+    border: $borderWidth solid $borderColor;
     border-collapse: separate;
     border-radius: $border-radius;
 
     th
         padding: .5em 1em;
-        border-bottom: $border-width solid $border-color;
+        border-bottom: $borderWidth solid $borderColor;
         font-weight: $font-weight-semibold;
 
     td
         padding: .5em 1em;
-        border-bottom: $border-width solid $border-color;
+        border-bottom: $borderWidth solid $borderColor;
 
     &:last-child td
         border-bottom: 0;
@@ -28,7 +28,7 @@ $border-width = 1px;
 
     &.cells
         th, tr td
-            border-left: $border-width solid $border-color;
+            border-left: $borderWidth solid $borderColor;
 
             &:first-child
                 border-left: 0;
@@ -40,4 +40,4 @@ $border-width = 1px;
     &.striped
         tr
             &:nth-child(2n)
-                background-color: $color-grey-light;
+                background-color: $stripedBackgroundColor;
