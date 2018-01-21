@@ -1,0 +1,66 @@
+ifExists(getFilename(), $theme);
+$background-color = $color-white;
+$border-color = $color-border;
+$border-radius = $border-radius-m;
+$border-width = 1px;
+$box-shadow = $box-shadow-close;
+$line-height = $line-height;
+$padding = .8rem 0;
+$item-padding = .2em 1.4em;
+$header-color = $color-text-body;
+$header-font-size = $font-size;
+$header-font-weight = $font-weight-semibold;
+$link-color = $color-text-body;
+$link-color_hover = $color-base;
+
+.dropdown
+    display: inline-block;
+    position: relative;
+
+    .menu
+        absolute: top 2rem left 0;
+        background-color: $background-color;
+        border: $border-width solid $border-color;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        display: none;
+        min-width: 13rem;
+        padding: $padding;
+        z-index: 800;
+
+        li, a
+            display: block;
+            line-height: $line-height;
+
+        li
+            padding: $item-padding;
+
+            &.header
+                color: $header-color;
+                font-size: $header-font-size;
+                font-weight: $header-font-weight;
+
+        a
+            color: $link-color;
+            cursor: pointer;
+
+            &:hover
+                color: $link-color_hover;
+
+    &.open
+        .menu
+            display: block;
+
+    &.floating
+        .menu
+            margin-top: 1rem;
+
+    &.right
+        .menu
+            left: auto;
+            right: 0;
+
+    &.upward
+        .menu
+            bottom: 2rem;
+            top: auto;
