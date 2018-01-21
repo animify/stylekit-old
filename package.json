@@ -17,6 +17,7 @@
   "homepage": "https://github.com/animify/stylekit#readme",
   "dependencies": {
     "nib": "^1.1.2",
-    "rupture": "^0.7.1"
+    "rupture": "^0.7.1",
+    "stylus": "^0.54.5"
   }
 }
