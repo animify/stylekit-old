@@ -14,5 +14,9 @@
   "bugs": {
     "url": "https://github.com/animify/stylekit/issues"
   },
-  "homepage": "https://github.com/animify/stylekit#readme"
+  "homepage": "https://github.com/animify/stylekit#readme",
+  "dependencies": {
+    "nib": "^1.1.2",
+    "rupture": "^0.7.1"
+  }
 }
