@@ -1,0 +1,53 @@
+ifExists(getFilename(), $theme);
+$background-color = $color-white;
+$border-color = $color-border;
+$focus_border-color = $color-base;
+$border-radius = $border-radius-m;
+$border-width = 1px;
+$color = $color-text-body;
+$disabled_color = $color-text-muted;
+$box-shadow = $box-shadow-form;
+$padding = 14px 18px;
+$transition = $animation-type-ease $animation-duration-m;
+
+.input
+    font-style: normal;
+    position: relative;
+
+    input[type='text'], input[type='number'], input[type='password'], textarea
+        background-color: $background-color;
+        border: 0;
+        border: $border-width solid $border-color;
+        border-radius: $border-radius;
+        box-shadow: $box-shadow;
+        color: $color;
+        font-family: $font-family-standard;
+        font-size: $font-size;
+        line-height: $line-height;
+        min-width: 220px;
+        outline: 0;
+        padding: $padding;
+        text-align: left;
+        transition: border-color $transition;
+
+        &:focus
+            border-color: $focus_border-color;
+
+        +inputPlaceholder()
+            color: $disabled_color;
+
+    &.transparent
+        input[type='text'], input[type='number'], input[type='password'], textarea
+            background-color: transparent;
+            border: 0;
+            margin: 0;
+            padding: 0;
+
+    +disabled()
+        input[type='text'], input[type='number'], input[type='password'], textarea
+            color: $disabled_color;
+
+    textarea
+        max-height: 12rem;
+        min-height: 8rem;
+        resize: vertical;
