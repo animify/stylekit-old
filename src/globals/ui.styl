@@ -5,8 +5,8 @@ html, body
 body
     margin: 0;
     padding: 0;
-    color: $color-text-body;
-    background-color: $color-background-body;
+    color: $textColorBody;
+    background-color: $colorBackgroundBody;
     font-family: $font-family-standard;
     font-size: $font-size;
     line-height: $line-height;
@@ -17,13 +17,13 @@ for h in (1 .. 5)
     h{h}
         font-size: lookup('$font-size-h' + h);
         font-weight: $font-weight-semibold;
-        color: $color-text-header;
+        color: $textColorHeader;
         line-height: $line-height;
 
 a
     text-decoration: none;
-    color: $color-base;
+    color: $colorBase;
 
     &:hover
-        color: lighten($color-base, $color-variation);
+        color: lighten($colorBase, $color-variation);
         cursor: pointer;

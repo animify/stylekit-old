@@ -1,9 +1,9 @@
 importThemeFile(getFilename(), $theme);
-$backgroundColor = $color-white;
+$backgroundColor = $colorWhite;
 $borderRadius = $borderRadius-m;
 $borderWidth = 1px;
-$borderColor = $bg-color-gray;
-$textColor = $color-text-body;
+$borderColor = $bgColorGray;
+$textColor = $textColorBody;
 $fontSize = $font-size;
 $fontWeight = $font-weight-bold;
 $lineHeight = $line-height;
@@ -39,8 +39,8 @@ $padding = .66em .86em;
         &.{size}
             font-size: lookup('$font-size-' + size);
 
-    for color in $colors
+    for color in $colorList
         &.{color}
             background-color: lookup('$color-' + color);
             border: $borderWidth solid @background-color;
-            color: $color-white;
+            color: $colorWhite;

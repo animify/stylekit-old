@@ -1,15 +1,15 @@
 importThemeFile(getFilename(), $theme);
 $backgroundColor = $color-grey-light;
-$borderColor = $color-border;
+$borderColor = $colorBorder;
 $borderRadius = $border-radius-m;
 $borderWidth = 6px;
-$textColor = $color-text-body;
+$textColor = $textColorBody;
 $lineHeight = $line-height;
 $margin = 1rem 0;
 $padding = 1rem 1.5rem;
 
 styleColored(type)
-    border-color: lookup('$color-border-' + type);
+    border-color: lookup('$colorBorder-' + type);
     background-color: lighten(@border-color, 90%);
     color: darken(@border-color, 45%);
 
