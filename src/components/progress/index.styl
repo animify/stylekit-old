@@ -26,24 +26,24 @@ styleSized(size)
 .progress
     cf();
 
-    background-color: $backgroundColor;
-    border-radius: $borderRadius;
-    content: '';
     height: $height;
+    border-radius: $borderRadius;
+    background-color: $backgroundColor;
+    content: '';
 
     .bar
-        background-color: $barBackgroundColor;
-        border-radius: $barBorderRadius;
-        height: 100%;
         position: relative;
         width: 0;
+        height: 100%;
+        border-radius: $barBorderRadius;
+        background-color: $barBackgroundColor;
 
         .status
             absolute: right .6rem;
-            color: $statusColor;
             display: none;
-            font-size: $statusFontSize;
+            color: $statusColor;
             font-weight: $statusFontWeight;
+            font-size: $statusFontSize;
             line-height: $statusLineHeight;
 
     &.tiny

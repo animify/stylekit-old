@@ -11,23 +11,23 @@ $padding = 14px 18px;
 $inputTransition = $animation-type-ease $animation-duration-m;
 
 .input
-    font-style: normal;
     position: relative;
+    font-style: normal;
 
     input[type='text'], input[type='number'], input[type='password'], textarea
-        background-color: $backgroundColor;
+        padding: $padding;
+        min-width: 220px;
+        outline: 0;
         border: 0;
         border: $borderWidth solid $borderColor;
         border-radius: $borderRadius;
+        background-color: $backgroundColor;
         box-shadow: $boxShadow;
         color: $textCcolor;
-        font-family: $font-family-standard;
-        font-size: $font-size;
-        line-height: $line-height;
-        min-width: 220px;
-        outline: 0;
-        padding: $padding;
         text-align: left;
+        font-size: $font-size;
+        font-family: $font-family-standard;
+        line-height: $line-height;
         transition: border-color $inputTransition;
 
         &:focus
@@ -38,16 +38,16 @@ $inputTransition = $animation-type-ease $animation-duration-m;
 
     &.transparent
         input[type='text'], input[type='number'], input[type='password'], textarea
-            background-color: transparent;
-            border: 0;
             margin: 0;
             padding: 0;
+            border: 0;
+            background-color: transparent;
 
     +disabled()
         input[type='text'], input[type='number'], input[type='password'], textarea
             color: $disabledTextColor;
 
     textarea
-        max-height: 12rem;
         min-height: 8rem;
+        max-height: 12rem;
         resize: vertical;

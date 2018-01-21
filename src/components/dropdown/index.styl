@@ -14,19 +14,19 @@ $linkColor = $color-text-body;
 $hoverLinkColor = $color-base;
 
 .dropdown
-    display: inline-block;
     position: relative;
+    display: inline-block;
 
     .menu
         absolute: top 2rem left 0;
-        background-color: $backgroundColor;
+        z-index: 800;
+        display: none;
+        padding: $padding;
+        min-width: 13rem;
         border: $borderWidth solid $borderColor;
         border-radius: $borderRadius;
+        background-color: $backgroundColor;
         box-shadow: $boxShadow;
-        display: none;
-        min-width: 13rem;
-        padding: $padding;
-        z-index: 800;
 
         li, a
             display: block;
@@ -37,8 +37,8 @@ $hoverLinkColor = $color-base;
 
             &.header
                 color: $headerColor;
-                font-size: $headerFontSize;
                 font-weight: $headerFontWeight;
+                font-size: $headerFontSize;
 
         a
             color: $linkColor;
@@ -57,10 +57,10 @@ $hoverLinkColor = $color-base;
 
     &.right
         .menu
-            left: auto;
             right: 0;
+            left: auto;
 
     &.upward
         .menu
-            bottom: 2rem;
             top: auto;
+            bottom: 2rem;

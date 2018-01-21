@@ -2,7 +2,7 @@ importThemeFile(getFilename(), $theme);
 $backgroundColor = $color-white;
 $borderRadius = $borderRadius-m;
 $borderWidth = 1px;
-$border-color = $bg-color-gray;
+$borderColor = $bg-color-gray;
 $textColor = $color-text-body;
 $fontSize = $font-size;
 $fontWeight = $font-weight-bold;
@@ -15,7 +15,7 @@ $padding = .66em .86em;
     padding: $padding;
     outline: 0;
     border: 0;
-    border: $borderWidth solid $border-color;
+    border: $borderWidth solid $borderColor;
     border-radius: $borderRadius;
     background-color: $backgroundColor;
     color: $textColor;
@@ -30,8 +30,8 @@ $padding = .66em .86em;
         color: inherit;
 
     +disabled()
-        border-color: @background-color;
         background-color: $backgroundColor !important;
+        border-color: @background-color;
         color: $color !important;
         user-select: none;
 
@@ -41,6 +41,6 @@ $padding = .66em .86em;
 
     for color in $colors
         &.{color}
-            border: $borderWidth solid @background-color;
             background-color: lookup('$color-' + color);
+            border: $borderWidth solid @background-color;
             color: $color-white;

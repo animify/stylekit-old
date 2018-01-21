@@ -18,10 +18,10 @@ $dividedPadding = .8rem 0;
         padding: $padding;
 
     li, .item
+        margin: $itemMargin;
         color: $textColor;
         font-size: $fontSize;
         line-height: $itemLineHeight;
-        margin: $itemMargin;
 
         & > .header
             display: block;
@@ -37,16 +37,16 @@ $dividedPadding = .8rem 0;
             list-style: none;
 
             &:before
+                margin: $counterMargin;
                 content: counters(orderedListItem, '.') ' ';
                 counter-increment: orderedListItem;
-                margin: $counterMargin;
                 opacity: $counterOpacity;
 
         ol&
             li[value], .item[value]
                 &:before
-                    content: attr(value);
                     margin-right: .5rem;
+                    content: attr(value);
 
     &.bulleted
         padding-left: 1rem;
@@ -56,8 +56,8 @@ $dividedPadding = .8rem 0;
 
             &:before
                 absolute: left auto top;
-                content: '\2022';
                 margin: $bulletMargin;
+                content: '\2022';
                 opacity: $bulletOpacity;
 
     &.divided
@@ -68,9 +68,9 @@ $dividedPadding = .8rem 0;
             width: 100%;
 
         li, .item
-            border-bottom: 1px solid $color-border;
             margin: 0;
             padding: $dividedPadding;
+            border-bottom: 1px solid $color-border;
 
             a
                 display: inline-block;
