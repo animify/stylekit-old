@@ -1,26 +1,28 @@
 importThemeFile(getFilename(), $theme);
-$background-color = $color-grey-light;
+$backgroundColor = $color-grey-light;
 $padding = 1rem 3rem;
-$item-line-height = $line-height;
-$item-color = $color-text-light;
-$item-font-weight = $font-weight-semibold;
-$item-margin = 0 0 0 2rem;
+$itemLineHeight = $line-height;
+$hoverTextColor = $color-text-body;
+$activeTextColor = $color-base;
+$itemColor = $color-text-light;
+$itemFontWeight = $font-weight-semibold;
+$itemMargin = 0 0 0 2rem;
 
 .menu
     &.basic
-        background-color: $background-color;
+        background-color: $backgroundColor;
         padding: $padding;
 
         .item
-            color: $item-color;
-            font-weight: $item-font-weight;
-            line-height: $item-line-height;
+            color: $itemColor;
+            font-weight: $itemFontWeight;
+            line-height: $itemLineHeight;
 
             & + .item
-                margin: $item-margin;
+                margin: $itemMargin;
 
             &:hover
-                color: $color-text-body;
+                color: $hoverTextColor;
 
             &.active
-                color: $color-base;
+                color: $activeTextColor;

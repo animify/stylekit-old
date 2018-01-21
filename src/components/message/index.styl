@@ -1,10 +1,10 @@
 importThemeFile(getFilename(), $theme);
-$background-color = $color-grey-light;
-$border-color = $color-border;
-$border-radius = $border-radius-m;
-$border-width = 6px;
-$color = $color-text-body;
-$line-height = $line-height;
+$backgroundColor = $color-grey-light;
+$borderColor = $color-border;
+$borderRadius = $border-radius-m;
+$borderWidth = 6px;
+$textColor = $color-text-body;
+$lineHeight = $line-height;
 $margin = 1rem 0;
 $padding = 1rem 1.5rem;
 
@@ -20,11 +20,11 @@ styleColored(type)
     margin: $margin;
     padding: $padding;
     border: 0;
-    border-left: $border-width solid $border-color;
-    border-radius: $border-radius;
-    background-color: $background-color;
-    color: $color;
-    line-height: $line-height;
+    border-left: $borderWidth solid $borderColor;
+    border-radius: $borderRadius;
+    background-color: $backgroundColor;
+    color: $textColor;
+    line-height: $lineHeight;
 
     &.warning
         styleColored('warning');

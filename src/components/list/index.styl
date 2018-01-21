@@ -1,17 +1,16 @@
 importThemeFile(getFilename(), $theme);
-$color = $color-text-body;
-$font-size = $font-size;
-$line-height = $line-height;
+$textColor = $color-text-body;
+$fontSize = $font-size;
 $margin = .5rem 0 0 0;
 $padding = 0 0 0 1rem;
-$item-line-height = $line-height;
-$item-margin = 0 0 .5rem 0;
-$header-font-weight = $font-weight-semibold;
-$counter-opacity = .6;
-$counter-margin-bottom = .8rem;
-$bullet-opacity = .6;
-$bullet-margin = 0 0 0 -1rem;
-$divided-padding = .8rem 0;
+$itemLineHeight = $line-height;
+$itemMargin = 0 0 .5rem 0;
+$headerFontWeight = $font-weight-semibold;
+$counterOpacity = .6;
+$counterMargin = 0 .3rem .8rem 0;
+$bulletOpacity = .6;
+$bulletMargin = 0 0 0 -1rem;
+$dividedPadding = .8rem 0;
 
 .list
     & .list
@@ -19,14 +18,14 @@ $divided-padding = .8rem 0;
         padding: $padding;
 
     li, .item
-        color: $color;
-        font-size: $font-size;
-        line-height: $item-line-height;
-        margin: $item-margin;
+        color: $textColor;
+        font-size: $fontSize;
+        line-height: $itemLineHeight;
+        margin: $itemMargin;
 
         & > .header
             display: block;
-            font-weight: $header-font-weight;
+            font-weight: $headerFontWeight;
 
     &.ordered
         counter-reset: orderedListItem;
@@ -40,10 +39,8 @@ $divided-padding = .8rem 0;
             &:before
                 content: counters(orderedListItem, '.') ' ';
                 counter-increment: orderedListItem;
-                margin-bottom: $counter-margin-bottom;
-                margin-right: .3rem;
-                margin-right: $counter-margin-right;
-                opacity: $counter-opacity;
+                margin: $counterMargin;
+                opacity: $counterOpacity;
 
         ol&
             li[value], .item[value]
@@ -60,8 +57,8 @@ $divided-padding = .8rem 0;
             &:before
                 absolute: left auto top;
                 content: '\2022';
-                margin: $bullet-margin;
-                opacity: $bullet-opacity;
+                margin: $bulletMargin;
+                opacity: $bulletOpacity;
 
     &.divided
         max-width: 36rem;
@@ -73,7 +70,7 @@ $divided-padding = .8rem 0;
         li, .item
             border-bottom: 1px solid $color-border;
             margin: 0;
-            padding: $divided-padding;
+            padding: $dividedPadding;
 
             a
                 display: inline-block;

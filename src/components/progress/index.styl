@@ -1,13 +1,13 @@
 importThemeFile(getFilename(), $theme);
-$background-color = $color-border;
-$border-radius = $border-radius-m;
+$backgroundColor = $color-border;
+$borderRadius = $border-radius-m;
 $height = 1.6rem;
-$bar-border-radius = $border-radius;
-$bar-background-color = darken($background-color, 76%);
-$status-color = $color-white;
-$status-font-size = $font-size-small;
-$status-font-weight = $font-weight-bold;
-$status-line-height = $height;
+$barBorderRadius = $borderRadius;
+$barBackgroundColor = darken($backgroundColor, 76%);
+$statusColor = $color-white;
+$statusFontSize = $font-size-small;
+$statusFontWeight = $font-weight-bold;
+$statusLineHeight = $height;
 
 styleSized(size)
     if (size == 'tiny')
@@ -26,25 +26,25 @@ styleSized(size)
 .progress
     cf();
 
-    background-color: $background-color;
-    border-radius: $border-radius;
+    background-color: $backgroundColor;
+    border-radius: $borderRadius;
     content: '';
     height: $height;
 
     .bar
-        background-color: $bar-background-color;
-        border-radius: $bar-border-radius;
+        background-color: $barBackgroundColor;
+        border-radius: $barBorderRadius;
         height: 100%;
         position: relative;
         width: 0;
 
         .status
             absolute: right .6rem;
-            color: $status-color;
+            color: $statusColor;
             display: none;
-            font-size: $status-font-size;
-            font-weight: $status-font-weight;
-            line-height: $status-line-height;
+            font-size: $statusFontSize;
+            font-weight: $statusFontWeight;
+            line-height: $statusLineHeight;
 
     &.tiny
         styleSized('tiny');
