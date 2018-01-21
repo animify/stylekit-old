@@ -1,17 +1,17 @@
 importThemeFile(getFilename(), $theme);
-$background-color = $color-white;
-$border-color = $color-border;
-$border-radius = $border-radius-m;
-$border-width = 1px;
-$box-shadow = $box-shadow-close;
-$line-height = $line-height;
+$backgroundColor = $color-white;
+$borderColor = $color-border;
+$borderRadius = $border-radius-m;
+$borderWidth = 1px;
+$boxShadow = $box-shadow-close;
+$lineHeight = $line-height;
 $padding = .8rem 0;
-$item-padding = .2em 1.4em;
-$header-color = $color-text-body;
-$header-font-size = $font-size;
-$header-font-weight = $font-weight-semibold;
-$link-color = $color-text-body;
-$link-color_hover = $color-base;
+$itemPadding = .2em 1.4em;
+$headerColor = $color-text-body;
+$headerFontSize = $font-size;
+$headerFontWeight = $font-weight-semibold;
+$linkColor = $color-text-body;
+$hoverLinkColor = $color-base;
 
 .dropdown
     display: inline-block;
@@ -19,10 +19,10 @@ $link-color_hover = $color-base;
 
     .menu
         absolute: top 2rem left 0;
-        background-color: $background-color;
-        border: $border-width solid $border-color;
-        border-radius: $border-radius;
-        box-shadow: $box-shadow;
+        background-color: $backgroundColor;
+        border: $borderWidth solid $borderColor;
+        border-radius: $borderRadius;
+        box-shadow: $boxShadow;
         display: none;
         min-width: 13rem;
         padding: $padding;
@@ -30,22 +30,22 @@ $link-color_hover = $color-base;
 
         li, a
             display: block;
-            line-height: $line-height;
+            line-height: $lineHeight;
 
         li
-            padding: $item-padding;
+            padding: $itemPadding;
 
             &.header
-                color: $header-color;
-                font-size: $header-font-size;
-                font-weight: $header-font-weight;
+                color: $headerColor;
+                font-size: $headerFontSize;
+                font-weight: $headerFontWeight;
 
         a
-            color: $link-color;
+            color: $linkColor;
             cursor: pointer;
 
             &:hover
-                color: $link-color_hover;
+                color: $hoverLinkColor;
 
     &.open
         .menu
