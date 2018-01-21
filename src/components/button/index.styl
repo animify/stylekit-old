@@ -1,0 +1,46 @@
+ifExists(getFilename(), $theme);
+$background-color = $color-white;
+$border-radius = $border-radius-m;
+$border-width = 1px;
+$border-color = $bg-color-gray;
+$color = $color-text-body;
+$font-size = $font-size;
+$font-weight = $font-weight-bold;
+$line-height = $line-height;
+$padding = .66em .86em;
+
+.button
+    position: relative;
+    display: inline-block;
+    padding: $padding;
+    outline: 0;
+    border: 0;
+    border: $border-width solid $border-color;
+    border-radius: $border-radius;
+    background-color: $background-color;
+    color: $color;
+    font-weight: $font-weight;
+    font-size: $font-size;
+    line-height: $line-height;
+    cursor: pointer;
+    transition: box-shadow $animation-duration-m $animation-type-ease;
+
+    &:hover
+        box-shadow: inset 0 -2px 0 rgba(0, 0, 31, .1);
+        color: inherit;
+
+    +disabled()
+        border-color: @background-color;
+        background-color: $background-color !important;
+        color: $color !important;
+        user-select: none;
+
+    for size in $generic-sizes
+        &.{size}
+            font-size: lookup('$font-size-' + size);
+
+    for color in $colors
+        &.{color}
+            border: $border-width solid @background-color;
+            background-color: lookup('$color-' + color);
+            color: $color-white;
