@@ -1,0 +1,61 @@
+ifExists(getFilename(), $theme);
+$background-color = $color-border;
+$border-radius = $border-radius-m;
+$height = 1.6rem;
+$bar-border-radius = $border-radius;
+$bar-background-color = darken($background-color, 76%);
+$status-color = $color-white;
+$status-font-size = $font-size-small;
+$status-font-weight = $font-weight-bold;
+$status-line-height = $height;
+
+styleSized(size)
+    if (size == 'tiny')
+        height: .26rem;
+
+    if (size == 'small')
+        height: .8rem;
+
+    if (size == 'large')
+        height: 2.8rem;
+
+        .status
+            font-size: $font-size;
+            line-height: 2.8rem;
+
+.progress
+    cf();
+
+    background-color: $background-color;
+    border-radius: $border-radius;
+    content: '';
+    height: $height;
+
+    .bar
+        background-color: $bar-background-color;
+        border-radius: $bar-border-radius;
+        height: 100%;
+        position: relative;
+        width: 0;
+
+        .status
+            absolute: right .6rem;
+            color: $status-color;
+            display: none;
+            font-size: $status-font-size;
+            font-weight: $status-font-weight;
+            line-height: $status-line-height;
+
+    &.tiny
+        styleSized('tiny');
+
+    &.small
+        styleSized('small');
+
+    &.large
+        styleSized('large');
+
+    &:not(.tiny):not(.small)
+        .bar.show
+            .status
+                display: block;
