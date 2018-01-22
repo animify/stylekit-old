@@ -1,20 +1,15 @@
 {
-  "name": "stylekit",
+  "name": "@stylekit/kit",
   "version": "0.0.1",
-  "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/animify/stylekit.git"
+    "url": "git+https://github.com/animify/stylekit/tree/master/packages/kit"
   },
-  "author": "Stefan Mansson <mansson.io>",
+  "author": "Stefan Mansson(https://mansson.io)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/animify/stylekit/issues"
   },
-  "homepage": "https://github.com/animify/stylekit#readme",
   "dependencies": {
     "nib": "^1.1.2",
     "rupture": "^0.7.1",
