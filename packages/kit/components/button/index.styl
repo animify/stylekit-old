@@ -35,7 +35,7 @@ $padding = .66em .86em;
         color: $color !important;
         user-select: none;
 
-    for size in $generic-sizes
+    for size in $sizeList
         &.{size}
             font-size: lookup('$font-size-' + size);
 

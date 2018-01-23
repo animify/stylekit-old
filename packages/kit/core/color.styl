@@ -3,10 +3,10 @@ for color in ($colorList)
         background-color: lookup('$color' + camelCase(color));
 
         &.light
-            background-color: lighten(lookup('$color' + camelCase(color)), $color-variation);
+            background-color: lighten(lookup('$color' + camelCase(color)), $colorVariation);
 
         &.dark
-            background-color: darken(lookup('$color' + camelCase(color)), $color-variation);
+            background-color: darken(lookup('$color' + camelCase(color)), $colorVariation);
 
     .text.{color}
         color: lookup('$color' + camelCase(color));

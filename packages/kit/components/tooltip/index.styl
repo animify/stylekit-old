@@ -70,7 +70,7 @@ $bodyPadding = .5em 1em;
         &:after
             transform: scale(1);
 
-    for size in $generic-sizes
+    for size in $sizeList
         &[data-text={size}]
             &:after
                 font-size: lookup('$font-size-' + size);
