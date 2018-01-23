@@ -1,6 +1,6 @@
 importThemeFile(getFilename(), $theme);
 $backgroundColor = $colorWhite;
-$borderRadius = $borderRadius-m;
+$borderRadius = $borderRadiusM;
 $borderWidth = 1px;
 $borderColor = $bgColorGray;
 $textColor = $textColorBody;
@@ -41,6 +41,6 @@ $padding = .66em .86em;
 
     for color in $colorList
         &.{color}
-            background-color: lookup('$color-' + color);
+            background-color: lookup('$color' + camelCase(color));
             border: $borderWidth solid @background-color;
             color: $colorWhite;

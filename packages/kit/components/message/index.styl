@@ -9,7 +9,7 @@ $margin = 1rem 0;
 $padding = 1rem 1.5rem;
 
 styleColored(type)
-    border-color: lookup('$colorBorder-' + type);
+    border-color: lookup('$colorBorder' + camelCase(type));
     background-color: lighten(@border-color, 90%);
     color: darken(@border-color, 45%);
 

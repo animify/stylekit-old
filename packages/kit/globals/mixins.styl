@@ -1,0 +1,20 @@
+disabled()
+    &.disabled, &[disabled]
+        cursor: default;
+        opacity: .7;
+        pointer-events: none;
+
+        {block};
+
+inputPlaceholder()
+    &::-webkit-input-placeholder
+        {block};
+
+    &:-moz-placeholder
+        {block};
+
+    &::-moz-placeholder
+        {block};
+
+    &:-ms-input-placeholder
+        {block};
