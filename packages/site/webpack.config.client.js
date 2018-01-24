@@ -30,6 +30,14 @@ module.exports = {
                 exclude: /node_modules/,
             },
             {
+                test: /\.json$/,
+                loader: 'json-loader'
+            },
+            {
+                test: /\.(html)$/,
+                use: 'raw-loader'
+            },
+            {
                 test: /\.(png|eot|svg|ttf|woff|woff2)$/,
                 loader: 'file-loader?name=[name].[ext]'
             },

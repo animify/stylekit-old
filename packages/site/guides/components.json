@@ -33,12 +33,12 @@
         "folder": "progress",
         "title": "Progress bars",
         "descHtml": "<p>Progess bars are used to indicate the progress state of a certain action.</p>"
-    }
+    },
     {
         "folder": "table",
         "title": "Table",
         "descHtml": "<p>Orgnanize data into something more readable.</p>"
-    }
+    },
     {
         "folder": "tooltip",
         "title": "Tooltip",
