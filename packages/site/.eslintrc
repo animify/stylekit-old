@@ -13,6 +13,7 @@
         'comma-dangle': 0,
         'import/no-unresolved': 'off',
         'import/no-dynamic-require': 'off',
+        'react/prefer-stateless-function': 'off',
         'no-render-return-value': 'off',
         'no-underscore-dangle': 'off',
         'import/resolver': 'off',
