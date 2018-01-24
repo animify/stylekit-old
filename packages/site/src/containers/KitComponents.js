@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ComponentSample from './../components/ComponentSample';
 import GuideComponents from './../../guides/components.json';
 
 const componentsFolder = './../../../kit/components';
@@ -46,18 +47,7 @@ class KitComponents extends Component {
         return (
             <section className="container">
                 <h1>Components</h1>
-                {components.map(example => {
-                    return (
-                        <section key={example.title}>
-                            <div dangerouslySetInnerHTML={{ __html: example.snippet }}>
-
-                            </div>
-                            <pre>
-                                {example.snippet}
-                            </pre>
-                        </section>
-                    )
-                })}
+                {components.map(sample => <ComponentSample key={sample.title} sample={sample} />)}
             </section>
         );
     }
