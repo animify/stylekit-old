@@ -5,7 +5,7 @@ import GuideComponents from './../../guides/components.json';
 const componentsFolder = './../../../kit/components';
 
 
-class KitComponents extends Component {
+export default class KitComponents extends Component {
     constructor() {
         super();
 
@@ -52,5 +52,3 @@ class KitComponents extends Component {
         );
     }
 }
-
-export default KitComponents;
