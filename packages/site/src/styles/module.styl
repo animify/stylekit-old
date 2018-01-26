@@ -1,9 +1,31 @@
 .module
     border-radius: $borderRadiusM;
     border: 1px solid $colorBorder;
+    position: relative;
     & > .content
         padding: 1.2em;
     & > .snippet
         border-top: 1px solid $colorBorder;
+        display: none;
         code
             border-radius: 0;
+    & > .toggle
+        cursor: default;
+        user-select: none;
+        font-size: 11px;
+        absolute: top right;
+        font-weight: 600;
+        padding: .5em .7em;
+        border: 1px solid $colorBorder;
+        border-top: 0;
+        border-right: 0;
+        border-bottom-left-radius: $borderRadiusM;
+        color: $textColorLight;
+        background-color: $colorWhite;
+
+    &.open
+        & > .toggle
+            background-color: $bgColorGrayLight;
+            color: $textColorBody;
+        & > .snippet
+            display: block;

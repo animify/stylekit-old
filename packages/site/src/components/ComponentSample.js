@@ -6,15 +6,25 @@ export default class ComponentSample extends Component {
     constructor() {
         super();
 
+        this.state = {
+            showingSnippet: false
+        };
+
         this.sampleSnippet = null;
+        this.toggleSnippet = this.toggleSnippet.bind(this);
     }
 
     componentDidMount() {
 
     }
 
+    toggleSnippet() {
+        this.setState({ showingSnippet: !this.state.showingSnippet });
+    }
+
     render() {
         const sample = this.props.sample;
+        const { showingSnippet } = this.state;
 
         return (
             <section className="component-sample" key={sample.title}>
@@ -22,7 +32,8 @@ export default class ComponentSample extends Component {
                     <h3>{sample.title}</h3>
                     <div dangerouslySetInnerHTML={{ __html: sample.descHtml }} />
                 </div>
-                <div className="module">
+                <div className={showingSnippet ? 'module open' : 'module'}>
+                    <span className="toggle" role="presentation" onClick={ this.toggleSnippet}>{ showingSnippet ? 'Hide snippet' : 'Show snippet' }</span>
                     <div className="content">
                         <div dangerouslySetInnerHTML={{ __html: sample.snippet }} />
                     </div>
