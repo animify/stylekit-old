@@ -1,14 +1,49 @@
-<div class="section">
-    <div class="description">
-        <h5>Basic buttons</h5>
-        <p>Standard basic UI buttons</p>
+<section class="snippet-section" title="Basic list" subtitle="Standard list"/>
+<ul class="list">
+    <li class="item">Item 1</li>
+    <li class="item">Item 2</li>
+    <li class="item">Item 3</li>
+    <li class="item">Item 4</li>
+</ul>
+
+<section class="snippet-section" title="Bulleted list" subtitle="Bulleted list"/>
+<ul class="list bulleted">
+    <li class="item">Item 1</li>
+    <li class="item">Item 2</li>
+    <li class="item">Item 3</li>
+    <ul class="list bulleted">
+        <li class="item">Item 1</li>
+        <li class="item">Item 2</li>
+        <li class="item">Item 3</li>
+        <li class="item">Item 4</li>
+    </ul>
+    <li class="item">Item 4</li>
+</ul>
+
+<section class="snippet-section" title="Numbered list" subtitle="Numbered list"/>
+<div class="list ordered">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3
+        <div class="list ordered">
+            <div class="item">Item 1</div>
+            <div class="item">Item 2</div>
+            <div class="item">Item 3</div>
+        </div>
     </div>
-    <div class="snippet">
-        <ul class="list">
-            <li class="item">Item 1</li>
-            <li class="item">Item 2</li>
-            <li class="item">Item 3</li>
-            <li class="item">Item 4</li>
-        </ul>
-    </div>
+    <div class="item">Item 4</div>
 </div>
+
+<section class="snippet-section" title="Custom list" subtitle="Custom list"/>
+<ol class="list ordered">
+    <li value="*">Item 1</li>
+    <li value="*">Item 2</li>
+    <li value="*">Item 3
+        <ol class="list ordered">
+            <li value="-">Item 1</li>
+            <li value="-">Item 2</li>
+            <li value="-">Item 3</li>
+        </ol>
+    </li>
+    <li value="*">Item 4</li>
+</ol>

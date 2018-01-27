@@ -4,9 +4,6 @@
 @import './../../kit/vars/*';
 @import './styles/*';
 
-body
-    background-color: #F2F4F5;
-
 .component
     display: flex;
     flex-direction: column;
@@ -22,7 +19,7 @@ body
 
     &-subsection
         display: flex;
-        border-top: 1px solid darken($colorBorder, 7%);;
+        border-top: 1px solid $colorBorder;
         margin-top: 2.6rem;
         padding-top: 2.6rem;
 
@@ -37,3 +34,6 @@ body
     cf();
     .hero
         margin: 4rem 0;
+        h1
+            font-size: 5em;
+            font-weight: $fontWeightBold;
