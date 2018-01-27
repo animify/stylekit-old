@@ -1,16 +1,24 @@
 .module
-    border-radius: $borderRadiusM;
-    border: 1px solid $colorBorder;
     position: relative;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    width: 70%;
+
     & > .content
         padding: 1.2em;
+        border: 1px solid $colorBorder;
+        border-radius: $borderRadiusM;
+        background-color: #fff;
+
     & > .snippet
-        border-top: 1px solid $colorBorder;
-        display: none;
+        margin-top: 1rem;
         code
-            border-radius: 0;
+            background-color: #282a36;
+            border-radius: $borderRadiusM;
+
     & > .toggle
-        cursor: default;
+        cursor: pointer;
         user-select: none;
         font-size: 11px;
         absolute: top right;
@@ -20,12 +28,13 @@
         border-top: 0;
         border-right: 0;
         border-bottom-left-radius: $borderRadiusM;
-        color: $textColorLight;
-        background-color: $colorWhite;
+        background-color: $bgColorGrayLight;
+        color: $textColorBody;
+        &:hover
+            color: $colorBase;
 
     &.open
         & > .toggle
-            background-color: $bgColorGrayLight;
-            color: $textColorBody;
+            background-color: $colorWhite;
         & > .snippet
             display: block;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
 import ComponentSample from './../components/ComponentSample';
 import GuideComponents from './../../guides/components.json';
-
 const componentsFolder = './../../../kit/components';
 
 
@@ -19,6 +19,23 @@ export default class KitComponents extends Component {
         this.importComponents();
     }
 
+    buildSubsections(snippet) {
+        const subsections = [];
+
+        const firstSection = snippet.first();
+        const trimmedSnippet = firstSection.nextUntil('.snippet-section');
+        const newSubsection = {
+            title: firstSection.attr('title'),
+            subtitle: firstSection.attr('subtitle'),
+            snippet: trimmedSnippet.wrapAll('<div>').parent().html()
+        };
+
+        subsections.push(newSubsection);
+
+        return subsections;
+    }
+
+
     importComponents() {
         const imports = GuideComponents.map(guide => {
             const componentData = { ...guide };
@@ -26,7 +43,7 @@ export default class KitComponents extends Component {
             return new Promise((resolve) => {
                 import(`./../../../kit/components/${guide.folder}/snippet.html`)
                     .then((snippet) => {
-                        componentData.snippet = snippet;
+                        componentData.subsections = this.buildSubsections($(snippet));
                         resolve(componentData);
                     });
             });
@@ -46,8 +63,10 @@ export default class KitComponents extends Component {
 
         return (
             <section className="container">
-                <h1>Components</h1>
-                {components.map(sample => <ComponentSample key={sample.title} sample={sample} />)}
+                <div className="layout">
+                    <h1>Components</h1>
+                    {components.map(sample => <ComponentSample key={sample.title} sample={sample} />)}
+                </div>
             </section>
         );
     }

@@ -27,24 +27,31 @@ export default class ComponentSample extends Component {
         const { showingSnippet } = this.state;
 
         return (
-            <section className="component-sample" key={sample.title}>
-                <div className="component-sample-header">
+            <section className="component" key={sample.title}>
+                <div className="component-description">
                     <h3>{sample.title}</h3>
                     <div dangerouslySetInnerHTML={{ __html: sample.descHtml }} />
                 </div>
-                <div className={showingSnippet ? 'module open' : 'module'}>
-                    <span className="toggle" role="presentation" onClick={ this.toggleSnippet}>{ showingSnippet ? 'Hide snippet' : 'Show snippet' }</span>
-                    <div className="content">
-                        <div dangerouslySetInnerHTML={{ __html: sample.snippet }} />
+
+                { sample.subsections.map(subsection => (
+                    <div className="component-subsection">
+                        <div className="component-subsection-description">
+                            <h5>{subsection.title}</h5>
+                            <p>{subsection.subtitle}</p>
+                        </div>
+                        <div className={showingSnippet ? 'module open' : 'module'}>
+                            <span className="toggle" role="presentation" onClick={this.toggleSnippet}>{ showingSnippet ? 'Hide snippet' : 'Show snippet' }</span>
+                            <div className="content">
+                                <div dangerouslySetInnerHTML={{ __html: subsection.snippet }} />
+                            </div>
+                            <div className="snippet">
+                                <Highlight language="html">
+                                    {subsection.snippet}
+                                </Highlight>
+                            </div>
+                        </div>
                     </div>
-                    <div className="snippet">
-                        <pre>
-                            <Highlight language="html">
-                                {sample.snippet}
-                            </Highlight>
-                        </pre>
-                    </div>
-                </div>
+                )) }
 
             </section>
         );
