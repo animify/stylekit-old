@@ -2,46 +2,46 @@
     {
         "folder": "button",
         "title": "Button",
-        "descHtml": "<p>A button indicates a possible user action.</p>"
+        "descHtml": "A button indicates a possible user action."
     },
     {
         "folder": "dropdown",
         "title": "Dropdown",
-        "descHtml": "<p>A dropdown allows a user to select an option from a list of values.</p>"
+        "descHtml": "A dropdown allows a user to select an option from a list of values."
     },
     {
         "folder": "form",
         "title": "Form elements",
-        "descHtml": "<p>Fields and action elements for forms.</p>"
+        "descHtml": "Fields and action elements for forms."
     },
     {
         "folder": "list",
         "title": "List",
-        "descHtml": "<p>Useful for structuring data into organized lists.</p>"
+        "descHtml": "Useful for structuring data into organized lists."
     },
     {
         "folder": "menu",
         "title": "Menu",
-        "descHtml": "<p>Menu components can be used for grouped navigation.</p>"
+        "descHtml": "Menu components can be used for grouped navigation."
     },
     {
         "folder": "message",
         "title": "Message",
-        "descHtml": "<p>A simple way to alert a user with a certain behaviour.</p>"
+        "descHtml": "A simple way to alert a user with a certain behaviour."
     },
     {
         "folder": "progress",
         "title": "Progress bars",
-        "descHtml": "<p>Progess bars are used to indicate the progress state of a certain action.</p>"
+        "descHtml": "Progess bars are used to indicate the progress state of a certain action."
     },
     {
         "folder": "table",
         "title": "Table",
-        "descHtml": "<p>Orgnanize data into something more readable.</p>"
+        "descHtml": "Orgnanize data into something more readable."
     },
     {
         "folder": "tooltip",
         "title": "Tooltip",
-        "descHtml": "<p>Add CSS-only helpers to hoverable elements using tooltips.</p>"
+        "descHtml": "Add CSS-only helpers to hoverable elements using tooltips."
     }
 ]

@@ -74,7 +74,9 @@ export default class KitComponents extends Component {
         return (
             <section className="container">
                 <div className="layout">
-                    <h1>Components</h1>
+                    <div className="hero">
+                        <h1>Components</h1>
+                    </div>
                     {components.map(sample => <ComponentSample key={sample.title} sample={sample} />)}
                 </div>
             </section>

@@ -2,8 +2,8 @@ import { AppContainer } from 'react-hot-loader';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import './site.styl';
 import './../../kit/stylekit.styl';
+import './site.styl';
 
 const appRoot = document.getElementById('app');
 const render = Component =>

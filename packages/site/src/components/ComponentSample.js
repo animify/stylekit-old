@@ -30,7 +30,7 @@ export default class ComponentSample extends Component {
             <section className="component" key={sample.title}>
                 <div className="component-description">
                     <h3>{sample.title}</h3>
-                    <div dangerouslySetInnerHTML={{ __html: sample.descHtml }} />
+                    <h4 dangerouslySetInnerHTML={{ __html: sample.descHtml }} />
                 </div>
 
                 { sample.subsections.map(subsection => (
@@ -40,11 +40,11 @@ export default class ComponentSample extends Component {
                             <p>{subsection.subtitle}</p>
                         </div>
                         <div className={showingSnippet ? 'module open' : 'module'}>
-                            <span className="toggle" role="presentation" onClick={this.toggleSnippet}>{ showingSnippet ? 'Hide snippet' : 'Show snippet' }</span>
                             <div className="content">
                                 <div dangerouslySetInnerHTML={{ __html: subsection.snippet }} />
                             </div>
                             <div className="snippet">
+                                <span className="type" role="presentation">HTML</span>
                                 <Highlight language="html">
                                     {subsection.snippet}
                                 </Highlight>

@@ -5,23 +5,35 @@
 @import './styles/*';
 
 body
-    background-color: #f3f5f7;
+    background-color: #F2F4F5;
 
 .component
-    margin: 3.5rem 0;
     display: flex;
     flex-direction: column;
+
+    & + .component
+        margin-top: 8rem;
+
     &-description
         width: 100%;
         display: block;
+        h4
+            font-weight: $fontWeightBook;
+
     &-subsection
         display: flex;
-        border-top: 1px solid $colorBorder;
-        margin-top: 2rem;
-        padding-top: 2rem;
+        border-top: 1px solid darken($colorBorder, 7%);;
+        margin-top: 2.6rem;
+        padding-top: 2.6rem;
+
         &-description
             width: 30%;
             padding-right: 2.4rem;
+            p
+                color: $textColorLight;
 
 .layout
-    margin: 6.5rem 0 3rem 0;
+    padding-top: 3.5em;
+    cf();
+    .hero
+        margin: 4rem 0;
