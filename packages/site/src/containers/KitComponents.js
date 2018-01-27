@@ -21,16 +21,26 @@ export default class KitComponents extends Component {
 
     buildSubsections(snippet) {
         const subsections = [];
+        const sections = snippet.filter('.snippet-section');
 
-        const firstSection = snippet.first();
-        const trimmedSnippet = firstSection.nextUntil('.snippet-section');
-        const newSubsection = {
-            title: firstSection.attr('title'),
-            subtitle: firstSection.attr('subtitle'),
-            snippet: trimmedSnippet.wrapAll('<div>').parent().html()
-        };
+        sections.each((i, s) => {
+            const section = $(s);
+            let trimmedSnippet = null;
 
-        subsections.push(newSubsection);
+            if (sections[i + 1]) {
+                trimmedSnippet = section.nextUntil(sections[i + 1]);
+            } else {
+                trimmedSnippet = section.nextAll();
+            }
+
+            const newSubsection = {
+                title: section.attr('title'),
+                subtitle: section.attr('subtitle'),
+                snippet: trimmedSnippet.clone().wrapAll('<div>').parent().html()
+            };
+
+            subsections.push(newSubsection);
+        });
 
         return subsections;
     }

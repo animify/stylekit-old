@@ -34,7 +34,7 @@ export default class ComponentSample extends Component {
                 </div>
 
                 { sample.subsections.map(subsection => (
-                    <div className="component-subsection">
+                    <div className="component-subsection" key={subsection.title}>
                         <div className="component-subsection-description">
                             <h5>{subsection.title}</h5>
                             <p>{subsection.subtitle}</p>
