@@ -4,7 +4,6 @@ import ComponentSample from './../components/ComponentSample';
 import GuideComponents from './../../guides/components.json';
 const componentsFolder = './../../../kit/components';
 
-
 export default class KitComponents extends Component {
     constructor() {
         super();
