@@ -1,31 +1,35 @@
 import React, { Component } from 'react';
+import * as Scroll from 'react-scroll';
+import { Link } from 'react-router-dom';
 import $ from 'jquery';
 import scrollToComponent from 'react-scroll-to-component';
 import ComponentSample from './../components/ComponentSample';
 import GuideComponents from './../../guides/components.json';
 const componentsFolder = './../../../kit/components';
+import Nav from './../components/Nav';
 
 export default class KitComponents extends Component {
     constructor() {
         super();
 
         this.state = {
-            components: []
+            components: [],
+            list: []
         }
     }
 
+    cleanString(str) {
+        return str.replace(/\s/g, '').toLowerCase();
+    }
+
     componentWillReceiveProps(props) {
-        // if (props.match.params.type !== this.props.match.params.type) {
-        //     Scroll.scrollTo(100);
-        //     // const target = $(`#component-${props.match.params.type.replace(/\s/g, '').toLowerCase()}`);
-        //
-        //     // if(target.length) {
-        //         // console.log('updating');
-        //         // $('html, body').animate({
-        //         //     scrollTop: target.offset().top - 100
-        //         // }, 400);
-        //     // }
-        // }
+        if (props.match.params.type !== this.props.match.params.type) {
+            console.log(`component-${this.cleanString(props.match.params.type)}`);
+
+            const element = document.getElementById(`component-button`);
+            if (element !== null)
+                element.scrollIntoView();
+        }
     }
 
     componentDidMount() {
@@ -75,8 +79,10 @@ export default class KitComponents extends Component {
         Promise.all(imports)
             .then((components) => {
                 console.log();
-                this.props.updateNavComponents(GuideComponents.map(c => c.folder));
-                this.setState({ components })
+                this.setState({
+                    components,
+                    list: GuideComponents.map(c => c.title)
+                })
             })
             .catch((e) => {
                 console.debug(`Stylekit: Oops, looks like you're missing a snippet file. ${e.message}`);
@@ -84,15 +90,25 @@ export default class KitComponents extends Component {
     }
 
     render() {
-        const { components } = this.state;
+        const { components, list } = this.state;
 
         return (
             <section className="container">
+                <Nav>
+                    <div className="dropdown right">
+                        <Link to="/components" className="item active toggle">Components</Link>
+                        <ul className="menu">
+                            { list.map(e => (
+                                <li key={`li-${e}`}><a onClick={() => scrollToComponent(this[this.cleanString(e)], { offset: -100, align: 'top', duration: 500})} className="capitalize">{e}</a></li>
+                            )) }
+                        </ul>
+                    </div>
+                </Nav>
                 <div className="layout">
                     <div className="hero">
                         <h1>Components</h1>
                     </div>
-                    {components.map(sample => <ComponentSample key={sample.title} sample={sample} />)}
+                    {components.map(sample => <ComponentSample ref={(section) => { this[this.cleanString(sample.title)] = section; }} key={`sample-${sample.title}`} sample={sample} />)}
                 </div>
             </section>
         );

@@ -8,27 +8,27 @@ export default class Router extends Component {
     constructor() {
         super();
 
-        this.state = {
-            navComponents: []
-        };
+        // this.state = {
+        //     navComponents: []
+        // };
 
-        this.updateNavComponents = this.updateNavComponents.bind(this);
+        // this.updateNavComponents = this.updateNavComponents.bind(this);
     }
 
-    updateNavComponents(componentList) {
-        console.log(componentList);
-        this.setState({
-            navComponents: componentList
-        });
-    }
+    // updateNavComponents(componentList) {
+    //     console.log(componentList);
+    //     this.setState({
+    //         navComponents: componentList
+    //     });
+    // }
 
     render() {
-        const { navComponents } = this.state;
+        // const { navComponents } = this.state;
 
         return (
             <BrowserRouter>
                 <div>
-                    <Nav components={navComponents} />
+                    {/* <Nav components={navComponents} /> */}
                     <Route exact path="/" render={() => (<HomeContainer />)} />
                     <Route exact path="/components/:type?" render={props => (<KitComponents {...props} updateNavComponents={this.updateNavComponents} />)} />
                 </div>
