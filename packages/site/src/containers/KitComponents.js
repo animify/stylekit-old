@@ -22,16 +22,6 @@ export default class KitComponents extends Component {
         return str.replace(/\s/g, '').toLowerCase();
     }
 
-    componentWillReceiveProps(props) {
-        if (props.match.params.type !== this.props.match.params.type) {
-            console.log(`component-${this.cleanString(props.match.params.type)}`);
-
-            const element = document.getElementById(`component-button`);
-            if (element !== null)
-                element.scrollIntoView();
-        }
-    }
-
     componentDidMount() {
         this.importComponents();
     }
@@ -80,9 +70,14 @@ export default class KitComponents extends Component {
             .then((components) => {
                 console.log();
                 this.setState({
-                    components,
-                    list: GuideComponents.map(c => c.title)
+                    components
                 })
+
+                const componentList = GuideComponents.map(e => (
+                    <li key={`li-${e.title}`}><a onClick={() => scrollToComponent(this[this.cleanString(e.title)], { offset: -100, align: 'top', duration: 500})} className="capitalize">1 {e.title}</a></li>
+                ));
+
+                this.props.updateNavComponents(componentList);
             })
             .catch((e) => {
                 console.debug(`Stylekit: Oops, looks like you're missing a snippet file. ${e.message}`);
@@ -94,16 +89,6 @@ export default class KitComponents extends Component {
 
         return (
             <section className="container">
-                <Nav>
-                    <div className="dropdown right">
-                        <Link to="/components" className="item active toggle">Components</Link>
-                        <ul className="menu">
-                            { list.map(e => (
-                                <li key={`li-${e}`}><a onClick={() => scrollToComponent(this[this.cleanString(e)], { offset: -100, align: 'top', duration: 500})} className="capitalize">{e}</a></li>
-                            )) }
-                        </ul>
-                    </div>
-                </Nav>
                 <div className="layout">
                     <div className="hero">
                         <h1>Components</h1>
