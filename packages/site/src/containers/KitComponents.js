@@ -13,8 +13,7 @@ export default class KitComponents extends Component {
         super();
 
         this.state = {
-            components: [],
-            list: []
+            components: []
         }
     }
 
@@ -68,10 +67,9 @@ export default class KitComponents extends Component {
 
         Promise.all(imports)
             .then((components) => {
-                console.log();
                 this.setState({
                     components
-                })
+                });
 
                 const componentList = GuideComponents.map(e => (
                     <li key={`li-${e.title}`}><a onClick={() => scrollToComponent(this[this.cleanString(e.title)], { offset: -100, align: 'top', duration: 500})} className="capitalize">1 {e.title}</a></li>

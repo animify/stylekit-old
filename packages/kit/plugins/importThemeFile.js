@@ -5,7 +5,6 @@ module.exports = function() {
         style.define('importThemeFile', function(path, theme) {
             const pathToThemes = './../themes/' + theme + '/' + path + '/index';
             const pathName = !!stylus.utils.lookup(pathToThemes.string + '.styl', this.paths);
-            console.log(pathName);
             stylus(path).import(pathName);
         });
     };

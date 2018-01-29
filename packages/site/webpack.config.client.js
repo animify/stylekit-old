@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const nib = require('nib');
 const jeet = require('jeet');
 const rupture = require('rupture');
+const foovar = require('foovar');
 
 module.exports = {
     entry: [
@@ -61,7 +62,7 @@ module.exports = {
         new webpack.LoaderOptionsPlugin({
             options: {
                 stylus: {
-                    use: [nib(), jeet(), rupture()]
+                    use: [nib(), jeet(), rupture(), foovar()]
                 },
                 context: '/'
             }

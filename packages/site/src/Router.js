@@ -4,10 +4,13 @@ import HomeContainer from './containers/Home';
 import KitComponents from './containers/KitComponents';
 import Nav from './components/Nav';
 import GuideComponents from './../guides/components.json';
+import colors from './definitions/colors';
 
 export default class Router extends Component {
     constructor() {
         super();
+        console.log(colors);
+        console.log(colors.colorBlack());
 
         this.state = {
             ComponentDropdown: GuideComponents.map(c => (<li key={`li-${c.title}`}><Link to={`/components/${c.folder}`} className="capitalize">{c.title}</Link></li>)),

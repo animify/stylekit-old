@@ -1,0 +1,17 @@
+(function(){var F=require('foovar/lib/FoovarValue');F.case=null;var S=require('foovar/lib/StylusExpression');module.exports={
+'colorBackgroundBody':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":255,"g":255,"b":255,"a":1,"raw":"#ffffff","name":""}]},true),{case:undefined}),
+'colorBase':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":67,"g":45,"b":236,"a":1,"raw":"#432DEC","name":""}]},true),{case:undefined}),
+'colorRed':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":247,"g":35,"b":63,"a":1,"raw":"#f7233f","name":""}]},true),{case:undefined}),
+'colorOrange':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":239,"g":133,"b":63,"a":1,"raw":"#ef853f","name":""}]},true),{case:undefined}),
+'colorYellow':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":236,"g":202,"b":11,"a":1,"raw":"#ECCA0B","name":""}]},true),{case:undefined}),
+'colorGreen':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":8,"g":196,"b":111,"a":1,"raw":"#08c46f","name":""}]},true),{case:undefined}),
+'colorBlue':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":64,"g":162,"b":241,"a":1,"raw":"#40a2f1","name":""}]},true),{case:undefined}),
+'colorPurple':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":91,"g":2,"b":234,"a":1,"raw":"#5b02ea","name":""}]},true),{case:undefined}),
+'colorPink':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":240,"g":2,"b":126,"a":1,"raw":"#f0027e","name":""}]},true),{case:undefined}),
+'colorWhite':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":255,"g":255,"b":255,"a":1,"raw":"#ffffff","name":""}]},true),{case:undefined}),
+'colorBlack':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":0,"g":0,"b":0,"a":1,"raw":"#000000","name":""}]},true),{case:undefined}),
+'colorBorder':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":226,"g":226,"b":226,"a":1,"raw":"#e2e2e2","name":""}]},true),{case:undefined}),
+'colorBorderInfo':new F(new S({"__type":"Expression","nodes":[{"__type":"Expression","nodes":[{"__type":"RGBA","r":83,"g":171,"b":242,"a":1,"name":""}]}]},true),{case:undefined}),
+'colorBorderWarning':new F(new S({"__type":"Expression","nodes":[{"__type":"Expression","nodes":[{"__type":"RGBA","r":244,"g":212,"b":29,"a":1,"name":""}]}]},true),{case:undefined}),
+'colorBorderImportant':new F(new S({"__type":"Expression","nodes":[{"__type":"Expression","nodes":[{"__type":"RGBA","r":248,"g":57,"b":82,"a":1,"name":""}]}]},true),{case:undefined}),
+'colorBorderSuccess':new F(new S({"__type":"Expression","nodes":[{"__type":"Expression","nodes":[{"__type":"RGBA","r":9,"g":225,"b":128,"a":1,"name":""}]}]},true),{case:undefined})};})();
