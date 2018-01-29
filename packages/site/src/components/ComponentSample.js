@@ -27,7 +27,7 @@ export default class ComponentSample extends Component {
         const { showingSnippet } = this.state;
 
         return (
-            <section className="component" key={sample.title}>
+            <section id={`component-${sample.title.replace(/\s/g, '').toLowerCase()}`} className="component" key={sample.title}>
                 <div className="component-description">
                     <h3>{sample.title}</h3>
                     <h4 dangerouslySetInnerHTML={{ __html: sample.descHtml }} />

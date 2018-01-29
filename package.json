@@ -9,5 +9,6 @@
   "author": "Stefan Mansson(https://mansson.io)",
   "bugs": {
     "url": "https://github.com/animify/stylekit/issues"
-  }
+  },
+  "dependencies": {}
 }

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
+import scrollToComponent from 'react-scroll-to-component';
 import ComponentSample from './../components/ComponentSample';
 import GuideComponents from './../../guides/components.json';
 const componentsFolder = './../../../kit/components';
@@ -13,8 +14,21 @@ export default class KitComponents extends Component {
         }
     }
 
+    componentWillReceiveProps(props) {
+        // if (props.match.params.type !== this.props.match.params.type) {
+        //     Scroll.scrollTo(100);
+        //     // const target = $(`#component-${props.match.params.type.replace(/\s/g, '').toLowerCase()}`);
+        //
+        //     // if(target.length) {
+        //         // console.log('updating');
+        //         // $('html, body').animate({
+        //         //     scrollTop: target.offset().top - 100
+        //         // }, 400);
+        //     // }
+        // }
+    }
+
     componentDidMount() {
-        console.log(GuideComponents);
         this.importComponents();
     }
 
@@ -60,11 +74,13 @@ export default class KitComponents extends Component {
 
         Promise.all(imports)
             .then((components) => {
-               this.setState({ components })
+                console.log();
+                this.props.updateNavComponents(GuideComponents.map(c => c.folder));
+                this.setState({ components })
             })
             .catch((e) => {
-               console.debug(`Stylekit: Oops, looks like you're missing a snippet file. ${e.message}`);
-           });
+                console.debug(`Stylekit: Oops, looks like you're missing a snippet file. ${e.message}`);
+            });
     }
 
     render() {
