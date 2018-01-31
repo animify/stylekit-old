@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const Nav = ({ components, utilities }) => (
+const Nav = ({ components, utilities, currentComponent }) => (
     <header>
         <div className="basic menu">
             <div className="container">
@@ -12,7 +12,7 @@ const Nav = ({ components, utilities }) => (
                 <div className="float-right">
                     <div className="dropdown right">
                         <Link to="/components" className="item active">Components</Link>
-                        <span className="text white toggle">&nbsp; ^ &nbsp;</span>
+                        <span className="text white toggle">{ currentComponent !== '' ? `: ${currentComponent}` : null }^</span>
                         <ul className="menu">
                             { components }
                         </ul>
@@ -32,9 +32,14 @@ const Nav = ({ components, utilities }) => (
     </header>
 );
 
+Nav.defaultProps = {
+    currentComponent: ''
+};
+
 Nav.propTypes = {
     components: PropTypes.array.isRequired,
-    utilities: PropTypes.array.isRequired
+    utilities: PropTypes.array.isRequired,
+    currentComponent: PropTypes.string
 };
 
 export default Nav;

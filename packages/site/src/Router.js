@@ -14,10 +14,18 @@ export default class Router extends Component {
 
         this.state = {
             ComponentDropdown: GuideComponents.map(c => (<li key={`li-${c.title}`}><Link to={`/components/${c.folder}`} className="capitalize">{c.title}</Link></li>)),
-            UtilityDropdown: GuideComponents.map(c => (<li key={`li-${c.title}`}><Link to={`/components/${c.folder}`} className="capitalize">Ut {c.folder}</Link></li>))
+            UtilityDropdown: GuideComponents.map(c => (<li key={`li-${c.title}`}><Link to={`/components/${c.folder}`} className="capitalize">Ut {c.folder}</Link></li>)),
+            currentComponent: undefined
         };
 
+        this.updateCurrentComponent = this.updateCurrentComponent.bind(this);
         this.updateNavComponents = this.updateNavComponents.bind(this);
+    }
+
+    updateCurrentComponent(currentComponent) {
+        this.setState({
+            currentComponent
+        });
     }
 
     updateNavComponents(componentList) {
@@ -27,14 +35,14 @@ export default class Router extends Component {
     }
 
     render() {
-        const { ComponentDropdown, UtilityDropdown } = this.state;
+        const { ComponentDropdown, UtilityDropdown, currentComponent } = this.state;
 
         return (
             <BrowserRouter>
                 <div>
-                    <Nav components={ComponentDropdown} utilities={UtilityDropdown} />
+                    <Nav components={ComponentDropdown} utilities={UtilityDropdown} currentComponent={currentComponent} />
                     <Route exact path="/" render={() => (<HomeContainer />)} />
-                    <Route exact path="/components/:type?" render={props => (<KitComponents {...props} updateNavComponents={this.updateNavComponents} />)} />
+                    <Route exact path="/components/:type?" render={props => (<KitComponents {...props} updateNavComponents={this.updateNavComponents} updateCurrentComponent={this.updateCurrentComponent} />)} />
                 </div>
             </BrowserRouter>
         );

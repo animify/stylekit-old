@@ -15,6 +15,8 @@ export default class KitComponents extends Component {
         this.state = {
             components: []
         }
+
+        this.setFocusedSection = this.setFocusedSection.bind(this);
     }
 
     cleanString(str) {
@@ -51,6 +53,22 @@ export default class KitComponents extends Component {
         return subsections;
     }
 
+    setFocusedSection(section) {
+        scrollToComponent(this[this.cleanString(section.title)], { offset: -100, align: 'top', duration: 500 });
+        this.props.updateCurrentComponent(this.capitalizeFirstLetter(section.title));
+        this.props.history.replace(`/components/${section.folder}`)
+    }
+
+    capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        if (nextProps.match.params.type !== this.props.match.params.type) {
+            return false;
+        }
+        return true;
+    }
 
     importComponents() {
         const imports = GuideComponents.map(guide => {
@@ -72,7 +90,7 @@ export default class KitComponents extends Component {
                 });
 
                 const componentList = GuideComponents.map(e => (
-                    <li key={`li-${e.title}`}><a onClick={() => scrollToComponent(this[this.cleanString(e.title)], { offset: -100, align: 'top', duration: 500})} className="capitalize">1 {e.title}</a></li>
+                    <li key={`li-${e.title}`}><a onClick={() => this.setFocusedSection(e)} className="capitalize">1 {e.title}</a></li>
                 ));
 
                 this.props.updateNavComponents(componentList);

@@ -18,11 +18,12 @@ $itemMargin = 0 0 0 2rem;
             font-weight: $itemFontWeight;
             line-height: $itemLineHeight;
 
-            & + .item
-                margin: $itemMargin;
-
             &:hover
                 color: $hoverTextColor;
 
             &.active
                 color: $activeTextColor;
+
+        .dropdown, .item
+            & + .dropdown, & + .item
+                margin: $itemMargin;
