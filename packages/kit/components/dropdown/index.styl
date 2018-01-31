@@ -18,6 +18,9 @@ $hoverLinkColor = $colorBase;
     position: relative;
     display: inline-block;
 
+    .toggle
+        user-select: none;
+
     .menu
         absolute: top 2rem left 0;
         z-index: 800;
@@ -27,6 +30,7 @@ $hoverLinkColor = $colorBase;
         border-radius: $borderRadius;
         background-color: $backgroundColor;
         box-shadow: $boxShadow;
+        display: none;
 
         li, a
             display: block;

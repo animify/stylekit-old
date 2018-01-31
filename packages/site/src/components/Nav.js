@@ -11,13 +11,15 @@ const Nav = ({ components, utilities }) => (
                 </div>
                 <div className="float-right">
                     <div className="dropdown right">
-                        <Link to="/components" className="item active toggle">Components</Link>
+                        <Link to="/components" className="item active">Components</Link>
+                        <span className="text white toggle">&nbsp; ^ &nbsp;</span>
                         <ul className="menu">
                             { components }
                         </ul>
                     </div>
                     <div className="dropdown right">
                         <Link to="/design" className="item">Design</Link>
+                        <span className="text white toggle">&nbsp; ^ &nbsp;</span>
                         <ul className="menu">
                             { utilities }
                         </ul>

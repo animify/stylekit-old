@@ -4,8 +4,10 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import './../../kit/stylekit.styl';
 import './site.styl';
+import './public/js/bsm';
 
 const appRoot = document.getElementById('app');
+
 const render = Component =>
     ReactDOM.render(
         <AppContainer>
