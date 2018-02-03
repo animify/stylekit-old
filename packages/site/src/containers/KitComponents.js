@@ -3,6 +3,7 @@ import * as Scroll from 'react-scroll';
 import { Link } from 'react-router-dom';
 import $ from 'jquery';
 import scrollToComponent from 'react-scroll-to-component';
+import Utils from './../utils/helpers';
 import ComponentSample from './../components/ComponentSample';
 import GuideComponents from './../../guides/components.json';
 const componentsFolder = './../../../kit/components';
@@ -17,10 +18,6 @@ export default class KitComponents extends Component {
         }
 
         this.setFocusedSection = this.setFocusedSection.bind(this);
-    }
-
-    cleanString(str) {
-        return str.replace(/\s/g, '').toLowerCase();
     }
 
     componentDidMount() {
@@ -54,13 +51,9 @@ export default class KitComponents extends Component {
     }
 
     setFocusedSection(section) {
-        scrollToComponent(this[this.cleanString(section.title)], { offset: -100, align: 'top', duration: 500 });
-        this.props.updateCurrentComponent(this.capitalizeFirstLetter(section.title));
+        scrollToComponent(this[Utils.cleanString(section.title)], { offset: -100, align: 'top', duration: 500 });
+        this.props.updateCurrentComponent(Utils.capitalizeFirstLetter(section.title));
         this.props.history.replace(`/components/${section.folder}`)
-    }
-
-    capitalizeFirstLetter(string) {
-        return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
     shouldComponentUpdate(nextProps, nextState) {
@@ -109,7 +102,7 @@ export default class KitComponents extends Component {
                     <div className="hero">
                         <h1>Components</h1>
                     </div>
-                    {components.map(sample => <ComponentSample ref={(section) => { this[this.cleanString(sample.title)] = section; }} key={`sample-${sample.title}`} sample={sample} />)}
+                    {components.map(sample => <ComponentSample ref={(section) => { this[Utils.cleanString(sample.title)] = section; }} key={`sample-${sample.title}`} sample={sample} />)}
                 </div>
             </section>
         );

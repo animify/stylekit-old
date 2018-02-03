@@ -12,20 +12,34 @@ const Nav = ({ components, utilities, currentComponent }) => (
                 <div className="float-right">
                     <div className="dropdown right">
                         <Link to="/components" className="item active">Components</Link>
-                        <span className="toggle">{ currentComponent !== '' ? `: ${currentComponent}` : null }^</span>
+                        <span className="toggle">{ currentComponent !== '' ? `: ${currentComponent}` : null }<i data-minicon="chevron-down" /></span>
                         <ul className="menu">
                             { components }
                         </ul>
                     </div>
                     <div className="dropdown right">
                         <Link to="/design" className="item">Design</Link>
-                        <span className="toggle">&nbsp; ^ &nbsp;</span>
+                        <span className="toggle"><i data-minicon="chevron-down" /></span>
                         <ul className="menu">
                             { utilities }
                         </ul>
                     </div>
 
-                    <Link to="/utility" className="item">Utility</Link>
+                    <div className="dropdown right">
+                        <Link to="/utility" className="item">Utility</Link>
+                        <span className="toggle"><i data-minicon="chevron-down" /></span>
+                        <ul className="menu">
+                            { utilities }
+                        </ul>
+                    </div>
+
+                    <div className="dropdown right">
+                        <Link to="/variables" className="item">Variables</Link>
+                        <span className="toggle"><i data-minicon="chevron-down" /></span>
+                        <ul className="menu">
+                            { utilities }
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
