@@ -46,7 +46,7 @@ export default class KitDesign extends Component {
                     <section className="component">
                         <div className="component-description">
                             <h3>Color Variables</h3>
-                            <h4>Color variables</h4>
+                            <h4>Variables for the colors used throughout the theme style.</h4>
                         </div>
                         <div className="row">
                             {
