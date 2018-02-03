@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const Nav = ({ components, utilities, currentComponent }) => (
     <header>
-        <div className="basic menu">
+        <div className="nav menu">
             <div className="container">
                 <div className="float-left">
                     <span className="item">Stylekit</span>
@@ -12,14 +12,14 @@ const Nav = ({ components, utilities, currentComponent }) => (
                 <div className="float-right">
                     <div className="dropdown right">
                         <Link to="/components" className="item active">Components</Link>
-                        <span className="text white toggle">{ currentComponent !== '' ? `: ${currentComponent}` : null }^</span>
+                        <span className="toggle">{ currentComponent !== '' ? `: ${currentComponent}` : null }^</span>
                         <ul className="menu">
                             { components }
                         </ul>
                     </div>
                     <div className="dropdown right">
                         <Link to="/design" className="item">Design</Link>
-                        <span className="text white toggle">&nbsp; ^ &nbsp;</span>
+                        <span className="toggle">&nbsp; ^ &nbsp;</span>
                         <ul className="menu">
                             { utilities }
                         </ul>

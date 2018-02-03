@@ -1,5 +1,4 @@
 importThemeFile(getFilename(), $theme);
-$backgroundColor = $bgColorGray;
 $padding = 1rem 3rem;
 $itemLineHeight = $defautlLineHeight;
 $hoverTextColor = $textColorBody;
@@ -7,23 +6,40 @@ $activeTextColor = $colorBase;
 $itemColor = $textColorLight;
 $itemFontWeight = $fontWeightSemibold;
 $itemMargin = 0 0 0 2rem;
+$basicBackgroundColor = $bgColorGray;
 
 .menu
+    .item
+        color: $itemColor;
+        font-weight: $itemFontWeight;
+        line-height: $itemLineHeight;
+
+        &:hover
+            color: $hoverTextColor;
+
+        &.active
+            color: $activeTextColor;
+
+    .dropdown, .item
+        & + .dropdown, & + .item
+            margin: $itemMargin;
+
     &.basic
         padding: $padding;
-        background-color: $backgroundColor;
+        background-color: $basicBackgroundColor;
 
-        .item
-            color: $itemColor;
-            font-weight: $itemFontWeight;
-            line-height: $itemLineHeight;
+    &.nav
+        padding: $padding;
+        background-color: #fff;
+        fixed: top left;
+        width: 100%;
+        z-index: 1000;
+        box-shadow: 0 1px 14px 0 rgba(0, 0, 31, .1);
 
-            &:hover
-                color: $hoverTextColor;
+    &.columns
+        display: flex;
 
-            &.active
-                color: $activeTextColor;
-
-        .dropdown, .item
-            & + .dropdown, & + .item
-                margin: $itemMargin;
+        .list
+            flex-basis: 0;
+            flex-grow: 1;
+            max-width: 100%;
