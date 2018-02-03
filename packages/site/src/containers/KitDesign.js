@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import * as Scroll from 'react-scroll';
 import scrollToComponent from 'react-scroll-to-component';
 import Utils from './../utils/helpers';
-import colors from './../definitions/colors';
+import colorDefinitions from './../definitions/colors';
+import ColorSample from './../components/ColorSample';
 
 export default class KitDesign extends Component {
     constructor() {
         super();
 
-        const colorVariables = Utils.buildColorVariables(colors);
+        const colorVariables = Utils.buildColorVariables(colorDefinitions);
 
         this.state = {
             colors: colorVariables
@@ -30,7 +31,7 @@ export default class KitDesign extends Component {
     setFocusedSection(section) {
         scrollToComponent(this[this.cleanString(section.title)], { offset: -100, align: 'top', duration: 500 });
         this.props.updateCurrentComponent(this.capitalizeFirstLetter(section.title));
-        this.props.history.replace(`/components/${section.folder}`)
+        this.props.history.replace(`/components/${section.folder}`);
     }
 
     render() {
@@ -42,6 +43,11 @@ export default class KitDesign extends Component {
                     <div className="hero">
                         <h1>Design</h1>
                     </div>
+                    {
+                        colors.map(e => (
+                            <ColorSample key={e.variable} colorName={e.variable} colorString={e.value.toRgbString()} />
+                        ))
+                    }
                 </div>
             </section>
         );

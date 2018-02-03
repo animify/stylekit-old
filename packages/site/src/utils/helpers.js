@@ -1,9 +1,36 @@
+import tinycolor from 'tinycolor2';
+
 export default class Utils {
     static buildColorVariables(fooVarVariables) {
-        return Object.entries(fooVarVariables).map(e => ({
-            variable: `$${e[0]}`,
-            value: e[1]()
-        }));
+        const colorObjects = Object.entries(fooVarVariables).map((e) => {
+            const rgbaArray = e[1]();
+            const rgbaObject = {
+                r: null,
+                g: null,
+                b: null,
+                a: 1
+            };
+
+            const rgbaObjectKeys = Object.keys(rgbaObject);
+
+            rgbaArray.forEach((num, index) => {
+                const rgbaIndex = rgbaObjectKeys[index];
+                rgbaObject[rgbaIndex] = num;
+            });
+
+            const color = tinycolor(rgbaObject);
+
+            if (color.isValid()) {
+                return {
+                    variable: `$${e[0]}`,
+                    value: tinycolor(rgbaObject)
+                };
+            }
+
+            return false;
+        });
+
+        return colorObjects.filter(e => e);
     }
 
     static capitalizeFirstLetter(string) {
