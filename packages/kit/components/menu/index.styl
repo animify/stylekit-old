@@ -5,6 +5,8 @@ $hoverTextColor = $textColorBody;
 $activeTextColor = $colorBase;
 $itemColor = $textColorLight;
 $itemFontWeight = $fontWeightSemibold;
+$itemHeaderFontWeight = $fontWeightBold;
+$footerItemFontSize = $fontSizeSub;
 $itemMargin = 0 0 0 2rem;
 $basicBackgroundColor = $bgColorGray;
 
@@ -20,7 +22,11 @@ $basicBackgroundColor = $bgColorGray;
         &.active
             color: $activeTextColor;
 
-    .dropdown, .item
+        &.header
+            color: $hoverTextColor;
+            font-weight: $itemHeaderFontWeight;
+
+    & > .dropdown, & > .item, & .float-right > .dropdown, & .float-right > .item, & .float-left > .dropdown, & .float-left > .item
         & + .dropdown, & + .item
             margin: $itemMargin;
 
@@ -36,10 +42,20 @@ $basicBackgroundColor = $bgColorGray;
         z-index: 1000;
         box-shadow: 0 1px 14px 0 rgba(0, 0, 31, .1);
 
-    &.columns
+    &.footer
         display: flex;
 
         .list
             flex-basis: 0;
             flex-grow: 1;
             max-width: 100%;
+
+            .item:not(.header)
+                font-size: $footerItemFontSize;
+
+                & > a
+                    font-weight: $fontWeightBook;
+                    color: $itemColor;
+
+                    &:hover
+                        color: $hoverTextColor;
