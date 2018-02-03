@@ -41,14 +41,16 @@
 .sample
     display: flex;
     flex-direction: column;
-    border: 1px solid $colorBorder;
     border-radius: $borderRadiusM;
     margin-top: 2rem;
-    .color
-        border-bottom: 1px solid $colorBorder;
-        display: block;
-        content: ' ';
-        width: 100%;
-        height: 85px;
+    box-shadow: 0 1px 14px 0 rgba(0, 0, 31, .1);
     .desc
-        padding: 1rem
+        padding: 3rem 1.2rem 1rem
+        small
+            color: $textColorLight
+            display: block;
+    &.dark .desc
+        p
+            color: #fff
+        small
+            color: rgba(255, 255, 255, .8)

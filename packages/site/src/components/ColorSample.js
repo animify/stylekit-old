@@ -1,10 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ColorSample = ({ colorName, colorString }) => (
+const ColorSample = ({ colorName, colorString, dark }) => (
     <div className="col xs-12 m-3">
-        <div className="sample">
-            <div className="color" style={{ backgroundColor: colorString }} />
+        <div className={dark ? 'dark sample' : 'sample'} style={{ backgroundColor: colorString }}>
             <div className="desc">
                 <p><strong>{colorName}</strong></p>
                 <small>{colorString}</small>
@@ -16,6 +15,7 @@ const ColorSample = ({ colorName, colorString }) => (
 ColorSample.propTypes = {
     colorName: PropTypes.string.isRequired,
     colorString: PropTypes.string.isRequired,
+    dark: PropTypes.bool.isRequired,
 };
 
 export default ColorSample;

@@ -1,5 +1,4 @@
 (function(){var F=require('foovar/lib/FoovarValue');F.case=null;var S=require('foovar/lib/StylusExpression');module.exports={
-'colorBackgroundBody':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":255,"g":255,"b":255,"a":1,"raw":"#ffffff","name":""}]},true),{case:undefined}),
 'colorBase':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":67,"g":45,"b":236,"a":1,"raw":"#432DEC","name":""}]},true),{case:undefined}),
 'colorRed':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":247,"g":35,"b":63,"a":1,"raw":"#f7233f","name":""}]},true),{case:undefined}),
 'colorOrange':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":239,"g":133,"b":63,"a":1,"raw":"#ef853f","name":""}]},true),{case:undefined}),
@@ -10,6 +9,7 @@
 'colorPink':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":240,"g":2,"b":126,"a":1,"raw":"#f0027e","name":""}]},true),{case:undefined}),
 'colorWhite':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":255,"g":255,"b":255,"a":1,"raw":"#ffffff","name":""}]},true),{case:undefined}),
 'colorBlack':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":0,"g":0,"b":0,"a":1,"raw":"#000000","name":""}]},true),{case:undefined}),
+'bgColorBody':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":255,"g":255,"b":255,"a":1,"raw":"#ffffff","name":""}]},true),{case:undefined}),
 'bgColorDark':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":28,"g":34,"b":43,"a":1,"raw":"#1c222b","name":""}]},true),{case:undefined}),
 'bgColorAsh':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":94,"g":99,"b":108,"a":1,"raw":"#5E636C","name":""}]},true),{case:undefined}),
 'bgColorGray':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":222,"g":227,"b":231,"a":1,"raw":"#DEE3E7","name":""}]},true),{case:undefined}),

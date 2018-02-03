@@ -50,8 +50,8 @@ export default class KitDesign extends Component {
                         </div>
                         <div className="row">
                             {
-                                colors.map(e => (
-                                    <ColorSample key={e.variable} colorName={e.variable} colorString={e.value.toRgbString()} />
+                                colors.map(color => (
+                                    <ColorSample key={color.variable} colorName={color.variable} colorString={color.value.toRgbString()} dark={color.dark} />
                                 ))
                             }
                         </div>

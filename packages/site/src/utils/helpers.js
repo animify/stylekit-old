@@ -23,7 +23,8 @@ export default class Utils {
             if (color.isValid()) {
                 return {
                     variable: `$${e[0]}`,
-                    value: tinycolor(rgbaObject)
+                    value: color,
+                    dark: color.isDark()
                 };
             }
 
