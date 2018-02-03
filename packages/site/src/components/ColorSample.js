@@ -6,8 +6,8 @@ const ColorSample = ({ colorName, colorString }) => (
         <div className="sample">
             <div className="color" style={{ backgroundColor: colorString }} />
             <div className="desc">
-                <h5>{colorName}</h5>
-                <p>{colorString}</p>
+                <p><strong>{colorName}</strong></p>
+                <small>{colorString}</small>
             </div>
         </div>
     </div>
