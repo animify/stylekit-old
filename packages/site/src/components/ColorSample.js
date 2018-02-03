@@ -2,9 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ColorSample = ({ colorName, colorString }) => (
-    <div className="sample">
-        <h5>{colorString}</h5>
-        <p>{colorName}</p>
+    <div className="col xs-12 m-3">
+        <div className="sample">
+            <div className="color" style={{ backgroundColor: colorString }} />
+            <div className="desc">
+                <h5>{colorName}</h5>
+                <p>{colorString}</p>
+            </div>
+        </div>
     </div>
 );
 

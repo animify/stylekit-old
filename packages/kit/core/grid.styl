@@ -1,15 +1,13 @@
 .row
     display: flex;
     flex-wrap: wrap;
-
-    gridRowMargin();
+    margin: auto - $gridPadding;
 
     & .equal
         flex-basis: 0;
         flex-grow: 1;
         max-width: 100%;
-
-        gridPadding();
+        padding: 0 $gridPadding;
 
     &.nogutter
         padding: 0;
@@ -18,20 +16,19 @@
     & .col
         flex: 0 0 100%;
         max-width: 100%;
+        padding: 0 $gridPadding;
 
-        gridPadding();
-
-        for size in $grid-sizes
-            +above(size)
-                &.{size}-equal
+        for $size in $gridSizes
+            +above($size)
+                &.{$size}-equal
                     flex-basis: 0;
                     flex-grow: 1;
                     max-width: 100%;
 
-            for len in (1 .. $grid-length)
-                +above(size)
-                    &.{size}-{len}
-                        gridWidth(len);
+                for $length in (1 .. $gridLength)
+                    &.{$size}-{$length}
+                        flex: 0 0 percentage(($length / $gridLength));
+                        max-width: percentage(($length / $gridLength));
 
-                    &.push-{size}-{len}
-                        gridPush(len);
+                    &.push-{$size}-{$length}
+                        margin-left: percentage(($length / $gridLength));

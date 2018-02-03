@@ -43,11 +43,19 @@ export default class KitDesign extends Component {
                     <div className="hero">
                         <h1>Design</h1>
                     </div>
-                    {
-                        colors.map(e => (
-                            <ColorSample key={e.variable} colorName={e.variable} colorString={e.value.toRgbString()} />
-                        ))
-                    }
+                    <section className="component">
+                        <div className="component-description">
+                            <h3>Color Variables</h3>
+                            <h4>Color variables</h4>
+                        </div>
+                        <div className="row">
+                            {
+                                colors.map(e => (
+                                    <ColorSample key={e.variable} colorName={e.variable} colorString={e.value.toRgbString()} />
+                                ))
+                            }
+                        </div>
+                    </section>
                 </div>
             </section>
         );
