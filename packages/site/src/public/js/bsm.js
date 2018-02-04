@@ -6,9 +6,7 @@ $('body').on('click', '.toggle, .menu a', function() {
 });
 
 $('body').on('mouseenter', '.dropdown.hover', function(e) {
-    console.log(e);
     $(this).addClass('open');
 }).on('mouseleave', '.dropdown.hover.open', function(e) {
-    console.log(e);
     $(this).removeClass('open');
 });

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import * as Scroll from 'react-scroll';
 import scrollToComponent from 'react-scroll-to-component';
 import Utils from './../utils/helpers';
 import colorDefinitions from './../definitions/colors';
@@ -23,6 +22,11 @@ export default class KitDesign extends Component {
     }
 
     componentDidMount() {
+        const componentList = ['colors', 'typography'].map(e => (
+            <li key={`li-${e}`}><a onClick={() => this.setFocusedSection(e)} className="capitalize">{e}</a></li>
+        ));
+
+        this.props.updateDesignComponents(componentList);
     }
 
     shouldComponentUpdate(nextProps) {
@@ -33,9 +37,8 @@ export default class KitDesign extends Component {
     }
 
     setFocusedSection(section) {
-        scrollToComponent(this[this.cleanString(section.title)], { offset: -100, align: 'top', duration: 500 });
-        this.props.updateCurrentComponent(this.capitalizeFirstLetter(section.title));
-        this.props.history.replace(`/components/${section.folder}`);
+        scrollToComponent(this[section], { offset: -100, align: 'top', duration: 500 });
+        this.props.history.replace(`/design/${section}`);
     }
 
     render() {
@@ -47,7 +50,7 @@ export default class KitDesign extends Component {
                     <div className="hero">
                         <h1>Design</h1>
                     </div>
-                    <section className="component">
+                    <section className="component" ref={(section) => { this.colors = section; }}>
                         <div className="component-description">
                             <h3>Color Variables</h3>
                             <h4>Variables for the colors used throughout the theme style.</h4>
@@ -60,7 +63,7 @@ export default class KitDesign extends Component {
                             }
                         </div>
                     </section>
-                    <section className="component">
+                    <section className="component" ref={(section) => { this.typography = section; }}>
                         <div className="component-description">
                             <h3>Typography Variables</h3>
                             <h4>Typography.</h4>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const Nav = ({ components, utilities, currentComponent }) => (
+const Nav = ({ components, utilities, design, currentComponent }) => (
     <header>
         <div className="nav menu">
             <div className="container">
@@ -21,7 +21,8 @@ const Nav = ({ components, utilities, currentComponent }) => (
                         <Link to="/design" className="item">Design</Link>
                         <span className="toggle"><i data-minicon="chevron-down" /></span>
                         <ul className="menu">
-                            { utilities }
+                            {console.log('eeee', design)}
+                            { design }
                         </ul>
                     </div>
 
@@ -45,6 +46,7 @@ Nav.defaultProps = {
 Nav.propTypes = {
     components: PropTypes.array.isRequired,
     utilities: PropTypes.array.isRequired,
+    design: PropTypes.array.isRequired,
     currentComponent: PropTypes.string
 };
 
