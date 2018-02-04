@@ -34,6 +34,15 @@ export default class Utils {
         return colorObjects.filter(e => e);
     }
 
+    static buildTypographyVariables(fooVarVariables) {
+        const colorObjects = Object.entries(fooVarVariables).map(e => ({
+            variable: `$${e[0]}`,
+            value: e[1].css
+        }));
+
+        return colorObjects.filter(e => e);
+    }
+
     static capitalizeFirstLetter(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }

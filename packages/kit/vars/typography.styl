@@ -5,10 +5,13 @@ $fontSizeH2 ?= 2.375em;
 $fontSizeH3 ?= 2em;
 $fontSizeH4 ?= 1.325em;
 $fontSizeH5 ?= 1.125em;
-$defaultFontSize ?= 17px;
+$fontSizeBody ?= 17px;
 $fontSizeSub ?= 15px;
 $fontSizeSmall ?= 13px;
 $fontWeightBook ?= 400;
 $fontWeightSemibold ?= 500;
 $fontWeightBold ?= 600;
 $defautlLineHeight ?= 1.5;
+foovar('src/definitions/typography.js', {
+    include: '^\$fontSize'
+});

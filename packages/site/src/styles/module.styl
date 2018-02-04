@@ -39,18 +39,26 @@
             display: block;
 
 .sample
-    display: flex;
-    flex-direction: column;
-    border-radius: $borderRadiusM;
-    margin-top: 2rem;
-    box-shadow: 0 1px 14px 0 rgba(0, 0, 31, .1);
-    .desc
-        padding: 3rem 1.2rem 1rem
-        small
-            color: $textColorLight
+    &.color
+        display: flex;
+        flex-direction: column;
+        border-radius: $borderRadiusM;
+        margin-top: 2rem;
+        box-shadow: 0 1px 14px 0 rgba(0, 0, 31, .1);
+        .desc
+            padding: 3rem 1.2rem 1rem
+            small
+                color: $textColorLight
+                display: block;
+        &.dark .desc
+            p
+                color: #fff
+            small
+                color: rgba(255, 255, 255, .8)
+
+    &.typography
+        display: flex;
+        padding: 1.2rem 0;
+        border-bottom: 1px solid $colorBorder;
+        span
             display: block;
-    &.dark .desc
-        p
-            color: #fff
-        small
-            color: rgba(255, 255, 255, .8)

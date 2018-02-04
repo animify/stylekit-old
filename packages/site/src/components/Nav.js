@@ -32,14 +32,6 @@ const Nav = ({ components, utilities, currentComponent }) => (
                             { utilities }
                         </ul>
                     </div>
-
-                    <div className="dropdown right">
-                        <Link to="/variables" className="item">Variables</Link>
-                        <span className="toggle"><i data-minicon="chevron-down" /></span>
-                        <ul className="menu">
-                            { utilities }
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>
