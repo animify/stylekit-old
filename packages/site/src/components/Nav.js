@@ -2,14 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const Nav = ({ components, utilities, design, currentComponent }) => (
+const Nav = ({ components }) => (
     <header>
-        <div className="nav menu">
+        <div className="nav menu main">
             <div className="container">
                 <div className="float-left">
                     <span className="item">Stylekit</span>
                 </div>
                 <div className="float-right">
+                    <Link to="/components" className="item">Components</Link>
+                    <Link to="/design" className="item">Design</Link>
+                    <Link to="/utility" className="item">Utility</Link>
+                </div>
+                {/* <div className="float-right">
                     <div className="dropdown hover right">
                         <Link to="/components" className="item active">Components</Link>
                         <span className="toggle">{ currentComponent !== '' ? `: ${currentComponent}` : null }<i data-minicon="chevron-down" /></span>
@@ -33,21 +38,19 @@ const Nav = ({ components, utilities, design, currentComponent }) => (
                             { utilities }
                         </ul>
                     </div>
-                </div>
+                </div> */}
+            </div>
+        </div>
+        <div className="nav menu submenu">
+            <div className="container">
+                { components }
             </div>
         </div>
     </header>
 );
 
-Nav.defaultProps = {
-    currentComponent: ''
-};
-
 Nav.propTypes = {
-    components: PropTypes.array.isRequired,
-    utilities: PropTypes.array.isRequired,
-    design: PropTypes.array.isRequired,
-    currentComponent: PropTypes.string
+    components: PropTypes.array.isRequired
 };
 
 export default Nav;

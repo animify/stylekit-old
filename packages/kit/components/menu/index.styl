@@ -36,6 +36,10 @@ $basicBackgroundColor = $bgColorGray;
         & + .dropdown, & + .item
             margin: $itemMargin;
 
+    .container
+        & > .item + .item
+            margin: $itemMargin;
+
     &.basic
         padding: $padding;
         background-color: $basicBackgroundColor;

@@ -82,10 +82,10 @@ export default class KitComponents extends Component {
                 });
 
                 const componentList = GuideComponents.map(e => (
-                    <li key={`li-${e.title}`}><a onClick={() => this.setFocusedSection(e)} className="capitalize">1 {e.title}</a></li>
+                    <li key={`li-${e.title}`} className="item"><a onClick={() => this.setFocusedSection(e)} className="capitalize">{e.title}</a></li>
                 ));
 
-                this.props.updateNavComponents(componentList);
+                this.props.updateNav(componentList);
             })
             .catch((e) => {
                 console.debug(`Stylekit: Oops, looks like you're missing a snippet file. ${e.message}`);

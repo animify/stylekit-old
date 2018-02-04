@@ -1,5 +1,6 @@
 header
-    .menu
+    .menu.nav
+        z-index: 2000
         .item
             position: relative;
         .minicon
@@ -8,3 +9,14 @@ header
             height: 18px;
             width: 18px;
             margin-left: .3em;
+        &.submenu
+            z-index: 1000;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            top: auto;
+            .item
+                font-size: $fontSizeSub;
+                font-weight: $fontWeightBook;
+                a
+                    color: $textColorLight;

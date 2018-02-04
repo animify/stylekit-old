@@ -7,22 +7,16 @@ import KitComponents from './containers/KitComponents';
 import KitDesign from './containers/KitDesign';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
-import GuideComponents from './../guides/components.json';
 
 export default class Router extends Component {
     constructor() {
         super();
 
         this.state = {
-            ComponentDropdown: GuideComponents.map(c => (<li key={`li-${c.title}`}><Link to={`/components/${c.folder}`} className="capitalize">{c.title}</Link></li>)),
-            UtilityDropdown: GuideComponents.map(c => (<li key={`li-${c.title}`}><Link to={`/components/${c.folder}`} className="capitalize">Ut {c.folder}</Link></li>)),
-            DesignDropdown: [],
-            currentComponent: undefined
+            NavComponents: []
         };
 
-        this.updateCurrentComponent = this.updateCurrentComponent.bind(this);
         this.updateNavComponents = this.updateNavComponents.bind(this);
-        this.updateDesignComponents = this.updateDesignComponents.bind(this);
     }
 
     componentDidMount() {
@@ -38,37 +32,24 @@ export default class Router extends Component {
         minicons.swap();
     }
 
-    updateCurrentComponent(currentComponent) {
-        this.setState({
-            currentComponent
-        });
-    }
-
     updateNavComponents(componentList) {
         this.setState({
-            ComponentDropdown: componentList
-        });
-    }
-
-    updateDesignComponents(componentList) {
-        console.log(componentList);
-        this.setState({
-            DesignDropdown: componentList
+            NavComponents: componentList
         });
     }
 
     render() {
-        const { ComponentDropdown, UtilityDropdown, DesignDropdown, currentComponent } = this.state;
+        const { NavComponents, UtilityDropdown, DesignDropdown, currentComponent } = this.state;
 
         return (
             <BrowserRouter>
                 <div>
-                    <Nav components={ComponentDropdown} utilities={UtilityDropdown} design={DesignDropdown} currentComponent={currentComponent} />
+                    <Nav components={NavComponents} />
                     <Route exact path="/" render={() => (<HomeContainer />)} />
 
-                    <Route exact path="/components/:type?" render={props => (<KitComponents {...props} updateNavComponents={this.updateNavComponents} updateCurrentComponent={this.updateCurrentComponent} />)} />
+                    <Route exact path="/components/:type?" render={props => (<KitComponents {...props} updateNav={this.updateNavComponents} />)} />
 
-                    <Route exact path="/design/:type?" render={props => (<KitDesign {...props} updateDesignComponents={this.updateDesignComponents} updateCurrentComponent={this.updateCurrentComponent} />)} />
+                    <Route exact path="/design/:type?" render={props => (<KitDesign {...props} updateNav={this.updateNavComponents} />)} />
                     <Footer />
                 </div>
             </BrowserRouter>

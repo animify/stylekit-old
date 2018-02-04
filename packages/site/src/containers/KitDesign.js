@@ -23,10 +23,10 @@ export default class KitDesign extends Component {
 
     componentDidMount() {
         const componentList = ['colors', 'typography'].map(e => (
-            <li key={`li-${e}`}><a onClick={() => this.setFocusedSection(e)} className="capitalize">{e}</a></li>
+            <li key={`li-${e}`} className="item"><a onClick={() => this.setFocusedSection(e)} className="capitalize">{e}</a></li>
         ));
 
-        this.props.updateDesignComponents(componentList);
+        this.props.updateNav(componentList);
     }
 
     shouldComponentUpdate(nextProps) {
