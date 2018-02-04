@@ -51,7 +51,6 @@ export default class KitComponents extends Component {
 
     setFocusedSection(section) {
         scrollToComponent(this[Utils.cleanString(section.title)], { offset: -100, align: 'top', duration: 500 });
-        this.props.updateCurrentComponent(Utils.capitalizeFirstLetter(section.title));
         this.props.history.replace(`/components/${section.folder}`)
     }
 
