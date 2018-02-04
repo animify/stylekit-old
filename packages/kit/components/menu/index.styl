@@ -1,12 +1,15 @@
 importThemeFile(getFilename(), $theme);
-$padding = 1rem 2rem;
-$navPadding = 1.2rem 3rem;
+$padding = 0 2rem;
+$navPadding = 0 3rem;
 $itemLineHeight = $defautlLineHeight;
 $hoverTextColor = $textColorBody;
 $activeTextColor = $colorBase;
 $itemColor = $textColorLight;
+$itemPadding = 1rem 0;
+$navItemPadding = 1.2rem 0;
 $itemFontWeight = $fontWeightSemibold;
 $itemHeaderFontWeight = $fontWeightBold;
+$footerItemPadding = .1rem 0;
 $footerItemFontSize = $fontSizeSub;
 $itemMargin = 0 0 0 2rem;
 $basicBackgroundColor = $bgColorGray;
@@ -16,6 +19,8 @@ $basicBackgroundColor = $bgColorGray;
         color: $itemColor;
         font-weight: $itemFontWeight;
         line-height: $itemLineHeight;
+        padding: $itemPadding;
+        display: inline-block;
 
         &:hover
             color: $hoverTextColor;
@@ -43,6 +48,12 @@ $basicBackgroundColor = $bgColorGray;
         z-index: 1000;
         box-shadow: 0 1px 14px 0 rgba(0, 0, 31, .1);
 
+        .item
+            padding: $navItemPadding;
+
+        .dropdown .menu
+            top: 3.2rem;
+
     &.footer
         display: flex;
 
@@ -50,6 +61,10 @@ $basicBackgroundColor = $bgColorGray;
             flex-basis: 0;
             flex-grow: 1;
             max-width: 100%;
+
+            .item
+                display: block;
+                padding: $footerItemPadding;
 
             .item:not(.header)
                 font-size: $footerItemFontSize;
