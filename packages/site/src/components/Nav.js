@@ -4,47 +4,41 @@ import PropTypes from 'prop-types';
 
 const Nav = ({ components }) => (
     <header>
-        <div className="nav menu main">
-            <div className="container">
-                <div className="float-left">
-                    <span className="item">Stylekit</span>
+        <div className="sidebar menu main">
+            <span className="logo">Stylekit</span>
+            <div className="options">
+                <Link to="/components" className="item active">Components</Link>
+                <ul className="list">
+                    { components }
+                </ul>
+                <Link to="/design" className="item">Design</Link>
+                <Link to="/utility" className="item">Utility</Link>
+            </div>
+            {/* <div className="float-right">
+                <div className="dropdown hover right">
+                    <Link to="/components" className="item active">Components</Link>
+                    <span className="toggle">{ currentComponent !== '' ? `: ${currentComponent}` : null }<i data-minicon="chevron-down" /></span>
+                    <ul className="menu">
+                        { components }
+                    </ul>
                 </div>
-                <div className="float-right">
-                    <Link to="/components" className="item">Components</Link>
+                <div className="dropdown hover right">
                     <Link to="/design" className="item">Design</Link>
-                    <Link to="/utility" className="item">Utility</Link>
+                    <span className="toggle"><i data-minicon="chevron-down" /></span>
+                    <ul className="menu">
+                        {console.log('eeee', design)}
+                        { design }
+                    </ul>
                 </div>
-                {/* <div className="float-right">
-                    <div className="dropdown hover right">
-                        <Link to="/components" className="item active">Components</Link>
-                        <span className="toggle">{ currentComponent !== '' ? `: ${currentComponent}` : null }<i data-minicon="chevron-down" /></span>
-                        <ul className="menu">
-                            { components }
-                        </ul>
-                    </div>
-                    <div className="dropdown hover right">
-                        <Link to="/design" className="item">Design</Link>
-                        <span className="toggle"><i data-minicon="chevron-down" /></span>
-                        <ul className="menu">
-                            {console.log('eeee', design)}
-                            { design }
-                        </ul>
-                    </div>
 
-                    <div className="dropdown hover right">
-                        <Link to="/utility" className="item">Utility</Link>
-                        <span className="toggle"><i data-minicon="chevron-down" /></span>
-                        <ul className="menu">
-                            { utilities }
-                        </ul>
-                    </div>
-                </div> */}
-            </div>
-        </div>
-        <div className="nav menu submenu">
-            <div className="container">
-                { components }
-            </div>
+                <div className="dropdown hover right">
+                    <Link to="/utility" className="item">Utility</Link>
+                    <span className="toggle"><i data-minicon="chevron-down" /></span>
+                    <ul className="menu">
+                        { utilities }
+                    </ul>
+                </div>
+            </div> */}
         </div>
     </header>
 );

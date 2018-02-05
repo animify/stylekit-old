@@ -58,6 +58,42 @@ $basicBackgroundColor = $bgColorGray;
         .dropdown .menu
             top: 3.2rem;
 
+    &.sidebar
+        z-index: 3000;
+        position: fixed;
+        bottom: 0;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 300px;
+        padding: 1rem 2.4rem;
+        background-color: $bgColorGrayLight;
+
+        & > .item, & .options > .item
+            display: block;
+            font-weight: 500;
+            color: $textColorBody;
+            padding: .5rem 0;
+
+            &.active
+                font-weight: 600;
+
+            & + .item
+                margin: 0;
+
+        .list
+            padding: 0 0 0 1rem;
+            margin-bottom: .8rem;
+
+            .item
+                font-weight: 400;
+                display: block;
+                font-size: $fontSizeSub;
+                padding: .2rem 0;
+
+                a
+                    color: $textColorLight;
+
     &.footer
         display: flex;
 

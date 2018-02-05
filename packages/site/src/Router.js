@@ -50,7 +50,6 @@ export default class Router extends Component {
                     <Route exact path="/components/:type?" render={props => (<KitComponents {...props} updateNav={this.updateNavComponents} />)} />
 
                     <Route exact path="/design/:type?" render={props => (<KitDesign {...props} updateNav={this.updateNavComponents} />)} />
-                    <Footer />
                 </div>
             </BrowserRouter>
         );

@@ -29,14 +29,14 @@ export default class ComponentSample extends Component {
         return (
             <section id={`component-${sample.title.replace(/\s/g, '').toLowerCase()}`} className="component" key={sample.title}>
                 <div className="component-description">
-                    <h3>{sample.title}</h3>
+                    <h2>{sample.title}</h2>
                     <h4 dangerouslySetInnerHTML={{ __html: sample.descHtml }} />
                 </div>
 
                 { sample.subsections.map(subsection => (
                     <div className="component-subsection" key={subsection.title}>
                         <div className="component-subsection-description">
-                            <h5>{subsection.title}</h5>
+                            <h4>{subsection.title}</h4>
                             <p>{subsection.subtitle}</p>
                         </div>
                         <div className={showingSnippet ? 'module open' : 'module'}>
