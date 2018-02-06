@@ -7,7 +7,7 @@ body
     padding: 0;
     color: $textColorBody;
     background-color: $bgColorBody;
-    font-family: $defaultFontFamily;
+    font-family: $fontFamilyBody;
     font-size: $fontSizeBody;
     line-height: $defautlLineHeight;
     -webkit-font-smoothing: antialiased;
@@ -16,9 +16,11 @@ body
 for h in (1 .. 5)
     h{h}
         font-size: lookup('$fontSizeH' + h);
-        font-weight: $fontWeightSemibold;
+        font-family: $fontFamilyHeading;
+        font-weight: $fontWeightBlack;
         color: $textColorHeader;
         line-height: $defautlLineHeight;
+        letter-spacing: -.15px;
 
 a
     text-decoration: none;

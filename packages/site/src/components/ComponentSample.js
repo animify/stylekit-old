@@ -44,7 +44,7 @@ export default class ComponentSample extends Component {
                                 <div dangerouslySetInnerHTML={{ __html: subsection.snippet }} />
                             </div>
                             <div className="snippet">
-                                <span className="type" role="presentation">HTML</span>
+                                {/* <span className="type" role="presentation">HTML</span> */}
                                 <Highlight language="html">
                                     {subsection.snippet}
                                 </Highlight>

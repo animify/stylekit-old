@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link, Route, BrowserRouter } from 'react-router-dom';
+import { Route, BrowserRouter } from 'react-router-dom';
 import minicons from 'minicons';
 import Utils from './utils/helpers';
 import HomeContainer from './containers/Home';
@@ -39,7 +39,7 @@ export default class Router extends Component {
     }
 
     render() {
-        const { NavComponents, UtilityDropdown, DesignDropdown, currentComponent } = this.state;
+        const { NavComponents } = this.state;
 
         return (
             <BrowserRouter>
