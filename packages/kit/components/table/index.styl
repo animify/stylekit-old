@@ -2,27 +2,27 @@ importThemeFile(getFilename(), $theme);
 $stripedBackgroundColor = $bgColorGray;
 $borderColor = $colorBorder;
 $borderWidth = 1px;
+$tableCellPadding = .6em 1.2em;
+$stripedRowBackgroundColor = $bgColorGrayLightest;
 
 .table
-    border: $borderWidth solid $borderColor;
     border-collapse: separate;
     border-radius: $border-radius;
 
     th
-        padding: .5em 1em;
-        border-bottom: $borderWidth solid $borderColor;
+        padding: $tableCellPadding;
+        border-bottom: $borderWidth solid darken($borderColor, 20%);
         font-weight: $fontWeightSemibold;
+        color: $textColorHeading;
 
     td
-        padding: .5em 1em;
+        padding: $tableCellPadding;
         border-bottom: $borderWidth solid $borderColor;
 
-    &:last-child td
+    tr:last-child td
         border-bottom: 0;
 
     &.basic
-        border: 0;
-
         th, tr
             background-color: transparent;
 
@@ -38,6 +38,9 @@ $borderWidth = 1px;
             background-color: transparent;
 
     &.striped
-        tr
-            &:nth-child(2n)
-                background-color: $stripedBackgroundColor;
+        tbody
+            tr
+                background-color: $stripedRowBackgroundColor;
+
+                &:nth-child(2n)
+                    background-color: transparent;
