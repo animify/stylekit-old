@@ -1,12 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import logo from './../public/images/stylekit-primary.svg';
 
 const Nav = ({ components }) => (
     <header>
         <div className="nav menu main noshadow">
             <div className="container">
-                <span className="item logo">Stylekit</span>
+                <span className="item logo"><img src={logo} height="24" alt="Stylekit primary logo" /></span>
 
                 <div className="float-right">
                     <Link to="/components" className="item active">Components</Link>
