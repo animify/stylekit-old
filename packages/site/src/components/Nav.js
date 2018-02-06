@@ -4,15 +4,15 @@ import PropTypes from 'prop-types';
 
 const Nav = ({ components }) => (
     <header>
-        <div className="sidebar menu main">
-            <span className="logo">Stylekit</span>
-            <div className="options">
-                <Link to="/components" className="item active">Components</Link>
-                <ul className="list">
-                    { components }
-                </ul>
-                <Link to="/design" className="item">Design</Link>
-                <Link to="/utility" className="item">Utility</Link>
+        <div className="nav menu main noshadow">
+            <div className="container">
+                <span className="item logo">Stylekit</span>
+
+                <div className="float-right">
+                    <Link to="/components" className="item active">Components</Link>
+                    <Link to="/design" className="item">Design</Link>
+                    <Link to="/utility" className="item">Utility</Link>
+                </div>
             </div>
             {/* <div className="float-right">
                 <div className="dropdown hover right">
