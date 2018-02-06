@@ -49,6 +49,7 @@ export default class KitDesign extends Component {
                 <div className="layout">
                     <div className="hero">
                         <h1>Design</h1>
+                        <h3>Design does this and that this and that this and that this and that this and that this and that.</h3>
                     </div>
                     <section className="component" ref={(section) => { this.colors = section; }}>
                         <div className="component-description">
