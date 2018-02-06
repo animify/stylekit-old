@@ -1,7 +1,7 @@
 importThemeFile(getFilename(), $theme);
 $padding = 0 2rem;
 $navPadding = 0 3rem;
-$itemLineHeight = $defautlLineHeight;
+$itemLineHeight = $lineHeightBase;
 $hoverTextColor = $textColorBody;
 $activeTextColor = $colorBase;
 $itemColor = $textColorLight;
@@ -29,7 +29,7 @@ $basicBackgroundColor = $bgColorGray;
             color: $activeTextColor;
 
         &.header
-            color: $hoverTextColor;
+            color: $textColorHeader;
             font-weight: $itemHeaderFontWeight;
 
     & > .dropdown, & > .item, & .float-right > .dropdown, & .float-right > .item, & .float-left > .dropdown, & .float-left > .item
@@ -107,8 +107,6 @@ $basicBackgroundColor = $bgColorGray;
                 padding: $footerItemPadding;
 
             .item:not(.header)
-                font-size: $footerItemFontSize;
-
                 & > a
                     font-weight: $fontWeightBook;
                     color: $itemColor;
