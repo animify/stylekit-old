@@ -34,13 +34,40 @@ export default class Utils {
         return colorObjects.filter(e => e);
     }
 
+    static buildCSSfromArray(arrays) {
+        let cssString = '';
+
+        if (arrays.length > 1 && typeof arrays[0] !== 'string') {
+            arrays.forEach((arr) => {
+                cssString += arr.join(' ');
+                cssString += ', ';
+            });
+        } else {
+            cssString += arrays.join(' ');
+        }
+
+        cssString.trim();
+        cssString = cssString.replace(/(^\s*,)|(,\s*$)/g, '');
+
+        return cssString;
+    }
+
+    static buildShadowVariables(fooVarVariables) {
+        const shadowObjects = Object.entries(fooVarVariables).map(e => ({
+            variable: `$${e[0]}`,
+            value: typeof e[1] === 'string' ? e[1] : Utils.buildCSSfromArray(e[1])
+        }));
+
+        return shadowObjects.filter(e => e);
+    }
+
     static buildTypographyVariables(fooVarVariables) {
-        const colorObjects = Object.entries(fooVarVariables).map(e => ({
+        const typographyObjects = Object.entries(fooVarVariables).map(e => ({
             variable: `$${e[0]}`,
             value: e[1].css
         }));
 
-        return colorObjects.filter(e => e);
+        return typographyObjects.filter(e => e);
     }
 
     static capitalizeFirstLetter(string) {

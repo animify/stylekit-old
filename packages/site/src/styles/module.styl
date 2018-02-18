@@ -48,19 +48,29 @@
         .desc
             padding: 3rem 1.2rem 1rem
             p
-                color: #252525;
+                color: $textColorHeading;
             small
-                color: rgba(0, 0, 0, .8)
+                color: rgba(0, 0, 0, .8);
                 display: block;
         &.dark .desc
             p
-                color: #fff
+                color: #fff;
             small
-                color: rgba(255, 255, 255, .8)
+                color: rgba(255, 255, 255, .8);
 
     &.typography
         display: flex;
         padding: 1.2rem 0;
         border-bottom: 1px solid $colorBorder;
         span
+            color: $textColorHeading;
             display: block;
+
+    &.shadow
+        padding: 1.2rem;
+        border-radius: $borderRadiusM;
+        margin-top: 2rem;
+        background-color: #fff;
+        border: 1px solid $colorBorder;
+        p
+            color: $textColorHeading;

@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ColorSample = ({ colorName, colorString, dark }) => (
-    <div className="col xs-12 m-3">
+    <div className="col xs-12 m-4">
         <div className={dark ? 'dark sample color' : 'sample color'} style={{ backgroundColor: colorString }}>
             <div className="desc">
                 <p><strong>{colorName}</strong></p>

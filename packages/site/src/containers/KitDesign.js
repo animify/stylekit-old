@@ -3,7 +3,9 @@ import scrollToComponent from 'react-scroll-to-component';
 import Utils from './../utils/helpers';
 import colorDefinitions from './../definitions/colors';
 import typographyDefinitions from './../definitions/typography';
+import shadowDefinitions from './../definitions/shadow';
 import ColorSample from './../components/ColorSample';
+import ShadowSample from './../components/ShadowSample';
 import TypographySample from './../components/TypographySample';
 
 export default class KitDesign extends Component {
@@ -11,10 +13,12 @@ export default class KitDesign extends Component {
         super();
 
         const colorVariables = Utils.buildColorVariables(colorDefinitions);
+        const shadowVariables = Utils.buildShadowVariables(shadowDefinitions);
         const typographyVariables = Utils.buildTypographyVariables(typographyDefinitions);
 
         this.state = {
             colors: colorVariables,
+            shadows: shadowVariables,
             typographies: typographyVariables
         };
 
@@ -42,7 +46,7 @@ export default class KitDesign extends Component {
     }
 
     render() {
-        const { colors, typographies } = this.state;
+        const { shadows, colors, typographies } = this.state;
 
         return (
             <section className="container">
@@ -60,6 +64,19 @@ export default class KitDesign extends Component {
                             {
                                 colors.map(color => (
                                     <ColorSample key={color.variable} colorName={color.variable} colorString={color.value.toRgbString()} dark={color.dark} />
+                                ))
+                            }
+                        </div>
+                    </section>
+                    <section className="component" ref={(section) => { this.colors = section; }}>
+                        <div className="component-description">
+                            <h3>Shadow Variables</h3>
+                            <h4>Variables for the colors used throughout the theme style.</h4>
+                        </div>
+                        <div className="row">
+                            {
+                                shadows.map(shadow => (
+                                    <ShadowSample key={shadow.variable} shadowName={shadow.variable} shadowCSS={shadow.value} />
                                 ))
                             }
                         </div>

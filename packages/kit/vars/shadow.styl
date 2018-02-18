@@ -1,0 +1,11 @@
+$boxShadowDistant ?= 0 4px 12px rgba(0, 0, 0, .1);
+$boxShadowClose ?= 0px 2px 3px 0px rgba(0, 0, 0, .1);
+$boxShadowSubtle ?= 0 1px 2px 0 rgba(0, 0, 0, .2);
+$boxShadowForm ?= 0 2px 2px 0 rgba(0, 0, 20, .015), 0 0 0 1px rgba(0, 0, 20, .0075);
+$boxShadowEmboss ?= inset 0 -2px 0 rgba(0, 0, 20, .15);
+$boxShadowDeboss ?= inset 0 2px 0 rgba(0, 0, 20, .15);
+$boxShadowRaise ?= 0 1px 1px 0 rgba(0, 0, 20, .05);
+foovar('src/definitions/shadow.js', {
+    include: '^\$boxShadow',
+    plainObject: 'css'
+});
