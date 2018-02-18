@@ -15,6 +15,11 @@
         "descHtml": "Fields and action elements for forms."
     },
     {
+        "folder": "label",
+        "title": "Labels",
+        "descHtml": "Highlight important words or phrases within your content."
+    },
+    {
         "folder": "list",
         "title": "List",
         "descHtml": "Useful for structuring data into organized lists."
