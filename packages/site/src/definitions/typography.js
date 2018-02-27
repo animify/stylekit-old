@@ -6,4 +6,4 @@
 'fontSizeH5':new F(new S({"__type":"Expression","nodes":[{"__type":"Unit","val":1.125,"type":"em"}]},true),{case:undefined}),
 'fontSizeBody':new F(new S({"__type":"Expression","nodes":[{"__type":"Unit","val":15,"type":"px"}]},true),{case:undefined}),
 'fontSizeSub':new F(new S({"__type":"Expression","nodes":[{"__type":"Unit","val":12,"type":"px"}]},true),{case:undefined}),
-'fontSizeSmall':new F(new S({"__type":"Expression","nodes":[{"__type":"Unit","val":10,"type":"px"}]},true),{case:undefined})};})();
+'fontSizeSmall':new F(new S({"__type":"Expression","nodes":[{"__type":"Unit","val":11,"type":"px"}]},true),{case:undefined})};})();
