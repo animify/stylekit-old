@@ -1,5 +1,0 @@
-{
-    "commands": [
-        "packages/kit/**/*.styl: stylus-supremacy format {relPath}{filename} -r --options ./packages/kit/stylus-options.json"
-    ]
-}

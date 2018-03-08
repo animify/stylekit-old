@@ -1,0 +1,7 @@
+[
+  {
+    "srcDir": "./packages/kit",
+    "files": "**/*.styl",
+    "command": "stylus-supremacy format ${srcFile} -r --options ./packages/kit/stylus-options.json"
+  }
+]

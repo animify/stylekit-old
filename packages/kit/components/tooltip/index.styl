@@ -11,14 +11,14 @@ $bodyBorderRadius = $borderRadiusM;
 $bodyBoxShadow = $boxShadowSubtle;
 $bodyTextColor = $textColorBody;
 $darkBodyTextColor = $colorWhite;
-$bodyPadding = .5em 1em;
+$bodyPadding = .6em 1.2em;
 
 .tooltip[data-content]
     position: relative;
 
     &:before
         position: absolute;
-        z-index: 20;
+        z-index: 24;
         width: .8rem;
         height: .8rem;
         background-color: $arrowBackgroundColor;
@@ -35,7 +35,7 @@ $bodyPadding = .5em 1em;
 
     &:after
         position: absolute;
-        z-index: 19;
+        z-index: 20;
         padding: $bodyPadding;
         max-width: none;
         border: $bodyBorder;
@@ -78,7 +78,7 @@ $bodyPadding = .5em 1em;
     &[data-position~=top]
         &:before
             bottom: 100%;
-            margin-bottom: .18rem;
+            margin-bottom: .2rem;
 
         &:after
             bottom: 100%;
@@ -95,7 +95,7 @@ $bodyPadding = .5em 1em;
 
     &[data-position='top left']
         &:before
-            left: 1rem;
+            left: 1.2rem;
 
         &:after
             right: auto;
@@ -120,7 +120,7 @@ $bodyPadding = .5em 1em;
 
     &[data-position='top right']
         &:before
-            right: 1rem;
+            right: 1.2rem;
 
         &:after
             right: 0;
@@ -129,7 +129,7 @@ $bodyPadding = .5em 1em;
 
     &[data-position='bottom left']
         &:before
-            left: 1rem;
+            left: 1.2rem;
 
         &:after
             right: auto;
@@ -150,7 +150,7 @@ $bodyPadding = .5em 1em;
 
     &[data-position='bottom right']
         &:before
-            right: 1rem;
+            right: 1.2rem;
 
         &:after
             right: 0;

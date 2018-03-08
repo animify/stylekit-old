@@ -15,7 +15,7 @@
 'bgColorGray':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":221,"g":225,"b":230,"a":1,"raw":"#DDE1E6","name":""}]},true),{case:undefined}),
 'bgColorGrayLight':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":252,"g":250,"b":250,"a":1,"raw":"#FCFAFA","name":""}]},true),{case:undefined}),
 'bgColorGrayLightest':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":250,"g":250,"b":250,"a":1,"raw":"#fafafa","name":""}]},true),{case:undefined}),
-'textColorHeading':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":21,"g":21,"b":21,"a":1,"raw":"#151515","name":""}]},true),{case:undefined}),
+'textColorHeading':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":0,"g":0,"b":0,"a":1,"raw":"#000000","name":""}]},true),{case:undefined}),
 'textColorBody':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":85,"g":85,"b":85,"a":1,"raw":"#555555","name":""}]},true),{case:undefined}),
 'textColorLight':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":149,"g":149,"b":149,"a":1,"raw":"#959595","name":""}]},true),{case:undefined}),
 'textColorDisabled':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":179,"g":179,"b":179,"a":1,"raw":"#B3B3B3","name":""}]},true),{case:undefined}),

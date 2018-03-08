@@ -6,8 +6,8 @@ $borderWidth = 1px;
 $boxShadow = 0 1px 4px rgba(0, 0, 31, .1), 0 4px 14px rgba(0, 0, 31, .08);
 $lineHeight = $lineHeightBase;
 $fontWeight = $fontWeightBook;
-$padding = .8rem 0;
-$itemPadding = .2em 1.4em;
+$padding = 1.2rem 0;
+$itemPadding = .4rem 2rem;
 $headerColor = $textColorBody;
 $headerFontSize = $fontSizeBody;
 $headerFontWeight = $fontWeightSemibold;
@@ -22,10 +22,10 @@ $hoverLinkColor = $colorBase;
         user-select: none;
 
     .menu
-        absolute: top 2rem left 0;
+        absolute: top 3.2rem left 0;
         z-index: 800;
         padding: $padding;
-        min-width: 13rem;
+        min-width: 21.6rem;
         border: $borderWidth solid $borderColor;
         border-radius: $borderRadius;
         background-color: $backgroundColor;
@@ -58,7 +58,7 @@ $hoverLinkColor = $colorBase;
 
     &.floating
         .menu
-            margin-top: 1rem;
+            margin-top: 1.6rem;
 
     &.right
         .menu
@@ -68,4 +68,4 @@ $hoverLinkColor = $colorBase;
     &.upward
         .menu
             top: auto;
-            bottom: 2rem;
+            bottom: 3.2rem;
