@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import logo from './../public/images/stylekit-primary.svg';
+import logo from './../public/images/logotype.svg';
 
-const Nav = ({ components }) => (
+const Nav = () => (
     <header>
-        <div className="nav menu main noshadow">
+        <div className="nav menu main header hasborder">
             <div className="container">
                 <span className="item logo"><img src={logo} height="24" alt="Stylekit primary logo" /></span>
 

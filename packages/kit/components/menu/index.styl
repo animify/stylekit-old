@@ -1,6 +1,7 @@
 importThemeFile(getFilename(), $theme);
 $padding = 0 2rem;
 $navPadding = 0 3.2rem;
+$navMainPadding = 1.2rem 3.2rem;
 $itemLineHeight = $lineHeightBase;
 $hoverTextColor = $textColorBody;
 $activeTextColor = $colorBase;
@@ -52,8 +53,21 @@ $basicBackgroundColor = $bgColorGrayLight;
         z-index: 1000;
         box-shadow: 0 1px 14px 0 rgba(0, 0, 31, .1);
 
+        &.header
+            padding: $navMainPadding;
+
+            &.hasborder
+                box-shadow: none;
+                border-bottom: 1px solid $colorBorder;
+
         .item
             padding: $navItemPadding;
+
+        .logo
+            padding: 0;
+
+            img
+                relative: top 1.2rem;
 
         .dropdown .menu
             top: 3.2rem;
