@@ -4,11 +4,11 @@
 @import './../../kit/vars/*';
 @import './styles/*';
 
-.component
+.guide
     display: flex;
     flex-direction: column;
 
-    & + .component
+    & + .guide
         margin-top: 8rem;
 
     &-description
@@ -23,6 +23,9 @@
         border-top: 1px solid $colorBorder;
         margin-top: 2.8rem;
         padding-top: 2.8rem;
+
+        .row + .row
+            margin-top: 2.4rem;
 
         &-description
             width: 30%;

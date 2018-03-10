@@ -1,4 +1,5 @@
 import tinycolor from 'tinycolor2';
+import $ from 'jquery';
 
 export default class Utils {
     static buildColorVariables(fooVarVariables) {
@@ -76,5 +77,58 @@ export default class Utils {
 
     static cleanString(string) {
         return string.replace(/\s/g, '').toLowerCase();
+    }
+
+    static buildSubsections(snippet) {
+        const subsections = [];
+        const sections = snippet.filter('.snippet-section');
+
+        sections.each((i, s) => {
+            const section = $(s);
+            let trimmedSnippet = null;
+
+            if (sections[i + 1]) {
+                trimmedSnippet = section.nextUntil(sections[i + 1]);
+            } else {
+                trimmedSnippet = section.nextAll();
+            }
+
+            const newSubsection = {
+                title: section.attr('title'),
+                subtitle: section.attr('subtitle'),
+                snippet: trimmedSnippet.clone().wrapAll('<div>').parent().html()
+            };
+
+            subsections.push(newSubsection);
+        });
+
+        return subsections;
+    }
+
+    static importPage(pageName, guideClass) {
+        import(`./../../guides/${pageName}.json`).then((pageGuide) => {
+            const imports = pageGuide.map(guideData => new Promise((resolve) => {
+                import(`./../../../kit/${pageName}/${guideData.folder}/snippet.html`)
+                    .then((snippet) => {
+                        const guideDataCloned = { ...guideData };
+                        guideDataCloned.subsections = Utils.buildSubsections($(snippet));
+                        resolve(guideDataCloned);
+                    });
+            }));
+
+            Promise.all(imports)
+                .then((guides) => {
+                    guideClass.setState({ guides });
+
+                    guideClass.props.updateNav(pageGuide.map(pageGuideData => ({
+                        title: pageGuideData.title,
+                        folder: pageGuideData.folder,
+                        component: guideClass[Utils.cleanString(pageGuideData.title)]
+                    })));
+                })
+                .catch((e) => {
+                    console.debug(`Stylekit: Oops, looks like you're missing a snippet file. ${e.message}`);
+                });
+        });
     }
 }

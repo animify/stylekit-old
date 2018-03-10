@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Highlight from 'react-highlight.js';
 
-export default class ComponentSample extends Component {
+export default class GuideSection extends Component {
     constructor() {
         super();
 
@@ -14,10 +14,6 @@ export default class ComponentSample extends Component {
         this.toggleSnippet = this.toggleSnippet.bind(this);
     }
 
-    componentDidMount() {
-
-    }
-
     toggleSnippet() {
         this.setState({ showingSnippet: !this.state.showingSnippet });
     }
@@ -27,15 +23,15 @@ export default class ComponentSample extends Component {
         const { showingSnippet } = this.state;
 
         return (
-            <section id={`component-${sample.title.replace(/\s/g, '').toLowerCase()}`} className="component" key={sample.title}>
-                <div className="component-description">
+            <section id={`guide-${sample.title.replace(/\s/g, '').toLowerCase()}`} className="guide" key={sample.title}>
+                <div className="guide-description">
                     <h2>{sample.title}</h2>
                     <h4 dangerouslySetInnerHTML={{ __html: sample.descHtml }} />
                 </div>
 
                 { sample.subsections.map(subsection => (
-                    <div className="component-subsection" key={subsection.title}>
-                        <div className="component-subsection-description">
+                    <div className="guide-subsection" key={subsection.title}>
+                        <div className="guide-subsection-description">
                             <h4>{subsection.title}</h4>
                             <p>{subsection.subtitle}</p>
                         </div>
@@ -44,7 +40,6 @@ export default class ComponentSample extends Component {
                                 <div dangerouslySetInnerHTML={{ __html: subsection.snippet }} />
                             </div>
                             <div className="snippet">
-                                {/* <span className="type" role="presentation">HTML</span> */}
                                 <Highlight language="html">
                                     {subsection.snippet}
                                 </Highlight>
@@ -58,7 +53,7 @@ export default class ComponentSample extends Component {
     }
 }
 
-ComponentSample.propTypes = {
+GuideSection.propTypes = {
     sample: PropTypes.shape({
         title: PropTypes.string,
         snippet: PropTypes.string

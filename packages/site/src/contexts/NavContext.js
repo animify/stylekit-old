@@ -6,7 +6,7 @@ const NavContext = React.createContext('nav');
 class NavProvider extends Component {
     state = {
         selectedNav: 'components',
-        selectedItem: '',
+        selectedItem: null,
     }
 
     toggleNav = (selectedNav) => {
@@ -22,17 +22,15 @@ class NavProvider extends Component {
         const { selectedNav, selectedItem } = this.state;
 
         return (
-            <NavContext.Provider value={selectedNav}>
+            <NavContext.Provider value={selectedItem}>
                 <div className="nav menu main header hasborder">
                     <div className="container">
                         <span className="item logo"><img src={logo} height="24" alt="Stylekit primary logo" /></span>
-                        <div className="dropdown selecteditem">
-                            <span className="toggle">{selectedItem}<i data-minicon="chevron-down" /></span>
-                            {this.props.children({setItem: this.setItem})}
-                        </div>
+                        {this.props.children({setItem: this.setItem})}
                         <div className="float-right">
                             <Link to="/components" onClick={() => this.toggleNav('components')} className={ selectedNav === 'components' ? 'item active': 'item'}>Components</Link>
                             <Link to="/design" onClick={() => this.toggleNav('design')} className={ selectedNav === 'design' ? 'item active': 'item'}>Design</Link>
+                            <Link to="/variables" onClick={() => this.toggleNav('variables')} className={ selectedNav === 'variables' ? 'item active': 'item'}>Variables</Link>
                             <Link to="/utility" onClick={() => this.toggleNav('utility')} className={ selectedNav === 'utility' ? 'item active': 'item'}>Utility</Link>
                         </div>
                     </div>

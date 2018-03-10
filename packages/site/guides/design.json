@@ -1,0 +1,12 @@
+[
+    {
+        "folder": "animation",
+        "title": "Animations",
+        "descHtml": "Animations for components"
+    },
+    {
+        "folder": "grid",
+        "title": "Grid",
+        "descHtml": "Grid system"
+    }
+]
