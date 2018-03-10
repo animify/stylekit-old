@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import $ from 'jquery';
-import scrollToComponent from 'react-scroll-to-component';
-import Utils from './../utils/helpers';
 import ComponentSample from './../components/ComponentSample';
 import GuideComponents from './../../guides/components.json';
 const componentsFolder = './../../../kit/components';
 import Nav from './../components/Nav';
+import Utils from './../utils/helpers';
 
 export default class KitComponents extends Component {
     constructor() {
@@ -15,8 +14,6 @@ export default class KitComponents extends Component {
         this.state = {
             components: []
         }
-
-        this.setFocusedSection = this.setFocusedSection.bind(this);
     }
 
     componentDidMount() {
@@ -49,11 +46,6 @@ export default class KitComponents extends Component {
         return subsections;
     }
 
-    setFocusedSection(section) {
-        scrollToComponent(this[Utils.cleanString(section.title)], { offset: -100, align: 'top', duration: 500 });
-        this.props.history.replace(`/components/${section.folder}`)
-    }
-
     shouldComponentUpdate(nextProps, nextState) {
         if (nextProps.match.params.type !== this.props.match.params.type) {
             return false;
@@ -80,11 +72,11 @@ export default class KitComponents extends Component {
                     components
                 });
 
-                const componentList = GuideComponents.map(e => (
-                    <li key={`li-${e.title}`} className="item"><a onClick={() => this.setFocusedSection(e)} className="capitalize">{e.title}</a></li>
-                ));
-
-                this.props.updateNav(componentList);
+                this.props.updateNav(GuideComponents.map(component => ({
+                    title: component.title,
+                    folder: component.folder,
+                    component: this[Utils.cleanString(component.title)]
+                })));
             })
             .catch((e) => {
                 console.debug(`Stylekit: Oops, looks like you're missing a snippet file. ${e.message}`);

@@ -45,6 +45,7 @@ export default class Router extends Component {
             <BrowserRouter>
                 <div>
                     <Nav components={NavComponents} />
+
                     <Route exact path="/" render={() => (<HomeContainer />)} />
 
                     <Route exact path="/components/:type?" render={props => (<KitComponents {...props} updateNav={this.updateNavComponents} />)} />
