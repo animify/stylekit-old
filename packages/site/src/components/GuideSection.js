@@ -39,11 +39,13 @@ export default class GuideSection extends Component {
                             <div className="content">
                                 <div dangerouslySetInnerHTML={{ __html: subsection.snippet }} />
                             </div>
-                            <div className="snippet">
-                                <Highlight language="html">
-                                    {subsection.snippet}
-                                </Highlight>
-                            </div>
+                            { subsection.codeStyle === 'hidden' ? null
+                                : <div className="snippet">
+                                    <Highlight language="html">
+                                        {subsection.snippet}
+                                    </Highlight>
+                                </div>
+                            }
                         </div>
                     </div>
                 )) }

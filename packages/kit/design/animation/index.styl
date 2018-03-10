@@ -1,21 +1,21 @@
 .transitionDuration
     &-0
-        transition-duration: duration-0;
+        transition-duration: $duration0;
 
     &-s
-        transition-duration: duration-s;
+        transition-duration: $durationS;
 
     &-m
-        transition-duration: duration-m;
+        transition-duration: $durationM;
 
     &-l
-        transition-duration: duration-l;
+        transition-duration: $durationL;
 
     &-xl
-        transition-duration: duration-xl;
+        transition-duration: $durationXL;
 
     &-xxl
-        transition-duration: duration-xxl;
+        transition-duration: $durationXXL;
 
 .transitionType
     &-linear
@@ -37,35 +37,35 @@
         transition-timing-function: cubic-bezier(.04, .89, .76, 1.74);
 
 .animation-spin
-    animation: spin duration-xxxl infinite linear;
+    animation: spin $durationXXXL infinite linear;
 
 .animation-rotate
-    animation: spin 3s duration-xxl infinite cubic-bezier(.04, .95, .17, 1);
+    animation: spin $durationXXXXL $durationXXXXL infinite cubic-bezier(.04, .95, .17, 1);
 
 .animation-bounce
-    animation: bounce duration-xxxl infinite cubic-bezier(.04, .95, .17, 1);
+    animation: bounce $durationXXXL infinite cubic-bezier(.04, .95, .17, 1);
 
 .animation-pulse
-    animation: pulse duration-xxxl infinite linear;
+    animation: pulse $durationXXXL infinite linear;
 
 .animation-shake
-    animation: shake duration-xxxl infinite linear;
+    animation: shake $durationXXXL infinite linear;
 
 .animation-swing
     transform-origin: 50% 0;
-    animation: swing duration-xxxxl infinite linear;
+    animation: swing $durationXXXXL infinite linear;
 
 .animation-spring
-    animation: spring duration-l cubic-bezier(.04, .95, .17, 1);
+    animation: spring $durationL cubic-bezier(.04, .95, .17, 1);
 
 .landing-fadein
-    animation: fadein duration-xl linear forwards;
+    animation: fadein $durationXL linear forwards;
     opacity: 0;
 
 .landing-ascend
-    animation: ascend duration-xl linear forwards;
+    animation: ascend $durationXL linear forwards;
     opacity: 0;
 
 .landing-descend
-    animation: descend duration-xl linear forwards;
+    animation: descend $durationXL linear forwards;
     opacity: 0;

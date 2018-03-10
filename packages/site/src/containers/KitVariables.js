@@ -25,9 +25,9 @@ export default class KitVariables extends Component {
 
     componentDidMount() {
         this.props.updateNavDropdown(['colors', 'shadows', 'typography'].map(component => ({
-            title: Utils.capitalizeFirstLetter(component),
-            folder: component,
-            component: this[Utils.cleanString(component)]
+            name: Utils.capitalizeFirstLetter(component),
+            basic: component,
+            section: this[Utils.cleanString(component)]
         })));
     }
 
@@ -48,8 +48,8 @@ export default class KitVariables extends Component {
                         <h1>Variables</h1>
                         <h3>Variables used throughout your stylekit.</h3>
                     </div>
-                    <section className="component" ref={(section) => { this.colors = section; }}>
-                        <div className="component-description">
+                    <section className="guide" ref={(section) => { this.colors = section; }}>
+                        <div className="guide-description">
                             <h3>Color Variables</h3>
                             <h4>Variables for the colors used throughout the theme style.</h4>
                         </div>
@@ -61,8 +61,8 @@ export default class KitVariables extends Component {
                             }
                         </div>
                     </section>
-                    <section className="component" ref={(section) => { this.shadows = section; }}>
-                        <div className="component-description">
+                    <section className="guide" ref={(section) => { this.shadows = section; }}>
+                        <div className="guide-description">
                             <h3>Shadow Variables</h3>
                             <h4>Variables for the colors used throughout the theme style.</h4>
                         </div>
@@ -74,8 +74,8 @@ export default class KitVariables extends Component {
                             }
                         </div>
                     </section>
-                    <section className="component" ref={(section) => { this.typography = section; }}>
-                        <div className="component-description">
+                    <section className="guide" ref={(section) => { this.typography = section; }}>
+                        <div className="guide-description">
                             <h3>Typography Variables</h3>
                             <h4>Typography.</h4>
                         </div>

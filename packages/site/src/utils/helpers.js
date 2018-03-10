@@ -96,6 +96,7 @@ export default class Utils {
             const newSubsection = {
                 title: section.attr('title'),
                 subtitle: section.attr('subtitle'),
+                codeStyle: section.attr('codeStyle'),
                 snippet: trimmedSnippet.clone().wrapAll('<div>').parent().html()
             };
 
