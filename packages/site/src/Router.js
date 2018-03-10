@@ -14,10 +14,10 @@ export default class Router extends Component {
         super();
 
         this.state = {
-            NavComponents: []
+            NavSections: []
         };
 
-        this.updateNavComponents = this.updateNavComponents.bind(this);
+        this.updateNavDropdown = this.updateNavDropdown.bind(this);
     }
 
     componentDidMount() {
@@ -33,27 +33,27 @@ export default class Router extends Component {
         minicons.swap();
     }
 
-    updateNavComponents(componentList) {
+    updateNavDropdown(componentList) {
         this.setState({
-            NavComponents: componentList
+            NavSections: componentList
         });
     }
 
     render() {
-        const { NavComponents } = this.state;
+        const { NavSections } = this.state;
 
         return (
             <BrowserRouter>
                 <div>
-                    <Nav components={NavComponents} />
+                    <Nav sections={NavSections} />
 
                     <Route exact path="/" render={() => (<HomeContainer />)} />
 
-                    <Route exact path="/components/:type?" render={props => (<KitComponents {...props} updateNav={this.updateNavComponents} />)} />
+                    <Route exact path="/components/:type?" render={props => (<KitComponents {...props} updateNavDropdown={this.updateNavDropdown} />)} />
 
-                    <Route exact path="/design/:type?" render={props => (<KitDesign {...props} updateNav={this.updateNavComponents} />)} />
+                    <Route exact path="/design/:type?" render={props => (<KitDesign {...props} updateNavDropdown={this.updateNavDropdown} />)} />
 
-                    <Route exact path="/variables/:type?" render={props => (<KitVariables {...props} updateNav={this.updateNavComponents} />)} />
+                    <Route exact path="/variables/:type?" render={props => (<KitVariables {...props} updateNavDropdown={this.updateNavDropdown} />)} />
                 </div>
             </BrowserRouter>
         );

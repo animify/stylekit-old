@@ -24,7 +24,7 @@ export default class KitVariables extends Component {
     }
 
     componentDidMount() {
-        this.props.updateNav(['colors', 'shadows', 'typography'].map(component => ({
+        this.props.updateNavDropdown(['colors', 'shadows', 'typography'].map(component => ({
             title: Utils.capitalizeFirstLetter(component),
             folder: component,
             component: this[Utils.cleanString(component)]

@@ -120,10 +120,11 @@ export default class Utils {
                 .then((guides) => {
                     guideClass.setState({ guides });
 
-                    guideClass.props.updateNav(pageGuide.map(pageGuideData => ({
-                        title: pageGuideData.title,
-                        folder: pageGuideData.folder,
-                        component: guideClass[Utils.cleanString(pageGuideData.title)]
+                    guideClass.props.updateNavDropdown(pageGuide.map(pageGuideData => ({
+                        name: pageGuideData.title,
+                        basic: pageGuideData.folder,
+                        pageName: pageName,
+                        section: guideClass[Utils.cleanString(pageGuideData.title)]
                     })));
                 })
                 .catch((e) => {
