@@ -9,6 +9,7 @@
     "author": "Stefan Mansson (https://mansson.io)",
     "license": "MIT",
     "dependencies": {
+        "babel-minify-webpack-plugin": "^0.3.0",
         "foovar": "^0.6.2",
         "fs": "0.0.1-security",
         "history": "^4.7.2",
