@@ -3,5 +3,10 @@
         "folder": "alignment",
         "title": "Alignment",
         "descHtml": "Align components within relative parent containers."
+    },
+    {
+        "folder": "text",
+        "title": "Text",
+        "descHtml": "Align components within relative parent containers."
     }
 ]
