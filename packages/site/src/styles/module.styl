@@ -30,6 +30,20 @@
     display: block;
     margin: 2rem auto;
 
+.paddedbox
+    min-height: 16rem;
+    padding: 2rem;
+    position: relative;
+    border-radius: $borderRadiusM;
+    border: 2px dashed #ecb4cd;
+    &:after
+        width: 100%;
+        box-shadow: 0 0 0 2rem inset #FFF5F9;
+        height: 100%
+        display: block;
+        content: ' '
+        absolute: top left;
+        border-radius: $borderRadiusM;
 .filled
     // background-color: lighten($colorBase, 55%);
     border: 2px solid $colorBase;
