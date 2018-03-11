@@ -30,7 +30,7 @@
     display: block;
     margin: 2rem auto;
 
-.paddedbox
+.dashedbox
     min-height: 16rem;
     padding: 2rem;
     position: relative;
@@ -49,6 +49,18 @@
         content: ' ';
         absolute: top left;
         border-radius: $borderRadiusM;
+
+.paddedbox
+    min-height: 16rem;
+    padding: 2rem;
+    position: relative;
+    border-radius: $borderRadiusM;
+    border: 1px solid $colorBorder;
+    p
+        color: $textColorHeading;
+        & + p
+            margin-top: 2.4rem;
+
 .filled
     // background-color: lighten($colorBase, 55%);
     border: 2px solid $colorBase;

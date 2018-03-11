@@ -29,7 +29,7 @@ class NavProvider extends Component {
                         {this.props.children({setItem: this.setItem})}
                         <div className="float-right">
                             <Link to="/components" onClick={() => this.toggleNav('components')} className={ selectedNav === 'components' ? 'item active': 'item'}>Components</Link>
-                            <Link to="/design" onClick={() => this.toggleNav('design')} className={ selectedNav === 'design' ? 'item active': 'item'}>Design</Link>
+                            <Link to="/layout" onClick={() => this.toggleNav('layout')} className={ selectedNav === 'layout' ? 'item active': 'item'}>Layout</Link>
                             <Link to="/variables" onClick={() => this.toggleNav('variables')} className={ selectedNav === 'variables' ? 'item active': 'item'}>Variables</Link>
                             <Link to="/utility" onClick={() => this.toggleNav('utility')} className={ selectedNav === 'utility' ? 'item active': 'item'}>Utility</Link>
                         </div>
