@@ -50,7 +50,7 @@ export default class KitVariables extends Component {
                     </div>
                     <section className="guide" ref={(section) => { this.colors = section; }}>
                         <div className="guide-description">
-                            <h3>Color Variables</h3>
+                            <h3>Colors</h3>
                             <h4>Variables for the colors used throughout the theme style.</h4>
                         </div>
                         <div className="row">
@@ -63,7 +63,7 @@ export default class KitVariables extends Component {
                     </section>
                     <section className="guide" ref={(section) => { this.shadows = section; }}>
                         <div className="guide-description">
-                            <h3>Shadow Variables</h3>
+                            <h3>Shadows</h3>
                             <h4>Variables for the colors used throughout the theme style.</h4>
                         </div>
                         <div className="row">
@@ -76,7 +76,7 @@ export default class KitVariables extends Component {
                     </section>
                     <section className="guide" ref={(section) => { this.typography = section; }}>
                         <div className="guide-description">
-                            <h3>Typography Variables</h3>
+                            <h3>Typography</h3>
                             <h4>Typography.</h4>
                         </div>
                         <div className="row">
