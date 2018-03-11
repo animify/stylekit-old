@@ -4,9 +4,8 @@ import PropTypes from 'prop-types';
 const ColorSample = ({ colorName, colorString, dark }) => (
     <div className="col xs-12 m-4">
         <div className="sample color">
-            <span className="preview" style={{ backgroundColor: colorString }} />
-            <span className="desc">
-                <p><strong>{colorName}</strong></p>
+            <span className={dark ? 'dark preview' : 'preview'} style={{ backgroundColor: colorString }}>
+                <p>{colorName}</p>
                 <small>{colorString}</small>
             </span>
         </div>

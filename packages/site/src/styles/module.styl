@@ -74,20 +74,31 @@
 .sample
     &.color
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         margin-top: 2.8rem;
+        border: 1px solid $colorBorder;
+        border-radius: $borderRadiusM;
         .preview
-            box-shadow: 0px 0px 0px 1px inset rgba(0, 0, 31, .1);
-            height: 4.8rem;
-            width: 4.8rem;
-            border-radius: 50%
-            margin-right: 2rem
-        .desc
-            p
-                color: $textColorHeading;
-            small
-                color: $textColorBody;
+            width: 100%;
+            border-radius: $borderRadiusM;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 2rem;
+            p, small
+                color: rgba(0,0,0,.6);
                 display: block;
+            p
+                font-weight: $fontWeightBold;
+                color: rgba(0,0,0,1);
+            small
+                font-weight: $fontWeightSemibold;
+            &.dark
+                small
+                    color: rgba(255,255,255,.6);
+                p
+                    color: #fff;
 
     &.typography
         display: flex;
