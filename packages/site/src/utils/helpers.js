@@ -107,9 +107,9 @@ export default class Utils {
     }
 
     static importPage(pageName, guideClass) {
-        import(`./../../guides/${pageName}.json`).then((pageGuide) => {
+        import(`./../../pages/${pageName}/guide.json`).then((pageGuide) => {
             const imports = pageGuide.map(guideData => new Promise((resolve) => {
-                import(`./../../../kit/${pageName}/${guideData.folder}/snippet.html`)
+                import(`./../../pages/${pageName}/${guideData.folder}/snippet.html`)
                     .then((snippet) => {
                         const guideDataCloned = { ...guideData };
                         guideDataCloned.subsections = Utils.buildSubsections($(snippet));
