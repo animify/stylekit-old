@@ -125,6 +125,7 @@ export default class Utils {
 
                     guideClass.props.updateNavDropdown({
                         current: hasTitle ? hasTitle.title : currentType,
+                        page: pageName,
                         list: pageGuide.map(pageGuideData => ({
                             name: pageGuideData.title,
                             basic: pageGuideData.folder,

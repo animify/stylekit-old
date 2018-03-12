@@ -28,6 +28,7 @@ export default class KitVariables extends Component {
         const hasTitle = types.includes(this.props.match.params.type);
         this.props.updateNavDropdown({
             current: hasTitle ? Utils.capitalizeFirstLetter(this.props.match.params.type) : undefined,
+            page: 'variables',
             list: types.map(component => ({
                 name: Utils.capitalizeFirstLetter(component),
                 basic: component,
