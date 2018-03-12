@@ -4,6 +4,7 @@
     "scripts": {
         "start:client": "webpack-dev-server --config webpack.config.client.js",
         "start": "rimraf ./dist && webpack-dev-server --config webpack.config.client.js",
+        "build:client": "webpack --config webpack.prod.config.client.js",
         "eslint": "eslint ."
     },
     "author": "Stefan Mansson (https://mansson.io)",

@@ -17,6 +17,8 @@ module.exports = {
         publicPath: '/dist/',
     },
 
+    devtool: 'none',
+
     module: {
         rules: [
             {
@@ -53,13 +55,10 @@ module.exports = {
 
     plugins: [
         new webpack.HashedModuleIdsPlugin(),
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NamedModulesPlugin(),
-        new MinifyPlugin(),
-        new webpack.NoEmitOnErrorsPlugin(),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
         }),
+        new MinifyPlugin(),
         new webpack.LoaderOptionsPlugin({
             options: {
                 stylus: {
