@@ -8,7 +8,7 @@ export default class KitComponents extends Component {
     }
 
     componentDidMount() {
-        Utils.importPage('components', this);
+        Utils.importPage('components', this, this.props.match.params.type);
     }
 
     shouldComponentUpdate(nextProps, nextState) {

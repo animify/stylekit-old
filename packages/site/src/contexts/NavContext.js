@@ -6,11 +6,11 @@ const NavContext = React.createContext('nav');
 class NavProvider extends Component {
     state = {
         selectedNav: 'components',
-        selectedItem: null,
+        selectedItem: undefined,
     }
 
     toggleNav = (selectedNav) => {
-        this.setState({ selectedNav });
+        this.setState({ selectedNav, selectedItem: undefined });
     }
 
     setItem = (selectedItem) => {

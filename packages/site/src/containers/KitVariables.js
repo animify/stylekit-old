@@ -24,11 +24,17 @@ export default class KitVariables extends Component {
     }
 
     componentDidMount() {
-        this.props.updateNavDropdown(['colors', 'shadows', 'typography'].map(component => ({
-            name: Utils.capitalizeFirstLetter(component),
-            basic: component,
-            section: this[Utils.cleanString(component)]
-        })));
+        const types = ['colors', 'shadows', 'typography'];
+        const hasTitle = types.includes(this.props.match.params.type);
+        this.props.updateNavDropdown({
+            current: hasTitle ? Utils.capitalizeFirstLetter(this.props.match.params.type) : undefined,
+            list: types.map(component => ({
+                name: Utils.capitalizeFirstLetter(component),
+                basic: component,
+                pageName: 'variables',
+                section: this[Utils.cleanString(component)]
+            }))
+        });
     }
 
     shouldComponentUpdate(nextProps) {

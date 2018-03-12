@@ -15,7 +15,10 @@ export default class Router extends Component {
         super();
 
         this.state = {
-            NavSections: []
+            NavSections: {
+                current: undefined,
+                list: []
+            }
         };
 
         this.updateNavDropdown = this.updateNavDropdown.bind(this);

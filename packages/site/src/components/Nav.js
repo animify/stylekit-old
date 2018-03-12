@@ -10,15 +10,37 @@ const Nav = ({ sections }) => {
         History.replace(`/${section.pageName}/${section.basic}`);
     };
 
+    const getName = (selectedItem) => {
+        let selectedItemName = null;
+
+        switch (true) {
+        case selectedItem !== undefined:
+            selectedItemName = selectedItem;
+            break;
+        case sections.current !== undefined:
+            selectedItemName = sections.current;
+            break;
+        case !selectedItem && sections.list.length > 0:
+            selectedItemName = sections.list[0].name;
+            break;
+        default:
+            selectedItemName = selectedItem;
+            break;
+        }
+
+        console.log(selectedItemName);
+        return selectedItemName;
+    };
+
     return (
         <NavProvider>
             {({ setItem }) => (
                 <NavContext.Consumer>
                     {selectedItem => (
                         <div className="dropdown selecteditem">
-                            <span className="toggle">{selectedItem === null && sections.length > 0 ? sections[0].name : selectedItem} <i data-minicon="chevron-down" /></span>
+                            <span className="toggle">{getName(selectedItem)} <i data-minicon="chevron-down" /></span>
                             <ul className="menu">
-                                {sections.length > 0 && sections.map(section => <li key={`section-${section.name}`}><a role="presentation" onClick={() => { setItem(section.name); setFocusedSection(section); }}>{section.name}</a></li>)}
+                                {sections.list.length > 0 && sections.list.map(section => <li key={`section-${section.name}`}><a role="presentation" onClick={() => { setItem(section.name); setFocusedSection(section); }}>{section.name}</a></li>)}
                             </ul>
                         </div>
                     )}
@@ -29,7 +51,7 @@ const Nav = ({ sections }) => {
 };
 
 Nav.propTypes = {
-    sections: PropTypes.array.isRequired
+    sections: PropTypes.object.isRequired
 };
 
 

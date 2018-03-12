@@ -106,7 +106,7 @@ export default class Utils {
         return subsections;
     }
 
-    static importPage(pageName, guideClass) {
+    static importPage(pageName, guideClass, currentType) {
         import(`./../../pages/${pageName}/guide.json`).then((pageGuide) => {
             const imports = pageGuide.map(guideData => new Promise((resolve) => {
                 import(`./../../pages/${pageName}/${guideData.folder}/snippet.html`)
@@ -121,12 +121,17 @@ export default class Utils {
                 .then((guides) => {
                     guideClass.setState({ guides });
 
-                    guideClass.props.updateNavDropdown(pageGuide.map(pageGuideData => ({
-                        name: pageGuideData.title,
-                        basic: pageGuideData.folder,
-                        pageName: pageName,
-                        section: guideClass[Utils.cleanString(pageGuideData.title)]
-                    })));
+                    const hasTitle = pageGuide.find(pageGuideData => pageGuideData.folder === currentType);
+
+                    guideClass.props.updateNavDropdown({
+                        current: hasTitle ? hasTitle.title : currentType,
+                        list: pageGuide.map(pageGuideData => ({
+                            name: pageGuideData.title,
+                            basic: pageGuideData.folder,
+                            pageName: pageName,
+                            section: guideClass[Utils.cleanString(pageGuideData.title)]
+                        }))
+                    });
                 })
                 .catch((e) => {
                     console.debug(`Stylekit: Oops, looks like you're missing a snippet file. ${e.message}`);

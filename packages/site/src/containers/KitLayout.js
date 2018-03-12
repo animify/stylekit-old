@@ -8,7 +8,7 @@ export default class KitDesign extends Component {
     }
 
     componentDidMount() {
-        Utils.importPage('layout', this);
+        Utils.importPage('layout', this, this.props.match.params.type);
     }
 
     shouldComponentUpdate(nextProps, nextState) {
