@@ -13,7 +13,14 @@ $fontWeightBook ?= 400;
 $fontWeightSemibold ?= 500;
 $fontWeightBold ?= 600;
 $fontWeightBlack ?= 800;
+$fontWeight = {
+    book: 400,
+    semiBold: 500,
+    bold: 600,
+    black: 800
+};
 $lineHeightBase ?= 1.5;
 foovar('src/definitions/typography.js', {
-    include: '^\$fontSize'
+    include: '^\$fontSize',
+    plainObject: 'css'
 });

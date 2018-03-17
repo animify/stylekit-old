@@ -47,8 +47,8 @@ const Nav = ({ sections }) => {
                             <div className="float-right">
                                 <Link to="/components" onClick={changedPage} className={[selectedNav, sections.page].includes('components') ? 'item active' : 'item'}>Components</Link>
                                 <Link to="/layout" onClick={changedPage} className={[selectedNav, sections.page].includes('layout') ? 'item active' : 'item'}>Layout</Link>
-                                <Link to="/variables" onClick={changedPage} className={[selectedNav, sections.page].includes('variables') ? 'item active' : 'item'}>Variables</Link>
                                 <Link to="/utility" onClick={changedPage} className={[selectedNav, sections.page].includes('utility') ? 'item active' : 'item'}>Utility</Link>
+                                <Link to="/variables" onClick={changedPage} className={[selectedNav, sections.page].includes('variables') ? 'item active' : 'item'}>Variables</Link>
                             </div>
                         </div>
                     )}

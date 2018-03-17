@@ -65,7 +65,7 @@ export default class Utils {
     static buildTypographyVariables(fooVarVariables) {
         const typographyObjects = Object.entries(fooVarVariables).map(e => ({
             variable: `$${e[0]}`,
-            value: e[1].css
+            value: e[1]
         }));
 
         return typographyObjects.filter(e => e);
