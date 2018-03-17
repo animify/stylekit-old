@@ -5,6 +5,7 @@ import App from './App';
 import './../../kit/stylekit.styl';
 import './site.styl';
 import './public/js/bsm';
+import './../../kit/stylekit';
 
 const appRoot = document.getElementById('app');
 
