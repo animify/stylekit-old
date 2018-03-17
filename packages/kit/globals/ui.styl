@@ -20,7 +20,7 @@ for h in (1 .. 5)
     h{h}
         font-size: lookup('$fontSizeH' + h);
         font-family: $fontFamilyHeading;
-        font-weight: $fontWeightBlack;
+        font-weight: $fontWeight.black;
         color: $textColorHeading;
         line-height: $lineHeightBase;
         letter-spacing: -.15px;
@@ -37,7 +37,7 @@ small, .small
     font-size: $fontSizeSmall;
 
 strong, .strong
-    font-weight: $fontWeightBold;
+    font-weight: $fontWeight.bold;
 
 footer
     margin-top: 5rem;

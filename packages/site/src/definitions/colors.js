@@ -9,6 +9,7 @@
 'colorPink':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":240,"g":2,"b":126,"a":1,"raw":"#f0027e","name":""}]},true),{case:undefined}),
 'colorWhite':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":255,"g":255,"b":255,"a":1,"raw":"#ffffff","name":""}]},true),{case:undefined}),
 'colorBlack':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":0,"g":0,"b":0,"a":1,"raw":"#000000","name":""}]},true),{case:undefined}),
+'colorAsh':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":94,"g":99,"b":108,"a":1,"raw":"#5E636C","name":""}]},true),{case:undefined}),
 'bgColorBody':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":255,"g":255,"b":255,"a":1,"raw":"#ffffff","name":""}]},true),{case:undefined}),
 'bgColorDark':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":28,"g":34,"b":43,"a":1,"raw":"#1c222b","name":""}]},true),{case:undefined}),
 'bgColorAsh':new F(new S({"__type":"Expression","nodes":[{"__type":"RGBA","r":94,"g":99,"b":108,"a":1,"raw":"#5E636C","name":""}]},true),{case:undefined}),
