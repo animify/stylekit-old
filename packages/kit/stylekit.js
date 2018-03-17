@@ -1,4 +1,4 @@
-import { Dropdown } from './js/components'
+import { Dropdown, Progress } from './js/components'
 
 class Stylekit {
     constructor() {
@@ -9,6 +9,7 @@ class Stylekit {
 
     initializeComponents() {
         this.components.dropdown = new Dropdown();
+        this.components.progress = new Progress();
     }
 }
 
