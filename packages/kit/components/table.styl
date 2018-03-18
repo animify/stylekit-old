@@ -1,6 +1,5 @@
 importThemeFile(getFilename(), $theme);
 $borderColor = $colorBorder;
-$borderWidth = 1px;
 $tableCellPadding = .6em 1.2em;
 
 .table
@@ -9,13 +8,13 @@ $tableCellPadding = .6em 1.2em;
 
     th
         padding: $tableCellPadding;
-        border-bottom: $borderWidth solid darken($borderColor, 20%);
+        border-bottom: 1px solid darken($borderColor, 20%);
         font-weight: $fontWeight.semiBold;
         color: $textColor.header;
 
     td
         padding: $tableCellPadding;
-        border-bottom: $borderWidth solid $borderColor;
+        border-bottom: 1px solid $borderColor;
 
     tr:last-child td
         border-bottom: 0;
@@ -26,7 +25,7 @@ $tableCellPadding = .6em 1.2em;
 
     &.celled
         th, tr td
-            border-left: $borderWidth solid $borderColor;
+            border-left: 1px solid $borderColor;
 
             &:first-child
                 border-left: 0;

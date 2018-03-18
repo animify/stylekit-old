@@ -2,7 +2,6 @@ importThemeFile(getFilename(), $theme);
 $borderColor = $colorBorder;
 $borderRadius = $borderRadiusM;
 $borderWidth = 1px;
-$boxShadow = $boxShadowForm;
 $padding = 1.2rem 1.6rem;
 $inputTransition = $animation-type-ease $animation-duration-m;
 
@@ -18,11 +17,11 @@ $inputTransition = $animation-type-ease $animation-duration-m;
         border: 1px solid $borderColor;
         border-radius: $borderRadius;
         background-color: $backgroundColor.white;
-        box-shadow: $boxShadow;
+        box-shadow: $boxShadow.form;
         color: $textColor.body;
         text-align: left;
         font-size: $fontSize.body;
-        font-family: $fontFamilyBody;
+        font-family: $fontFamily.body;
         line-height: $lineHeightBase;
         transition: border-color $inputTransition;
 

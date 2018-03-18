@@ -1,7 +1,6 @@
 importThemeFile(getFilename(), $theme);
 $arrowBoxShadow = 1px 1px 0 0 $colorBorder;
 $invertedArrowBoxShadow = -1px -1px 0 0 $colorBorder;
-$bodyBoxShadow = $boxShadowSubtle;
 $bodyPadding = .6em 1.2em;
 
 .tooltip[data-content]
@@ -32,7 +31,7 @@ $bodyPadding = .6em 1.2em;
         border: 1px solid $colorBorder;
         border-radius: $borderRadiusM;
         background-color: $backgroundColor.white;
-        box-shadow: $bodyBoxShadow;
+        box-shadow: $boxShadow.subtle;
         color: $textColor.body;
         content: attr(data-content);
         text-align: left;

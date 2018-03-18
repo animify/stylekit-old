@@ -10,7 +10,7 @@ body
     padding: 0;
     color: $textColor.body;
     background-color: $backgroundColor.body;
-    font-family: $fontFamilyBody;
+    font-family: $fontFamily.body;
     font-size: $fontSize.body;
     line-height: $lineHeightBase;
     -webkit-font-smoothing: antialiased;
@@ -19,7 +19,7 @@ body
 for h in (1 .. 5)
     h{h}
         font-size: $fontSize['h' + h];
-        font-family: $fontFamilyHeading;
+        font-family: $fontFamily.header;
         font-weight: $fontWeight.black;
         color: $textColor.header;
         line-height: $lineHeightBase;
