@@ -1,14 +1,16 @@
-$colorBase ?= #000000;
-$colorRed ?= #f7233f;
-$colorOrange ?= #ef853f;
-$colorYellow ?= #ECCA0B;
-$colorGreen ?= #08c46f;
-$colorBlue ?= #40a2f1;
-$colorPurple ?= #5b02ea;
-$colorPink ?= #f0027e;
-$colorWhite ?= #ffffff;
-$colorBlack ?= #000000;
-$colorAsh ?= #5E636C;
+$color = {
+    base: #000000,
+    red: #f7233f,
+    orange: #ef853f,
+    yellow: #ECCA0B,
+    green: #08c46f,
+    blue: #40a2f1,
+    purple: #5b02ea,
+    pink: #f0027e,
+    white: #ffffff,
+    black: #000000,
+    ash: #5E636C
+};
 $bgColorBody ?= #ffffff;
 $bgColorDark ?= #1c222b;
 $bgColorAsh ?= #5E636C;
@@ -20,10 +22,10 @@ $textColorBody ?= #555555;
 $textColorLight ?= #959595;
 $textColorDisabled ?= #B3B3B3;
 $colorBorder ?= #f2f2f2;
-$colorBorderInfo ?= lighten($colorBlue, 10%);
-$colorBorderWarning ?= lighten($colorYellow, 10%);
-$colorBorderImportant ?= lighten($colorRed, 10%);
-$colorBorderSuccess ?= lighten($colorGreen, 10%);
+$colorBorderInfo ?= lighten($color.blue, 10%);
+$colorBorderWarning ?= lighten($color.yellow, 10%);
+$colorBorderImportant ?= lighten($color.red, 10%);
+$colorBorderSuccess ?= lighten($color.green, 10%);
 foovar('src/definitions/colors.js', {
     include: '(^\$color|^\$text|^\$bgColor)'
 });

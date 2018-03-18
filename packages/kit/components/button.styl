@@ -1,9 +1,9 @@
 importThemeFile(getFilename(), $theme);
-$backgroundColor = $colorWhite;
+$backgroundColor = $color.white;
 $borderRadius = $borderRadiusM;
 $borderWidth = 1px;
-$borderColor = $colorBase;
-$textColor = $colorBase;
+$borderColor = $color.base;
+$textColor = $color.base;
 $lineHeight = $lineHeightBase;
 $padding = .8rem 1.6rem;
 
@@ -30,7 +30,7 @@ $padding = .8rem 1.6rem;
     +disabled()
         background-color: $backgroundColor !important;
         border-color: @background-color;
-        color: $color !important;
+        color: $color.base !important;
         user-select: none;
 
     for size in $sizeList
@@ -41,4 +41,4 @@ $padding = .8rem 1.6rem;
         &.{color}
             background-color: lookup('$color' + camelCase(color));
             border: $borderWidth solid @background-color;
-            color: $colorWhite;
+            color: $color.white;
