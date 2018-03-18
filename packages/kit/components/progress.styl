@@ -2,7 +2,6 @@ importThemeFile(getFilename(), $theme);
 $borderRadius = $borderRadiusM;
 $height = 1.6rem;
 $barBorderRadius = $borderRadius;
-$statusColor = $color.white;
 $statusLineHeight = $height;
 
 styleSized(size)
@@ -37,7 +36,7 @@ styleSized(size)
         .status
             absolute: right .8rem;
             display: none;
-            color: $statusColor;
+            color: $textColor.white;
             font-weight: $fontWeight.bold;
             font-size: $fontSize.small;
             line-height: $statusLineHeight;

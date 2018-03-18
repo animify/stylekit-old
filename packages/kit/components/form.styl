@@ -1,10 +1,7 @@
 importThemeFile(getFilename(), $theme);
 $borderColor = $colorBorder;
-$focusBorderColor = $color.base;
 $borderRadius = $borderRadiusM;
 $borderWidth = 1px;
-$textColor = $textColorBody;
-$disabledTextColor = $textColorDisabled;
 $boxShadow = $boxShadowForm;
 $padding = 1.2rem 1.6rem;
 $inputTransition = $animation-type-ease $animation-duration-m;
@@ -18,11 +15,11 @@ $inputTransition = $animation-type-ease $animation-duration-m;
         min-width: 21.6rem;
         outline: 0;
         border: 0;
-        border: $borderWidth solid $borderColor;
+        border: 1px solid $borderColor;
         border-radius: $borderRadius;
         background-color: $backgroundColor.white;
         box-shadow: $boxShadow;
-        color: $textColor;
+        color: $textColor.body;
         text-align: left;
         font-size: $fontSize.body;
         font-family: $fontFamilyBody;
@@ -30,10 +27,10 @@ $inputTransition = $animation-type-ease $animation-duration-m;
         transition: border-color $inputTransition;
 
         &:focus
-            border-color: $focusBorderColor;
+            border-color: $color.base;
 
         +inputPlaceholder()
-            color: $disabledTextColor;
+            color: $textColor.disabled;
 
     &.transparent
         input[type='text'], input[type='number'], input[type='password'], textarea
@@ -44,7 +41,7 @@ $inputTransition = $animation-type-ease $animation-duration-m;
 
     +disabled()
         input[type='text'], input[type='number'], input[type='password'], textarea
-            color: $disabledTextColor;
+            color: $textColor.disabled;
 
     textarea
         min-height: 8rem;

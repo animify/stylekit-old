@@ -1,8 +1,5 @@
 importThemeFile(getFilename(), $theme);
 $borderRadius = $borderRadiusM;
-$borderWidth = 1px;
-$borderColor = $color.base;
-$textColor = $color.base;
 $lineHeight = $lineHeightBase;
 $padding = .8rem 1.6rem;
 
@@ -12,10 +9,10 @@ $padding = .8rem 1.6rem;
     padding: $padding;
     outline: 0;
     border: 0;
-    border: $borderWidth solid $borderColor;
+    border: 1px solid $color.base;
     border-radius: $borderRadius;
     background-color: $backgroundColor.white;
-    color: $textColor;
+    color: $color.base;
     font-weight: $fontWeight.semiBold;
     font-size: $fontSize.body;
     line-height: $lineHeight;
@@ -34,10 +31,14 @@ $padding = .8rem 1.6rem;
 
     for size in $sizeList
         &.{size}
-            font-size: lookup('$font-size-' + size);
+            font-size: $fontSize[size];
 
     for color in $colorList
         &.{color}
-            background-color: lookup('$color' + camelCase(color));
-            border: $borderWidth solid @background-color;
+            background-color: $color[color];
+            border: 1px solid @background-color;
             color: $color.white;
+
+            &:hover
+                background-color: lighten(@background-color, 20%);
+                color: #fff;

@@ -2,7 +2,6 @@ importThemeFile(getFilename(), $theme);
 $borderColor = $colorBorder;
 $borderRadius = $borderRadiusM;
 $borderWidth = 6px;
-$textColor = $textColorBody;
 $lineHeight = $lineHeightBase;
 $margin = 1.2rem 0;
 $padding = 1.2rem 1.6rem;
@@ -22,7 +21,7 @@ styleColored(type)
     border-left: $borderWidth solid $backgroundColor.base;
     border-radius: $borderRadius;
     background-color: $backgroundColor.light;
-    color: $textColor;
+    color: $textColor.body;
     line-height: $lineHeight;
 
     &.warning

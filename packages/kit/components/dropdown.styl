@@ -1,14 +1,10 @@
 importThemeFile(getFilename(), $theme);
 $borderColor = $colorBorder;
 $borderRadius = $borderRadiusM;
-$borderWidth = 1px;
 $boxShadow = 0 1px 4px rgba(0, 0, 31, .1), 0 4px 14px rgba(0, 0, 31, .08);
 $lineHeight = $lineHeightBase;
 $padding = 1.2rem 0;
 $itemPadding = .4rem 2rem;
-$headerColor = $textColorBody;
-$linkColor = $textColorBody;
-$hoverLinkColor = $color.base;
 
 .dropdown
     position: relative;
@@ -22,7 +18,7 @@ $hoverLinkColor = $color.base;
         z-index: 800;
         padding: $padding;
         min-width: 21.6rem;
-        border: $borderWidth solid $borderColor;
+        border: 1px solid $borderColor;
         border-radius: $borderRadius;
         background-color: $backgroundColor.white;
         box-shadow: $boxShadow;
@@ -37,16 +33,16 @@ $hoverLinkColor = $color.base;
             padding: $itemPadding;
 
             &.header
-                color: $headerColor;
+                color: $textColor.body;
                 font-weight: $fontWeight.semiBold;
                 font-size: $fontSize.body;
 
         a
-            color: $linkColor;
+            color: $textColor.body;
             cursor: pointer;
 
             &:hover
-                color: $hoverLinkColor;
+                color: $color.base;
 
     &.open
         .menu

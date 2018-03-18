@@ -3,33 +3,28 @@ $padding = 0 2.4rem;
 $navPadding = 0 3.2rem;
 $navMainPadding = 1.2rem 3.2rem;
 $itemLineHeight = $lineHeightBase;
-$hoverTextColor = $textColorBody;
-$activeTextColor = $color.base;
-$itemColor = $textColorLight;
 $itemPadding = 1.2rem 0;
 $navItemPadding = 1.2rem 0;
-$itemHeaderFontWeight = $fontWeight.bold;
 $footerItemPadding = .2rem 0;
-$footerItemFontSize = $fontSize.sub;
 $itemMargin = 0 0 0 2.4rem;
 
 .menu
     .item
-        color: $itemColor;
+        color: $textColor.light;
         font-weight: $fontWeight.semiBold;
         line-height: $itemLineHeight;
         padding: $itemPadding;
         display: inline-block;
 
         &:hover
-            color: $hoverTextColor;
+            color: $textColor.body;
 
         &.active
-            color: $activeTextColor;
+            color: $color.base;
 
         &.header
-            color: $textColorHeading;
-            font-weight: $itemHeaderFontWeight;
+            color: $textColor.header;
+            font-weight: $fontWeight.bold;
 
     & > .dropdown, & > .item, & .float-right > .dropdown, & .float-right > .item, & .float-left > .dropdown, & .float-left > .item
         & + .dropdown, & + .item
@@ -84,7 +79,7 @@ $itemMargin = 0 0 0 2.4rem;
         & > .item, & .options > .item
             display: block;
             font-weight: 500;
-            color: $textColorBody;
+            color: $textColor.body;
             padding: .4rem 0;
 
             &.active
@@ -104,7 +99,7 @@ $itemMargin = 0 0 0 2.4rem;
                 padding: .2rem 0;
 
                 a
-                    color: $textColorLight;
+                    color: $textColor.light;
 
     &.footer
         display: flex;
@@ -117,11 +112,12 @@ $itemMargin = 0 0 0 2.4rem;
             .item
                 display: block;
                 padding: $footerItemPadding;
+                font-size: $fontSize.sub;
 
             .item:not(.header)
                 & > a
                     font-weight: $fontWeight.book;
-                    color: $itemColor;
+                    color: $textColor.light;
 
                     &:hover
-                        color: $hoverTextColor;
+                        color: $textColor.body;
