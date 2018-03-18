@@ -11,14 +11,14 @@ body
     color: $textColorBody;
     background-color: $bgColorBody;
     font-family: $fontFamilyBody;
-    font-size: $fontSizeBody;
+    font-size: $fontSize.body;
     line-height: $lineHeightBase;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
 for h in (1 .. 5)
     h{h}
-        font-size: lookup('$fontSizeH' + h);
+        font-size: $fontSize['h' + h];
         font-family: $fontFamilyHeading;
         font-weight: $fontWeight.black;
         color: $textColorHeading;
@@ -34,7 +34,7 @@ a
         cursor: pointer;
 
 small, .small
-    font-size: $fontSizeSmall;
+    font-size: $fontSize.small;
 
 strong, .strong
     font-weight: $fontWeight.bold;

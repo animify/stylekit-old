@@ -8,7 +8,6 @@ $activeTextColor = $colorBase;
 $itemColor = $textColorLight;
 $itemPadding = 1.2rem 0;
 $navItemPadding = 1.2rem 0;
-$itemFontWeight = $fontWeight.semiBold;
 $itemHeaderFontWeight = $fontWeight.bold;
 $footerItemPadding = .2rem 0;
 $footerItemFontSize = $fontSizeSub;
@@ -18,7 +17,7 @@ $basicBackgroundColor = $bgColorGrayLight;
 .menu
     .item
         color: $itemColor;
-        font-weight: $itemFontWeight;
+        font-weight: $fontWeight.semiBold;
         line-height: $itemLineHeight;
         padding: $itemPadding;
         display: inline-block;
@@ -102,7 +101,7 @@ $basicBackgroundColor = $bgColorGrayLight;
             .item
                 font-weight: 400;
                 display: block;
-                font-size: $fontSizeSub;
+                font-size: $fontSize.sub;
                 padding: .2rem 0;
 
                 a

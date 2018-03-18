@@ -5,12 +5,9 @@ $borderRadius = $borderRadiusM;
 $borderWidth = 1px;
 $boxShadow = 0 1px 4px rgba(0, 0, 31, .1), 0 4px 14px rgba(0, 0, 31, .08);
 $lineHeight = $lineHeightBase;
-$fw = $fontWeight.book;
 $padding = 1.2rem 0;
 $itemPadding = .4rem 2rem;
 $headerColor = $textColorBody;
-$headerFontSize = $fontSizeBody;
-$headerFontWeight = $fontWeight.semiBold;
 $linkColor = $textColorBody;
 $hoverLinkColor = $colorBase;
 
@@ -35,15 +32,15 @@ $hoverLinkColor = $colorBase;
         li, a
             display: block;
             line-height: $lineHeight;
-            font-weight: $fw;
+            font-weight: $fontWeight.book;
 
         li
             padding: $itemPadding;
 
             &.header
                 color: $headerColor;
-                font-weight: $headerFontWeight;
-                font-size: $headerFontSize;
+                font-weight: $fontWeight.semiBold;
+                font-size: $fontSize.body;
 
         a
             color: $linkColor;
