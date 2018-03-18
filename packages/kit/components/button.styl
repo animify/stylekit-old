@@ -1,5 +1,4 @@
 importThemeFile(getFilename(), $theme);
-$backgroundColor = $color.white;
 $borderRadius = $borderRadiusM;
 $borderWidth = 1px;
 $borderColor = $color.base;
@@ -15,7 +14,7 @@ $padding = .8rem 1.6rem;
     border: 0;
     border: $borderWidth solid $borderColor;
     border-radius: $borderRadius;
-    background-color: $backgroundColor;
+    background-color: $backgroundColor.white;
     color: $textColor;
     font-weight: $fontWeight.semiBold;
     font-size: $fontSize.body;
@@ -28,7 +27,7 @@ $padding = .8rem 1.6rem;
         color: #fff;
 
     +disabled()
-        background-color: $backgroundColor !important;
+        background-color: $backgroundColor.white !important;
         border-color: @background-color;
         color: $color.base !important;
         user-select: none;

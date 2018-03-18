@@ -10,9 +10,8 @@ $itemPadding = 1.2rem 0;
 $navItemPadding = 1.2rem 0;
 $itemHeaderFontWeight = $fontWeight.bold;
 $footerItemPadding = .2rem 0;
-$footerItemFontSize = $fontSizeSub;
+$footerItemFontSize = $fontSize.sub;
 $itemMargin = 0 0 0 2.4rem;
-$basicBackgroundColor = $bgColorGrayLight;
 
 .menu
     .item
@@ -42,7 +41,7 @@ $basicBackgroundColor = $bgColorGrayLight;
 
     &.basic
         padding: $padding;
-        background-color: $basicBackgroundColor;
+        background-color: $backgroundColor.light;
 
     &.nav
         padding: $navPadding;
@@ -80,7 +79,7 @@ $basicBackgroundColor = $bgColorGrayLight;
         height: 100%;
         width: 300px;
         padding: 1.2rem 2.4rem;
-        background-color: $bgColorGrayLight;
+        background-color: $backgroundColor.light;
 
         & > .item, & .options > .item
             display: block;

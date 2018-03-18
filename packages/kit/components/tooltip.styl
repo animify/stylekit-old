@@ -1,16 +1,10 @@
 importThemeFile(getFilename(), $theme);
-$arrowBackgroundColor = $color.white;
-$darkArrowBackgroundColor = $color.ash;
 $arrowBoxShadow = 1px 1px 0 0 $colorBorder;
 $invertedArrowBoxShadow = -1px -1px 0 0 $colorBorder;
-$bodyBackgroundColor = $color.white;
-$darkBodyBackgroundColor = $color.ash;
 $bodyBorder = 1px solid $colorBorder;
-$darkBodyBorderColor = $color.ash;
 $bodyBorderRadius = $borderRadiusM;
 $bodyBoxShadow = $boxShadowSubtle;
 $bodyTextColor = $textColorBody;
-$darkBodyTextColor = $color.white;
 $bodyPadding = .6em 1.2em;
 
 .tooltip[data-content]
@@ -21,7 +15,7 @@ $bodyPadding = .6em 1.2em;
         z-index: 24;
         width: .8rem;
         height: .8rem;
-        background-color: $arrowBackgroundColor;
+        background-color: $backgroundColor.white;
         box-shadow: $arrowBoxShadow;
         content: ' ';
         opacity: 0;
@@ -40,7 +34,7 @@ $bodyPadding = .6em 1.2em;
         max-width: none;
         border: $bodyBorder;
         border-radius: $bodyBorderRadius;
-        background-color: $bodyBackgroundColor;
+        background-color: $backgroundColor.white;
         box-shadow: $bodyBoxShadow;
         color: $bodyTextColor;
         content: attr(data-content);
@@ -54,13 +48,13 @@ $bodyPadding = .6em 1.2em;
 
     &.dark
         &:before
-            background-color: $darkArrowBackgroundColor;
+            background-color: $backgroundColor.dark;
             box-shadow: none !important;
 
         &:after
-            border-color: $darkBodyBorderColor;
-            background-color: $darkBodyBackgroundColor;
-            color: $darkBodyTextColor;
+            border-color: $backgroundColor.dark;
+            background-color: $backgroundColor.dark;
+            color: $color.white;
 
     &:hover
         &:before

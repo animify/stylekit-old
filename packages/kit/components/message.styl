@@ -1,5 +1,4 @@
 importThemeFile(getFilename(), $theme);
-$backgroundColor = $bgColorGrayLight;
 $borderColor = $colorBorder;
 $borderRadius = $borderRadiusM;
 $borderWidth = 6px;
@@ -20,9 +19,9 @@ styleColored(type)
     margin: $margin;
     padding: $padding;
     border: 0;
-    border-left: $borderWidth solid $bgColorGray;
+    border-left: $borderWidth solid $backgroundColor.base;
     border-radius: $borderRadius;
-    background-color: $backgroundColor;
+    background-color: $backgroundColor.light;
     color: $textColor;
     line-height: $lineHeight;
 

@@ -1,9 +1,7 @@
 importThemeFile(getFilename(), $theme);
-$backgroundColor = $colorBorder;
 $borderRadius = $borderRadiusM;
 $height = 1.6rem;
 $barBorderRadius = $borderRadius;
-$barBackgroundColor = darken($backgroundColor, 76%);
 $statusColor = $color.white;
 $statusLineHeight = $height;
 
@@ -26,7 +24,7 @@ styleSized(size)
 
     height: $height;
     border-radius: $borderRadius;
-    background-color: $backgroundColor;
+    background-color: $backgroundColor.base;
     content: '';
 
     .bar
@@ -34,7 +32,7 @@ styleSized(size)
         width: 0;
         height: 100%;
         border-radius: $barBorderRadius;
-        background-color: $barBackgroundColor;
+        background-color: $color.base;
 
         .status
             absolute: right .8rem;
