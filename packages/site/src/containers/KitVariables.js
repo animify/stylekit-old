@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import scrollToComponent from 'react-scroll-to-component';
 import Utils from './../utils/helpers';
-import colorDefinitions from './../definitions/colors';
-import typographyDefinitions from './../definitions/typography';
-import shadowDefinitions from './../definitions/shadow';
+import variableDefs from './../definitions/variables';
+// import typographyDefinitions from './../definitions/variables';
 import ColorSample from './../components/ColorSample';
 import ShadowSample from './../components/ShadowSample';
 import TypographySample from './../components/TypographySample';
@@ -12,14 +10,11 @@ export default class KitVariables extends Component {
     constructor() {
         super();
 
-        const colorVariables = Utils.buildColorVariables(colorDefinitions);
-        const shadowVariables = Utils.buildShadowVariables(shadowDefinitions);
-        const typographyVariables = Utils.buildTypographyVariables(typographyDefinitions);
+        const variables = Utils.buildVariables(variableDefs);
 
+        console.log(variables);
         this.state = {
-            colors: colorVariables,
-            shadows: shadowVariables,
-            typographies: typographyVariables
+            variables
         };
     }
 
@@ -46,7 +41,7 @@ export default class KitVariables extends Component {
     }
 
     render() {
-        const { shadows, colors, typographies } = this.state;
+        const { variables } = this.state;
 
         return (
             <section className="container">
@@ -61,14 +56,23 @@ export default class KitVariables extends Component {
                             <h4>Variables for the colors used throughout the theme style.</h4>
                         </div>
                         <div className="row">
+                            {variables}
+                        </div>
+                    </section>
+                    {/* <section className="guide" ref={(section) => { this.colors = section; }}>
+                        <div className="guide-description">
+                            <h3>Colors</h3>
+                            <h4>Variables for the colors used throughout the theme style.</h4>
+                        </div>
+                        <div className="row">
                             {
                                 colors.map(color => (
                                     <ColorSample key={color.variable} colorName={color.variable} colorString={color.value.toRgbString()} dark={color.dark} />
                                 ))
                             }
                         </div>
-                    </section>
-                    <section className="guide" ref={(section) => { this.shadows = section; }}>
+                    </section> */}
+                    {/* <section className="guide" ref={(section) => { this.shadows = section; }}>
                         <div className="guide-description">
                             <h3>Shadows</h3>
                             <h4>Variables for the colors used throughout the theme style.</h4>
@@ -93,7 +97,7 @@ export default class KitVariables extends Component {
                                 ))
                             }
                         </div>
-                    </section>
+                    </section> */}
                 </div>
             </section>
         );

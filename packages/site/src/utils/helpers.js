@@ -1,5 +1,8 @@
+import React, { Component } from 'react';
 import tinycolor from 'tinycolor2';
 import $ from 'jquery';
+import Variables from './variables';
+import Variable from './../components/Variable';
 
 export default class Utils {
     static buildColorVariables(fooVarVariables) {
@@ -63,12 +66,48 @@ export default class Utils {
     }
 
     static buildTypographyVariables(fooVarVariables) {
+        Object.entries(fooVarVariables).map(e => console.log(e));
         const typographyObjects = Object.entries(fooVarVariables).map(e => ({
             variable: `$${e[0]}`,
             value: e[1]
         }));
 
         return typographyObjects.filter(e => e);
+    }
+
+    static buildVariables(variables) {
+        const view = [];
+
+        Object.entries(variables).map(variable => {
+            const variableName = variable[0];
+            const variableData = variable[1];
+            const variableType = typeof variableData;
+            console.log(variableType, variableName, variableData);
+
+            switch (variableType) {
+                case 'string':
+                    view.push(<Variable key={variableName} varName={variableName} varStyle={variableData} />);
+                    break;
+                case 'object':
+                    const isArray = Array.isArray(variableData);
+
+                    if (isArray) {
+                        view.push(<Variable key={variableName} varName={variableName} varStyle={Utils.buildCSSfromArray(variableData)} />)
+                    } else {
+                        Object.entries(variableData).forEach(v => {
+                            const name = `${variableName}.${v[0]}`
+                            let data = v[1];
+                            data = Array.isArray(data) ? Utils.buildCSSfromArray(data) : data;
+
+                            view.push(<Variable key={name} varName={name} varStyle={data} />)
+                        });
+                    }
+                    break;
+            }
+        });
+
+
+        return view;
     }
 
     static capitalizeFirstLetter(string) {
