@@ -52,11 +52,11 @@ export default class KitVariables extends Component {
                     {Object.values(variables).map(variable => (
                         <section className="guide" ref={(section) => { this[variable.id] = section; }} key={variable.id}>
                             <div className="guide-description">
-                                <h3>{variable.id}</h3>
-                                <h4>Variables for the colors used throughout the theme style.</h4>
+                                <h3>{variable.title}</h3>
+                                <h4>{variable.description}</h4>
                             </div>
                             <div className="row">
-                                { variable.variables.map(v => (<Variable varName={v.name} varStyle={v.data} varPropertyCss={variable.propertyCss} />)) }
+                                { variable.variables.map(v => (<Variable key={v.name} varName={v.name} varStyle={v.data} varPropertyCss={variable.propertyCss} />)) }
                             </div>
                         </section>
                     ))}

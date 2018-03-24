@@ -1,31 +1,43 @@
 [
     {
         "id": "color",
+        "title": "Color",
+        "description": "All the variables",
         "startsWith": "$color",
         "propertyCss": "color"
     },
     {
         "id": "textColor",
+        "title": "Text color",
+        "description": "All the variables",
         "startsWith": "$textColor",
         "propertyCss": "textColor"
     },
     {
         "id": "backgroundColor",
+        "title": "Background color",
+        "description": "All the variables",
         "startsWith": "$backgroundColor",
         "propertyCss": "backgroundColor"
     },
     {
         "id": "fontSize",
+        "title": "Font size",
+        "description": "All the variables",
         "startsWith": "$fontSize",
         "propertyCss": "fontSize"
     },
     {
         "id": "fontWeight",
+        "title": "Font weight",
+        "description": "All the variables",
         "startsWith": "$fontWeight",
         "propertyCss": "fontWeight"
     },
     {
         "id": "boxShadow",
+        "title": "Box shadow",
+        "description": "All the variables",
         "startsWith": "$boxShadow",
         "propertyCss": "boxShadow"
     }

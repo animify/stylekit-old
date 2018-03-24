@@ -78,12 +78,7 @@ export default class Utils {
     static buildVariables(variables, guide) {
         const view = [];
         const variablesStructure = guide.reduce((a, g) => {
-            a[g.id] = {
-                id: g.id,
-                startsWith: g.startsWith,
-                propertyCss: g.propertyCss,
-                variables: []
-            }
+            a[g.id] = {...g, variables: []}
             return a;
         }, {});
 
