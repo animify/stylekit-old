@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Utils from './../utils/helpers';
 import variableDefs from './../definitions/variables';
+import variableGuide from './../../pages/variables/guide.json';
+import Variable from '../components/Variable';
 
 export default class KitVariables extends Component {
     constructor() {
         super();
 
-        const variables = Utils.buildVariables(variableDefs);
+        const variables = Utils.buildVariables(variableDefs, variableGuide);
 
         console.log(variables);
         this.state = {
@@ -46,54 +48,18 @@ export default class KitVariables extends Component {
                         <h1>Variables</h1>
                         <h3>Variables used throughout your stylekit.</h3>
                     </div>
-                    <section className="guide" ref={(section) => { this.colors = section; }}>
-                        <div className="guide-description">
-                            <h3>Colors</h3>
-                            <h4>Variables for the colors used throughout the theme style.</h4>
-                        </div>
-                        <div className="row">
-                            {variables}
-                        </div>
-                    </section>
-                    {/* <section className="guide" ref={(section) => { this.colors = section; }}>
-                        <div className="guide-description">
-                            <h3>Colors</h3>
-                            <h4>Variables for the colors used throughout the theme style.</h4>
-                        </div>
-                        <div className="row">
-                            {
-                                colors.map(color => (
-                                    <ColorSample key={color.variable} colorName={color.variable} colorString={color.value.toRgbString()} dark={color.dark} />
-                                ))
-                            }
-                        </div>
-                    </section> */}
-                    {/* <section className="guide" ref={(section) => { this.shadows = section; }}>
-                        <div className="guide-description">
-                            <h3>Shadows</h3>
-                            <h4>Variables for the colors used throughout the theme style.</h4>
-                        </div>
-                        <div className="row">
-                            {
-                                shadows.map(shadow => (
-                                    <ShadowSample key={shadow.variable} shadowName={shadow.variable} shadowCSS={shadow.value} />
-                                ))
-                            }
-                        </div>
-                    </section>
-                    <section className="guide" ref={(section) => { this.typography = section; }}>
-                        <div className="guide-description">
-                            <h3>Typography</h3>
-                            <h4>Typography.</h4>
-                        </div>
-                        <div className="row">
-                            {
-                                typographies.map(typography => (
-                                    <TypographySample key={typography.variable} typographyName={typography.variable} typographySize={typography.value} />
-                                ))
-                            }
-                        </div>
-                    </section> */}
+
+                    {Object.values(variables).map(variable => (
+                        <section className="guide" ref={(section) => { this.colors = section; }}>
+                            <div className="guide-description">
+                                <h3>{variable.id}</h3>
+                                <h4>Variables for the colors used throughout the theme style.</h4>
+                            </div>
+                            <div className="row">
+                                { variable.variables.map(v => (<Variable varName={v.name} varStyle={v.data} varPropertyCss={variable.propertyCss} />)) }
+                            </div>
+                        </section>
+                    ))}
                 </div>
             </section>
         );

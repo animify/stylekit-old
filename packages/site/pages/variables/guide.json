@@ -1,26 +1,32 @@
 [
     {
+        "id": "color",
         "startsWith": "$color",
-        "css": "color"
+        "propertyCss": "color"
     },
     {
+        "id": "textColor",
         "startsWith": "$textColor",
-        "css": "textColor"
+        "propertyCss": "textColor"
     },
     {
+        "id": "backgroundColor",
         "startsWith": "$backgroundColor",
-        "css": "backgroundColor"
+        "propertyCss": "backgroundColor"
     },
     {
+        "id": "fontSize",
         "startsWith": "$fontSize",
-        "css": "fontSize"
+        "propertyCss": "fontSize"
     },
     {
+        "id": "fontWeight",
         "startsWith": "$fontWeight",
-        "css": "fontWeight"
+        "propertyCss": "fontWeight"
     },
     {
+        "id": "boxShadow",
         "startsWith": "$boxShadow",
-        "css": "boxShadow"
+        "propertyCss": "boxShadow"
     }
 ]

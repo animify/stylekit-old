@@ -75,31 +75,54 @@ export default class Utils {
         return typographyObjects.filter(e => e);
     }
 
-    static buildVariables(variables) {
+    static buildVariables(variables, guide) {
         const view = [];
+        const variablesStructure = guide.reduce((a, g) => {
+            a[g.id] = {
+                id: g.id,
+                startsWith: g.startsWith,
+                propertyCss: g.propertyCss,
+                variables: []
+            }
+            return a;
+        }, {});
+
+        console.log(variablesStructure);
 
         Object.entries(variables).map(variable => {
             const variableName = variable[0];
             const variableData = variable[1];
             const variableType = typeof variableData;
-            console.log(variableType, variableName, variableData);
+
+            const belongsTo = guide.map(g => g.startsWith).find(g => variableName.startsWith(g.replace(/\$/,''))).replace(/\$/,'')
+            const variableDataArray = variablesStructure[belongsTo].variables;
 
             switch (variableType) {
                 case 'string':
                     view.push(<Variable key={variableName} varName={variableName} varStyle={variableData} />);
+                    variableDataArray.push({
+                        name: variableName,
+                        data: variableData
+                    });
                     break;
                 case 'object':
                     const isArray = Array.isArray(variableData);
 
                     if (isArray) {
-                        view.push(<Variable key={variableName} varName={variableName} varStyle={Utils.buildCSSfromArray(variableData)} />)
+                        variableDataArray.push({
+                            name: variableName,
+                            data: Utils.buildCSSfromArray(variableData)
+                        });
                     } else {
                         Object.entries(variableData).forEach(v => {
                             const name = `${variableName}.${v[0]}`
                             let data = v[1];
                             data = Array.isArray(data) ? Utils.buildCSSfromArray(data) : data;
 
-                            view.push(<Variable key={name} varName={name} varStyle={data} />)
+                            variableDataArray.push({
+                                name,
+                                data
+                            });
                         });
                     }
                     break;
@@ -107,7 +130,7 @@ export default class Utils {
         });
 
 
-        return view;
+        return variablesStructure;
     }
 
     static capitalizeFirstLetter(string) {
