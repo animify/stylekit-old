@@ -17,7 +17,7 @@ export default class KitVariables extends Component {
     }
 
     componentDidMount() {
-        const types = Object.values(this.state.variables).map(variable => variable.id);
+        const types = Object.values(this.state.variables).map(variable => variable.title);
         const hasTitle = types.includes(this.props.match.params.type);
         this.props.updateNavDropdown({
             current: hasTitle ? Utils.capitalizeFirstLetter(this.props.match.params.type) : undefined,
@@ -50,13 +50,15 @@ export default class KitVariables extends Component {
                     </div>
 
                     {Object.values(variables).map(variable => (
-                        <section className="guide" ref={(section) => { this[variable.id] = section; }} key={variable.id}>
+                        <section className="guide" ref={(section) => { this[variable.title] = section; }} key={variable.id}>
                             <div className="guide-description">
                                 <h3>{variable.title}</h3>
                                 <h4>{variable.description}</h4>
                             </div>
-                            <div className="row">
-                                { variable.variables.map(v => (<Variable key={v.name} varName={v.name} varStyle={v.data} varPropertyCss={variable.propertyCss} displayStyle={variable.displayStyle} />)) }
+                            <div className="guide-subsection">
+                                <div className="row">
+                                    { variable.variables.map(v => (<Variable key={v.name} varName={v.name} varStyle={v.data} varPropertyCss={variable.propertyCss} displayStyle={variable.displayStyle} />)) }
+                                </div>
                             </div>
                         </section>
                     ))}
