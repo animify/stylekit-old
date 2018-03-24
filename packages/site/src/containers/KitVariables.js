@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import Utils from './../utils/helpers';
 import variableDefs from './../definitions/variables';
-// import typographyDefinitions from './../definitions/variables';
-import ColorSample from './../components/ColorSample';
-import ShadowSample from './../components/ShadowSample';
-import TypographySample from './../components/TypographySample';
 
 export default class KitVariables extends Component {
     constructor() {

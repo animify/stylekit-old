@@ -1,0 +1,26 @@
+[
+    {
+        "startsWith": "$color",
+        "css": "color"
+    },
+    {
+        "startsWith": "$textColor",
+        "css": "textColor"
+    },
+    {
+        "startsWith": "$backgroundColor",
+        "css": "backgroundColor"
+    },
+    {
+        "startsWith": "$fontSize",
+        "css": "fontSize"
+    },
+    {
+        "startsWith": "$fontWeight",
+        "css": "fontWeight"
+    },
+    {
+        "startsWith": "$boxShadow",
+        "css": "boxShadow"
+    }
+]

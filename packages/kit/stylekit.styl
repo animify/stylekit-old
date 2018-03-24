@@ -8,7 +8,7 @@
 @import 'components/*';
 
 foovar('src/definitions/variables.js', {
-    include: '(^\$color|^\$textColor|^\$backgroundColor|^\$fontSize|^\$fontFamily|^\$fontWeight|^\$boxShadow)',
+    include: variableConfig(),
     compress: true,
     plainObject: 'css'
 });
