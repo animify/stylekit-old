@@ -56,7 +56,7 @@ export default class KitVariables extends Component {
                                 <h4>{variable.description}</h4>
                             </div>
                             <div className="row">
-                                { variable.variables.map(v => (<Variable key={v.name} varName={v.name} varStyle={v.data} varPropertyCss={variable.propertyCss} />)) }
+                                { variable.variables.map(v => (<Variable key={v.name} varName={v.name} varStyle={v.data} varPropertyCss={variable.propertyCss} displayStyle={variable.displayStyle} />)) }
                             </div>
                         </section>
                     ))}

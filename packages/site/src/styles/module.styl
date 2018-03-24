@@ -71,35 +71,6 @@
     font-weight: $fontWeight.semiBold;
     border-radius: $borderRadiusM;
 
-.sample
-    &.color
-        display: flex;
-        flex-direction: column;
-        margin-top: 2.8rem;
-        border: 1px solid $colorBorder;
-        border-radius: $borderRadiusM;
-        .preview
-            width: 100%;
-            border-radius: $borderRadiusM;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            padding: 2rem;
-            p, small
-                color: rgba(0,0,0,.6);
-                display: block;
-            p
-                font-weight: $fontWeight.bold;
-                color: rgba(0,0,0,1);
-            small
-                font-weight: $fontWeight.semiBold;
-            &.dark
-                small
-                    color: rgba(255,255,255,.6);
-                p
-                    color: #fff;
-
     &.typography
         display: flex;
         padding: 1.2rem 0;
@@ -116,3 +87,32 @@
         border: 1px solid $colorBorder;
         p
             color: $textColor.header;
+
+.variable-sample
+    .inner
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        flex: 1 0 100%;
+
+    & + .variable-sample
+        margin-top: 1.2rem;
+
+    &.color
+        .inner
+            align-items: center;
+            .style
+                display: inline-block;
+                content: ' ';
+                width: 4.8rem;
+                height: 4.8rem;
+                border-radius: 50%;
+                box-shadow: $boxShadow.close;
+            .about
+                display: flex;
+                flex-direction: column;
+                margin-left: 1.6rem;
+                strong
+                    color: $textColor.header;
+                small
+                    color: $textColor.body;
