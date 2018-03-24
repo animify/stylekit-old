@@ -17,16 +17,16 @@ export default class KitVariables extends Component {
     }
 
     componentDidMount() {
-        const types = ['colors', 'shadows', 'typography'];
+        const types = Object.values(this.state.variables).map(variable => variable.id);
         const hasTitle = types.includes(this.props.match.params.type);
         this.props.updateNavDropdown({
             current: hasTitle ? Utils.capitalizeFirstLetter(this.props.match.params.type) : undefined,
             page: 'variables',
             list: types.map(component => ({
-                name: Utils.capitalizeFirstLetter(component),
+                name: component,
                 basic: component,
                 pageName: 'variables',
-                section: this[Utils.cleanString(component)]
+                section: this[component]
             }))
         });
     }
@@ -50,7 +50,7 @@ export default class KitVariables extends Component {
                     </div>
 
                     {Object.values(variables).map(variable => (
-                        <section className="guide" ref={(section) => { this.colors = section; }}>
+                        <section className="guide" ref={(section) => { this[variable.id] = section; }} key={variable.id}>
                             <div className="guide-description">
                                 <h3>{variable.id}</h3>
                                 <h4>Variables for the colors used throughout the theme style.</h4>
