@@ -76,7 +76,6 @@ export default class Utils {
     }
 
     static buildVariables(variables, guide) {
-        const view = [];
         const variablesStructure = guide.reduce((a, g) => {
             a[g.id] = {...g, variables: []}
             return a;
@@ -94,9 +93,8 @@ export default class Utils {
 
             switch (variableType) {
                 case 'string':
-                    view.push(<Variable key={variableName} varName={variableName} varStyle={variableData} />);
                     variableDataArray.push({
-                        name: variableName,
+                        name: `$${variableName}`,
                         data: variableData
                     });
                     break;
@@ -105,12 +103,12 @@ export default class Utils {
 
                     if (isArray) {
                         variableDataArray.push({
-                            name: variableName,
+                            name: `$${variableName}`,
                             data: Utils.buildCSSfromArray(variableData)
                         });
                     } else {
                         Object.entries(variableData).forEach(v => {
-                            const name = `${variableName}.${v[0]}`
+                            const name = `$${variableName}.${v[0]}`
                             let data = v[1];
                             data = Array.isArray(data) ? Utils.buildCSSfromArray(data) : data;
 
