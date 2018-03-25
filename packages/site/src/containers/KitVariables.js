@@ -1,32 +1,26 @@
 import React, { Component } from 'react';
+import scrollToComponent from 'react-scroll-to-component';
 import Utils from './../utils/helpers';
 import variableDefs from './../definitions/variables';
 import variableGuide from './../../pages/variables/guide.json';
 import Variable from '../components/Variable';
 
 export default class KitVariables extends Component {
-    constructor() {
-        super();
-
-        const variables = Utils.buildVariables(variableDefs, variableGuide);
-
-        console.log(variables);
-        this.state = {
-            variables
-        };
-    }
+    state = {
+        variables: Utils.buildVariables(variableDefs, variableGuide)
+    };
 
     componentDidMount() {
-        const types = Object.values(this.state.variables).map(variable => variable.title);
-        const hasTitle = types.includes(this.props.match.params.type);
+        const types = Object.values(this.state.variables).map(variable => ({title: variable.title, id: variable.id}));
+        const hasTitle = types.find(t => t.id === this.props.match.params.type);
         this.props.updateNavDropdown({
-            current: hasTitle ? Utils.capitalizeFirstLetter(this.props.match.params.type) : undefined,
+            current: hasTitle ? hasTitle.title : undefined,
             page: 'variables',
             list: types.map(component => ({
-                name: component,
-                basic: component,
+                name: component.title,
+                basic: component.id,
                 pageName: 'variables',
-                section: this[component]
+                section: this[component.id]
             }))
         });
     }
@@ -36,6 +30,12 @@ export default class KitVariables extends Component {
             return false;
         }
         return true;
+    }
+
+    componentDidUpdate() {
+        if (this.props.match.params.type) {
+            scrollToComponent(this[this.props.match.params.type], { offset: -100, align: 'top', duration: 1 });
+        }
     }
 
     render() {
@@ -50,7 +50,7 @@ export default class KitVariables extends Component {
                     </div>
 
                     {Object.values(variables).map(variable => (
-                        <section className="guide" ref={(section) => { this[variable.title] = section; }} key={variable.id}>
+                        <section className="guide" ref={(section) => { this[variable.id] = section; }} key={variable.id}>
                             <div className="guide-description">
                                 <h3>{variable.title}</h3>
                                 <h4>{variable.description}</h4>

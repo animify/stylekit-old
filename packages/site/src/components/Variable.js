@@ -13,7 +13,7 @@ const buildByDisplayStyle = (varName, varStyle, varPropertyCss, displayStyle) =>
         </div>);
     case 'text':
         return (<div className="inner">
-            <h4 className="style" style={{ [varPropertyCss]: varStyle }}>Quick fox jumps over MO</h4>
+            <h4 className="style" style={{ [varPropertyCss]: varStyle }}>Pack my box with five dozen liquor jugs.</h4>
             <span className="about">
                 <strong>{varName}</strong>
                 <small>{varStyle}</small>

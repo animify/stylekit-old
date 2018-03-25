@@ -56,32 +56,11 @@ export default class Utils {
         return cssString;
     }
 
-    static buildShadowVariables(fooVarVariables) {
-        const shadowObjects = Object.entries(fooVarVariables).map(e => ({
-            variable: `$${e[0]}`,
-            value: typeof e[1] === 'string' ? e[1] : Utils.buildCSSfromArray(e[1])
-        }));
-
-        return shadowObjects.filter(e => e);
-    }
-
-    static buildTypographyVariables(fooVarVariables) {
-        Object.entries(fooVarVariables).map(e => console.log(e));
-        const typographyObjects = Object.entries(fooVarVariables).map(e => ({
-            variable: `$${e[0]}`,
-            value: e[1]
-        }));
-
-        return typographyObjects.filter(e => e);
-    }
-
     static buildVariables(variables, guide) {
         const variablesStructure = guide.reduce((a, g) => {
             a[g.id] = {...g, variables: []}
             return a;
         }, {});
-
-        console.log(variablesStructure);
 
         Object.entries(variables).map(variable => {
             const variableName = variable[0];
@@ -185,7 +164,7 @@ export default class Utils {
                             name: pageGuideData.title,
                             basic: pageGuideData.folder,
                             pageName: pageName,
-                            section: guideClass[Utils.cleanString(pageGuideData.title)]
+                            section: guideClass[Utils.cleanString(pageGuideData.folder)]
                         }))
                     });
                 })
