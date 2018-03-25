@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './../public/images/logotype.svg';
+import { Link } from 'react-router-dom';
 
 const NavContext = React.createContext('nav');
 class NavProvider extends Component {
@@ -8,8 +8,8 @@ class NavProvider extends Component {
         selectedItem: undefined,
     }
 
-    changedPage = (selectedNav) => {
-        this.setState({  selectedItem: undefined });
+    changedPage = () => {
+        this.setState({ selectedItem: undefined });
         window.scrollTo(0, 0);
     }
 
@@ -22,6 +22,14 @@ class NavProvider extends Component {
         this.setState({selectedItem});
     }
 
+    setHome = () => {
+        window.scrollTo(0, 0);
+        this.setState({
+            selectedNav: undefined,
+            selectedItem: undefined,
+        });
+    }
+
     render() {
         const { selectedNav, selectedItem } = this.state;
 
@@ -29,11 +37,9 @@ class NavProvider extends Component {
             <NavContext.Provider value={{selectedItem, selectedNav}}>
                 <div className="nav menu main header hasborder">
                     <div className="container">
-                        <span className="item logo"><img src={logo} height="24" alt="Stylekit primary logo" /></span>
-                        {this.props.children({setItem: this.setItem, setNav: this.setNav, changedPage: this.changedPage})}
+                        {this.props.children({setHome: this.setHome, setItem: this.setItem, setNav: this.setNav, changedPage: this.changedPage})}
                     </div>
                 </div>
-
             </NavContext.Provider>
         );
     }

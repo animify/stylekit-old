@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router';
 import { Route, BrowserRouter } from 'react-router-dom';
 import minicons from 'minicons';
 import Utils from './utils/helpers';
@@ -8,7 +9,6 @@ import KitLayout from './containers/KitLayout';
 import KitUtility from './containers/KitUtility';
 import KitVariables from './containers/KitVariables';
 import Nav from './components/Nav';
-import Footer from './components/Footer';
 
 export default class Router extends Component {
     constructor() {
@@ -24,16 +24,19 @@ export default class Router extends Component {
         this.updateNavDropdown = this.updateNavDropdown.bind(this);
     }
 
-    componentDidMount() {
+    componentWillMount() {
         minicons.setOptions({
             observe: true,
             config: {
                 name: 'feedlist-icons',
                 props: {
-                    stroke: 'rgba(0, 0, 31, .6)'
+                    stroke: 'rgba(0, 0, 0, .6)'
                 }
             }
         });
+    }
+
+    componentDidMount() {
         minicons.swap();
     }
 
@@ -49,7 +52,7 @@ export default class Router extends Component {
         return (
             <BrowserRouter>
                 <div>
-                    <Nav sections={NavSections} />
+                    <NavWithRouter sections={NavSections} />
 
                     <Route exact path="/" render={() => (<HomeContainer />)} />
 
@@ -65,3 +68,5 @@ export default class Router extends Component {
         );
     }
 }
+
+const NavWithRouter = withRouter(Nav);
