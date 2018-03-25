@@ -9,8 +9,13 @@ $color = {
     pink: #f0027e,
     white: #ffffff,
     black: #000000,
-    ash: #5E636C
+    ash: #5E636C,
+    border: #f2f2f2
 };
+$color.borderInfo = lighten($color.blue, 10%);
+$color.borderWarning = lighten($color.yellow, 10%);
+$color.borderImportant = lighten($color.red, 10%);
+$color.borderSuccess = lighten($color.green, 10%);
 $backgroundColor = {
     dark: #1c222b,
     body: #ffffff,
@@ -26,11 +31,3 @@ $textColor = {
     disabled: #B3B3B3,
     white: #ffffff
 };
-$colorBorder ?= #f2f2f2;
-$colorBorderInfo ?= lighten($color.blue, 10%);
-$colorBorderWarning ?= lighten($color.yellow, 10%);
-$colorBorderImportant ?= lighten($color.red, 10%);
-$colorBorderSuccess ?= lighten($color.green, 10%);
-// foovar('src/definitions/colors.js', {
-//     include: '(^\$color|^\$text|^\$bgColor)'
-// });

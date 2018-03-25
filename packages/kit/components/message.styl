@@ -1,5 +1,4 @@
-importThemeFile(getFilename(), $theme);
-$borderColor = $colorBorder;
+$borderColor = $color.border;
 $borderRadius = $borderRadiusM;
 $borderWidth = 6px;
 $lineHeight = $lineHeightBase;
@@ -7,7 +6,7 @@ $margin = 1.2rem 0;
 $padding = 1.2rem 1.6rem;
 
 styleColored(type)
-    border-color: lookup('$colorBorder' + camelCase(type));
+    border-color: $color['border' + camelCase(type)];
     background-color: lighten(@border-color, 90%);
     color: darken(@border-color, 45%);
 

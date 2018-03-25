@@ -1,6 +1,6 @@
 importThemeFile(getFilename(), $theme);
-$arrowBoxShadow = 1px 1px 0 0 $colorBorder;
-$invertedArrowBoxShadow = -1px -1px 0 0 $colorBorder;
+$arrowBoxShadow = 1px 1px 0 0 $color.border;
+$invertedArrowBoxShadow = -1px -1px 0 0 $color.border;
 $bodyPadding = .6em 1.2em;
 
 .tooltip[data-content]
@@ -28,7 +28,7 @@ $bodyPadding = .6em 1.2em;
         z-index: 20;
         padding: $bodyPadding;
         max-width: none;
-        border: 1px solid $colorBorder;
+        border: 1px solid $color.border;
         border-radius: $borderRadiusM;
         background-color: $backgroundColor.white;
         box-shadow: $boxShadow.subtle;

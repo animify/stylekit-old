@@ -1,5 +1,5 @@
 importThemeFile(getFilename(), $theme);
-$borderColor = $colorBorder;
+$borderColor = $color.border;
 $borderRadius = $borderRadiusM;
 $borderWidth = 1px;
 $padding = 1.2rem 1.6rem;
@@ -29,7 +29,7 @@ $inputTransition = $animation-type-ease $animation-duration-m;
             border-color: $color.base;
 
         +inputPlaceholder()
-            color: $textColor.disabled;
+            color: $textColor.light;
 
     &.transparent
         input[type='text'], input[type='number'], input[type='password'], textarea

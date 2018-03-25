@@ -1,12 +1,12 @@
-for color in ($colorList)
+for color in ($listColors)
     .{color}:not(.button):not(.text)
         background-color: $color[color];
 
         &.light
-            background-color: lighten($color[color], $colorVariation);
+            background-color: lighten($color[color], $variationColors);
 
         &.dark
-            background-color: darken($color[color], $colorVariation);
+            background-color: darken($color[color], $variationColors);
 
     .text.{color}
         color: $color[color];
