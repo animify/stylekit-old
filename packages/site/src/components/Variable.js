@@ -12,13 +12,13 @@ const buildByDisplayStyle = (varName, varStyle, varPropertyCss, displayStyle) =>
             </span>
         </div>);
     case 'text':
-        return (<div><h4 style={{ [varPropertyCss]: varStyle }}>
-            Quick fox jumps over MO
-        </h4>
-        <span>
-            <p>{varName}</p>
-            <small>{varStyle}</small>
-        </span></div>);
+        return (<div className="inner">
+            <h4 className="style" style={{ [varPropertyCss]: varStyle }}>Quick fox jumps over MO</h4>
+            <span className="about">
+                <strong>{varName}</strong>
+                <small>{varStyle}</small>
+            </span>
+        </div>);
     case 'shape':
         return (<div className="inner">
             <span className="style" style={{ [varPropertyCss]: varStyle }} />
