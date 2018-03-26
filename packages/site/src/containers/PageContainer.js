@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import scrollToComponent from 'react-scroll-to-component';
 import SectionComponent from './../components/SectionComponent';
+import PageLoader from './../components/PageLoader';
 import Utils from './../utils/helpers';
 import Constants from './../utils/Constants';
 
@@ -28,6 +29,8 @@ export default class PageContainer extends Component {
         }
     }
 
+
+
     render() {
         const { title, description } = this.props;
         const { sections, list } = this.state;
@@ -39,7 +42,14 @@ export default class PageContainer extends Component {
                         <h1>{title}</h1>
                         <h3>{description}</h3>
                     </div>
-                    {sections.map(section => <SectionComponent ref={(component) => { this[Utils.cleanString(section.folder)] = component; }} key={`sample-${section.title}`} section={section} />)}
+                    {
+                        sections.length > 0 ?
+                            sections.map(section => <SectionComponent ref={(component) => { this[Utils.cleanString(section.folder)] = component; }} key={`sample-${section.title}`} section={section} />) :
+                            <div className="loaders">
+                                <PageLoader />
+                                <PageLoader />
+                            </div>
+                    }
                 </div>
             </section>
         );
