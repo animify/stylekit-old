@@ -20,7 +20,7 @@ export default class Navigation extends Component {
 
     focusSection = (section) => {
         scrollToComponent(section.section, { offset: -100, align: 'top', duration: 500 });
-        History.replace(`/${section.pageName}/${section.basic}`);
+        History.replace(`/${section.pageName}/${section.id}`);
     };
 
     setNav = (selectedSection) => {
@@ -55,7 +55,7 @@ export default class Navigation extends Component {
             currentSectionName = sections.current;
             break;
         case !selectionName && sections.list.length > 0:
-            currentSectionName = sections.list[0].name;
+            currentSectionName = sections.list[0].title;
             break;
         default:
             currentSectionName = selectionName;
@@ -77,7 +77,7 @@ export default class Navigation extends Component {
                         <div className="dropdown selecteditem" style={{ display: this.isHome() ? 'none' : null }}>
                             <span className="toggle">{this.getName(selectedPage)} <i data-minicon="chevron-down" /></span>
                             <ul className="menu">
-                                {sections.list.length > 0 && sections.list.map(section => <li key={`section-${section.name}`}><a role="presentation" onClick={() => { this.setItem(section.name); this.focusSection(section); }}>{section.name}</a></li>)}
+                                {sections.list.length > 0 && sections.list.map(section => <li key={`section-${section.title}`}><a role="presentation" onClick={() => { this.setItem(section.title); this.focusSection(section); }}>{section.title}</a></li>)}
                             </ul>
                         </div>
                         <div className="float-right">

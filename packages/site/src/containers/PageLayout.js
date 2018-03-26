@@ -14,7 +14,7 @@ export default class PageLayout extends Component {
             }
         };
 
-        this.updateNavDropdown = this.updateNavDropdown.bind(this);
+        this.updateNavSections = this.updateNavSections.bind(this);
     }
 
     componentWillMount() {
@@ -33,7 +33,7 @@ export default class PageLayout extends Component {
         minicons.swap();
     }
 
-    updateNavDropdown(componentList) {
+    updateNavSections(componentList) {
         this.setState({
             NavSections: componentList
         });
@@ -45,7 +45,7 @@ export default class PageLayout extends Component {
         return (
             <div>
                 <Navigation {...this.props} sections={NavSections} />
-                <PageContainer {...this.props} updateNavDropdown={this.updateNavDropdown} />
+                <PageContainer {...this.props} updateNavSections={this.updateNavSections} />
             </div>
         );
     }

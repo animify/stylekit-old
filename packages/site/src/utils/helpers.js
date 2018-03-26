@@ -106,7 +106,7 @@ export default class Utils {
         return subsections;
     }
 
-    static importPage(pageName, guideClass, currentType) {
+    static importPage(pageName, pageContainer, currentSection) {
         import(`./../../pages/${pageName}/guide.json`).then((pageGuide) => {
             const imports = pageGuide.map(guideData => new Promise((resolve) => {
                 import(`./../../pages/${pageName}/${guideData.folder}/snippet.html`)
@@ -119,18 +119,18 @@ export default class Utils {
 
             Promise.all(imports)
                 .then((guides) => {
-                    guideClass.setState({ guides });
+                    pageContainer.setState({ guides });
 
-                    const hasTitle = pageGuide.find(pageGuideData => pageGuideData.folder === currentType);
+                    const hasTitle = pageGuide.find(pageGuideData => pageGuideData.folder === currentSection);
 
-                    guideClass.props.updateNavDropdown({
-                        current: hasTitle ? hasTitle.title : currentType,
+                    pageContainer.props.updateNavSections({
+                        current: hasTitle ? hasTitle.title : currentSection,
                         page: pageName,
                         list: pageGuide.map(pageGuideData => ({
-                            name: pageGuideData.title,
-                            basic: pageGuideData.folder,
+                            id: pageGuideData.folder,
+                            title: pageGuideData.title,
                             pageName: pageName,
-                            section: guideClass[Utils.cleanString(pageGuideData.folder)]
+                            section: pageContainer[Utils.cleanString(pageGuideData.folder)]
                         }))
                     });
                 })

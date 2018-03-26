@@ -18,8 +18,8 @@ export default class KitVariables extends Component {
             current: currentSection ? currentSection.title : undefined,
             page: 'variables',
             list: availableVariables.map(component => ({
-                name: component.title,
-                basic: component.id,
+                id: component.id,
+                title: component.title,
                 pageName: 'variables',
                 section: this[component.id]
             }))
@@ -58,7 +58,7 @@ export default class KitVariables extends Component {
                             </div>
                             <div className="guide-subsection">
                                 <div className="row">
-                                    { variable.variables.map(v => (<Variable key={v.name} varName={v.name} varCssStyle={v.data} varCssProperty={variable.propertyCss} displayStyle={variable.displayStyle} />)) }
+                                    { variable.variables.map(v => (<Variable key={v.title} varName={v.title} varCssStyle={v.data} varCssProperty={variable.propertyCss} displayStyle={variable.displayStyle} />)) }
                                 </div>
                             </div>
                         </section>
