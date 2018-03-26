@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import minicons from 'minicons';
 import Navigation from './../components/Navigation';
 import PageContainer from './PageContainer';
+import PageVariables from './PageVariables';
 
 export default class PageLayout extends Component {
     constructor() {
@@ -41,12 +43,21 @@ export default class PageLayout extends Component {
 
     render() {
         const { NavSections } = this.state;
+        const { guide } = this.props;
 
         return (
             <div>
                 <Navigation {...this.props} sections={NavSections} />
-                <PageContainer {...this.props} updateNavSections={this.updateNavSections} />
+                {
+                    guide === 'variables' ?
+                        <PageVariables {...this.props} updateNavSections={this.updateNavSections} /> :
+                        <PageContainer {...this.props} updateNavSections={this.updateNavSections} />
+                }
             </div>
         );
     }
 }
+
+PageLayout.propTypes = {
+    guide: PropTypes.string.isRequired
+};

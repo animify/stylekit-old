@@ -121,10 +121,10 @@ export default class Utils {
                 .then((sections) => {
                     pageContainer.setState({ sections });
 
-                    const hasTitle = pageGuide.find(guideSection => guideSection.folder === currentSectionId);
+                    const currentSection = pageGuide.find(guideSection => guideSection.folder === currentSectionId);
 
                     pageContainer.props.updateNavSections({
-                        current: hasTitle ? hasTitle.title : currentSectionId,
+                        current: currentSection ? currentSection.title : currentSectionId,
                         page: pageName,
                         list: pageGuide.map(guideSection => ({
                             id: guideSection.folder,

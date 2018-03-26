@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Route, BrowserRouter } from 'react-router-dom';
 import HomeContainer from './containers/Home';
-import KitVariables from './containers/KitVariables';
 import PageLayout from './containers/PageLayout';
 
 export default class Router extends Component {
@@ -17,7 +16,7 @@ export default class Router extends Component {
 
                     <Route exact path="/utility/:type?" render={props => (<PageLayout {...props} guide="utility" title="Utility" description="Components do this and that this and that this and that this and that this and that this and that." />)} />
 
-                    <Route exact path="/variables/:type?" render={props => (<KitVariables {...props} updateNavDropdown={this.updateNavDropdown} />)} />
+                    <Route exact path="/variables/:type?" render={props => (<PageLayout {...props} guide="variables" title="Variables" description="Components do this and that this and that this and that this and that this and that this and that." />)} />
                 </div>
             </BrowserRouter>
         );

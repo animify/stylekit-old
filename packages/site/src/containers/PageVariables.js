@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import scrollToComponent from 'react-scroll-to-component';
 import Utils from './../utils/helpers';
 import variableDefs from './../definitions/variables';
 import variableGuide from './../../pages/variables/guide.json';
 import Variable from '../components/Variable';
+import Constants from './../utils/Constants';
 
-export default class KitVariables extends Component {
+export default class PageVariables extends Component {
     state = {
         variables: Utils.buildVariables(variableDefs, variableGuide)
     };
@@ -14,7 +16,7 @@ export default class KitVariables extends Component {
         const availableVariables = Object.values(this.state.variables).map(variable => ({title: variable.title, id: variable.id}));
         const currentSection = availableVariables.find(v => v.id === this.props.match.params.type);
 
-        this.props.updateNavDropdown({
+        this.props.updateNavSections({
             current: currentSection ? currentSection.title : undefined,
             page: 'variables',
             list: availableVariables.map(component => ({
@@ -35,30 +37,31 @@ export default class KitVariables extends Component {
 
     componentDidUpdate() {
         if (this.props.match.params.type) {
-            scrollToComponent(this[this.props.match.params.type], { offset: -100, align: 'top', duration: 1 });
+            scrollToComponent(this[this.props.match.params.type], Constants.scrollOptionsPageLoad);
         }
     }
 
     render() {
+        const { title, description } = this.props;
         const { variables } = this.state;
 
         return (
             <section className="container">
                 <div className="layout">
                     <div className="hero">
-                        <h1>Variables</h1>
-                        <h3>Variables used throughout your stylekit.</h3>
+                        <h1>{title}</h1>
+                        <h3>{description}</h3>
                     </div>
 
                     {Object.values(variables).map(variable => (
-                        <section className="guide" ref={(section) => { this[variable.id] = section; }} key={variable.id}>
+                        <section className="guide" ref={(component) => { this[variable.id] = component; }} key={variable.id}>
                             <div className="guide-description">
                                 <h3>{variable.title}</h3>
                                 <h4>{variable.description}</h4>
                             </div>
                             <div className="guide-subsection">
                                 <div className="row">
-                                    { variable.variables.map(v => (<Variable key={v.title} varName={v.title} varCssStyle={v.data} varCssProperty={variable.propertyCss} displayStyle={variable.displayStyle} />)) }
+                                    { variable.variables.map(v => (<Variable key={v.name} varName={v.name} varCssStyle={v.data} varCssProperty={variable.propertyCss} displayStyle={variable.displayStyle} />)) }
                                 </div>
                             </div>
                         </section>
@@ -68,3 +71,9 @@ export default class KitVariables extends Component {
         );
     }
 }
+
+PageVariables.propTypes = {
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    guide: PropTypes.string.isRequired
+};
