@@ -24,10 +24,9 @@ $padding = .8rem 1.6rem;
         color: #fff;
 
     +disabled()
-        background-color: $backgroundColor.white !important;
-        border-color: @background-color;
         color: $color.base !important;
-        user-select: none;
+        background-color: $backgroundColor.base;
+        border-color: @background-color;
 
     for size in $sizeList
         &.{size}
