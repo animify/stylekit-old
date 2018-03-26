@@ -1,43 +1,9 @@
 import React, { Component } from 'react';
 import tinycolor from 'tinycolor2';
 import $ from 'jquery';
-import Variables from './variables';
 import Variable from './../components/Variable';
 
 export default class Utils {
-    static buildColorVariables(fooVarVariables) {
-        const colorObjects = Object.entries(fooVarVariables).map((e) => {
-            const rgbaArray = e[1]();
-            const rgbaObject = {
-                r: null,
-                g: null,
-                b: null,
-                a: 1
-            };
-
-            const rgbaObjectKeys = Object.keys(rgbaObject);
-
-            rgbaArray.forEach((num, index) => {
-                const rgbaIndex = rgbaObjectKeys[index];
-                rgbaObject[rgbaIndex] = num;
-            });
-
-            const color = tinycolor(rgbaObject);
-
-            if (color.isValid()) {
-                return {
-                    variable: `$${e[0]}`,
-                    value: color,
-                    dark: color.isDark()
-                };
-            }
-
-            return false;
-        });
-
-        return colorObjects.filter(e => e);
-    }
-
     static buildCSSfromArray(arrays) {
         let cssString = '';
 

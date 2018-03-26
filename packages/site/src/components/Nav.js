@@ -7,35 +7,35 @@ import History from './../utils/history';
 import logo from './../public/images/logotype.svg';
 
 const Nav = ({ sections, location }) => {
-    const setFocusedSection = (section) => {
+    const isHome = () => location.pathname === '/';
+
+    const focusSection = (section) => {
         scrollToComponent(section.section, { offset: -100, align: 'top', duration: 500 });
         History.replace(`/${section.pageName}/${section.basic}`);
     };
 
-    const isHome = () => location.pathname === '/';
-
-    const getName = (selectedItem) => {
-        let selectedItemName = null;
+    const getName = (selectionName) => {
+        let currentSectionName = null;
 
         switch (true) {
         case isHome:
-            selectedItemName = 'LUL';
+            currentSectionName = 'LUL';
             break;
-        case selectedItem !== undefined:
-            selectedItemName = selectedItem;
+        case selectionName !== undefined:
+            currentSectionName = selectionName;
             break;
         case sections.current !== undefined:
-            selectedItemName = sections.current;
+            currentSectionName = sections.current;
             break;
-        case !selectedItem && sections.list.length > 0:
-            selectedItemName = sections.list[0].name;
+        case !selectionName && sections.list.length > 0:
+            currentSectionName = sections.list[0].name;
             break;
         default:
-            selectedItemName = selectedItem;
+            currentSectionName = selectionName;
             break;
         }
 
-        return selectedItemName;
+        return currentSectionName;
     };
 
     return (
@@ -48,7 +48,7 @@ const Nav = ({ sections, location }) => {
                             <div className="dropdown selecteditem" style={{ display: isHome() ? 'none' : null }}>
                                 <span className="toggle">{getName(selectedItem)} <i data-minicon="chevron-down" /></span>
                                 <ul className="menu">
-                                    {sections.list.length > 0 && sections.list.map(section => <li key={`section-${section.name}`}><a role="presentation" onClick={() => { setItem(section.name); setFocusedSection(section); }}>{section.name}</a></li>)}
+                                    {sections.list.length > 0 && sections.list.map(section => <li key={`section-${section.name}`}><a role="presentation" onClick={() => { setItem(section.name); focusSection(section); }}>{section.name}</a></li>)}
                                 </ul>
                             </div>
                             <div className="float-right">

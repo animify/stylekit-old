@@ -1,50 +1,50 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const buildByDisplayStyle = (varName, varStyle, varPropertyCss, displayStyle) => {
+const buildByDisplayStyle = (varName, varCssProperty, varCssStyle, displayStyle) => {
     switch (displayStyle) {
     case 'color':
         return (<div className="inner">
-            <span className="style" style={{ backgroundColor: varStyle }} />
+            <span className="style" style={{ backgroundColor: varCssStyle }} />
             <span className="about">
                 <strong>{varName}</strong>
-                <small>{varStyle}</small>
+                <small>{varCssStyle}</small>
             </span>
         </div>);
     case 'text':
         return (<div className="inner">
-            <h4 className="style" style={{ [varPropertyCss]: varStyle }}>Pack my box with five dozen liquor jugs.</h4>
+            <h4 className="style" style={{ [varCssProperty]: varCssStyle }}>Pack my box with five dozen liquor jugs.</h4>
             <span className="about">
                 <strong>{varName}</strong>
-                <small>{varStyle}</small>
+                <small>{varCssStyle}</small>
             </span>
         </div>);
     case 'shape':
         return (<div className="inner">
-            <span className="style" style={{ [varPropertyCss]: varStyle }} />
+            <span className="style" style={{ [varCssProperty]: varCssStyle }} />
             <span className="about">
                 <strong>{varName}</strong>
-                <small>{varStyle}</small>
+                <small>{varCssStyle}</small>
             </span>
         </div>);
     default:
-        return (<span style={{ [varPropertyCss]: varStyle }}>
+        return (<span style={{ [varCssProperty]: varCssStyle }}>
             <p>{varName}</p>
-            <small>{varStyle}</small>
+            <small>{varCssStyle}</small>
         </span>);
     }
 };
 
-const Variable = ({ varName, varStyle, varPropertyCss, displayStyle }) => (
+const Variable = ({ varName, varCssProperty, varCssStyle, displayStyle }) => (
     <div className={`variable-sample col xs-12 ${displayStyle}`}>
-        { buildByDisplayStyle(varName, varStyle, varPropertyCss, displayStyle) }
+        { buildByDisplayStyle(varName, varCssProperty, varCssStyle, displayStyle) }
     </div>
 );
 
 Variable.propTypes = {
     varName: PropTypes.string.isRequired,
-    varStyle: PropTypes.string.isRequired,
-    varPropertyCss: PropTypes.string.isRequired,
+    varCssStyle: PropTypes.string.isRequired,
+    varCssProperty: PropTypes.string.isRequired,
     displayStyle: PropTypes.string.isRequired,
 };
 
