@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Highlight from 'react-highlight.js';
 
-export default class GuideSection extends Component {
+export default class SectionComponent extends Component {
     constructor() {
         super();
 
@@ -10,7 +10,6 @@ export default class GuideSection extends Component {
             showingSnippet: false
         };
 
-        this.sampleSnippet = null;
         this.toggleSnippet = this.toggleSnippet.bind(this);
     }
 
@@ -19,17 +18,17 @@ export default class GuideSection extends Component {
     }
 
     render() {
-        const sample = this.props.sample;
+        const { section } = this.props;
         const { showingSnippet } = this.state;
 
         return (
-            <section id={`guide-${sample.title.replace(/\s/g, '').toLowerCase()}`} className="guide" key={sample.title}>
+            <section id={`guide-${section.title.replace(/\s/g, '').toLowerCase()}`} className="guide" key={section.title}>
                 <div className="guide-description">
-                    <h2>{sample.title}</h2>
-                    <h4 dangerouslySetInnerHTML={{ __html: sample.descHtml }} />
+                    <h2>{section.title}</h2>
+                    <h4 dangerouslySetInnerHTML={{ __html: section.descHtml }} />
                 </div>
 
-                { sample.subsections.map(subsection => (
+                { section.subsections.map(subsection => (
                     <div className="guide-subsection" key={subsection.title}>
                         <div className="guide-subsection-description">
                             <h4>{subsection.title}</h4>
@@ -55,8 +54,8 @@ export default class GuideSection extends Component {
     }
 }
 
-GuideSection.propTypes = {
-    sample: PropTypes.shape({
+SectionComponent.propTypes = {
+    section: PropTypes.shape({
         title: PropTypes.string,
         snippet: PropTypes.string
     }).isRequired

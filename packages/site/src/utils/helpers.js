@@ -79,7 +79,7 @@ export default class Utils {
         return string.replace(/\s/g, '').toLowerCase();
     }
 
-    static buildSubsections(snippet) {
+    static buildSnippet(snippet) {
         const subsections = [];
         const sections = snippet.filter('.snippet-section');
 
@@ -106,31 +106,31 @@ export default class Utils {
         return subsections;
     }
 
-    static importPage(pageName, pageContainer, currentSection) {
+    static importPage(pageName, pageContainer, currentSectionId) {
         import(`./../../pages/${pageName}/guide.json`).then((pageGuide) => {
-            const imports = pageGuide.map(guideData => new Promise((resolve) => {
-                import(`./../../pages/${pageName}/${guideData.folder}/snippet.html`)
+            const imports = pageGuide.map(guideSection => new Promise((resolve) => {
+                import(`./../../pages/${pageName}/${guideSection.folder}/snippet.html`)
                     .then((snippet) => {
-                        const guideDataCloned = { ...guideData };
-                        guideDataCloned.subsections = Utils.buildSubsections($(snippet));
-                        resolve(guideDataCloned);
+                        const section = { ...guideSection };
+                        section.subsections = Utils.buildSnippet($(snippet));
+                        resolve(section);
                     });
             }));
 
             Promise.all(imports)
-                .then((guides) => {
-                    pageContainer.setState({ guides });
+                .then((sections) => {
+                    pageContainer.setState({ sections });
 
-                    const hasTitle = pageGuide.find(pageGuideData => pageGuideData.folder === currentSection);
+                    const hasTitle = pageGuide.find(guideSection => guideSection.folder === currentSectionId);
 
                     pageContainer.props.updateNavSections({
-                        current: hasTitle ? hasTitle.title : currentSection,
+                        current: hasTitle ? hasTitle.title : currentSectionId,
                         page: pageName,
-                        list: pageGuide.map(pageGuideData => ({
-                            id: pageGuideData.folder,
-                            title: pageGuideData.title,
+                        list: pageGuide.map(guideSection => ({
+                            id: guideSection.folder,
+                            title: guideSection.title,
                             pageName: pageName,
-                            section: pageContainer[Utils.cleanString(pageGuideData.folder)]
+                            section: pageContainer[Utils.cleanString(guideSection.folder)]
                         }))
                     });
                 })

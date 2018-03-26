@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import scrollToComponent from 'react-scroll-to-component';
 import History from './../utils/history';
 import logo from './../public/images/logotype.svg';
+import Constants from './../utils/Constants';
 
 export default class Navigation extends Component {
     state = {
@@ -19,7 +20,7 @@ export default class Navigation extends Component {
     isHome = () => location.pathname === '/';
 
     focusSection = (section) => {
-        scrollToComponent(section.section, { offset: -100, align: 'top', duration: 500 });
+        scrollToComponent(section.section, Constants.scrollOptionsScrollTo);
         History.replace(`/${section.pageName}/${section.id}`);
     };
 
@@ -46,7 +47,7 @@ export default class Navigation extends Component {
 
         switch (true) {
         case this.isHome():
-            currentSectionName = 'LUL';
+            currentSectionName = undefined;
             break;
         case selectionName !== undefined:
             currentSectionName = selectionName;

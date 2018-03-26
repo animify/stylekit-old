@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import scrollToComponent from 'react-scroll-to-component';
-import GuideSection from './../components/GuideSection';
+import SectionComponent from './../components/SectionComponent';
 import Utils from './../utils/helpers';
+import Constants from './../utils/Constants';
 
 export default class PageContainer extends Component {
     state = {
-        guides: []
+        sections: []
     }
 
     componentDidMount() {
@@ -23,13 +24,13 @@ export default class PageContainer extends Component {
 
     componentDidUpdate() {
         if (this.props.match.params.type) {
-            scrollToComponent(this[Utils.cleanString(this.props.match.params.type)], { offset: -100, align: 'top', duration: 1 });
+            scrollToComponent(this[Utils.cleanString(this.props.match.params.type)], Constants.scrollOptionsPageLoad);
         }
     }
 
     render() {
         const { title, description } = this.props;
-        const { guides, list } = this.state;
+        const { sections, list } = this.state;
 
         return (
             <section className="container">
@@ -38,7 +39,7 @@ export default class PageContainer extends Component {
                         <h1>{title}</h1>
                         <h3>{description}</h3>
                     </div>
-                    {guides.map(sample => <GuideSection ref={(section) => { this[Utils.cleanString(sample.folder)] = section; }} key={`sample-${sample.title}`} sample={sample} />)}
+                    {sections.map(section => <SectionComponent ref={(component) => { this[Utils.cleanString(section.folder)] = component; }} key={`sample-${section.title}`} section={section} />)}
                 </div>
             </section>
         );
