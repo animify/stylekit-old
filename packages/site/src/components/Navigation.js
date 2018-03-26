@@ -35,6 +35,7 @@ export default class Navigation extends Component {
 
     setHome = () => {
         window.scrollTo(0, 0);
+
         this.setState({
             selectedSection: undefined,
             selectedPage: undefined,
