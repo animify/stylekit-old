@@ -8,6 +8,7 @@ import KitComponents from './containers/KitComponents';
 import KitLayout from './containers/KitLayout';
 import KitUtility from './containers/KitUtility';
 import KitVariables from './containers/KitVariables';
+import PageLayout from './containers/PageLayout';
 import Nav from './components/Nav';
 
 export default class Router extends Component {
@@ -52,17 +53,17 @@ export default class Router extends Component {
         return (
             <BrowserRouter>
                 <div>
-                    <NavWithRouter sections={NavSections} />
+                    {/* <NavWithRouter sections={NavSections} /> */}
 
                     <Route exact path="/" render={() => (<HomeContainer />)} />
 
-                    <Route exact path="/components/:type?" render={props => (<KitComponents {...props} updateNavDropdown={this.updateNavDropdown} />)} />
+                    <Route exact path="/components/:type?" render={props => (<PageLayout {...props} guide="components" title="Components" description="Components do this and that this and that this and that this and that this and that this and that." />)} />
 
-                    <Route exact path="/layout/:type?" render={props => (<KitLayout {...props} updateNavDropdown={this.updateNavDropdown} />)} />
+                    <Route exact path="/layout/:type?" render={props => (<PageLayout {...props} guide="layout" title="Layout" description="Components do this and that this and that this and that this and that this and that this and that." />)} />
+
+                    <Route exact path="/utility/:type?" render={props => (<PageLayout {...props} guide="utility" title="Utility" description="Components do this and that this and that this and that this and that this and that this and that." />)} />
 
                     <Route exact path="/variables/:type?" render={props => (<KitVariables {...props} updateNavDropdown={this.updateNavDropdown} />)} />
-
-                    <Route exact path="/utility/:type?" render={props => (<KitUtility {...props} updateNavDropdown={this.updateNavDropdown} />)} />
                 </div>
             </BrowserRouter>
         );
