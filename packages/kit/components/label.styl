@@ -13,3 +13,34 @@ $padding = .4rem 1.2rem;
     color: $textColor.white;
     font-weight: $fontWeight.bold;
     font-size: $fontSize.sub;
+
+    &.circular
+        padding: .4rem;
+        border-radius: 50%;
+        width: 2.4rem;
+        height: 2.4rem;
+        line-height: 1.6rem;
+        text-align: center;
+
+    .detail
+        background-color: rgba(0, 0, 0, .1);
+        padding: .4rem 1.2rem;
+        height: 100%;
+        margin: -.4rem -1.2rem -.4rem 1.2rem;
+        border-radius: 0 $borderRadius $borderRadius 0;
+        display: inline-block;
+        font-weight: 500;
+        vertical-align: top;
+        float: right;
+        color: rgba(255, 255, 255, .7);
+
+    i
+        margin-right: .6rem;
+
+    a
+        color: #fff;
+        margin-left: .8rem;
+        padding-left: .8rem;
+        font-weight: 600;
+        text-transform: none;
+        border-left: 2px solid rgba(0, 0, 0, .1);

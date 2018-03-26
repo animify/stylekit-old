@@ -9,7 +9,12 @@ $inputTransition = $animation-type-ease $animation-duration-m;
     position: relative;
     font-style: normal;
 
-    input[type='text'], input[type='number'], input[type='password'], textarea
+    textarea
+        min-height: 8rem;
+        max-height: 16rem;
+        resize: vertical;
+
+    input[type='text'], input[type='number'], input[type='password'], input[type='email'], textarea
         padding: $padding;
         min-width: 21.6rem;
         outline: 0;
@@ -32,17 +37,12 @@ $inputTransition = $animation-type-ease $animation-duration-m;
             color: $textColor.light;
 
     &.transparent
-        input[type='text'], input[type='number'], input[type='password'], textarea
+        input[type='text'], input[type='number'], input[type='password'], input[type='email'], textarea
             margin: 0;
             padding: 0;
             border: 0;
             background-color: transparent;
 
     +disabled()
-        input[type='text'], input[type='number'], input[type='password'], textarea
+        input[type='text'], input[type='number'], input[type='password'], input[type='email'], textarea
             color: $textColor.disabled;
-
-    textarea
-        min-height: 8rem;
-        max-height: 16rem;
-        resize: vertical;
