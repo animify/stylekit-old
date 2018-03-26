@@ -9,11 +9,11 @@ import Constants from './../utils/Constants';
 
 export default class PageVariables extends Component {
     state = {
-        variables: Utils.buildVariables(variableDefs, variableGuide)
+        sections: Utils.buildVariables(variableDefs, variableGuide)
     };
 
     componentDidMount() {
-        const availableVariables = Object.values(this.state.variables).map(variable => ({title: variable.title, id: variable.id}));
+        const availableVariables = Object.values(this.state.sections).map(variable => ({title: variable.title, id: variable.id}));
         const currentSection = availableVariables.find(v => v.id === this.props.match.params.type);
 
         this.props.updateNavSections({
@@ -43,7 +43,7 @@ export default class PageVariables extends Component {
 
     render() {
         const { title, description } = this.props;
-        const { variables } = this.state;
+        const { sections } = this.state;
 
         return (
             <section className="container">
@@ -53,7 +53,7 @@ export default class PageVariables extends Component {
                         <h3>{description}</h3>
                     </div>
 
-                    {Object.values(variables).map(variable => (
+                    {Object.values(sections).map(variable => (
                         <section className="guide" ref={(component) => { this[variable.id] = component; }} key={variable.id}>
                             <div className="guide-description">
                                 <h3>{variable.title}</h3>
