@@ -7,12 +7,12 @@ import logo from './../public/images/logotype.svg';
 
 export default class Navigation extends Component {
     state = {
-        selectedNav: undefined,
-        selectedItem: undefined,
+        selectedSection: undefined,
+        selectedPage: undefined,
     }
 
     changedPage = () => {
-        this.setState({ selectedItem: undefined });
+        this.setState({ selectedPage: undefined });
         window.scrollTo(0, 0);
     }
 
@@ -23,20 +23,20 @@ export default class Navigation extends Component {
         History.replace(`/${section.pageName}/${section.basic}`);
     };
 
-    setNav = (selectedNav) => {
-        this.setState({ selectedNav });
+    setNav = (selectedSection) => {
+        this.setState({ selectedSection });
     }
 
-    setItem = (selectedItem) => {
-        if (selectedItem === this.state.selectedItem) return;
-        this.setState({selectedItem});
+    setItem = (selectedPage) => {
+        if (selectedPage === this.state.selectedPage) return;
+        this.setState({selectedPage});
     }
 
     setHome = () => {
         window.scrollTo(0, 0);
         this.setState({
-            selectedNav: undefined,
-            selectedItem: undefined,
+            selectedSection: undefined,
+            selectedPage: undefined,
         });
     }
 
@@ -66,7 +66,7 @@ export default class Navigation extends Component {
     };
 
     render() {
-        const { selectedNav, selectedItem } = this.state;
+        const { selectedSection, selectedPage } = this.state;
         const { sections } = this.props;
 
         return (
@@ -75,16 +75,16 @@ export default class Navigation extends Component {
                     <div className="set">
                         <Link to="/" onClick={this.setHome} className="item logo"><img src={logo} height="24" alt="Stylekit primary logo" /></Link>
                         <div className="dropdown selecteditem" style={{ display: this.isHome() ? 'none' : null }}>
-                            <span className="toggle">{this.getName(selectedItem)} <i data-minicon="chevron-down" /></span>
+                            <span className="toggle">{this.getName(selectedPage)} <i data-minicon="chevron-down" /></span>
                             <ul className="menu">
                                 {sections.list.length > 0 && sections.list.map(section => <li key={`section-${section.name}`}><a role="presentation" onClick={() => { this.setItem(section.name); this.focusSection(section); }}>{section.name}</a></li>)}
                             </ul>
                         </div>
                         <div className="float-right">
-                            <Link to="/components" onClick={this.changedPage} className={!this.isHome() && [selectedNav, sections.page].includes('components') ? 'item active' : 'item'}>Components</Link>
-                            <Link to="/layout" onClick={this.changedPage} className={!this.isHome() && [selectedNav, sections.page].includes('layout') ? 'item active' : 'item'}>Layout</Link>
-                            <Link to="/utility" onClick={this.changedPage} className={!this.isHome() && [selectedNav, sections.page].includes('utility') ? 'item active' : 'item'}>Utility</Link>
-                            <Link to="/variables" onClick={this.changedPage} className={!this.isHome() && [selectedNav, sections.page].includes('variables') ? 'item active' : 'item'}>Variables</Link>
+                            <Link to="/components" onClick={this.changedPage} className={!this.isHome() && [selectedSection, sections.page].includes('components') ? 'item active' : 'item'}>Components</Link>
+                            <Link to="/layout" onClick={this.changedPage} className={!this.isHome() && [selectedSection, sections.page].includes('layout') ? 'item active' : 'item'}>Layout</Link>
+                            <Link to="/utility" onClick={this.changedPage} className={!this.isHome() && [selectedSection, sections.page].includes('utility') ? 'item active' : 'item'}>Utility</Link>
+                            <Link to="/variables" onClick={this.changedPage} className={!this.isHome() && [selectedSection, sections.page].includes('variables') ? 'item active' : 'item'}>Variables</Link>
                         </div>
                     </div>
                 </div>
