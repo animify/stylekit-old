@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import minicons from 'minicons';
-import Nav from './../components/Nav';
+import Navigation from './../components/Navigation';
 import PageContainer from './PageContainer';
 
 export default class PageLayout extends Component {
@@ -44,7 +44,7 @@ export default class PageLayout extends Component {
 
         return (
             <div>
-                <Nav {...this.props} sections={NavSections} />
+                <Navigation {...this.props} sections={NavSections} />
                 <PageContainer {...this.props} updateNavDropdown={this.updateNavDropdown} />
             </div>
         );
