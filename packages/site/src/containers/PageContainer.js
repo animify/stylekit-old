@@ -30,17 +30,10 @@ export default class PageContainer extends Component {
         }
     }
 
-    sectionItem(section) {
-        if (this.props.guide === 'variables') {
-            return (<SectionVariableComponent ref={(component) => { this[section.id] = component; }} key={`sample-${section.id}`} section={section} />);
-        } else {
-            return (<SectionComponent ref={(component) => { this[Utils.cleanString(section.folder)] = component; }} key={`sample-${section.title}`} section={section} />);
-        }
-    }
-
     render() {
-        const { title, description } = this.props;
+        const { title, description, guide } = this.props;
         const { sections, list } = this.state;
+        const Component = guide === 'variables' ? SectionVariableComponent : SectionComponent;
 
         return (
             <section className="container">
@@ -51,7 +44,7 @@ export default class PageContainer extends Component {
                     </div>
                     {
                         sections.length > 0 ?
-                            sections.map(section => this.sectionItem(section)):
+                            sections.map(section => <Component ref={(component) => { this[Utils.cleanString(section.id)] = component; }} key={`sample-${section.id}`} section={section} />):
                             <div className="loaders">
                                 <PageLoader />
                                 <PageLoader />

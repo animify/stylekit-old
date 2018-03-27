@@ -107,39 +107,32 @@ export default class Utils {
         return subsections;
     }
 
-    static importPage(pageName, pageContainer, currentSectionId) {
+    static importPage(pageName, pageContainer, currentSectionNameOverride) {
         import(`./../../pages/${pageName}/guide.json`).then((pageGuide) => {
-            let imports = null;
-            let currentSection = null;
-            let navList = null;
+            let currentSectionName = null;
+            let pageSections = null;
 
             const setPageData = (sections) => {
-                console.log(sections);
                 pageContainer.setState({ sections });
 
                 if (pageName === 'variables') {
                     const availableVariables = Object.values(sections).map(section => ({title: section.title, id: section.id}));
-                    currentSection = availableVariables.find(v => v.id === currentSectionId)
-                    navList = availableVariables.map(component => ({
-                        id: component.id,
-                        title: component.title,
-                        pageName: 'variables',
-                        section: pageContainer[component.id]
-                    }));
+                    currentSectionName = availableVariables.find(v => v.id === currentSectionNameOverride);
+                    pageSections = availableVariables;
                 } else {
-                    currentSection = pageGuide.find(guideSection => guideSection.folder === currentSectionId);
-                    navList = pageGuide.map(guideSection => ({
-                        id: guideSection.folder,
-                        title: guideSection.title,
-                        pageName: pageName,
-                        section: pageContainer[Utils.cleanString(guideSection.folder)]
-                    }));
+                    currentSectionName = pageGuide.find(guideSection => guideSection.folder === currentSectionNameOverride);
+                    pageSections = sections;
                 }
 
                 pageContainer.props.updateNavSections({
-                    current: currentSection ? currentSection.title : currentSectionId,
+                    current: currentSectionName ? currentSectionName.title : currentSectionNameOverride,
                     page: pageName,
-                    list: navList
+                    list: pageSections.map(section => ({
+                        id: section.id,
+                        title: section.title,
+                        pageName: pageName,
+                        section: pageContainer[Utils.cleanString(section.id)]
+                    }))
                 });
             }
 
@@ -149,7 +142,11 @@ export default class Utils {
             } else {
                 const pageImports = pageGuide.map(guideSection => new Promise((resolve) => {
                     import(`./../../pages/${pageName}/${guideSection.folder}/snippet.html`)
-                    .then((snippet) => resolve({ ...guideSection, subsections: Utils.buildSnippet($(snippet)) }));
+                        .then((snippet) => resolve({
+                            ...guideSection,
+                            id: guideSection.folder,
+                            subsections: Utils.buildSnippet($(snippet))
+                        }));
                 }));
 
                 Promise.all(pageImports)
