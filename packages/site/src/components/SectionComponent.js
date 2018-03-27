@@ -22,7 +22,7 @@ export default class SectionComponent extends Component {
         const { showingSnippet } = this.state;
 
         return (
-            <section id={`guide-${section.title.replace(/\s/g, '').toLowerCase()}`} className="guide" key={section.title}>
+            <section className="guide">
                 <div className="guide-description">
                     <h2>{section.title}</h2>
                     <h4 dangerouslySetInnerHTML={{ __html: section.descHtml }} />

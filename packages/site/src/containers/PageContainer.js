@@ -32,7 +32,7 @@ export default class PageContainer extends Component {
 
     sectionItem(section) {
         if (this.props.guide === 'variables') {
-            return (<SectionVariableComponent ref={(component) => { this[Utils.cleanString(section.id)] = component; }} key={`sample-${section.title}`} section={section} />);
+            return (<SectionVariableComponent ref={(component) => { this[section.id] = component; }} key={`sample-${section.id}`} section={section} />);
         } else {
             return (<SectionComponent ref={(component) => { this[Utils.cleanString(section.folder)] = component; }} key={`sample-${section.title}`} section={section} />);
         }

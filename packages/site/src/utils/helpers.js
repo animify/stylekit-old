@@ -77,7 +77,7 @@ export default class Utils {
     }
 
     static cleanString(string) {
-        return string.replace(/\s/g, '').toLowerCase();
+        return string.replace(/\s/g, '');
     }
 
     static buildSnippet(snippet) {
@@ -124,7 +124,7 @@ export default class Utils {
                         id: component.id,
                         title: component.title,
                         pageName: 'variables',
-                        section: this[component.id]
+                        section: pageContainer[component.id]
                     }));
                 } else {
                     currentSection = pageGuide.find(guideSection => guideSection.folder === currentSectionId);

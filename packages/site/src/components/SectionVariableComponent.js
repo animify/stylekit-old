@@ -11,7 +11,7 @@ export default class SectionVariableComponent extends Component {
         const { section } = this.props;
 
         return (
-            <section id={`guide-${section.title.replace(/\s/g, '').toLowerCase()}`} className="guide" ref={(component) => { this[section.id] = component; }} key={section.id}>
+            <section className="guide">
                 <div className="guide-description">
                     <h3>{section.title}</h3>
                     <h4>{section.description}</h4>
