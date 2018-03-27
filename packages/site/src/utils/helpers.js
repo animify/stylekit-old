@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import tinycolor from 'tinycolor2';
 import $ from 'jquery';
 import Variable from './../components/Variable';
+import variableDefs from './../definitions/variables';
 
 export default class Utils {
     static buildCSSfromArray(arrays) {
@@ -68,7 +69,7 @@ export default class Utils {
         });
 
 
-        return variablesStructure;
+        return Object.values(variablesStructure);
     }
 
     static capitalizeFirstLetter(string) {
@@ -108,35 +109,55 @@ export default class Utils {
 
     static importPage(pageName, pageContainer, currentSectionId) {
         import(`./../../pages/${pageName}/guide.json`).then((pageGuide) => {
-            const imports = pageGuide.map(guideSection => new Promise((resolve) => {
-                import(`./../../pages/${pageName}/${guideSection.folder}/snippet.html`)
-                    .then((snippet) => {
-                        const section = { ...guideSection };
-                        section.subsections = Utils.buildSnippet($(snippet));
-                        resolve(section);
-                    });
-            }));
+            let imports = null;
+            let currentSection = null;
+            let navList = null;
 
-            Promise.all(imports)
-                .then((sections) => {
-                    pageContainer.setState({ sections });
+            const setPageData = (sections) => {
+                console.log(sections);
+                pageContainer.setState({ sections });
 
-                    const currentSection = pageGuide.find(guideSection => guideSection.folder === currentSectionId);
+                if (pageName === 'variables') {
+                    const availableVariables = Object.values(sections).map(section => ({title: section.title, id: section.id}));
+                    currentSection = availableVariables.find(v => v.id === currentSectionId)
+                    navList = availableVariables.map(component => ({
+                        id: component.id,
+                        title: component.title,
+                        pageName: 'variables',
+                        section: this[component.id]
+                    }));
+                } else {
+                    currentSection = pageGuide.find(guideSection => guideSection.folder === currentSectionId);
+                    navList = pageGuide.map(guideSection => ({
+                        id: guideSection.folder,
+                        title: guideSection.title,
+                        pageName: pageName,
+                        section: pageContainer[Utils.cleanString(guideSection.folder)]
+                    }));
+                }
 
-                    pageContainer.props.updateNavSections({
-                        current: currentSection ? currentSection.title : currentSectionId,
-                        page: pageName,
-                        list: pageGuide.map(guideSection => ({
-                            id: guideSection.folder,
-                            title: guideSection.title,
-                            pageName: pageName,
-                            section: pageContainer[Utils.cleanString(guideSection.folder)]
-                        }))
-                    });
-                })
-                .catch((e) => {
-                    console.debug(`Stylekit: Oops, looks like you're missing a snippet file. ${e.message}`);
+                pageContainer.props.updateNavSections({
+                    current: currentSection ? currentSection.title : currentSectionId,
+                    page: pageName,
+                    list: navList
                 });
+            }
+
+            if (pageName === 'variables') {
+                const variables = Utils.buildVariables(variableDefs, pageGuide);
+                setPageData(variables);
+            } else {
+                const pageImports = pageGuide.map(guideSection => new Promise((resolve) => {
+                    import(`./../../pages/${pageName}/${guideSection.folder}/snippet.html`)
+                    .then((snippet) => resolve({ ...guideSection, subsections: Utils.buildSnippet($(snippet)) }));
+                }));
+
+                Promise.all(pageImports)
+                    .then((sections) => setPageData(sections))
+                    .catch((e) => {
+                        console.debug(`Stylekit: Oops, looks like you're missing a snippet file. ${e.message}`);
+                    });
+            }
         });
     }
 }

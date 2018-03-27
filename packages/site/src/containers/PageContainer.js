@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import scrollToComponent from 'react-scroll-to-component';
 import SectionComponent from './../components/SectionComponent';
+import SectionVariableComponent from './../components/SectionVariableComponent';
 import PageLoader from './../components/PageLoader';
 import Utils from './../utils/helpers';
 import Constants from './../utils/Constants';
@@ -29,7 +30,13 @@ export default class PageContainer extends Component {
         }
     }
 
-
+    sectionItem(section) {
+        if (this.props.guide === 'variables') {
+            return (<SectionVariableComponent ref={(component) => { this[Utils.cleanString(section.id)] = component; }} key={`sample-${section.title}`} section={section} />);
+        } else {
+            return (<SectionComponent ref={(component) => { this[Utils.cleanString(section.folder)] = component; }} key={`sample-${section.title}`} section={section} />);
+        }
+    }
 
     render() {
         const { title, description } = this.props;
@@ -44,7 +51,7 @@ export default class PageContainer extends Component {
                     </div>
                     {
                         sections.length > 0 ?
-                            sections.map(section => <SectionComponent ref={(component) => { this[Utils.cleanString(section.folder)] = component; }} key={`sample-${section.title}`} section={section} />) :
+                            sections.map(section => this.sectionItem(section)):
                             <div className="loaders">
                                 <PageLoader />
                                 <PageLoader />
