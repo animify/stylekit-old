@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import scrollToComponent from 'react-scroll-to-component';
-import SectionComponent from './../components/SectionComponent';
-import SectionVariableComponent from './../components/SectionVariableComponent';
-import PageLoader from './../components/PageLoader';
 import Utils from './../utils/Utils';
 import Constants from './../utils/Constants';
+import PageSection from './../components/PageSection';
+import VariableSection from './../components/VariableSection';
+import PageLoader from './../components/PageLoader';
 
 export default class PageContainer extends Component {
     state = {
@@ -33,7 +33,7 @@ export default class PageContainer extends Component {
     render() {
         const { title, description, guide } = this.props;
         const { sections, list } = this.state;
-        const Component = guide === 'variables' ? SectionVariableComponent : SectionComponent;
+        const Component = guide === 'variables' ? VariableSection : PageSection;
 
         return (
             <section className="container">

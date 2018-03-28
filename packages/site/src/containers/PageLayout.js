@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import minicons from 'minicons';
 import Navigation from './../components/Navigation';
 import PageContainer from './PageContainer';

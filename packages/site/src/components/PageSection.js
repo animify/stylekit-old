@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Highlight from 'react-highlight.js';
 
-export default class SectionComponent extends Component {
+export default class PageSection extends Component {
     constructor() {
         super();
 
@@ -54,7 +54,7 @@ export default class SectionComponent extends Component {
     }
 }
 
-SectionComponent.propTypes = {
+PageSection.propTypes = {
     section: PropTypes.shape({
         title: PropTypes.string,
         snippet: PropTypes.string
