@@ -4,7 +4,7 @@ import scrollToComponent from 'react-scroll-to-component';
 import SectionComponent from './../components/SectionComponent';
 import SectionVariableComponent from './../components/SectionVariableComponent';
 import PageLoader from './../components/PageLoader';
-import Utils from './../utils/helpers';
+import Utils from './../utils/Utils';
 import Constants from './../utils/Constants';
 
 export default class PageContainer extends Component {

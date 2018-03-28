@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const HomeContainer = () => (
+const HomeLayout = () => (
     <section className="container">
         <div className="layout">
             <div className="hero">
@@ -52,4 +52,4 @@ const HomeContainer = () => (
     </section>
 );
 
-export default HomeContainer;
+export default HomeLayout;

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import scrollToComponent from 'react-scroll-to-component';
-import History from './../utils/history';
 import logo from './../public/images/logotype.svg';
 import Constants from './../utils/Constants';
 
@@ -21,7 +20,7 @@ export default class Navigation extends Component {
 
     focusSection = (section) => {
         scrollToComponent(section.section, Constants.scrollOptionsScrollTo);
-        History.replace(`/${section.pageName}/${section.id}`);
+        this.props.history.replace(`/${section.pageName}/${section.id}`);
     };
 
     setNav = (selectedSection) => {
