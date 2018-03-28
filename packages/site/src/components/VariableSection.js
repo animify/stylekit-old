@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-export default class SectionVariableComponent extends Component {
+export default class VariableSection extends Component {
     toggleSnippet() {
         this.setState({ showingSnippet: !this.state.showingSnippet });
     }
@@ -51,10 +51,11 @@ export default class SectionVariableComponent extends Component {
                     <h3>{section.title}</h3>
                     <h4>{section.description}</h4>
                 </div>
+
                 <div className="guide-subsection">
                     <div className="row">
                         { section.variables.map(v => (
-                            <div className={`variable-sample col xs-12 ${section.displayStyle}`}>
+                            <div className={`variable-sample col xs-12 ${section.displayStyle}`} key={v.name}>
                                 { this.buildByDisplayStyle(v.name, v.data) }
                             </div>
                         )) }
@@ -65,7 +66,7 @@ export default class SectionVariableComponent extends Component {
     }
 }
 
-SectionVariableComponent.propTypes = {
+VariableSection.propTypes = {
     section: PropTypes.shape({
         id: PropTypes.string,
         title: PropTypes.string,
