@@ -1,10 +1,45 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Variable from './Variable';
 
 export default class SectionVariableComponent extends Component {
     toggleSnippet() {
         this.setState({ showingSnippet: !this.state.showingSnippet });
+    }
+
+    buildByDisplayStyle(varName, varCssStyle) {
+        const { section } = this.props;
+
+        switch (section.displayStyle) {
+        case 'color':
+            return (<div className="inner">
+                <span className="style" style={{ backgroundColor: varCssStyle }} />
+                <span className="about">
+                    <strong>{varName}</strong>
+                    <small>{varCssStyle}</small>
+                </span>
+            </div>);
+        case 'text':
+            return (<div className="inner">
+                <h4 className="style" style={{ [section.propertyCss]: varCssStyle }}>Pack my box with five dozen liquor jugs.</h4>
+                <span className="about">
+                    <strong>{varName}</strong>
+                    <small>{varCssStyle}</small>
+                </span>
+            </div>);
+        case 'shape':
+            return (<div className="inner">
+                <span className="style" style={{ [section.propertyCss]: varCssStyle }} />
+                <span className="about">
+                    <strong>{varName}</strong>
+                    <small>{varCssStyle}</small>
+                </span>
+            </div>);
+        default:
+            return (<span style={{ [section.propertyCss]: varCssStyle }}>
+                <p>{varName}</p>
+                <small>{varCssStyle}</small>
+            </span>);
+        }
     }
 
     render() {
@@ -18,7 +53,11 @@ export default class SectionVariableComponent extends Component {
                 </div>
                 <div className="guide-subsection">
                     <div className="row">
-                        { section.variables.map(v => (<Variable key={v.name} varName={v.name} varCssStyle={v.data} varCssProperty={section.propertyCss} displayStyle={section.displayStyle} />)) }
+                        { section.variables.map(v => (
+                            <div className={`variable-sample col xs-12 ${section.displayStyle}`}>
+                                { this.buildByDisplayStyle(v.name, v.data) }
+                            </div>
+                        )) }
                     </div>
                 </div>
             </section>

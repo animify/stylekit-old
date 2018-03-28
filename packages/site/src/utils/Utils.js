@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import tinycolor from 'tinycolor2';
 import $ from 'jquery';
-import Variable from './../components/Variable';
 import variableDefs from './../definitions/variables';
 
 export default class Utils {
