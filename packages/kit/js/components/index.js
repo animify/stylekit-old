@@ -1,4 +1,5 @@
+import Accordion from './Accordion';
 import Dropdown from './Dropdown';
 import Progress from './Progress';
 
-export { Dropdown, Progress };
+export { Accordion, Dropdown, Progress };

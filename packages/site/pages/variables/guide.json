@@ -2,7 +2,7 @@
     {
         "id": "color",
         "title": "Color",
-        "description": "All the variables",
+        "description": "Base style colors.",
         "startsWith": "$color",
         "propertyCss": "color",
         "displayStyle": "color"

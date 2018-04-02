@@ -33,6 +33,10 @@ export default class PageLayout extends Component {
         minicons.swap();
     }
 
+    componentDidUpdate() {
+        minicons.swap();
+    }
+
     updateNavSections(componentList) {
         this.setState({
             NavSections: componentList

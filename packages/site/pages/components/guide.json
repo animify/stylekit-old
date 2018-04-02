@@ -1,5 +1,10 @@
 [
     {
+        "folder": "accordion",
+        "title": "Accordion",
+        "descHtml": "Toggle and display sections of content."
+    },
+    {
         "folder": "button",
         "title": "Button",
         "descHtml": "A button indicates a possible user action."
