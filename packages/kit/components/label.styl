@@ -1,5 +1,4 @@
 importThemeFile(getFilename(), $theme);
-$borderRadius = $borderRadiusM;
 $lineHeight = $lineHeightBase;
 $padding = .4rem 1.2rem;
 
@@ -8,7 +7,7 @@ $padding = .4rem 1.2rem;
     display: inline-block;
     padding: $padding;
     border: 0;
-    border-radius: $borderRadius;
+    border-radius: $borderRadius.base;
     background-color: $color.base;
     color: $textColor.white;
     font-weight: $fontWeight.bold;
@@ -27,7 +26,7 @@ $padding = .4rem 1.2rem;
         padding: .4rem 1.2rem;
         height: 100%;
         margin: -.4rem -1.2rem -.4rem 1.2rem;
-        border-radius: 0 $borderRadius $borderRadius 0;
+        border-radius: 0 $borderRadius.base $borderRadius.base 0;
         display: inline-block;
         font-weight: 500;
         vertical-align: top;

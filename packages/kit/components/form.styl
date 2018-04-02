@@ -1,6 +1,5 @@
 importThemeFile(getFilename(), $theme);
 $borderColor = $color.border;
-$borderRadius = $borderRadiusM;
 $borderWidth = 1px;
 $padding = 1.2rem 1.6rem;
 $inputTransition = $animation-type-ease $animation-duration-m;
@@ -20,7 +19,7 @@ $inputTransition = $animation-type-ease $animation-duration-m;
         outline: 0;
         border: 0;
         border: 1px solid $borderColor;
-        border-radius: $borderRadius;
+        border-radius: $borderRadius.base;
         background-color: $backgroundColor.white;
         box-shadow: $boxShadow.form;
         color: $textColor.body;

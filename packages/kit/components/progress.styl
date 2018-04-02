@@ -1,7 +1,6 @@
 importThemeFile(getFilename(), $theme);
-$borderRadius = $borderRadiusM;
 $height = 1.6rem;
-$barBorderRadius = $borderRadius;
+$barBorderRadius = $borderRadius.base;
 $statusLineHeight = $height;
 
 styleSized(size)
@@ -22,7 +21,7 @@ styleSized(size)
     cf();
 
     height: $height;
-    border-radius: $borderRadius;
+    border-radius: $borderRadius.base;
     background-color: $backgroundColor.base;
     content: '';
 

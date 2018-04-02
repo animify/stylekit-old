@@ -1,5 +1,13 @@
 [
     {
+        "id": "borderRadius",
+        "title": "Border radius",
+        "description": "Base style border radius.",
+        "startsWith": "$borderRadius",
+        "propertyCss": "borderRadius",
+        "displayStyle": "shape"
+    },
+    {
         "id": "color",
         "title": "Color",
         "description": "Base style colors.",
