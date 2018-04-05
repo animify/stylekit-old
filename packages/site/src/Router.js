@@ -44,7 +44,7 @@ export default class Router extends Component {
                     <Route exact path="/" render={() => (<HomeLayout />)} />
 
                     { Router.stylePages.map(page => (
-                        <Route exact path={page.path} render={props => (<PageLayout {...props} guide={page.guide} title={page.title} description={page.description} />)} />
+                        <Route exact path={page.path} key={page.title} render={props => (<PageLayout {...props} guide={page.guide} title={page.title} description={page.description} />)} />
                     )) }
 
                 </div>
