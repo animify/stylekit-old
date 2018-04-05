@@ -93,11 +93,14 @@ export default class Utils {
                 trimmedSnippet = section.nextAll();
             }
 
+            const snippetHtml = trimmedSnippet.clone().wrapAll('<div>').parent();
+            snippetHtml.contents().filter(() => this.nodeType === 3).remove();
+
             const newSubsection = {
                 title: section.attr('title'),
                 subtitle: section.attr('subtitle'),
                 codeStyle: section.attr('codeStyle'),
-                snippet: trimmedSnippet.clone().wrapAll('<div>').parent().html()
+                snippet: snippetHtml.html()
             };
 
             subsections.push(newSubsection);
