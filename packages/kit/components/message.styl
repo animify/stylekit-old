@@ -1,11 +1,9 @@
-$borderColor = $color.border;
 $borderWidth = 6px;
-$lineHeight = $lineHeightBase;
 $margin = 1.2rem 0;
 $padding = 1.2rem 1.6rem;
 
 styleColored(type)
-    border-color: $color['border' + camelCase(type)];
+    border-color: $borderColor[type];
     background-color: lighten(@border-color, 90%);
     color: darken(@border-color, 45%);
 
@@ -16,11 +14,11 @@ styleColored(type)
     margin: $margin;
     padding: $padding;
     border: 0;
-    border-left: $borderWidth solid $backgroundColor.base;
+    border-left: $borderWidth solid $borderColor.base;
     border-radius: $borderRadius.base;
     background-color: $backgroundColor.light;
     color: $textColor.body;
-    line-height: $lineHeight;
+    line-height: $lineHeightBase;
 
     &.warning
         styleColored('warning');

@@ -12,10 +12,13 @@ $color = {
     ash: #5E636C,
     border: #f2f2f2
 };
-$color.borderInfo = lighten($color.blue, 10%);
-$color.borderWarning = lighten($color.yellow, 10%);
-$color.borderImportant = lighten($color.red, 10%);
-$color.borderSuccess = lighten($color.green, 10%);
+$borderColor = {
+    base: #f2f2f2,
+    info: lighten($color.blue, 10%),
+    warning: lighten($color.yellow, 10%),
+    important: lighten($color.red, 10%),
+    success: lighten($color.green, 10%)
+};
 $backgroundColor = {
     dark: #1c222b,
     body: #ffffff,

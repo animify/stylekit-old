@@ -32,6 +32,14 @@
         "displayStyle": "color"
     },
     {
+        "id": "borderColor",
+        "title": "Border color",
+        "description": "All the variables",
+        "startsWith": "$borderColor",
+        "propertyCss": "borderColor",
+        "displayStyle": "color"
+    },
+    {
         "id": "fontSize",
         "title": "Font size",
         "description": "All the variables",
