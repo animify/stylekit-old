@@ -1,71 +1,35 @@
-.transitionDuration
-    &-0
-        transition-duration: $duration0;
+.animation
+    &.spin
+        animation: spin $durationXXXL infinite linear;
 
-    &-s
-        transition-duration: $durationS;
+    &.rotate
+        animation: spin $durationXXXXL $durationXXXXL infinite cubic-bezier(.04, .95, .17, 1);
 
-    &-m
-        transition-duration: $durationM;
+    &.bounce
+        animation: bounce $durationXXXL infinite cubic-bezier(.04, .95, .17, 1);
 
-    &-l
-        transition-duration: $durationL;
+    &.pulse
+        animation: pulse $durationXXXL infinite linear;
 
-    &-xl
-        transition-duration: $durationXL;
+    &.shake
+        animation: shake $durationXXXL infinite linear;
 
-    &-xxl
-        transition-duration: $durationXXL;
+    &.swing
+        transform-origin: 50% 0;
+        animation: swing $durationXXXXL infinite linear;
 
-.transitionType
-    &-linear
-        transition-timing-function: linear;
+    &.spring
+        animation: spring $durationL cubic-bezier(.04, .95, .17, 1);
 
-    &-ease
-        transition-timing-function: ease;
+.landing
+    &.fadein
+        animation: fadein $durationXL linear forwards;
+        opacity: 0;
 
-    &-scaleIn
-        transition-timing-function: cubic-bezier(0, 1.42, .44, 1);
+    &.ascend
+        animation: ascend $durationXL linear forwards;
+        opacity: 0;
 
-    &-scaleOut
-        transition-timing-function: cubic-bezier(.16, .86, .44, 1);
-
-    &-spring
-        transition-timing-function: cubic-bezier(.68, -.55, .27, 1.55);
-
-    &-bounce
-        transition-timing-function: cubic-bezier(.04, .89, .76, 1.74);
-
-.animation-spin
-    animation: spin $durationXXXL infinite linear;
-
-.animation-rotate
-    animation: spin $durationXXXXL $durationXXXXL infinite cubic-bezier(.04, .95, .17, 1);
-
-.animation-bounce
-    animation: bounce $durationXXXL infinite cubic-bezier(.04, .95, .17, 1);
-
-.animation-pulse
-    animation: pulse $durationXXXL infinite linear;
-
-.animation-shake
-    animation: shake $durationXXXL infinite linear;
-
-.animation-swing
-    transform-origin: 50% 0;
-    animation: swing $durationXXXXL infinite linear;
-
-.animation-spring
-    animation: spring $durationL cubic-bezier(.04, .95, .17, 1);
-
-.landing-fadein
-    animation: fadein $durationXL linear forwards;
-    opacity: 0;
-
-.landing-ascend
-    animation: ascend $durationXL linear forwards;
-    opacity: 0;
-
-.landing-descend
-    animation: descend $durationXL linear forwards;
-    opacity: 0;
+    &.descend
+        animation: descend $durationXL linear forwards;
+        opacity: 0;
