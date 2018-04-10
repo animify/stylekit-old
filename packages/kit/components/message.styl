@@ -2,7 +2,7 @@ $borderWidth = 6px;
 $margin = 1.2rem 0;
 $padding = 1.2rem 1.6rem;
 
-styleColored(type)
+messageStyle(type)
     border-color: $borderColor[type];
     background-color: lighten(@border-color, 90%);
     color: darken(@border-color, 45%);
@@ -21,16 +21,16 @@ styleColored(type)
     line-height: $lineHeightBase;
 
     &.warning
-        styleColored('warning');
+        messageStyle: 'warning';
 
     &.important
-        styleColored('important');
+        messageStyle: 'important';
 
     &.success
-        styleColored('success');
+        messageStyle: 'success';
 
     &.info
-        styleColored('info');
+        messageStyle: 'info';
 
     a
         color: inherit;

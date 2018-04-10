@@ -9,14 +9,6 @@
         max-width: 100%;
         padding: 0 $gridPadding;
 
-        for $size in $gridSizes
-            +above($size)
-                &\\\@{$size}
-                    flex-basis: 0;
-                    flex-grow: 1;
-                    max-width: 100%;
-                    padding: 0 $gridPadding;
-
     &.nogutter
         padding: 0;
         margin: 0;
@@ -26,13 +18,18 @@
         max-width: 100%;
         padding: 0 $gridPadding;
 
-    & .col
-        for $size in $gridSizes
-            +above($size)
-                for $length in (1 .. $gridLength)
-                    &-{$length}\\\@{$size}
-                        flex: 0 0 percentage(($length / $gridLength));
-                        max-width: percentage(($length / $gridLength));
+    for $breakpoint in $gridSizes
+        +above($breakpoint)
+            .equal\\\@{$breakpoint}
+                flex-basis: 0;
+                flex-grow: 1;
+                max-width: 100%;
+                padding: 0 $gridPadding;
 
-                    &.push-{$size}-{$length}
-                        margin-left: percentage(($length / $gridLength));
+            for $gridSize in (1 .. $gridLength)
+                .push-{$gridSize}\\\@{$breakpoint}
+                    margin-left: percentage(($gridSize / $gridLength));
+
+                .col-{$gridSize}\\\@{$breakpoint}
+                    flex: 0 0 percentage(($gridSize / $gridLength));
+                    max-width: percentage(($gridSize / $gridLength));

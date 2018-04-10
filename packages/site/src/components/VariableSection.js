@@ -55,7 +55,7 @@ export default class VariableSection extends Component {
                 <div className="guide-subsection">
                     <div className="row">
                         { section.variables.map(v => (
-                            <div className={`variable-sample col xs-12 ${section.displayStyle}`} key={v.name}>
+                            <div className={`variable-sample col-12@t ${section.displayStyle}`} key={v.name}>
                                 { this.buildByDisplayStyle(v.name, v.data) }
                             </div>
                         )) }

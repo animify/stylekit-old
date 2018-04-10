@@ -1,18 +1,18 @@
-for scale in $breakpointIdentifiers
-    +below(scale)
-        .{scale}-hide
+for $breakpoint in $breakpointIdentifiers
+    +below($breakpoint)
+        .hidden\\\@{$breakpoint}
             display: none;
 
-        .{scale}-show
+        .visible\\\@{$breakpoint}
             display: block;
 
-        .{scale}-stack
+        .stack\\\@{$breakpoint}
             stack();
 
             margin: 0;
             padding: 0;
 
-        .{scale}-stackable > *
+        .stackable\\\@{$breakpoint} > *
             stack();
 
             margin: 0;

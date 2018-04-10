@@ -13,8 +13,21 @@ inputPlaceholder()
     &:-moz-placeholder
         {block};
 
-    &::-moz-placeholder
-        {block};
-
     &:-ms-input-placeholder
         {block};
+
+size($width, $height = $width)
+    +cache('w' + $width)
+        width: $width;
+
+    +cache('h' + $height)
+        height: $height;
+
+responsiveClass()
+    {block};
+
+    for $breakpoint in $breakpointIdentifiers
+        +above($breakpoint)
+            &\\\@{$breakpoint}
+                +cache($breakpoint)
+                    {block};

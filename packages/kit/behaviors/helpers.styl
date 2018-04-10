@@ -10,11 +10,14 @@
 .unstack
     unstack();
 
-.block
+.block, .visible
     display: block !important;
 
 .inline
     display: inline-block !important;
+
+.flex
+    display: flex !important;
 
 .relative
     position: relative;
@@ -66,62 +69,55 @@
 .capitalize
     text-transform: capitalize;
 
-.text-left
-    text-align: left;
-
-.text-right
-    text-align: right;
-
-.text-center
-    text-align: center;
-
 .text
-    &.right
+    &-right
         text-align: right;
 
-    &.left
+    &-left
         text-align: left;
 
-    &.center
+    &-center
         text-align: center;
 
-.text-justify
-    text-align: justify;
+    &-justify
+        text-align: justify;
 
-    &:after
+        &:after
+            display: inline-block;
+            content: '';
+            width: 100%;
+
+.float
+    &-left
+        float: left;
+
+    &-right
+        float: right;
+
+    &-none
+        float: none;
+
+.align
+    &-top
+        vertical-align: top;
         display: inline-block;
-        content: '';
-        width: 100%;
 
-.float-left
-    float: left;
+    &-middle
+        vertical-align: middle;
+        display: inline-block;
 
-.float-right
-    float: right;
+    &-bottom
+        vertical-align: bottom;
+        display: inline-block;
 
-.float-reset
-    float: none;
+    &-center
+        align(both);
 
-.align-top
-    vertical-align: top;
-    display: inline-block;
+    &-horizontal
+        align(horizontal);
 
-.align-middle
-    vertical-align: middle;
-    display: inline-block;
-
-.align-bottom
-    vertical-align: bottom;
-    display: inline-block;
-
-.align-center
-    align(both);
-
-.align-horizontal
-    align(horizontal);
-
-.align-vertical
-    align(vertical);
+    &-vertical
+        align(vertical);
 
 .transform
     &.uppercase

@@ -9,7 +9,7 @@ const HomeLayout = () => (
                 <h3>Choose which part of the stylekit you want to view:</h3>
             </div>
             <div className="row selectables">
-                <div className="col xs-12 m-6">
+                <div className="col-12@t col-6@m">
                     <div className="selectable">
                         <div className="inner">
                             <h2>Components</h2>
@@ -18,7 +18,7 @@ const HomeLayout = () => (
                         <Link to="/components" className="explore">Explore <i data-minicon="arrow-right" /></Link>
                     </div>
                 </div>
-                <div className="col xs-12 m-6">
+                <div className="col-12@t col-6@m">
                     <div className="selectable">
                         <div className="inner">
                             <h2>Layout</h2>
@@ -29,7 +29,7 @@ const HomeLayout = () => (
                 </div>
             </div>
             <div className="row selectables">
-                <div className="col xs-12 m-6">
+                <div className="col-12@t col-6@m">
                     <div className="selectable">
                         <div className="inner">
                             <h2>Utility</h2>
@@ -38,7 +38,7 @@ const HomeLayout = () => (
                         <Link to="/utility" className="explore">Explore <i data-minicon="arrow-right" /></Link>
                     </div>
                 </div>
-                <div className="col xs-12 m-6">
+                <div className="col-12@t col-6@m">
                     <div className="selectable">
                         <div className="inner">
                             <h2>Variables</h2>
