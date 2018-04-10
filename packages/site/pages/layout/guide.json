@@ -1,13 +1,18 @@
 [
     {
+        "folder": "alignment",
+        "title": "Alignment",
+        "descHtml": "Align components within relative parent containers."
+    },
+    {
         "folder": "animation",
         "title": "Animations",
         "descHtml": "Animations for components."
     },
     {
-        "folder": "breakpoint",
-        "title": "Breakpoints",
-        "descHtml": "Bl;ah blash"
+        "folder": "composition",
+        "title": "Composition",
+        "descHtml": "Utility classes to assist in positioning elements within your layout"
     },
     {
         "folder": "container",

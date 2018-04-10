@@ -9,24 +9,28 @@
         max-width: 100%;
         padding: 0 $gridPadding;
 
+        for $size in $gridSizes
+            +above($size)
+                &\\\@{$size}
+                    flex-basis: 0;
+                    flex-grow: 1;
+                    max-width: 100%;
+                    padding: 0 $gridPadding;
+
     &.nogutter
         padding: 0;
         margin: 0;
 
-    & .col
+    & > [class^='col-']
         flex: 0 0 100%;
         max-width: 100%;
         padding: 0 $gridPadding;
 
+    & .col
         for $size in $gridSizes
             +above($size)
-                &.{$size}-equal
-                    flex-basis: 0;
-                    flex-grow: 1;
-                    max-width: 100%;
-
                 for $length in (1 .. $gridLength)
-                    &.{$size}-{$length}
+                    &-{$length}\\\@{$size}
                         flex: 0 0 percentage(($length / $gridLength));
                         max-width: percentage(($length / $gridLength));
 
