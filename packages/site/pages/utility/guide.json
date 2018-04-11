@@ -5,8 +5,23 @@
         "descHtml": "Bl;ah blash"
     },
     {
+        "folder": "composition",
+        "title": "Composition",
+        "descHtml": "Utility classes to assist in positioning elements within your layout"
+    },
+    {
+        "folder": "modifiers",
+        "title": "Modifiers",
+        "descHtml": "modifiers"
+    },
+    {
         "folder": "text",
         "title": "Text",
         "descHtml": "Align components within relative parent containers."
+    },
+    {
+        "folder": "visibility",
+        "title": "Visibility",
+        "descHtml": "visibility"
     }
 ]
