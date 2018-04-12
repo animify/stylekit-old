@@ -13,10 +13,13 @@
         padding: 0;
         margin: 0;
 
-    & > [class^='col-']
-        flex: 0 0 100%;
+    & > [class*='col-']
         max-width: 100%;
-        padding: 0 $gridPadding;
+        min-height: 1px;
+        width: 100%;
+        position: relative;
+        padding-right: $gridPadding;
+        padding-left: $gridPadding;
 
     for $breakpoint in $gridSizes
         +above($breakpoint)
@@ -24,7 +27,8 @@
                 flex-basis: 0;
                 flex-grow: 1;
                 max-width: 100%;
-                padding: 0 $gridPadding;
+                padding-right: $gridPadding;
+                padding-left: $gridPadding;
 
             for $gridSize in (1 .. $gridLength)
                 .push-{$gridSize}\\\@{$breakpoint}
