@@ -1,10 +1,7 @@
-for color in $listColors
-    .{color}:not(.button):not(.text)
-        background-color: $color[color];
-
-    .{color}\\\@text
-        color: $color[color];
+for $c in $listColors
+    .{$c}\\\@text
+        color: $color[$c];
 
 for $bg in $backgroundColor
-    .bg-{$bg}
+    .{$bg}\\\@bg
         background-color: $backgroundColor[$bg];

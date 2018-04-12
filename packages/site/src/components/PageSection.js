@@ -36,7 +36,7 @@ export default class PageSection extends Component {
                         </div>
                         <div className={showingSnippet ? 'module open' : 'module'}>
                             <div className="content">
-                                <div dangerouslySetInnerHTML={{ __html: subsection.snippet }} />
+                                <div className={subsection.class ? subsection.class : null} dangerouslySetInnerHTML={{ __html: subsection.snippet }} />
                             </div>
                             { subsection.codeStyle === 'hidden' ? null
                                 : <div className="snippet">
@@ -57,6 +57,8 @@ export default class PageSection extends Component {
 PageSection.propTypes = {
     section: PropTypes.shape({
         title: PropTypes.string,
+        subtitle: PropTypes.string,
+        descHtml: PropTypes.string,
         snippet: PropTypes.string
     }).isRequired
 };

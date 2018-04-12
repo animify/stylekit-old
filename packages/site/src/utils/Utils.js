@@ -100,6 +100,7 @@ export default class Utils {
                 title: section.attr('title'),
                 subtitle: section.attr('subtitle'),
                 codeStyle: section.attr('codeStyle'),
+                class: section.attr('class').replace(/snippet-section\b/g, '').trim(),
                 snippet: snippetHtml.html()
             };
 
