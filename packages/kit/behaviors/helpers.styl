@@ -103,18 +103,24 @@
 .align
     &-top
         vertical-align: top;
-        display: inline-block;
 
     &-middle
         vertical-align: middle;
-        display: inline-block;
 
     &-bottom
         vertical-align: bottom;
-        display: inline-block;
 
-    &-center
-        align(both);
+    &-baseline
+        vertical-align: baseline;
+
+    &-text-top
+        vertical-align: text-top;
+
+    &-text-bottom
+        vertical-align: text-bottom;
+
+.center
+    align(both);
 
     &-horizontal
         align(horizontal);

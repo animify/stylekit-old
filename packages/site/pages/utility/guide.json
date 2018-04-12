@@ -20,6 +20,11 @@
         "descHtml": "Align components within relative parent containers."
     },
     {
+        "folder": "verticalalign",
+        "title": "Vertical align",
+        "descHtml": "verticalalign"
+    },
+    {
         "folder": "visibility",
         "title": "Visibility",
         "descHtml": "visibility"
