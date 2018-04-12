@@ -25,11 +25,6 @@
         "descHtml": "verticalalign"
     },
     {
-        "folder": "fontweight",
-        "title": "Font weight",
-        "descHtml": "fontweight"
-    },
-    {
         "folder": "visibility",
         "title": "Visibility",
         "descHtml": "visibility"
