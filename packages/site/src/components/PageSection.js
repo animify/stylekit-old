@@ -18,11 +18,11 @@ export default class PageSection extends Component {
     }
 
     render() {
-        const { section } = this.props;
+        const { section, className } = this.props;
         const { showingSnippet } = this.state;
 
         return (
-            <section className="guide">
+            <section className={`guide ${className}`}>
                 <div className="guide-description">
                     <h2>{section.title}</h2>
                     <h4 dangerouslySetInnerHTML={{ __html: section.descHtml }} />
@@ -54,7 +54,12 @@ export default class PageSection extends Component {
     }
 }
 
+PageSection.defaultProps = {
+    className: null,
+};
+
 PageSection.propTypes = {
+    className: PropTypes.string,
     section: PropTypes.shape({
         title: PropTypes.string,
         subtitle: PropTypes.string,

@@ -45,6 +45,9 @@ $itemMargin = 0 0 0 2.4rem;
         z-index: 1000;
         box-shadow: 0 1px 14px 0 rgba(0, 0, 31, .1);
 
+        &.submenu
+            absolute: top 60px left;
+
         &.header
             padding: $navMainPadding;
 
@@ -99,6 +102,9 @@ $itemMargin = 0 0 0 2.4rem;
 
                 a
                     color: $textColor.light;
+
+    &.scrollable
+        white-space: nowrap;
 
     &.footer
         display: flex;

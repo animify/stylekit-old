@@ -15,6 +15,7 @@ export default class PageLayout extends Component {
         };
 
         this.updateNavSections = this.updateNavSections.bind(this);
+        this.updateCurrentSection = this.updateCurrentSection.bind(this);
     }
 
     componentWillMount() {
@@ -43,13 +44,17 @@ export default class PageLayout extends Component {
         });
     }
 
+    updateCurrentSection(currentSectionName) {
+        this.pageContainer.setState({ currentSectionName });
+    }
+
     render() {
         const { NavSections } = this.state;
 
         return (
             <div>
-                <Navigation {...this.props} sections={NavSections} />
-                <PageContainer {...this.props} updateNavSections={this.updateNavSections} />
+                <Navigation {...this.props} sections={NavSections} updateCurrentSection={this.updateCurrentSection} />
+                <PageContainer ref={(component) => { this.pageContainer = component; }} {...this.props} updateNavSections={this.updateNavSections} />
             </div>
         );
     }

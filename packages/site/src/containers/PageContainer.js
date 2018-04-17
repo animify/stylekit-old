@@ -9,31 +9,27 @@ import PageLoader from './../components/PageLoader';
 
 export default class PageContainer extends Component {
     state = {
-        sections: []
+        sections: [],
+        currentSectionName: this.props.match.params.type
     }
 
     componentDidMount() {
         Utils.importPage(this.props.guide, this, this.props.match.params.type);
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        if (nextProps.match.params.type !== this.props.match.params.type) {
-            return false;
-        }
-        return true;
-    }
-
-
     componentDidUpdate() {
-        if (this.props.match.params.type) {
-            scrollToComponent(this[Utils.cleanString(this.props.match.params.type)], Constants.scrollOptionsPageLoad);
+        if (!this.props.match.params.type) {
+            const section = this.state.sections[0];
+            this.setState({currentSectionName: section.id})
+            this.props.history.replace(`${this.props.match.url}/${section.id}`);
         }
     }
 
     render() {
         const { title, description, guide } = this.props;
-        const { sections, list } = this.state;
-        const Component = guide === 'variables' ? VariableSection : PageSection;
+        const { sections, list, currentSectionName } = this.state;
+        const GuideComponent = guide === 'variables' ? VariableSection : PageSection;
+        const currentSection = sections.find(section => currentSectionName === section.id);
 
         return (
             <section className="container">
@@ -42,14 +38,13 @@ export default class PageContainer extends Component {
                         <h1>{title}</h1>
                         <h3>{description}</h3>
                     </div>
-                    {
-                        sections.length > 0 ?
-                            sections.map(section => <Component ref={(component) => { this[Utils.cleanString(section.id)] = component; }} key={`sample-${section.id}`} section={section} />):
-                            <div className="loaders">
+                        { currentSection ?
+                            <GuideComponent key={`sample-${currentSection.id}`} section={currentSection} />
+                            : <div className="loaders">
                                 <PageLoader />
                                 <PageLoader />
                             </div>
-                    }
+                        }
                 </div>
             </section>
         );
