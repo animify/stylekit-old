@@ -92,7 +92,7 @@ export default class Navigation extends Component {
                 </div>
                 <div className="submenu nav menu scrollable header hasborder">
                     <div className="container">
-                        {sections.list.length > 0 && sections.list.map(section => <a className="item" role="presentation" key={`section-${section.title}`} onClick={() => { this.setItem(section.title); this.focusSection(section); }}>{section.title}</a>)}
+                        {sections.list.length > 0 && sections.list.map(section => <a className={selectedPage === section.title ? 'item active' : 'item'} role="presentation" key={`section-${section.title}`} onClick={() => { this.setItem(section.title); this.focusSection(section); }}>{section.title}</a>)}
                     </div>
                 </div>
             </header>
