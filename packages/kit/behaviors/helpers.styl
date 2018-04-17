@@ -16,9 +16,6 @@
 .inline
     display: inline-block !important;
 
-.flex
-    display: flex !important;
-
 .relative
     position: relative;
 
@@ -163,6 +160,8 @@
     box-shadow: none !important;
 
 .flex
+    display: flex !important;
+
     &-auto
         flex: 1 1 auto;
         min-width: 0;
@@ -192,7 +191,7 @@
     &-row-reverse
         flex-direction: row-reverse;
 
-.items
+.align
     &-start
         align-items: flex-start;
 
@@ -208,10 +207,10 @@
     &-stretch
         align-items: stretch;
 
-    .self-start
+.self
+    &-start
         align-self: flex-start;
 
-.self
     &-end
         align-self: flex-end;
 
