@@ -1,0 +1,81 @@
+.square
+    background-color: lighten($color.pink, 70%);
+    border: 2px solid rgba($color.base, 20%);
+    color: $color.base;
+    padding: 1.2rem;
+    font-weight: $fontWeight.semiBold;
+    border-radius: $borderRadius.base;
+    content: ' ';
+    width: 4.8rem;
+    height: 4.8rem;
+    display: block;
+    margin: 2px;
+    &.margined
+        margin: 0 auto 2rem
+
+.containerbox
+    min-height: 16rem;
+    padding: 2rem;
+    position: relative;
+    border-radius: $borderRadius.base;
+    border: 2px solid $borderColor.base;
+
+.dashedbox
+    min-height: 16rem;
+    padding: 2rem;
+    position: relative;
+    border-radius: $backgroundColor.base;
+    border: 2px dashed #efefef;
+    p
+        color: $textColor.header;
+        & + p
+            margin-top: 2.4rem;
+
+    &:after
+        width: 100%;
+        box-shadow: 0 0 0 2rem inset $backgroundColor.lightest;
+        height: 100%;
+        display: block;
+        content: ' ';
+        absolute: top left;
+        border-radius: $borderRadius.base;
+        z-index: -1;
+
+.paddedbox
+    min-height: 16rem;
+    padding: 2rem;
+    position: relative;
+    border-radius: $borderRadius.base;
+    border: 1px solid $borderColor.base;
+    p
+        color: $textColor.header;
+        & + p
+            margin-top: 2.4rem;
+
+.filled
+    // background-color: lighten($color.base, 55%);
+    border: 2px solid $color.base;
+    color: $color.base;
+    padding: 1.2rem;
+    font-weight: $fontWeight.semiBold;
+    border-radius: $borderRadius.base;
+
+    &.typography
+        display: flex;
+        padding: 1.2rem 0;
+        border-bottom: 1px solid $borderColor.base;
+        span
+            color: $textColor.header;
+            display: block;
+
+    &.shadow
+        padding: 1.2rem;
+        border-radius: $borderRadius.base;
+        margin-top: 2.4rem;
+        background-color: #fff;
+        border: 1px solid $borderColor.base;
+        p
+            color: $textColor.header;
+
+.fi
+    padding: .4rem .6rem;
