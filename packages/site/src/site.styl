@@ -4,6 +4,9 @@
 @import './../../kit/variables/*';
 @import './styles/*';
 
+.layout
+    margin: 12.4rem 0
+
 .hero
     margin: 0 0 4rem 0;
     h1
@@ -40,8 +43,8 @@
 
     &-subsection
         border-top: 1px solid $borderColor.base;
-        margin-top: 2.8rem;
-        padding-top: 2.8rem;
+        margin-top: 4rem;
+        padding-top: 4rem;
 
         .row + .row
             margin-top: 2.4rem;
@@ -60,6 +63,7 @@
 
             & > .content
                 border-radius: $borderRadius.base;
+                margin: 2rem 0;
                 .nav.menu
                     position: static;
                 .progress + .progress
@@ -68,8 +72,9 @@
                     margin-left: 1rem;
 
             & > .snippet
-                margin-top: 1rem;
                 position: relative;
+                code + code
+                    padding-left: 5.2rem;
 
             &.open
                 & > .toggle

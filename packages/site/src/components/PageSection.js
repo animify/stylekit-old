@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Highlight from 'react-highlight.js';
+import SyntaxHighlighter, { registerLanguage } from 'react-syntax-highlighter/prism-light';
+import markup from 'react-syntax-highlighter/languages/prism/markup';
+
+registerLanguage('markup', markup);
 
 export default class PageSection extends Component {
     constructor() {
@@ -20,7 +23,16 @@ export default class PageSection extends Component {
     render() {
         const { section, className } = this.props;
         const { showingSnippet } = this.state;
-
+        const lnStyle = {
+            position: 'absolute',
+            backgroundColor: '#fafafa',
+            color: '#D0CFD6',
+            width: '40px',
+            boxShadow: 'none',
+            borderRadius: '4px 0 0 4px',
+            textAlign: 'right',
+            zIndex: 200,
+        }
         return (
             <section className={`guide ${className}`}>
                 <div className="guide-description">
@@ -40,9 +52,9 @@ export default class PageSection extends Component {
                             </div>
                             { subsection.codeStyle === 'hidden' ? null
                                 : <div className="snippet">
-                                    <Highlight language="html">
+                                    <SyntaxHighlighter language="markup" lineNumberContainerStyle={lnStyle} useInlineStyles={false} showLineNumbers>
                                         {subsection.snippet}
-                                    </Highlight>
+                                    </SyntaxHighlighter>
                                 </div>
                             }
                         </div>

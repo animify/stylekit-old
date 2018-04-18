@@ -1,18 +1,18 @@
 code
     display: block;
     width: 100%;
-    padding: .8rem 1.2rem;
+    padding: 1.2rem 1.6rem;
     position: relative;
     border-radius: $borderRadius.base;
-    background-color: #fff;
+    background-color: $backgroundColor.lightest;
     color: $textColor.body;
     font-family: $fontFamily.code;
     font-size: $fontSize.sub;
     overflow: hidden;
     overflow-x: auto;
-    line-height: 1.6;
-    border: 1px solid $borderColor.base;
+    line-height: 1.8;
 
+    // border: 1px solid $borderColor.base;
     & + code
         margin-top: 1.2rem;
 
@@ -20,5 +20,4 @@ pre
     tab-size: 6;
     flex: 1;
     margin: 0;
-    overflow: auto;
     min-width: 0;

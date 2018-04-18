@@ -40,7 +40,7 @@ export default class Router extends Component {
     render() {
         return (
             <BrowserRouter>
-                <div>
+                <div className="layout">
                     <Route exact path="/" render={() => (<HomeLayout />)} />
 
                     { Router.stylePages.map(page => (
