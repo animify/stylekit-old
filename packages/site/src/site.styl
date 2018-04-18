@@ -4,16 +4,13 @@
 @import './../../kit/variables/*';
 @import './styles/*';
 
-.layout
-    margin: 12.4rem 0;
-    cf();
-    .hero
-        margin: 4rem 0;
-        h1
-            font-size: 6.8rem;
-        h3
-            color: $textColor.body;
-            font-weight: $fontWeight.book;
+.hero
+    margin: 0 0 4rem 0;
+    h1
+        font-size: 6.8rem;
+    h3
+        color: $textColor.body;
+        font-weight: $fontWeight.book;
 
 .menu
     .set
@@ -31,9 +28,6 @@
             relative: top .2rem left .4rem;
 
 .guide
-    display: flex;
-    flex-direction: column;
-
     & + .guide
         margin-top: 8rem;
 
@@ -45,7 +39,6 @@
             font-weight: $fontWeight.book;
 
     &-subsection
-        display: flex;
         border-top: 1px solid $borderColor.base;
         margin-top: 2.8rem;
         padding-top: 2.8rem;
@@ -53,16 +46,8 @@
         .row + .row
             margin-top: 2.4rem;
 
-        &-description
-            width: 30%;
-            padding-right: 2.8rem;
-
         .module
             position: relative;
-            display: flex;
-            flex-grow: 1;
-            flex-direction: column;
-            width: 70%;
 
             .container
                 background-color: #000;

@@ -52,10 +52,13 @@ export default class PageLayout extends Component {
         const { NavSections } = this.state;
 
         return (
-            <div>
-                <Navigation {...this.props} sections={NavSections} updateCurrentSection={this.updateCurrentSection} />
+            <section className="container split">
+                <aside className="sidebar">
+                    <Navigation {...this.props} sections={NavSections} updateCurrentSection={this.updateCurrentSection} />
+                </aside>
                 <PageContainer ref={(component) => { this.pageContainer = component; }} {...this.props} updateNavSections={this.updateNavSections} />
-            </div>
+            </section>
+
         );
     }
 }

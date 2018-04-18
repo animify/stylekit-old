@@ -32,21 +32,19 @@ export default class PageContainer extends Component {
         const currentSection = sections.find(section => currentSectionName === section.id);
 
         return (
-            <section className="container">
-                <div className="layout">
-                    <div className="hero">
-                        <h1>{title}</h1>
-                        <h3>{description}</h3>
-                    </div>
-                        { currentSection ?
-                            <GuideComponent key={`sample-${currentSection.id}`} section={currentSection} />
-                            : <div className="loaders">
-                                <PageLoader />
-                                <PageLoader />
-                            </div>
-                        }
+            <div className="body">
+                <div className="hero">
+                    <h1>{title}</h1>
+                    <h3>{description}</h3>
                 </div>
-            </section>
+                    { currentSection ?
+                        <GuideComponent key={`sample-${currentSection.id}`} section={currentSection} />
+                        : <div className="loaders">
+                            <PageLoader />
+                            <PageLoader />
+                        </div>
+                    }
+            </div>
         );
     }
 }
