@@ -49,7 +49,7 @@ export default class VariableSection extends Component {
             <section className="guide">
                 <div className="guide-description">
                     <h2>{section.title}</h2>
-                    <h4>{section.description}</h4>
+                    <h5>{section.description}</h5>
                 </div>
 
                 <div className="guide-subsection">

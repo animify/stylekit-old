@@ -90,6 +90,9 @@ export default class Navigation extends Component {
                 //     </div>
                 // </div>
                 <div className="list">
+                    <div className="item header capitalize">
+                        <h4>{sections.page}</h4>
+                    </div>
                     {sections.list.length > 0 && sections.list.map(section => <div class={selectedPage === section.title ? 'item active' : 'item'}><a role="presentation" key={`section-${section.title}`} onClick={() => { this.setItem(section.title); this.focusSection(section); }}>{section.title}</a></div>)}
                 </div>
         );

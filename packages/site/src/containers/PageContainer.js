@@ -33,17 +33,13 @@ export default class PageContainer extends Component {
 
         return (
             <div className="body">
-                <div className="hero">
-                    <h1>{title}</h1>
-                    <h3>{description}</h3>
-                </div>
-                    { currentSection ?
-                        <GuideComponent key={`sample-${currentSection.id}`} section={currentSection} />
-                        : <div className="loaders">
-                            <PageLoader />
-                            <PageLoader />
-                        </div>
-                    }
+                { currentSection ?
+                    <GuideComponent key={`sample-${currentSection.id}`} section={currentSection} />
+                    : <div className="loaders">
+                        <PageLoader />
+                        <PageLoader />
+                    </div>
+                }
             </div>
         );
     }
