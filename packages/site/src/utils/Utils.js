@@ -128,7 +128,7 @@ export default class Utils {
                 }
 
                 pageContainer.props.updateNavSections({
-                    current: currentSectionName ? currentSectionName.title : currentSectionNameOverride,
+                    current: currentSectionName ? currentSectionName.id : currentSectionNameOverride,
                     page: pageName,
                     list: pageSections.map(section => ({
                         id: section.id,
