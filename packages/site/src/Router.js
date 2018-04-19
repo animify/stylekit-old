@@ -41,9 +41,9 @@ export default class Router extends Component {
         return (
             <BrowserRouter>
                 <div className="layout">
-                    <Route exact path="/" render={() => (<HomeLayout />)} />
+                    <Route exact path="/" render={() => (<HomeLayout stylePages={Router.stylePages} />)} />
 
-                    { Router.stylePages.map(page => (
+                    { Router.stylePages.filter(p => p.active).map(page => (
                         <Route exact path={page.path} key={page.title} render={props => (<PageLayout {...props} guide={page.guide} title={page.title} description={page.description} />)} />
                     )) }
 

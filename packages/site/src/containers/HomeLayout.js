@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const HomeLayout = () => (
+const HomeLayout = ({ stylePages }) => (
     <section className="container">
         <div className="layout">
             <div className="hero">
@@ -9,44 +9,19 @@ const HomeLayout = () => (
                 <h3>Choose which part of the stylekit you want to view:</h3>
             </div>
             <div className="row selectables">
-                <div className="col-12@t col-6@m">
-                    <div className="selectable">
-                        <div className="inner">
-                            <h2>Components</h2>
-                            <p>Components Components Components Components</p>
+                {
+                    stylePages.filter(p => p.active).map(page => (
+                        <div className="col-12@t col-6@m">
+                            <div className="selectable">
+                                <div className="inner">
+                                    <h2>{page.title}</h2>
+                                    <p>{page.description}</p>
+                                </div>
+                                <Link to={`/${page.guide}`} className="explore">Explore <i data-minicon="arrow-right" /></Link>
+                            </div>
                         </div>
-                        <Link to="/components" className="explore">Explore <i data-minicon="arrow-right" /></Link>
-                    </div>
-                </div>
-                <div className="col-12@t col-6@m">
-                    <div className="selectable">
-                        <div className="inner">
-                            <h2>Layout</h2>
-                            <p>Components Components Components Components</p>
-                        </div>
-                        <Link to="/layout" className="explore">Explore <i data-minicon="arrow-right" /></Link>
-                    </div>
-                </div>
-            </div>
-            <div className="row selectables">
-                <div className="col-12@t col-6@m">
-                    <div className="selectable">
-                        <div className="inner">
-                            <h2>Utility</h2>
-                            <p>Components Components Components Components</p>
-                        </div>
-                        <Link to="/utility" className="explore">Explore <i data-minicon="arrow-right" /></Link>
-                    </div>
-                </div>
-                <div className="col-12@t col-6@m">
-                    <div className="selectable">
-                        <div className="inner">
-                            <h2>Variables</h2>
-                            <p>Components Components Components Components</p>
-                        </div>
-                        <Link to="/variables" className="explore">Explore <i data-minicon="arrow-right" /></Link>
-                    </div>
-                </div>
+                    ))
+                }
             </div>
         </div>
     </section>
