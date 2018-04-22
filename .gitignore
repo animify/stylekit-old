@@ -1,0 +1,5 @@
+node_modules
+packages/site/build
+packages/site/dist
+packages/site/node_modules
+packages/kit/node_modules
