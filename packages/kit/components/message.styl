@@ -1,7 +1,3 @@
-$borderWidth = 6px;
-$margin = 1.2rem 0;
-$padding = 1.2rem 1.6rem;
-
 messageStyle(type)
     border-color: $borderColor[type];
     background-color: lighten(@border-color, 90%);
@@ -11,12 +7,12 @@ messageStyle(type)
         color: darken(@border-color, 60%);
 
 .message
-    margin: $margin;
-    padding: $padding;
+    margin: 1.2rem 0;
+    padding: 1.2rem 1.6rem;
     border: 0;
-    border-left: $borderWidth solid $borderColor.base;
+    border-left: 6px solid $borderColor.base;
     border-radius: $borderRadius.base;
-    background-color: $backgroundColor.light;
+    background-color: $backgroundColor.lightest;
     color: $textColor.body;
     line-height: $lineHeightBase;
 
