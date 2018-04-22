@@ -2,8 +2,10 @@
     .item
         color: $textColor.light;
         line-height: $lineHeightBase;
-        padding: 1.2rem 0;
         display: inline-block;
+
+        & + .item
+            margin-left: 1.2rem;
 
         &:hover
             color: $textColor.body;
@@ -25,10 +27,13 @@
 
     &.basic
         padding: 0 2.4rem;
-        background-color: $backgroundColor.light;
+        background-color: $backgroundColor.lightest;
+
+        .item
+            padding: 1.2rem 0;
 
     &.nav
-        padding: 0 3.2rem;
+        padding: 0 2.4rem;
         background-color: #fff;
         fixed: top left;
         width: 100%;
@@ -108,9 +113,15 @@
                 display: block;
                 padding: 0;
 
+                & + .item
+                    margin-left: 0;
+
+                &.header
+                    font-size: $fontSize.h6;
+
             .item:not(.header)
                 & > a
-                    font-size: $fontSize.sub;
+                    font-size: $fontSize.body;
                     font-weight: $fontWeight.book;
                     color: $textColor.light;
 
