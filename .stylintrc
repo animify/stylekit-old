@@ -41,7 +41,7 @@
         "showHeaders": false,
         "truncate": true
     },
-    "semicolons": "always",
+    "semicolons": false,
     "sortOrder": false,
     "stackedProperties": "never",
     "trailingWhitespace": "never",

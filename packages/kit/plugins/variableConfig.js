@@ -1,4 +1,4 @@
-export default function () {
+module.exports = function () {
     const buildRegex = (startsWithArray) => {
         const string = startsWithArray.join('|^\\');
         return `(^\\${string})`;
