@@ -24,7 +24,7 @@ export default class Utils {
 
     static buildVariables(variables, guide) {
         const variablesStructure = guide.reduce((a, g) => {
-            a[g.id] = {...g, variables: []}
+            a[g.id] = { ...g, variables: [] }
             return a;
         }, {});
 
@@ -33,7 +33,7 @@ export default class Utils {
             const variableData = variable[1];
             const variableType = typeof variableData;
 
-            const belongsTo = guide.map(g => g.startsWith).find(g => variableName.startsWith(g.replace(/\$/,''))).replace(/\$/,'')
+            const belongsTo = guide.map(g => g.startsWith).find(g => variableName.startsWith(g.replace(/\$/, ''))).replace(/\$/, '')
             const variableDataArray = variablesStructure[belongsTo].variables;
 
             switch (variableType) {
@@ -119,7 +119,7 @@ export default class Utils {
                 pageContainer.setState({ sections });
 
                 if (pageName === 'variables') {
-                    const availableVariables = Object.values(sections).map(section => ({title: section.title, id: section.id}));
+                    const availableVariables = Object.values(sections).map(section => ({ title: section.title, id: section.id }));
                     currentSectionName = availableVariables.find(v => v.id === currentSectionNameOverride);
                     pageSections = availableVariables;
                 } else {
