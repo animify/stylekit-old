@@ -1,18 +1,8 @@
-$padding = 0 2.4rem;
-$navPadding = 0 3.2rem;
-$navMainPadding = 1.2rem 3.2rem;
-$itemLineHeight = $lineHeightBase;
-$itemPadding = 1.2rem 0;
-$navItemPadding = 1.2rem 0;
-$footerItemPadding = .2rem 0;
-$itemMargin = 0 0 0 2.4rem;
-
 .menu
     .item
         color: $textColor.light;
-        font-weight: $fontWeight.semiBold;
-        line-height: $itemLineHeight;
-        padding: $itemPadding;
+        line-height: $lineHeightBase;
+        padding: 1.2rem 0;
         display: inline-block;
 
         &:hover
@@ -27,18 +17,18 @@ $itemMargin = 0 0 0 2.4rem;
 
     & > .dropdown, & > .item, & .float-right > .dropdown, & .float-right > .item, & .float-left > .dropdown, & .float-left > .item
         & + .dropdown, & + .item
-            margin: $itemMargin;
+            margin: 0 0 0 2.4rem;
 
     .container
         & > .item + .item
-            margin: $itemMargin;
+            margin: 0 0 0 2.4rem;
 
     &.basic
-        padding: $padding;
+        padding: 0 2.4rem;
         background-color: $backgroundColor.light;
 
     &.nav
-        padding: $navPadding;
+        padding: 0 3.2rem;
         background-color: #fff;
         fixed: top left;
         width: 100%;
@@ -49,14 +39,14 @@ $itemMargin = 0 0 0 2.4rem;
             absolute: top 60px left;
 
         &.header
-            padding: $navMainPadding;
+            padding: 1.2rem 3.2rem;
 
             &.hasborder
                 box-shadow: none;
                 border-bottom: 1px solid $borderColor.base;
 
         .item
-            padding: $navItemPadding;
+            padding: 1.2rem 0;
 
         .logo
             padding: 0;
@@ -116,7 +106,7 @@ $itemMargin = 0 0 0 2.4rem;
 
             .item
                 display: block;
-                padding: $footerItemPadding;
+                padding: .2rem 0;
                 font-size: $fontSize.sub;
 
             .item:not(.header)
