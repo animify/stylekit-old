@@ -23,18 +23,18 @@ export default class Progress {
             const status = target.find('.status');
             const percentage = Math.ceil(target.attr('data-percent'));
 
-            $({countNum: 0}).animate({countNum: percentage}, {
+            $({ countNum: 0 }).animate({ countNum: percentage }, {
                 duration: 1600,
-                easing:'linear',
-                step: function() {
+                easing: 'linear',
+                step: function () {
                     let pct = '';
-                    if (percentage == 0){
+                    if (percentage == 0) {
                         pct = Math.floor(this.countNum) + '%';
-                    } else{
-                        pct = Math.floor(this.countNum+1) + '%';
+                    } else {
+                        pct = Math.floor(this.countNum + 1) + '%';
                     }
 
-                    status.text(pct) && target.css('width',pct);
+                    status.text(pct) && target.css('width', pct);
                 },
                 done: () => target.parent('.progress').addClass('loaded')
             });

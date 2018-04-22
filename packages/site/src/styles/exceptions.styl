@@ -3,24 +3,31 @@
         .flex
             height: 100px;
             background-color: $backgroundColor.light;
+
             & + .flex
                 margin-top: .8rem;
+
     &-flex-order
         .flex
             background-color: $backgroundColor.light;
+
     &-self-align
         [class*='self-']
             background-color: $backgroundColor.dark;
-            color: #fff
+            color: #fff;
+
     &-table-elements
         td
             padding: .8rem;
             background-color: $backgroundColor.light;
+
             & + td
                 border-left: .4rem solid #fff;
+
     &-flex-direction, &-flex-justify
         .flex
             background-color: $backgroundColor.light;
             padding: .4rem;
+
             & + .flex
                 margin-top: .8rem;

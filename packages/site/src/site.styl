@@ -5,10 +5,11 @@
 @import './styles/*';
 
 .layout
-    margin: 12.4rem 0
+    margin: 12.4rem 0;
 
 .hero
-    margin: 0 0 4rem 0;
+    margin: 0 0 4rem;
+
     h4
         color: $textColor.body;
         font-weight: $fontWeight.book;
@@ -16,12 +17,14 @@
 .menu
     .set
         display: inline;
+
     .set > .selecteditem
         relative: top .4rem left 2.4rem;
         font-weight: 500;
         color: $color.base;
         border-left: 2px solid $borderColor.base;
         padding-left: 2.4rem;
+
         svg
             width: 1.6rem;
             height: 1.6rem;
@@ -34,10 +37,11 @@
     &-description
         width: 100%;
         display: block;
+
         h5
             color: $textColor.body;
             font-weight: $fontWeight.book;
-            letter-spacing: 0
+            letter-spacing: 0;
 
     &-subsection
         border-top: 1px solid $borderColor.base;
@@ -56,27 +60,33 @@
                 width: 320px;
                 margin: 0 auto;
                 border-radius: $borderRadius.base;
+
                 &.fluid
                     width: 100%;
 
             & > .content
                 border-radius: $borderRadius.base;
                 margin: 2rem 0;
+
                 .nav.menu
                     position: static;
+
                 .progress + .progress
                     margin-top: 1rem;
+
                 .button + .button, .label + .label
                     margin-left: 1rem;
 
             & > .snippet
                 position: relative;
+
                 code + code
                     padding-left: 5.2rem;
 
             &.open
                 & > .toggle
                     background-color: $color.white;
+
                 & > .snippet
                     display: block;
 
@@ -93,6 +103,7 @@
     &.color
         .inner
             align-items: center;
+
             .style
                 display: inline-block;
                 content: ' ';
@@ -100,18 +111,22 @@
                 height: 4.8rem;
                 border-radius: 50%;
                 box-shadow: $boxShadow.close;
+
             .about
                 display: flex;
                 flex-direction: column;
                 margin-left: 1.6rem;
+
                 strong
                     color: $textColor.header;
+
                 small
                     color: $textColor.body;
 
     &.shape
         .inner
             align-items: center;
+
             .style
                 display: inline-block;
                 content: ' ';
@@ -121,12 +136,15 @@
                 box-shadow: none;
                 background-color: #fff;
                 border: 1px solid $borderColor.base;
+
             .about
                 display: flex;
                 flex-direction: column;
                 margin-left: 1.6rem;
+
                 strong
                     color: $textColor.header;
+
                 small
                     color: $textColor.body;
 
@@ -136,13 +154,17 @@
 
         .inner
             flex-direction: column;
+
             .style
                 color: $textColor.body;
-                width: 100%
+                width: 100%;
+
             .about
                 display: flex;
                 flex-direction: column;
+
                 strong
                     color: $textColor.header;
+
                 small
                     color: $textColor.body;

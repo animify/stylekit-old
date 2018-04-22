@@ -1,6 +1,6 @@
 {
     "blocks": false,
-    "brackets": false,
+    "brackets": "never",
     "colons": "always",
     "colors": "always",
     "commaSpace": "always",
@@ -10,7 +10,9 @@
     "depthLimit": false,
     "duplicates": false,
     "efficient": "always",
-    "exclude": [],
+    "exclude": [
+        "node_modules/**/*"
+    ],
     "extendPref": false,
     "globalDupe": false,
     "groupOutputByFile": true,
@@ -26,7 +28,7 @@
     "noImportant": true,
     "parenSpace": false,
     "placeholders": "always",
-    "prefixVarsWithDollar": "always",
+    "prefixVarsWithDollar": false,
     "quotePref": false,
     "reporterOptions": {
         "columns": [
@@ -44,7 +46,7 @@
     "stackedProperties": "never",
     "trailingWhitespace": "never",
     "universal": false,
-    "valid": true,
+    "valid": false,
     "zeroUnits": "never",
     "zIndexNormalize": false
 }
