@@ -9,11 +9,16 @@
     background-color: $backgroundColor.white;
     color: $textColor.body;
     font-weight: $fontWeight.semiBold;
-    font-size: $textColor.body;
+    font-size: $fontSize.body;
     line-height: $lineHeightBase;
     transition: box-shadow $animation-duration-m $animation-type-ease;
 
     &:hover
+        border-color: @color;
+        background-color: @color;
+        color: #fff;
+
+    &:active
         border-color: @color;
         background-color: @color;
         color: #fff;
@@ -30,9 +35,15 @@
     for color in $listColors
         &.{color}
             background-color: $color[color];
-            border: 1px solid @background-color;
+            border-color: @background-color;
             color: $color.white;
 
             &:hover
-                background-color: lighten(@background-color, 20%);
+                background-color: darken(@background-color, 8%);
+                border-color: @background-color;
+                color: #fff;
+
+            &:active
+                background-color: darken(@background-color, 16%);
+                border-color: @background-color;
                 color: #fff;
