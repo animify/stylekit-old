@@ -15,16 +15,16 @@ $dividedPadding = .8rem 0;
 
     li, .item
         margin: $itemMargin;
-        color: $textColor.body;
+        color: $textColor.light;
         font-size: $fontSize.body;
         line-height: $itemLineHeight;
         transition: padding 140ms ease, border-left 140ms ease;
 
         a
-            color: $textColor.body;
+            color: $textColor.light;
 
             &:hover
-                color: $color.base;
+                color: $textColor.body;
 
         &.header
             display: block;
@@ -36,7 +36,6 @@ $dividedPadding = .8rem 0;
 
             a
                 color: $textColor.header;
-                font-weight: $fontWeight.semiBold;
 
     &.ordered
         counter-reset: orderedListItem;

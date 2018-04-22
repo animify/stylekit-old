@@ -1,7 +1,3 @@
-$borderWidth = 1px;
-$padding = 1.2rem 1.6rem;
-$inputTransition = $animation-type-ease $animation-duration-m;
-
 .input
     position: relative;
     font-style: normal;
@@ -12,7 +8,7 @@ $inputTransition = $animation-type-ease $animation-duration-m;
         resize: vertical;
 
     input[type='text'], input[type='number'], input[type='password'], input[type='email'], textarea
-        padding: $padding;
+        padding: .8rem 1.6rem;
         min-width: 21.6rem;
         outline: 0;
         border: 0;
@@ -25,13 +21,15 @@ $inputTransition = $animation-type-ease $animation-duration-m;
         font-size: $fontSize.body;
         font-family: $fontFamily.body;
         line-height: $lineHeightBase;
-        transition: border-color $inputTransition;
+        transition: border-color $animation-type-ease $animation-duration-m;
 
         &:focus
             border-color: $color.base;
+            color: $textColor.body;
 
         +inputPlaceholder()
             color: $textColor.light;
+            opacity: 1;
 
     &.transparent
         input[type='text'], input[type='number'], input[type='password'], input[type='email'], textarea

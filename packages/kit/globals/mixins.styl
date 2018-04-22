@@ -6,13 +6,16 @@ disabled()
         {block};
 
 inputPlaceholder()
+    &::placeholder
+        {block};
+
     &::-webkit-input-placeholder
         {block};
 
-    &:-moz-placeholder
+    &::-moz-placeholder
         {block};
 
-    &:-ms-input-placeholder
+    &::-ms-input-placeholder
         {block};
 
 size($width, $height = $width)
