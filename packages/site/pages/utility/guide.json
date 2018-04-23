@@ -12,7 +12,7 @@
     {
         "folder": "flex",
         "title": "Flex",
-        "descHtml": "Utility classes to assist in positioning elements within your layout"
+        "descHtml": "Helper classes to assist with positioning flex elements."
     },
     {
         "folder": "modifiers",
