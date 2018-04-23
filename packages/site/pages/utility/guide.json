@@ -17,7 +17,7 @@
     {
         "folder": "modifiers",
         "title": "Modifiers",
-        "descHtml": "modifiers"
+        "descHtml": "Modifiers change certain properties on a given element."
     },
     {
         "folder": "text",
