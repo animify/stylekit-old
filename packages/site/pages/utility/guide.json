@@ -27,7 +27,7 @@
     {
         "folder": "verticalalign",
         "title": "Vertical align",
-        "descHtml": "verticalalign"
+        "descHtml": "Align various types of elements across the vertical axis."
     },
     {
         "folder": "visibility",
