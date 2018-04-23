@@ -1,0 +1,7 @@
+for $c in $listColors
+    .{$c}\\\@text
+        color: $color[$c];
+
+for $prop, $val in merge($backgroundColor, $color)
+    .{$prop}\\\@bg
+        background-color: $val;
