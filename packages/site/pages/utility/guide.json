@@ -2,7 +2,7 @@
     {
         "folder": "breakpoint",
         "title": "Breakpoints",
-        "descHtml": "Bl;ah blash"
+        "descHtml": "Breakpoints help by providing classes that only activate on each Breakpoint Identifier."
     },
     {
         "folder": "composition",
