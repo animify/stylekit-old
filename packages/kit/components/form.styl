@@ -36,8 +36,16 @@
             margin: 0;
             padding: 0;
             border: 0;
+            box-shadow: none;
             background-color: transparent;
+
+        textarea
+            resize: none;
 
     +disabled()
         input[type='text'], input[type='number'], input[type='password'], input[type='email'], textarea
             color: $textColor.disabled;
+
+            +inputPlaceholder()
+                color: $textColor.disabled;
+                opacity: 1;
