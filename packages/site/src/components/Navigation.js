@@ -35,7 +35,7 @@ export default class Navigation extends Component {
 
     setItem = (selectedPage) => {
         if (selectedPage === this.state.selectedPage) return;
-        this.setState({selectedPage});
+        this.setState({ selectedPage });
     }
 
     setHome = () => {
@@ -52,21 +52,21 @@ export default class Navigation extends Component {
         const sections = this.props.sections;
 
         switch (true) {
-        case this.isHome():
-            currentSectionName = undefined;
-            break;
-        case selectionName !== undefined:
-            currentSectionName = selectionName;
-            break;
-        case sections.current !== undefined:
-            currentSectionName = sections.current;
-            break;
-        case !selectionName && sections.list.length > 0:
-            currentSectionName = sections.list[0].title;
-            break;
-        default:
-            currentSectionName = selectionName;
-            break;
+            case this.isHome():
+                currentSectionName = undefined;
+                break;
+            case selectionName !== undefined:
+                currentSectionName = selectionName;
+                break;
+            case sections.current !== undefined:
+                currentSectionName = sections.current;
+                break;
+            case !selectionName && sections.list.length > 0:
+                currentSectionName = sections.list[0].title;
+                break;
+            default:
+                currentSectionName = selectionName;
+                break;
         }
 
         return currentSectionName;
@@ -91,7 +91,7 @@ export default class Navigation extends Component {
                         </div>
                     </div>
                 </header>
-                <div className="list">
+                <div className="list fixed">
                     <div className="item header capitalize">
                         <h4>{sections.page}</h4>
                     </div>
