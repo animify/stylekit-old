@@ -47,7 +47,7 @@
     {
         "folder": "table",
         "title": "Table",
-        "descHtml": "Orgnanize data into something more readable."
+        "descHtml": "Present readable data in a two-dimensional table comprised of rows and columns."
     },
     {
         "folder": "tooltip",

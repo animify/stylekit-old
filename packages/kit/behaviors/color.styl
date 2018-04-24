@@ -1,13 +1,13 @@
-for $c in $listColors
+for $prop, $val in merge($backgroundColor, $color)
     .{$c}\\\@text
-        color: $color[$c] !important;
+        color: $val !important;
 
-for $c in $listColors
-    .{$c}\\\@border
-        border-color: $color[$c] !important;
+for $prop, $val in merge($backgroundColor, $color)
+    .{$prop}\\\@border
+        border-color: $val !important;
 
         &::before, &::after
-            border-color: $color[$c] !important;
+            border-color: $val !important;
 
 for $prop, $val in merge($backgroundColor, $color)
     .{$prop}\\\@bg
