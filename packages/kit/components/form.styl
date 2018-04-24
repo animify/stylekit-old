@@ -8,7 +8,7 @@
         resize: vertical;
 
     input[type='text'], input[type='number'], input[type='password'], input[type='email'], textarea
-        padding: .8rem 1.6rem;
+        padding: .8rem 1.4rem;
         min-width: 21.6rem;
         outline: 0;
         border: 0;
@@ -16,7 +16,7 @@
         border-radius: $borderRadius.base;
         background-color: $backgroundColor.white;
         box-shadow: $boxShadow.form;
-        color: $textColor.body;
+        color: $textColor.header;
         text-align: left;
         font-size: $fontSize.body;
         font-family: $fontFamily.body;
@@ -25,10 +25,9 @@
 
         &:focus
             border-color: $color.base;
-            color: $textColor.body;
 
         +inputPlaceholder()
-            color: $textColor.light;
+            color: $textColor.body;
             opacity: 1;
 
     &.transparent

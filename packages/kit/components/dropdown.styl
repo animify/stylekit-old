@@ -8,7 +8,7 @@
     .menu
         absolute: top 3.2rem left 0;
         z-index: 800;
-        padding: .8rem 0;
+        padding: 1.2rem 0;
         min-width: 21.6rem;
         border: 1px solid $borderColor.base;
         border-radius: $borderRadius.base;
@@ -26,21 +26,21 @@
             padding: .4rem 1.8rem;
 
             &.header
-                color: $textColor.body;
+                color: $textColor.header;
                 font-weight: $fontWeight.semiBold;
                 font-size: $fontSize.body;
 
-            &:hover
+            &:not(.header):not(.divider):hover
                 background-color: $backgroundColor.lighter;
 
                 a
-                    color: $textColor.body;
+                    color: $textColor.header;
 
-            &:active
+            &:not(.header):not(.divider):active
                 background-color: $backgroundColor.light;
 
                 a
-                    color: $textColor.body;
+                    color: $textColor.header;
 
     &.open
         .menu

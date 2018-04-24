@@ -1,6 +1,6 @@
 .menu
     .item
-        color: $textColor.light;
+        color: $textColor.body;
         line-height: $lineHeightBase;
         display: inline-block;
 
@@ -8,10 +8,10 @@
             margin-left: 1.2rem;
 
         &:hover
-            color: $textColor.body;
+            color: $textColor.header;
 
         &.active
-            color: $textColor.header;
+            color: $color.base;
 
         &.header
             color: $textColor.header;
@@ -44,7 +44,7 @@
             absolute: top 60px left;
 
         &.header
-            padding: 1.2rem 3.2rem;
+            padding: 1rem 3.2rem;
 
             &.hasborder
                 box-shadow: none;
@@ -123,7 +123,7 @@
                 & > a
                     font-size: $fontSize.body;
                     font-weight: $fontWeight.book;
-                    color: $textColor.light;
+                    color: $textColor.body;
 
                     &:hover
-                        color: $textColor.body;
+                        color: $textColor.header;
