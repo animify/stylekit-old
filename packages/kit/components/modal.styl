@@ -6,16 +6,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 140ms ease;
 
-    .background
+    & > .background
         fixed: top left;
         display: block;
         content: ' ';
         width: 100%;
         height: 100%;
-        background-color: rgba($backgroundColor.black, .4);
+        background-color: transparent;
+        will-change: background-color;
+        transition: background-color 140ms ease;
 
-    .content
+    & > .content
         position: relative;
         z-index: 3050;
         width: fit-content;
@@ -24,20 +29,35 @@
         background-color: $backgroundColor.white;
         border-radius: $borderRadius.base;
         box-shadow: $boxShadow.distant;
+        will-change: transform, opacity;
+        transform: scale(0);
+        opacity: 0;
+        transition: transform 140ms ease, opacity 140ms ease;
 
-        .header, .body, .footer
+        & > .header, & > .body, & > .footer
             padding-right: 3.2rem;
             padding-left: 3.2rem;
 
-        .header
+        & > .header
             padding-top: 2.4rem;
             padding-bottom: 2.4rem;
 
-        .body
+        & > .body
             padding-bottom: 2.4rem;
 
-        .footer
+        & > .footer
             padding-top: 2rem;
             background-color: $backgroundColor.lightest;
             padding-bottom: 2rem;
-            border-radius: 0 0 $borderRadius.base ((((((($borderRadius.base)))))));
+            border-radius: 0 0 $borderRadius.base (((((((($borderRadius.base))))))));
+
+    &.open
+        pointer-events: auto;
+        opacity: 1;
+
+        & > .background
+            background-color: rgba($backgroundColor.black, .4);
+
+        & > .content
+            transform: scale(1);
+            opacity: 1;

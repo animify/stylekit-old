@@ -22,11 +22,6 @@
         background-color: $backgroundColor.lighter;
         color: $textColor.header;
 
-    +disabled()
-        color: $color.body !important;
-        background-color: $backgroundColor.grey;
-        border-color: @background-color;
-
     &.transparent
         background-color: transparent;
         color: $color.base;
@@ -55,3 +50,8 @@
                 background-color: darken(@background-color, 16%);
                 border-color: @background-color;
                 color: #fff;
+
+    +disabled()
+        color: $color.body !important;
+        background-color: $backgroundColor.grey;
+        border-color: @background-color;
