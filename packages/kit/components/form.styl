@@ -1,6 +1,13 @@
 .input
     position: relative;
     font-style: normal;
+    display: flex;
+    flex-direction: column;
+
+    label
+        font-size: $fontSize.sub;
+        color: $textColor.header;
+        font-weight: $fontWeight.semiBold;
 
     textarea
         min-height: 8rem;
@@ -22,13 +29,28 @@
         font-family: $fontFamily.body;
         line-height: $lineHeightBase;
         transition: border-color $animation-type-ease $animation-duration-m;
+        order: 2;
+
+        & + label
+            margin-bottom: .4rem;
+            order: 1;
 
         &:focus
             border-color: $color.base;
+            box-shadow: $boxShadow.formFocus;
+
+            & + label
+                color: $color.base;
 
         +inputPlaceholder()
             color: $textColor.body;
             opacity: 1;
+
+    input[type='password']
+        font-family: small-caption;
+
+        +inputPlaceholder()
+            font-family: $fontFamily.body;
 
     &.transparent
         input[type='text'], input[type='number'], input[type='password'], input[type='email'], textarea
@@ -48,3 +70,12 @@
             +inputPlaceholder()
                 color: $textColor.disabled;
                 opacity: 1;
+
+    & + .input
+        margin-top: 1.4rem;
+
+    &.full
+        input[type='text'], input[type='number'], input[type='password'], input[type='email'], textarea
+            max-width: none;
+            display: block;
+            width: 100%;

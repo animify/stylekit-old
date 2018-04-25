@@ -35,6 +35,11 @@
         "descHtml": "Menu components can be used for grouped navigation."
     },
     {
+        "folder": "modal",
+        "title": "Modal",
+        "descHtml": "Modal component."
+    },
+    {
         "folder": "message",
         "title": "Message",
         "descHtml": "A simple way to alert a user with a certain behaviour."

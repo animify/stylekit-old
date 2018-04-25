@@ -12,21 +12,29 @@
     font-size: $fontSize.body;
     line-height: $lineHeightBase;
     transition: box-shadow $animation-duration-m $animation-type-ease;
+    box-shadow: $boxShadow.form;
 
     &:hover
-        border-color: @color;
-        background-color: @color;
-        color: #fff;
+        background-color: $backgroundColor.lightest;
+        color: $textColor.header;
 
     &:active
-        border-color: @color;
-        background-color: @color;
-        color: #fff;
+        background-color: $backgroundColor.lighter;
+        color: $textColor.header;
 
     +disabled()
         color: $color.body !important;
         background-color: $backgroundColor.grey;
         border-color: @background-color;
+
+    &.transparent
+        background-color: transparent;
+        color: $color.base;
+        border-color: transparent;
+
+        &:hover
+            background-color: $backgroundColor.light;
+            border-color: @background-color;
 
     for size in $sizeList
         &.{size}
