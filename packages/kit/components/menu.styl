@@ -5,7 +5,7 @@
         display: inline-block;
 
         & + .item
-            margin-left: 1.2rem;
+            margin-left: 1.6rem;
 
         &:hover
             color: $textColor.header;
@@ -19,7 +19,7 @@
 
     & > .dropdown, & > .item, & .float-right > .dropdown, & .float-right > .item, & .float-left > .dropdown, & .float-left > .item
         & + .dropdown, & + .item
-            margin: 0 0 0 2.4rem;
+            margin: 0 0 0 3.6rem;
 
     .container
         & > .item + .item
@@ -44,7 +44,8 @@
             absolute: top 60px left;
 
         &.header
-            padding: 1rem 3.2rem;
+            padding: .8rem 3.2rem;
+            background-color: rgba($backgroundColor.white, .8);
 
             &.hasborder
                 box-shadow: none;

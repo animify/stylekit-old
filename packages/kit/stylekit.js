@@ -1,4 +1,4 @@
-import { Accordion, Dropdown, Progress } from './js/components'
+import { Accordion, Dropdown, Modal, Progress } from './js/components'
 
 class Stylekit {
     constructor() {
@@ -10,6 +10,7 @@ class Stylekit {
     initializeComponents() {
         this.components.accordion = new Accordion();
         this.components.dropdown = new Dropdown();
+        this.components.modal = new Modal();
         this.components.progress = new Progress();
     }
 }

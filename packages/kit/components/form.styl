@@ -35,6 +35,13 @@
             margin-bottom: .4rem;
             order: 1;
 
+        &:hover
+            border-color: $borderColor.dark;
+            box-shadow: $boxShadow.formFocus;
+
+            & + label
+                color: $textColor.header;
+
         &:focus
             border-color: $color.base;
             box-shadow: $boxShadow.formFocus;
@@ -43,7 +50,7 @@
                 color: $color.base;
 
         +inputPlaceholder()
-            color: $textColor.body;
+            color: $textColor.light;
             opacity: 1;
 
     input[type='password']

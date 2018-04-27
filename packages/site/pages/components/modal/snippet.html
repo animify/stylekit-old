@@ -1,5 +1,6 @@
 <section class="snippet-section" title="Basic Modal" subtitle="A basic modal." />
-<div class="modal">
+<a class="button base" modal-toggle="sign-in">Open a sign in modal</a>
+<div class="modal" modal-name="sign-in">
     <div class="background" />
     <div class="content">
         <div class="header">
@@ -22,7 +23,7 @@
                     <a>Don't have an account? Sign up.</a>
                 </small>
                 <div>
-                    <a class="button">Cancel</a>
+                    <a class="button" modal-cancel>Cancel</a>
                     <a class="button base">Sign in</a>
                 </div>
             </div>
