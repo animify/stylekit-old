@@ -2,6 +2,12 @@ import React, { Component } from 'react';
 import tinycolor from 'tinycolor2';
 import $ from 'jquery';
 import variableDefs from './../definitions/variables';
+import jsHTML from 'js-beautify';
+
+const options = {
+  "indent_size": 4,
+  "unformatted": ['abbr', 'area', 'audio', 'b', 'bdi', 'bdo', 'br', 'button', 'canvas', 'cite', 'code', 'data', 'datalist', 'del', 'dfn', 'em', 'embed', 'i', 'iframe', 'ins', 'kbd', 'keygen', 'map', 'mark', 'math', 'meter', 'noscript', 'object', 'output', 'progress', 'q', 'ruby', 's', 'samp', 'select', 'small', 'strong', 'sub', 'sup', 'svg', 'template', 'time', 'u', 'var', 'video', 'wbr', 'text', 'acronym', 'address', 'big', 'dt', 'ins', 'strike', 'tt']
+}
 
 export default class Utils {
     static buildCSSfromArray(arrays) {
@@ -93,15 +99,20 @@ export default class Utils {
                 trimmedSnippet = section.nextAll();
             }
 
-            const snippetHtml = trimmedSnippet.clone().wrapAll('<div>').parent();
+            let snippetHtml = trimmedSnippet.clone().wrapAll('<div>').parent();
             snippetHtml.contents().filter(() => this.nodeType === 3).remove();
+
+            const codeHtml = snippetHtml.clone();
+            codeHtml.find('[hidechildren]').empty().removeAttr('hidechildren').append('...');
+            snippetHtml.find('[hidechildren]').removeAttr('hidechildren');
 
             const newSubsection = {
                 title: section.attr('title'),
                 subtitle: section.attr('subtitle'),
                 codeStyle: section.attr('codeStyle'),
                 class: section.attr('class').replace(/snippet-section\b/g, '').trim(),
-                snippet: snippetHtml.html()
+                snippet: jsHTML.html(snippetHtml.html(), options),
+                displaySnippet: jsHTML.html(codeHtml.html(), options),
             };
 
             subsections.push(newSubsection);

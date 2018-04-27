@@ -53,7 +53,7 @@ export default class PageSection extends Component {
                             { subsection.codeStyle === 'hidden' ? null
                                 : <div className="snippet">
                                     <SyntaxHighlighter language="markup" lineNumberContainerStyle={lnStyle} useInlineStyles={false} showLineNumbers>
-                                        {subsection.snippet}
+                                        {subsection.displaySnippet}
                                     </SyntaxHighlighter>
                                 </div>
                             }
