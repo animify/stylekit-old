@@ -1,4 +1,4 @@
-.modal
+.modal-container
     fixed: top left;
     width: 100%;
     height: 100%;
@@ -20,7 +20,7 @@
         will-change: background-color;
         transition: background-color 140ms ease;
 
-    & > .content
+    & > .modal
         position: relative;
         z-index: 3050;
         width: fit-content;
@@ -58,6 +58,6 @@
         & > .background
             background-color: rgba($backgroundColor.black, .4);
 
-        & > .content
+        & > .modal
             transform: scale(1);
             opacity: 1;
