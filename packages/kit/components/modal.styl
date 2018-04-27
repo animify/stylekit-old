@@ -20,6 +20,19 @@
         will-change: background-color;
         transition: background-color 140ms ease;
 
+    & > .modal-x
+        display: block;
+        fixed: top 2.4rem right 2.4rem;
+        height: 4rem;
+        width: 4rem;
+        background-color: $backgroundColor.light;
+        border-radius: 50%;
+        content: ' ';
+        will-change: transform, opacity;
+        transform: scale(0);
+        opacity: 0;
+        transition: transform 140ms ease, opacity 140ms ease;
+
     & > .modal
         position: relative;
         z-index: 3050;
@@ -50,13 +63,33 @@
             background-color: $backgroundColor.lightest;
             padding-bottom: 2rem;
             border-radius: 0 0 $borderRadius.base (((((((($borderRadius.base))))))));
+            .subtext
+                display: block
+                margin-top: 2rem;
+
+    &.overlay
+        & > .modal
+            background-color: transparent
+            border-radius: 0
+            box-shadow: none
+            & > .footer
+                padding-top: 0;
+                background-color: transparent
+                border-radius: 0
 
     &.open
         pointer-events: auto;
         opacity: 1;
 
-        & > .background
+        &:not(.overlay) > .background
             background-color: rgba($backgroundColor.black, .4);
+
+        &.overlay > .background
+            background-color: $backgroundColor.white;
+
+        & > .modal-x
+            transform: scale(1);
+            opacity: 1;
 
         & > .modal
             transform: scale(1);
