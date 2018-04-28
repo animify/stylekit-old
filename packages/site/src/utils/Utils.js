@@ -121,31 +121,41 @@ export default class Utils {
         return subsections;
     }
 
-    static importPage(pageName, pageContainer, currentSectionNameOverride) {
+    static loadSection(pageName, section) {
+        console.log('loading section', pageName, section);
+        return new Promise((resolve, reject) => {
+            import(`./../../pages/${pageName}/${section.folder}/snippet.html`)
+                .then((snippet) => resolve({
+                    ...section,
+                    id: section.folder,
+                    subsections: Utils.buildSnippet($(snippet))
+                }));
+        })
+
+    }
+
+    static importPage(pageName, pageContainer, sectionName) {
         import(`./../../pages/${pageName}/guide.json`).then((pageGuide) => {
             let currentSectionName = null;
             let pageSections = null;
 
-            const setPageData = (sections) => {
-                pageContainer.setState({ sections });
+            const setPageData = (sections, section) => {
+                pageContainer.setState({ sections, section });
 
                 if (pageName === 'variables') {
                     const availableVariables = Object.values(sections).map(section => ({ title: section.title, id: section.id }));
-                    currentSectionName = availableVariables.find(v => v.id === currentSectionNameOverride);
+                    currentSectionName = availableVariables.find(v => v.id === sectionName);
                     pageSections = availableVariables;
                 } else {
-                    currentSectionName = pageGuide.find(guideSection => guideSection.folder === currentSectionNameOverride);
                     pageSections = sections;
                 }
 
-                pageContainer.props.updateNavSections({
-                    current: currentSectionName ? currentSectionName.id : currentSectionNameOverride,
+                pageContainer.props.updateSectionNames({
+                    current: sectionName,
                     page: pageName,
                     list: pageSections.map(section => ({
-                        id: section.id,
-                        title: section.title,
-                        pageName: pageName,
-                        section: pageContainer[Utils.cleanString(section.id)]
+                        ...section,
+                        page: pageName,
                     }))
                 });
             }
@@ -154,20 +164,10 @@ export default class Utils {
                 const variables = Utils.buildVariables(variableDefs, pageGuide);
                 setPageData(variables);
             } else {
-                const pageImports = pageGuide.map(guideSection => new Promise((resolve) => {
-                    import(`./../../pages/${pageName}/${guideSection.folder}/snippet.html`)
-                        .then((snippet) => resolve({
-                            ...guideSection,
-                            id: guideSection.folder,
-                            subsections: Utils.buildSnippet($(snippet))
-                        }));
-                }));
-
-                Promise.all(pageImports)
-                    .then((sections) => setPageData(sections))
-                    .catch((e) => {
-                        console.debug(`Stylekit: Oops, looks like you're missing a snippet file. ${e.message}`);
-                    });
+                const pageSection = sectionName ? pageGuide.find(g => g.folder === sectionName) : pageGuide[0];
+                Utils.loadSection(pageName, pageSection).then(section => {
+                    setPageData(pageGuide, section)
+                });
             }
         });
     }

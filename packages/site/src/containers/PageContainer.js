@@ -10,6 +10,7 @@ import PageLoader from './../components/PageLoader';
 export default class PageContainer extends Component {
     state = {
         sections: [],
+        section: null,
         currentSectionName: this.props.match.params.type
     }
 
@@ -20,21 +21,33 @@ export default class PageContainer extends Component {
     componentDidUpdate() {
         if (!this.props.match.params.type) {
             const section = this.state.sections[0];
-            this.setState({currentSectionName: section.id})
-            this.props.history.replace(`${this.props.match.url}/${section.id}`);
+            Utils.loadSection(section.page, section).then(section => {
+                this.setState({section});
+                this.props.history.replace(`/${section.page}/${section.id}`);
+            });
+        }
+    }
+
+    shouldComponentUpdate(nextProps, nextState) {
+        if (this.state.section !== null) {
+            return this.state.section.folder !== nextState.section.folder;
+        } else {
+            return true;
         }
     }
 
     render() {
         const { title, description, guide } = this.props;
-        const { sections, list, currentSectionName } = this.state;
+        const { section, sections, list, currentSectionName } = this.state;
         const GuideComponent = guide === 'variables' ? VariableSection : PageSection;
         const currentSection = sections.find(section => currentSectionName === section.id);
 
+        console.log('section', section);
+
         return (
             <div className="body">
-                { currentSection ?
-                    <GuideComponent key={`sample-${currentSection.id}`} section={currentSection} />
+                { section !== null ?
+                    <GuideComponent key={`sample-${section.id}`} section={section} />
                     : <div className="loaders">
                         <PageLoader />
                         <PageLoader />

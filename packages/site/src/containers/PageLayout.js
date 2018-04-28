@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import minicons from 'minicons';
 import Navigation from './../components/Navigation';
+import Sidebar from './../components/Sidebar';
 import PageContainer from './PageContainer';
 
 export default class PageLayout extends Component {
@@ -8,13 +9,13 @@ export default class PageLayout extends Component {
         super();
 
         this.state = {
-            NavSections: {
+            SectionNames: {
                 current: undefined,
                 list: []
             }
         };
 
-        this.updateNavSections = this.updateNavSections.bind(this);
+        this.updateSectionNames = this.updateSectionNames.bind(this);
         this.updateCurrentSection = this.updateCurrentSection.bind(this);
     }
 
@@ -38,25 +39,27 @@ export default class PageLayout extends Component {
         minicons.swap();
     }
 
-    updateNavSections(componentList) {
+    updateSectionNames(componentList) {
         this.setState({
-            NavSections: componentList
+            SectionNames: componentList
         });
     }
 
-    updateCurrentSection(currentSectionName) {
-        this.pageContainer.setState({ currentSectionName });
+    updateCurrentSection(section) {
+        this.pageContainer.setState({ section });
     }
 
     render() {
-        const { NavSections } = this.state;
+        const { SectionNames } = this.state;
 
         return (
             <section className="container split">
+                <Navigation {...this.props} />
+
                 <aside className="sidebar">
-                    <Navigation {...this.props} sections={NavSections} updateCurrentSection={this.updateCurrentSection} />
+                    <Sidebar {...this.props} sections={SectionNames} updateCurrentSection={this.updateCurrentSection} />
                 </aside>
-                <PageContainer ref={(component) => { this.pageContainer = component; }} {...this.props} updateNavSections={this.updateNavSections} />
+                <PageContainer ref={(component) => { this.pageContainer = component; }} {...this.props} updateSectionNames={this.updateSectionNames} />
             </section>
 
         );
