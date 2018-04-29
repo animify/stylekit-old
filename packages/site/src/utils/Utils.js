@@ -136,7 +136,6 @@ export default class Utils {
 
     static importPage(pageName, pageContainer, sectionName) {
         import(`./../../pages/${pageName}/guide.json`).then((pageGuide) => {
-            let currentSectionName = null;
             let pageSections = null;
 
             const setPageData = (sections, section) => {
@@ -144,7 +143,6 @@ export default class Utils {
 
                 if (pageName === 'variables') {
                     const availableVariables = Object.values(sections).map(section => ({ title: section.title, id: section.id }));
-                    currentSectionName = availableVariables.find(v => v.id === sectionName);
                     pageSections = availableVariables;
                 } else {
                     pageSections = sections;
@@ -162,11 +160,14 @@ export default class Utils {
 
             if (pageName === 'variables') {
                 const variables = Utils.buildVariables(variableDefs, pageGuide);
-                setPageData(variables);
+                const pageSection = sectionName ? variables.find(g => g.id === sectionName) : variables[0];
+                console.log(variables);
+                setPageData(variables, pageSection);
             } else {
-                const pageSection = sectionName ? pageGuide.find(g => g.folder === sectionName) : pageGuide[0];
+                const components = pageGuide.map(section => ({...section, id: section.folder}));
+                const pageSection = sectionName ? components.find(g => g.folder === sectionName) : components[0];
                 Utils.loadSection(pageName, pageSection).then(section => {
-                    setPageData(pageGuide, section)
+                    setPageData(components, section)
                 });
             }
         });

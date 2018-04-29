@@ -10,27 +10,16 @@ import PageLoader from './../components/PageLoader';
 export default class PageContainer extends Component {
     state = {
         sections: [],
-        section: null,
-        currentSectionName: this.props.match.params.type
+        section: null
     }
 
     componentDidMount() {
         Utils.importPage(this.props.guide, this, this.props.match.params.type);
     }
 
-    componentDidUpdate() {
-        if (!this.props.match.params.type) {
-            const section = this.state.sections[0];
-            Utils.loadSection(section.page, section).then(section => {
-                this.setState({section});
-                this.props.history.replace(`/${section.page}/${section.id}`);
-            });
-        }
-    }
-
     shouldComponentUpdate(nextProps, nextState) {
         if (this.state.section !== null) {
-            return this.state.section.folder !== nextState.section.folder;
+            return this.state.section.id !== nextState.section.id;
         } else {
             return true;
         }
@@ -38,11 +27,11 @@ export default class PageContainer extends Component {
 
     render() {
         const { title, description, guide } = this.props;
-        const { section, sections, list, currentSectionName } = this.state;
+        const { section, sections, list } = this.state;
         const GuideComponent = guide === 'variables' ? VariableSection : PageSection;
-        const currentSection = sections.find(section => currentSectionName === section.id);
 
         console.log('section', section);
+        console.log('guide', guide);
 
         return (
             <div className="body">

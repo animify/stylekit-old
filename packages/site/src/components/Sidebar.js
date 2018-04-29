@@ -7,40 +7,40 @@ import Utils from '../utils/Utils';
 
 export default class Sidebar extends Component {
     state = {
-        selectedPage: undefined,
+        selectedSection: undefined,
     }
 
     componentDidUpdate() {
-        const param = this.props.match.params.type;
+        let param = this.props.match.params.type;
+
+        if (!param && this.props.sections) {
+            param = this.props.sections.list[0].id;
+        }
 
         this.setItem(param);
     }
 
     focusSection = (section) => {
-        console.log('focusing section', section);
-        Utils.loadSection(section.page, section).then(section => {
-            this.props.updateCurrentSection(section);
-            this.props.history.replace(`/${section.page}/${section.id}`);
-        });
+        this.props.updateCurrentSection(section);
     };
 
-    setItem = (selectedPage) => {
-        if (selectedPage === this.state.selectedPage) return;
-        this.setState({ selectedPage });
+    setItem = (selectedSection) => {
+        if (selectedSection === this.state.selectedSection) return;
+        this.setState({ selectedSection });
     }
 
     render() {
-        const { selectedPage } = this.state;
+        const { selectedSection } = this.state;
         const { sections } = this.props;
 
         return (
-            <div>
+            <div className="list fixed">
                 <div className="item header capitalize">
                     <h4>{sections.page}</h4>
                 </div>
                 {
                     sections.list.length > 0 &&
-                    sections.list.map(section => <div key={`section-${section.folder}`} className={selectedPage === section.folder ? 'item active' : 'item'}><a role="presentation" onClick={() => { this.setItem(section.id); this.focusSection(section); }}>{section.title}</a></div>)
+                    sections.list.map(section => <div key={`section-${section.id}`} className={selectedSection === section.id ? 'item active' : 'item'}><a role="presentation" onClick={() => { this.setItem(section.id); this.focusSection(section); }}>{section.title}</a></div>)
                 }
             </div>
         );

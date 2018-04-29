@@ -2,10 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 export default class VariableSection extends Component {
-    toggleSnippet() {
-        this.setState({ showingSnippet: !this.state.showingSnippet });
-    }
-
     buildByDisplayStyle(varName, varCssStyle) {
         const { section } = this.props;
 
@@ -44,6 +40,8 @@ export default class VariableSection extends Component {
 
     render() {
         const { section } = this.props;
+
+        console.log('rendering', section);
 
         return (
             <section className="guide">
