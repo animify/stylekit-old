@@ -1,45 +1,37 @@
-$arrowBoxShadow = 1px 1px 0 0 $borderColor.base;
-$invertedArrowBoxShadow = -1px -1px 0 0 $borderColor.base;
-$bodyPadding = .6em 1.2em;
-
-.tooltip[data-content]
+.tooltip[tooltip-text]
     position: relative;
 
     &:before
         position: absolute;
-        z-index: 24;
-        width: .8rem;
-        height: .8rem;
-        background-color: $backgroundColor.white;
-        box-shadow: $arrowBoxShadow;
+        z-index: 18;
+        width: 1.2em;
+        height: 1.2em;
+        background-color: $backgroundColor.dark;
         content: ' ';
         opacity: 0;
-        transition: all cubic-bezier(.02, .49, .01, .97) .14s;
+        transition: transform cubic-bezier(.02, .49, .01, .97) 140ms, opacity ease 70ms
         transform: rotate(45deg) scale(0);
-        transform-origin: center top;
+        transform-origin: center;
         will-change: transform, opacity;
-
-        ../[data-position~=bottom]:before
-            box-shadow: $invertedArrowBoxShadow;
+        border-radius: 2px;
 
     &:after
         position: absolute;
         z-index: 20;
-        padding: $bodyPadding;
-        max-width: none;
-        border: 1px solid $borderColor.base;
+        padding: .4em .8em;
         border-radius: $borderRadius.base;
-        background-color: $backgroundColor.white;
-        box-shadow: $boxShadow.subtle;
-        color: $textColor.body;
-        content: attr(data-content);
+        background-color: $backgroundColor.dark;
+        color: $textColor.white;
+        content: attr(tooltip-text);
         text-align: left;
         white-space: nowrap;
         cursor: default;
-        transition: all cubic-bezier(.02, .49, .01, .97) .14s;
+        transition: transform cubic-bezier(.02, .49, .01, .97) 140ms, opacity ease 70ms
         transform: scale(0);
         pointer-events: none;
         will-change: transform, opacity;
+        max-width: none;
+        transform-origin: left bottom;
 
     &.dark
         &:before
@@ -60,38 +52,51 @@ $bodyPadding = .6em 1.2em;
             transform: scale(1);
 
     for size in $sizeList
-        &[data-text={size}]
+        &[tooltip-size={size}]
             &:after
-                font-size: lookup('$font-size-' + size);
+                font-size: $variantFontSize[size];
 
-    &[data-position~=top]
+    &:not([tooltip-position])
+        &:before
+            absolute: bottom 100% left 1.2em;
+            margin-bottom: .4em;
+        &:after
+            absolute: left 0 bottom 100%;
+            margin-bottom: .6em;
+
+    &[tooltip-position~=top]
         &:before
             bottom: 100%;
-            margin-bottom: .2rem;
+            margin-bottom: .4em;
 
         &:after
             bottom: 100%;
-            margin-bottom: .6rem;
+            margin-bottom: .6em;
 
-    &[data-position~=bottom]
+    &[tooltip-position~=left]
+        &:before
+            left: 1.2em;
+
+    &[tooltip-position~=right]
+        &:before
+            right: 1.2em;
+
+    &[tooltip-position~=bottom]
         &:before
             top: 100%;
-            margin-top: .4rem;
+            margin-top: .4em;
 
         &:after
             top: 100%;
-            margin-top: .6rem;
+            margin-top: .6em;
 
-    &[data-position='top left']
-        &:before
-            left: 1.2rem;
-
+    &[tooltip-position='top left']
         &:after
             right: auto;
             left: 0;
             transform-origin: left bottom;
 
-    &[data-position='top center']
+    &[tooltip-position='top center']
         &:before
             left: 50%;
 
@@ -107,25 +112,19 @@ $bodyPadding = .6em 1.2em;
             &:before
                 transform: rotate(45deg) scale(1);
 
-    &[data-position='top right']
-        &:before
-            right: 1.2rem;
-
+    &[tooltip-position='top right']
         &:after
             right: 0;
             left: auto;
             transform-origin: right bottom;
 
-    &[data-position='bottom left']
-        &:before
-            left: 1.2rem;
-
+    &[tooltip-position='bottom left']
         &:after
             right: auto;
             left: 0;
             transform-origin: left top;
 
-    &[data-position='bottom center']
+    &[tooltip-position='bottom center']
         &:before
             left: 50%;
 
@@ -137,10 +136,7 @@ $bodyPadding = .6em 1.2em;
         &:hover:after
             transform: translateX(-50%) scale(1);
 
-    &[data-position='bottom right']
-        &:before
-            right: 1.2rem;
-
+    &[tooltip-position='bottom right']
         &:after
             right: 0;
             left: auto;

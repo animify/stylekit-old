@@ -38,7 +38,7 @@ export default class PageSection extends Component {
             boxShadow: 'none',
             borderRadius: '4px 0 0 4px',
             textAlign: 'right',
-            zIndex: 200,
+            zIndex: 10,
         }
         return (
             <section className={`guide ${className}`}>
