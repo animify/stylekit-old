@@ -1,4 +1,35 @@
-<section class="snippet-section" title="Equal columns" subtitle="Rows containing an equally split number of columns." codeStyle="hidden"/>
+<section class="snippet-section" title="Rows" subtitle="Rows are the basis of the Grid system. They should always be the outer parent containing all inner Columns."/>
+<div class="row">
+    <!-- Columns go here -->
+</div>
+<div class="row">
+    <!-- Columns go here -->
+</div>
+
+<section class="snippet-section" title="Fixed Columns" subtitle="Columns are based on a 12-point Grid system. Use the prefix col- + width to add Columns." codeStyle="hidden"/>
+<div class="row">
+    <div class="col-4">
+        <div class="filled">.col-4</div>
+    </div>
+    <div class="col-8">
+        <div class="filled">.col-8</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-9">
+        <div class="filled">.col-9</div>
+    </div>
+    <div class="col-3">
+        <div class="filled">.col-3</div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="filled">.col-12</div>
+    </div>
+</div>
+
+<section class="snippet-section" title="Equal Columns" subtitle="Columns can take up equal amount of spacing based on the children in the Row." codeStyle="hidden"/>
 <div class="row">
     <div class="equal">
         <div class="filled">.equal</div>
@@ -36,30 +67,7 @@
     </div>
 </div>
 
-<section class="snippet-section" title="Responsive columns" subtitle="Rows containing an equally split number of columns." codeStyle="hidden"/>
-<div class="row">
-    <div class="s-4">
-        <div class="filled">.col.s-4</div>
-    </div>
-    <div class="s-8">
-        <div class="filled">.col.s-8</div>
-    </div>
-</div>
-<div class="row">
-    <div class="m-9">
-        <div class="filled">.col.m-9</div>
-    </div>
-    <div class="m-3">
-        <div class="filled">.col.m-3</div>
-    </div>
-</div>
-<div class="row">
-    <div class="col">
-        <div class="filled">.col</div>
-    </div>
-</div>
-
-<section class="snippet-section" title="Responsive equal columns" subtitle="Rows containing an equally split number of columns." codeStyle="hidden"/>
+<section class="snippet-section" title="Responsive Columns" subtitle="Column classes can contain a Breakpoint suffix so that they're only active above that Breakpoint." codeStyle="hidden"/>
 <div class="row">
     <div class="col-4@m">
         <div class="filled">.col-4@m</div>
@@ -77,49 +85,49 @@
     </div>
 </div>
 
-<section class="snippet-section" title="Mixing responsive columns" subtitle="Rows containing an equally split number of columns." codeStyle="hidden"/>
+<section class="snippet-section" title="Mixed Responsive Columns" subtitle="Columns can contain several Responsive Column classes, resize your browser to try it out." codeStyle="hidden"/>
 <div class="row">
-    <div class="t-6 m-9">
-        <div class="filled">.col.t-6.m-9</div>
+    <div class="col-6@t col-8@m">
+        <div class="filled">.col-6@t .col-8@m</div>
     </div>
-    <div class="t-6 m-3">
-        <div class="filled">.col.t-6.m-3</div>
+    <div class="col-6@t col-4@m">
+        <div class="filled">.col-6@t .col-4@m</div>
     </div>
 </div>
 <div class="row">
-    <div class="t-12 m-4">
-        <div class="filled">.col.t-12.m-4</div>
+    <div class="col-12@t col-4@m">
+        <div class="filled">.col-12@t .col-4@m</div>
     </div>
-    <div class="t-12 m-4">
-        <div class="filled">.col.t-12.m-4</div>
+    <div class="col-12@t col-4@m">
+        <div class="filled">.col-12@t .col-4@m</div>
     </div>
-    <div class="t-12 m-4">
-        <div class="filled">.col.t-12.m-4</div>
+    <div class="col-12@t col-4@m">
+        <div class="filled">.col-12@t .col-4@m</div>
     </div>
 </div>
 <div class="row">
-    <div class="m-9 l-5">
-        <div class="filled">.col.m-9.l-5</div>
+    <div class="col-12@t col-9@m col-5@l">
+        <div class="filled">.col-12@t .col-9@m .col-5@l</div>
     </div>
-    <div class="m-3 l-7">
-        <div class="filled">.col.m-3.l-7</div>
+    <div class="col-12@t col-3@m col-7@l">
+        <div class="filled">.col-12@t .col-3@m .col-7@l</div>
     </div>
 </div>
 
-<section class="snippet-section" title="Pushing columns" subtitle="Columns can be pushed further down the row relative to the previous column." codeStyle="hidden"/>
+<section class="snippet-section" title="Column Push" subtitle="Columns can be pushed along the row relative to the previous Column." codeStyle="hidden"/>
 <div class="row">
-    <div class="m-4">
-        <div class="filled">.col.m-4</div>
+    <div class="col-4@m">
+        <div class="filled">.col-4@m</div>
     </div>
-    <div class="m-4 push-m-4">
-        <div class="filled">.col.m-4.push-m-4</div>
+    <div class="col-4@m push-4@m">
+        <div class="filled">.col-4@m .push-4@m</div>
     </div>
 </div>
 <div class="row">
-    <div class="t-12 m-5">
-        <div class="filled">.col.t-12.m-5</div>
+    <div class="col-12@t col-5@m">
+        <div class="filled">.col-12@t .col-5@m</div>
     </div>
-    <div class="t-12 m-5 push-m-2">
-        <div class="filled">.col.t-12.m-5.push-m-2</div>
+    <div class="col-12@t col-5@m push-2@m">
+        <div class="filled">.col-12@t .col-5@m .push-2@m</div>
     </div>
 </div>

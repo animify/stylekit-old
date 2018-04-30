@@ -3,6 +3,14 @@
     flex-wrap: wrap;
     margin: auto - $gridPadding;
 
+    & > [class*='col-']
+        max-width: 100%;
+        min-height: 1px;
+        width: 100%;
+        position: relative;
+        padding-right: $gridPadding;
+        padding-left: $gridPadding;
+
     & .equal
         flex-basis: 0;
         flex-grow: 1;
@@ -13,13 +21,13 @@
         padding: 0;
         margin: 0;
 
-    & > [class*='col-']
-        max-width: 100%;
-        min-height: 1px;
-        width: 100%;
-        position: relative;
-        padding-right: $gridPadding;
-        padding-left: $gridPadding;
+    for $gridSize in (1 .. $gridLength)
+        .push-{$gridSize}
+            margin-left: percentage(($gridSize / $gridLength));
+
+        .col-{$gridSize}
+            flex: 0 0 percentage(($gridSize / $gridLength));
+            max-width: percentage(($gridSize / $gridLength));
 
     for $breakpoint in $gridSizes
         +above($breakpoint)
