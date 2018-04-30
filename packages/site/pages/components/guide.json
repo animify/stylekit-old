@@ -16,7 +16,7 @@
     },
     {
         "folder": "form",
-        "title": "Form elements",
+        "title": "Form Elements",
         "descHtml": "Fields and action elements for forms."
     },
     {
@@ -46,7 +46,7 @@
     },
     {
         "folder": "progress",
-        "title": "Progress bars",
+        "title": "Progress Bars",
         "descHtml": "Progess bars are used to indicate the progress state of a certain action."
     },
     {
