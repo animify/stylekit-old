@@ -1,7 +1,7 @@
 .button
     position: relative;
     display: inline-block;
-    padding: .8rem 1.6rem;
+    padding: .6em 1.4em;
     outline: 0;
     border: 0;
     border: 1px solid $borderColor.base;
@@ -34,7 +34,7 @@
 
     for size in $sizeList
         &.{size}
-            font-size: $fontSize[size];
+            font-size: $buttonFontSize[size];
 
     for color in $listColors
         &.{color}

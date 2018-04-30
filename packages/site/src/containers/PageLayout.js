@@ -26,6 +26,9 @@ export default class PageLayout extends Component {
             config: {
                 name: 'feedlist-icons',
                 props: {
+                    width: 12,
+                    height: 12,
+                    'stroke-width': 3,
                     stroke: 'rgba(0, 0, 0, .6)'
                 }
             }
