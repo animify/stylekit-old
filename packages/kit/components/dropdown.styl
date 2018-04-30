@@ -23,6 +23,13 @@
             font-weight: $fontWeight.book;
 
         li
+            &.divider
+                margin: .4rem 0;
+                padding: 0 1.8rem;
+                background-color: $borderColor.base;
+                height: 1px;
+                width: 100%;
+                content: ' ';
             &.header
                 color: $textColor.header;
                 font-weight: $fontWeight.bold;
@@ -43,6 +50,9 @@
 
                 a
                     color: $textColor.header;
+
+            +disabled()
+                color: $color.body !important;
 
     &.open
         .menu
