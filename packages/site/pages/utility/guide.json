@@ -10,11 +10,6 @@
         "descHtml": "Utility classes to assist in positioning elements within your layout"
     },
     {
-        "folder": "flex",
-        "title": "Flex",
-        "descHtml": "Helper classes to assist with positioning flex elements."
-    },
-    {
         "folder": "modifiers",
         "title": "Modifiers",
         "descHtml": "Modifiers change certain properties on a given element."

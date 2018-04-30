@@ -15,6 +15,11 @@
         "descHtml": "Bl;ah blash"
     },
     {
+        "folder": "flex",
+        "title": "Flex",
+        "descHtml": "Helper classes to assist with positioning flex elements."
+    },
+    {
         "folder": "grid",
         "title": "Grid",
         "descHtml": "A flexible grid system tailored for responsive layouts."
