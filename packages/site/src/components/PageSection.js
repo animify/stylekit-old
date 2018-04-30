@@ -16,6 +16,13 @@ export default class PageSection extends Component {
         this.toggleSnippet = this.toggleSnippet.bind(this);
     }
 
+    componentDidMount() {
+        if (this.props.section && this.props.section.id === 'progress') {
+            window.stylekit.components.progress.load();
+            window.stylekit.components.progress.loadActive();
+        }
+    }
+
     toggleSnippet() {
         this.setState({ showingSnippet: !this.state.showingSnippet });
     }

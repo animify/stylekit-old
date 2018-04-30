@@ -1,42 +1,40 @@
-<section class="snippet-section" title="Basic progress bar" subtitle="A basic progress bar."/>
+<section class="snippet-section" title="Basic Progress Bar" subtitle="A basic Progress Bar showing the state of progress using the percentage attribute."/>
 <div class="progress">
-    <div class="bar" data-percent="48" style="width: 48%;">
+    <div class="bar" percentage="48">
         <div class="status">48%</div>
     </div>
 </div>
 
-<section class="snippet-section" title="Active progress bar" subtitle="An active progress bar."/>
+<section class="snippet-section" title="Active Progress Bar" subtitle="An active Progress Bar, which animates on initial load or programatically."/>
 <div class="progress active">
-    <div class="bar green" data-percent="76" style="width: 1%;">
-        <div class="status">1%</div>
+    <div class="bar green@bg" percentage="76">
+        <div class="status" />
     </div>
 </div>
 
-<section class="snippet-section" title="Progress bar with status" subtitle="Progress bars can have a status label."/>
-<div class="progress">
-    <div class="bar violet show" data-percent="96" style="width: 96%;">
-        <div class="status">1%</div>
-    </div>
-</div>
+<section class="snippet-section" title="Progress Bar with Status" subtitle="Progress Bars can have a status label, that shows the percentage of the state."/>
 <div class="progress large">
-    <div class="bar purple show" data-percent="66" style="width: 66%;">
-        <div class="status">1%</div>
+    <div class="bar purple@bg show-status" percentage="66">
+        <div class="status" />
     </div>
 </div>
 
-<section class="snippet-section" title="Progress bar sizes" subtitle="Progress bar size variations."/>
+<section class="snippet-section" title="Progress Bar Sizes" subtitle="Progress Bar size variations, using sizes from the size list."/>
 <div class="progress tiny">
-    <div class="bar yellow" data-percent="92" style="width: 92%;">
-        <div class="status">1%</div>
+    <div class="bar yellow@bg" percentage="92">
     </div>
 </div>
 <div class="progress small">
-    <div class="bar orange" data-percent="42" style="width: 42%;">
-        <div class="status">1%</div>
+    <div class="bar orange@bg" percentage="42">
+    </div>
+</div>
+<div class="progress medium">
+    <div class="bar blue@bg show-status" percentage="27">
+        <div class="status" />
     </div>
 </div>
 <div class="progress large">
-    <div class="bar red" data-percent="58" style="width: 58%;">
-        <div class="status">1%</div>
+    <div class="bar red@bg show-status" percentage="58">
+        <div class="status" />
     </div>
 </div>

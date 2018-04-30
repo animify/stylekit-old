@@ -5,6 +5,9 @@ styleSized(size)
     if (size == 'small')
         height: .8rem;
 
+    if (size == 'medium')
+        height: 2.2rem;
+
     if (size == 'large')
         height: 2.8rem;
 
@@ -14,7 +17,7 @@ styleSized(size)
 
 .progress
     cf();
-    height: $height;
+    height: 1rem;
     border-radius: $borderRadius.base;
     background-color: $backgroundColor.grey;
     content: '';
@@ -34,16 +37,12 @@ styleSized(size)
             font-size: $fontSize.small;
             line-height: 1.6rem;
 
-    &.tiny
-        styleSized('tiny');
 
-    &.small
-        styleSized('small');
-
-    &.large
-        styleSized('large');
+    for size in $sizeList
+        &.{size}
+            styleSized(size);
 
     &:not(.tiny):not(.small)
-        .bar.show
+        .bar.show-status
             .status
                 display: block;

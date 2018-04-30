@@ -7,10 +7,10 @@ export default class Progress {
     }
 
     load() {
-        $('.progress:not(.active) .bar[data-percent]').each((i, e) => {
+        $('.progress:not(.active) .bar[percentage]').each((i, e) => {
             const target = $(e);
             const status = target.find('.status');
-            const percentage = Math.ceil(target.attr('data-percent')) + '%';
+            const percentage = Math.ceil(target.attr('percentage')) + '%';
 
             target.css('width', percentage);
             status.text(percentage);
@@ -18,10 +18,10 @@ export default class Progress {
     }
 
     loadActive() {
-        $('.progress.active:not(.loaded) .bar[data-percent]').each((i, e) => {
+        $('.progress.active:not(.loaded) .bar[percentage]').each((i, e) => {
             const target = $(e);
             const status = target.find('.status');
-            const percentage = Math.ceil(target.attr('data-percent'));
+            const percentage = Math.ceil(target.attr('percentage'));
 
             $({ countNum: 0 }).animate({ countNum: percentage }, {
                 duration: 1600,
