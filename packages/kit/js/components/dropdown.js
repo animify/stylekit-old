@@ -15,9 +15,10 @@ export default class Dropdown {
 
     setEventHover() {
         $('body').on('mouseenter', '.dropdown.hover', (e) => {
-            $(e.target).addClass('open');
+            console.log(e);
+            $(e.currentTarget).addClass('open');
         }).on('mouseleave', '.dropdown.hover.open', (e) => {
-            $(e.target).removeClass('open');
+            $(e.currentTarget).removeClass('open');
         });
     }
 }
