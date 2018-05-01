@@ -27,5 +27,7 @@ messageStyle(type)
         color: $textColor.heading;
         font-size: $fontSize.body;
     a
-        color: inherit;
-        text-decoration: underline;
+        @extends .link;
+        @extends .link.link-underline;
+        @extends .link.link-light;
+        @extends .link.link-light.link-underline;

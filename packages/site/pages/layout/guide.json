@@ -16,12 +16,12 @@
     },
     {
         "folder": "flex",
-        "title": "Flex",
+        "title": "Flex Layout",
         "descHtml": "Helper classes to assist with positioning flex elements."
     },
     {
         "folder": "grid",
-        "title": "Grid",
+        "title": "Grid System",
         "descHtml": "A flexible grid system tailored for responsive layouts."
     }
 ]

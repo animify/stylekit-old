@@ -1,17 +1,15 @@
 .menu
     .item
-        color: $textColor.body;
         line-height: $lineHeightBase;
         display: inline-block;
-
-        & + .item
-            margin-left: 1.6rem;
-
-        &:hover
-            color: $textColor.heading;
+        @extends .link;
+        @extends .link.link-body;
 
         &.active
             color: $color.base;
+
+        & + .item
+            margin-left: 1.6rem;
 
         &.header
             color: $textColor.heading;
@@ -96,9 +94,8 @@
                 display: block;
                 font-size: $fontSize.sub;
                 padding: .2rem 0;
-
-                a
-                    color: $textColor.light;
+                @extends .link;
+                @extends .link.link-light;
 
     &.scrollable
         white-space: nowrap;
@@ -125,7 +122,5 @@
                 & > a
                     font-size: $fontSize.body;
                     font-weight: $fontWeight.book;
-                    color: $textColor.body;
-
-                    &:hover
-                        color: $textColor.heading;
+                    @extends .link;
+                    @extends .link.link-body;

@@ -17,7 +17,20 @@
             content: ' ';
             absolute: bottom -2px left;
 
-    for $text in 'light' 'body' 'heading'
+    &.link-body
+        color: $textColor.body;
+
+        &.link-underline
+            &:before
+                border-color: @color;
+
+        &:hover
+            color: $textColor.heading;
+
+        &:active
+            color: $color.black;
+
+    for $text in 'light' 'heading'
         &.link-{$text}
             color: $textColor[$text];
 
