@@ -1,49 +1,48 @@
 <section class="snippet-section" title="Basic List" subtitle="A basic vertically stacked list."/>
 <ul class="list">
-    <li class="item">Item 1</li>
-    <li class="item">Item 2</li>
-    <li class="item">Item 3</li>
-    <li class="item">Item 4</li>
+    <li class="item" hidechildren>Item 1</li>
+    <li class="item" hidechildren>Item 2</li>
+    <li class="item" hidechildren>Item 3</li>
+    <li class="item" hidechildren>Item 4</li>
 </ul>
 
 <section class="snippet-section" title="Bulleted List" subtitle="A list with a bulleted list style."/>
 <ul class="list bulleted">
-    <li class="item">Item 1</li>
-    <li class="item">Item 2</li>
-    <li class="item">Item 3</li>
+    <li class="item" hidechildren>Item 1</li>
+    <li class="item" hidechildren>Item 2</li>
+    <li class="item" hidechildren>Item 3</li>
     <ul class="list bulleted">
-        <li class="item">Item 1</li>
-        <li class="item">Item 2</li>
-        <li class="item">Item 3</li>
-        <li class="item">Item 4</li>
+        <li class="item" hidechildren>Item 1</li>
+        <li class="item" hidechildren>Item 2</li>
+        <li class="item" hidechildren>Item 3</li>
+        <li class="item" hidechildren>Item 4</li>
     </ul>
-    <li class="item">Item 4</li>
+    <li class="item" hidechildren>Item 4</li>
 </ul>
 
 <section class="snippet-section" title="Numbered List" subtitle="An ordered list with a numbered list style. Nested lists append sub-increments."/>
 <div class="list ordered">
-    <div class="item">Item 1</div>
-    <div class="item">Item 2</div>
-    <div class="item">Item 3
+    <div class="item" hidechildren>Item 1</div>
+    <div class="item" hidechildren>Item 2</div>
+    <div class="item" hidechildren>Item 3
         <div class="list ordered">
-            <div class="item">Item 1</div>
-            <div class="item">Item 2</div>
-            <div class="item">Item 3</div>
+            <div class="item" hidechildren>Item 1</div>
+            <div class="item" hidechildren>Item 2</div>
+            <div class="item" hidechildren>Item 3</div>
         </div>
     </div>
-    <div class="item">Item 4</div>
+    <div class="item" hidechildren>Item 4</div>
 </div>
 
 <section class="snippet-section" title="Custom List" subtitle="A list with a custom list style, dependent on the value attribute."/>
 <ol class="list ordered">
-    <li value="*">Item 1</li>
-    <li value="*">Item 2</li>
-    <li value="*">Item 3
-        <ol class="list ordered">
-            <li value="-">Item 1</li>
-            <li value="-">Item 2</li>
-            <li value="-">Item 3</li>
-        </ol>
-    </li>
-    <li value="*">Item 4</li>
+    <li value="*" hidechildren>Item 1</li>
+    <li value="*" hidechildren>Item 2</li>
+    <li value="*" hidechildren>Item 3</li>
+    <ol class="list ordered">
+        <li value="-" hidechildren>Item 1</li>
+        <li value="-" hidechildren>Item 2</li>
+        <li value="-" hidechildren>Item 3</li>
+    </ol>
+    <li value="*" hidechildren>Item 4</li>
 </ol>

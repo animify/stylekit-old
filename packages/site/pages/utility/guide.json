@@ -7,7 +7,7 @@
     {
         "folder": "composition",
         "title": "Composition",
-        "descHtml": "Utility classes to assist in positioning elements within your layout"
+        "descHtml": "Utility classes to assist in positioning elements within your layout."
     },
     {
         "folder": "modifiers",
@@ -15,13 +15,13 @@
         "descHtml": "Modifiers change certain properties on a given element."
     },
     {
-        "folder": "text",
-        "title": "Text",
-        "descHtml": "Align components within relative parent containers."
+        "folder": "typography",
+        "title": "Typography",
+        "descHtml": "Modify text properties using typography utilities."
     },
     {
         "folder": "verticalalign",
-        "title": "Vertical align",
+        "title": "Vertical Align",
         "descHtml": "Align various types of elements across the vertical axis."
     },
     {
