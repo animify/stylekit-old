@@ -25,7 +25,7 @@
         fixed: top 3.2rem right 3.2rem;
         height: 4rem;
         width: 4rem;
-        background-color: $backgroundColor.light;
+        background-color: $color.smoke;
         border-radius: 50%;
         content: ' ';
         will-change: transform, opacity;
@@ -39,7 +39,7 @@
         width: fit-content;
         max-width: 640px;
         min-width: 520px;
-        background-color: $backgroundColor.white;
+        background-color: $color.white;
         border-radius: $borderRadius.base;
         box-shadow: $boxShadow.distant;
         will-change: transform, opacity;
@@ -60,7 +60,7 @@
 
         & > .footer
             padding-top: 2rem;
-            background-color: $backgroundColor.lightest;
+            background-color: $color.smoke;
             padding-bottom: 2rem;
             border-radius: 0 0 $borderRadius.base (((((((($borderRadius.base))))))));
             .subtext
@@ -82,10 +82,10 @@
         opacity: 1;
 
         &:not(.overlay) > .background
-            background-color: rgba($backgroundColor.black, .4);
+            background-color: rgba($color.black, .4);
 
         &.overlay > .background
-            background-color: $backgroundColor.white;
+            background-color: $color.white;
 
         & > .modal-x
             transform: scale(1);

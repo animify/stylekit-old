@@ -1,37 +1,39 @@
 $color = {
-    base: #3662f9,
-    red: #f7233f,
-    orange: #ef853f,
-    yellow: #ECCA0B,
-    green: #1faf65,
-    blue: #3575ee,
-    purple: #5b02ea,
-    pink: #f0027e,
-    white: #ffffff,
+    base: #35b9f9,
+    red: #f34363,
+    orange: #ff8842,
+    yellow: #ffbe2b,
+    green: #14d461,
+    blue: #35b9f9,
+    purple: #8d62ec,
+    pink: #ff4ccd,
     black: #000000,
-    ash: #5E636C
+    gunmetal: #1e2223,
+    slate: #44484a,
+    silver: #767c7f,
+    smoke: #929a9c,
+    dim: #eceeef,
+    snow: #f4f6f7,
+    white: #ffffff,
 };
+
+$textColor = {
+    heading: $color.gunmetal,
+    body: $color.slate,
+    light: $color.silver,
+    disabled: $color.smoke,
+}
+
+$uiColor = {
+    positive: $color.green,
+    negative: $color.red,
+    info: $color.blue,
+    warning: $color.yellow,
+}
+
 $borderColor = {
-    dark: #ccc,
-    base: #e4e4e4,
     info: lighten($color.blue, 10%),
     warning: lighten($color.yellow, 10%),
     important: lighten($color.red, 10%),
     success: lighten($color.green, 10%)
-};
-$backgroundColor = {
-    dark: #1f2e3e,
-    grey: #f6f7f9,
-    light: #eceff1,
-    lighter: #f4f6f7,
-    lightest: #fafafa,
-    white: #ffffff,
-    black: #000000
-};
-$textColor = {
-    header: #111,
-    body: #444,
-    light: #777,
-    disabled: #999,
-    white: #ffffff
 };

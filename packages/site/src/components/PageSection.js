@@ -32,8 +32,8 @@ export default class PageSection extends Component {
         const { showingSnippet } = this.state;
         const lnStyle = {
             position: 'absolute',
-            backgroundColor: '#fafafa',
-            color: '#D0CFD6',
+            backgroundColor: '#f4f6f7',
+            color: '#999',
             width: '40px',
             boxShadow: 'none',
             borderRadius: '4px 0 0 4px',

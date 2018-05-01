@@ -8,13 +8,13 @@
             margin-left: 1.6rem;
 
         &:hover
-            color: $textColor.header;
+            color: $textColor.heading;
 
         &.active
             color: $color.base;
 
         &.header
-            color: $textColor.header;
+            color: $textColor.heading;
             font-weight: $fontWeight.bold;
 
     & > .dropdown, & > .item, & .float-right > .dropdown, & .float-right > .item, & .float-left > .dropdown, & .float-left > .item
@@ -27,7 +27,7 @@
 
     &.basic
         padding: 0 2.4rem;
-        background-color: $backgroundColor.lightest;
+        background-color: $color.smoke;
 
         .item
             padding: 1.2rem 0;
@@ -45,11 +45,12 @@
 
         &.header
             padding: .8rem 3.2rem;
-            background-color: rgba($backgroundColor.white, .8);
+            background-color: rgba($color.white, .8);
 
             &.hasborder
                 box-shadow: none;
-                border-bottom: 1px solid $borderColor.base;
+
+                border-bottom: 1px solid $color.dim;
 
         .item
             padding: 1.2rem 0;
@@ -72,7 +73,7 @@
         height: 100%;
         width: 300px;
         padding: 1.2rem 2.4rem;
-        background-color: $backgroundColor.light;
+        background-color: $color.smoke;
 
         & > .item, & .options > .item
             display: block;
@@ -127,4 +128,4 @@
                     color: $textColor.body;
 
                     &:hover
-                        color: $textColor.header;
+                        color: $textColor.heading;

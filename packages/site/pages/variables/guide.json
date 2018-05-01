@@ -1,47 +1,31 @@
 [
     {
         "id": "borderRadius",
-        "title": "Border radius",
+        "title": "Border Radius",
         "description": "Base style border radius.",
         "startsWith": "$borderRadius",
         "propertyCss": "borderRadius",
         "displayStyle": "shape"
     },
     {
+        "id": "boxShadow",
+        "title": "Box Shadow",
+        "description": "All the variables",
+        "startsWith": "$boxShadow",
+        "propertyCss": "boxShadow",
+        "displayStyle": "shape"
+    },
+    {
         "id": "color",
-        "title": "Color",
-        "description": "Base style colors.",
+        "title": "Color Scheme",
+        "description": "The colors used across the whole kit. Each subset of colors are aliases of colors from this scheme.",
         "startsWith": "$color",
         "propertyCss": "color",
         "displayStyle": "color"
     },
     {
-        "id": "textColor",
-        "title": "Text color",
-        "description": "All the variables",
-        "startsWith": "$textColor",
-        "propertyCss": "textColor",
-        "displayStyle": "color"
-    },
-    {
-        "id": "backgroundColor",
-        "title": "Background color",
-        "description": "All the variables",
-        "startsWith": "$backgroundColor",
-        "propertyCss": "backgroundColor",
-        "displayStyle": "color"
-    },
-    {
-        "id": "borderColor",
-        "title": "Border color",
-        "description": "All the variables",
-        "startsWith": "$borderColor",
-        "propertyCss": "borderColor",
-        "displayStyle": "color"
-    },
-    {
         "id": "fontSize",
-        "title": "Font size",
+        "title": "Font Size",
         "description": "All the variables",
         "startsWith": "$fontSize",
         "propertyCss": "fontSize",
@@ -49,18 +33,10 @@
     },
     {
         "id": "fontWeight",
-        "title": "Font weight",
+        "title": "Font Weight",
         "description": "All the variables",
         "startsWith": "$fontWeight",
         "propertyCss": "fontWeight",
         "displayStyle": "text"
-    },
-    {
-        "id": "boxShadow",
-        "title": "Box shadow",
-        "description": "All the variables",
-        "startsWith": "$boxShadow",
-        "propertyCss": "boxShadow",
-        "displayStyle": "shape"
     }
 ]

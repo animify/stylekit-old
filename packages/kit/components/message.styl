@@ -1,33 +1,31 @@
 messageStyle(type)
-    border-color: $borderColor[type];
-    background-color: lighten(@border-color, 90%);
-    color: darken(@border-color, 45%);
-
-    h5
-        color: darken(@border-color, 60%);
-
+    border-color: $uiColor[type];
 .message
     margin: 1.2rem 0;
-    padding: 1.2rem 1.6rem;
+    padding: 1rem 1.6rem;
     border: 0;
-    border-left: 6px solid $borderColor.base;
+    border-left: 6px solid $color.smoke;
     border-radius: $borderRadius.base;
-    background-color: $backgroundColor.lightest;
+    background-color: $color.dim;
     color: $textColor.body;
     line-height: $lineHeightBase;
+    font-size: $fontSize.sub;
 
     &.warning
         messageStyle: 'warning';
 
-    &.important
-        messageStyle: 'important';
+    &.negative
+        messageStyle: 'negative';
 
-    &.success
-        messageStyle: 'success';
+    &.positive
+        messageStyle: 'positive';
 
     &.info
         messageStyle: 'info';
 
+    strong
+        color: $textColor.heading;
+        font-size: $fontSize.body;
     a
         color: inherit;
         text-decoration: underline;

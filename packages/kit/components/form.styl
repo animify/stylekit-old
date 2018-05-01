@@ -6,7 +6,7 @@
 
     label
         font-size: $fontSize.sub;
-        color: $textColor.header;
+        color: $textColor.heading;
         font-weight: $fontWeight.semiBold;
 
     textarea
@@ -19,11 +19,12 @@
         min-width: 21.6rem;
         outline: 0;
         border: 0;
-        border: 1px solid $borderColor.base;
+        border: 1px solid $color.dim;
+
         border-radius: $borderRadius.base;
-        background-color: $backgroundColor.white;
+        background-color: $color.white;
         box-shadow: $boxShadow.form;
-        color: $textColor.header;
+        color: $textColor.heading;
         text-align: left;
         font-size: $fontSize.body;
         font-family: $fontFamily.body;
@@ -37,11 +38,11 @@
             font-weight: $fontWeight.bold;
 
         &:hover
-            border-color: $borderColor.dark;
+            border-color: $color.smoke;
             box-shadow: $boxShadow.formFocus;
 
             & + label
-                color: $textColor.header;
+                color: $textColor.heading;
 
         &:focus
             border-color: $color.base;

@@ -10,9 +10,10 @@
         z-index: 800;
         padding: .8rem 0;
         min-width: 21.6rem;
-        border: 1px solid $borderColor.base;
+        border: 1px solid $color.dim;
+        
         border-radius: $borderRadius.base;
-        background-color: $backgroundColor.white;
+        background-color: $color.white;
         box-shadow: 0 1px 4px rgba(0, 0, 31, .1), 0 4px 14px rgba(0, 0, 31, .08);
         display: none;
 
@@ -26,12 +27,12 @@
             &.divider
                 margin: .4rem 0;
                 padding: 0 1.8rem;
-                background-color: $borderColor.base;
+                background-color: $color.smoke;
                 height: 1px;
                 width: 100%;
                 content: ' ';
             &.header
-                color: $textColor.header;
+                color: $textColor.heading;
                 font-weight: $fontWeight.bold;
                 font-size: $fontSize.body;
                 padding: .6rem 1.8rem;
@@ -40,16 +41,16 @@
                 padding: .6rem 1.8rem;
 
             &:not(.header):not(.divider):hover
-                background-color: $backgroundColor.lighter;
+                background-color: $color.smoke;
 
                 a
-                    color: $textColor.header;
+                    color: $textColor.heading;
 
             &:not(.header):not(.divider):active
-                background-color: $backgroundColor.light;
+                background-color: $color.smoke;
 
                 a
-                    color: $textColor.header;
+                    color: $textColor.heading;
 
             +disabled()
                 color: $color.body !important;

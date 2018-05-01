@@ -1,7 +1,7 @@
 .square
     background-color: lighten($color.pink, 70%);
     border: 2px solid rgba($color.black, 10%);
-    color: $textColor.header;
+    color: $textColor.heading;
     padding: 1.2rem;
     font-weight: $fontWeight.semiBold;
     border-radius: $borderRadius.base;
@@ -19,24 +19,25 @@
     padding: 2rem;
     position: relative;
     border-radius: $borderRadius.base;
-    border: 2px solid $borderColor.base;
+    border: 2px solid;
+
 
 .dashedbox
     min-height: 16rem;
     padding: 2rem;
     position: relative;
-    border-radius: $backgroundColor.grey;
+    border-radius: $color.snow;
     border: 2px dashed #efefef;
 
     p
-        color: $textColor.header;
+        color: $textColor.heading;
 
         & + p
             margin-top: 2.4rem;
 
     &:after
         width: 100%;
-        box-shadow: 0 0 0 2rem inset $backgroundColor.lighter;
+        box-shadow: 0 0 0 2rem inset $color.smoke;
         height: 100%;
         display: block;
         content: ' ';
@@ -49,10 +50,10 @@
     padding: 2rem;
     position: relative;
     border-radius: $borderRadius.base;
-    border: 1px solid $borderColor.base;
+    border: 1px solid $color.dim;
 
     p
-        color: $textColor.header;
+        color: $textColor.heading;
 
         & + p
             margin-top: 2.4rem;
@@ -60,18 +61,18 @@
 .filled
     padding: 1.2rem;
     border-radius: $borderRadius.base;
-    color: $textColor.header;
+    color: $textColor.heading;
     font-weight: $fontWeight.bold;
     font-size: $fontSize.body;
-    background-color: $backgroundColor.light;
+    background-color: $color.dim;
 
     &.typography
         display: flex;
         padding: 1.2rem 0;
-        border-bottom: 1px solid $borderColor.base;
+        border-bottom: 1px solid $color.dim;
 
         span
-            color: $textColor.header;
+            color: $textColor.heading;
             display: block;
 
     &.shadow
@@ -79,10 +80,10 @@
         border-radius: $borderRadius.base;
         margin-top: 2.4rem;
         background-color: #fff;
-        border: 1px solid $borderColor.base;
+        border: 1px solid $color.dim;
 
         p
-            color: $textColor.header;
+            color: $textColor.heading;
 
 .fi
     padding: .4rem .8rem;
