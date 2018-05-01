@@ -15,6 +15,11 @@
     box-shadow: $boxShadow.form;
     text-align: center;
 
+    &.transparent
+        background-color: transparent;
+        border-color: transparent;
+        box-shadow: none;
+
     &:hover
         background-color: $color.snow;
         color: $textColor.heading;
@@ -22,15 +27,6 @@
     &:active
         background-color: $color.dim;
         color: $textColor.heading;
-
-    &.transparent
-        background-color: transparent;
-        color: $color.base;
-        border-color: transparent;
-
-        &:hover
-            background-color: $color.smoke;
-            border-color: @background-color;
 
     for size in $sizeList
         &.{size}
@@ -51,6 +47,18 @@
                 background-color: darken(@background-color, 16%);
                 border-color: @background-color;
                 color: #fff;
+
+    &.transparent.base
+        background-color: transparent;
+        border-color: transparent;
+        color: $color.base;
+        &:hover
+            background-color: $color.base;
+            color: $color.white;
+
+        &:active
+            background-color: darken($color.base, 8%);
+            color: $color.white;
 
     +disabled()
         color: $color.body !important;

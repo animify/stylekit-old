@@ -21,8 +21,13 @@
     },
     {
         "folder": "label",
-        "title": "Labels",
+        "title": "Label",
         "descHtml": "Highlight important words or phrases within your content."
+    },
+    {
+        "folder": "link",
+        "title": "Link",
+        "descHtml": "Anchor links can have different styles depending on its usage."
     },
     {
         "folder": "list",
