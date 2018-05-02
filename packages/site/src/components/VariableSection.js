@@ -44,13 +44,11 @@ export default class VariableSection extends Component {
     render() {
         const { section } = this.props;
 
-        console.log('rendering', section);
-
         return (
             <section className="guide">
                 <div className="guide-description">
                     <h2>{section.title}</h2>
-                    <h5>{section.description}</h5>
+                    <p>{section.description}</p>
                 </div>
 
                 <div className="guide-subsection">

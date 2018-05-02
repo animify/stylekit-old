@@ -44,7 +44,7 @@ export default class PageSection extends Component {
             <section className={`guide ${className}`}>
                 <div className="guide-description">
                     <h2>{section.title}</h2>
-                    <h5 dangerouslySetInnerHTML={{ __html: section.descHtml }} />
+                    <p dangerouslySetInnerHTML={{ __html: section.descHtml }} />
                 </div>
 
                 { section.subsections.map(subsection => (

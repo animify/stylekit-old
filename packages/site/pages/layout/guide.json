@@ -7,12 +7,12 @@
     {
         "folder": "animation",
         "title": "Animations",
-        "descHtml": "Animations for components."
+        "descHtml": "Add landing or infinite animations to add life to your layout."
     },
     {
         "folder": "container",
         "title": "Containers",
-        "descHtml": "Bl;ah blash"
+        "descHtml": "Containers bind your content together to form the layout."
     },
     {
         "folder": "flex",
