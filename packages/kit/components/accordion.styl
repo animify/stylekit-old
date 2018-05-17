@@ -2,10 +2,11 @@
     width: 100%;
 
     & > .title
-        padding: .8rem 0;
+        @extend .pv2;
         cursor: default;
         color: $textColor.heading;
-        font-weight: 500;
+        font-weight: $fontWeight.semiBold;
+        transition: padding-bottom 140ms ease;
 
         & > i
             width: 1.2rem;
@@ -21,19 +22,18 @@
 
     & > .content
         display: none;
-        color: text-default;
+        color: $textColor.body;
 
         &.open
             display: block;
 
         & + .title
-            margin-top: .4rem;
+            @extend .mt1;
 
     &.styled
         padding: 0;
         max-width: 40rem;
         border: 1px solid $color.dim;
-
         background-color: $color.white;
         border-radius: $borderRadius.base;
 
@@ -41,18 +41,18 @@
             max-width: none;
 
         & > .title
-            padding: 1.6rem;
+            @extend .p4;
             border-top: 1px solid $color.dim;
+            color: $textColor.heading;
 
-            font-weight: 600;
-            color: $color.header;
+            &.open
+                @extend .pb1;
 
             &:first-child
                 border: none;
 
         & > .content
-            padding: 0 1.6rem 1.6rem;
-            margin-top: -.8rem;
+            @extend .ph4, .pb4;
 
             & + .title
-                margin-top: 0;
+                @extend .mt0;
