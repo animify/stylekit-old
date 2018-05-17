@@ -6,9 +6,9 @@
         user-select: none;
 
     .menu
+        @extend .pv1;
         absolute: top 3.2rem left 0;
         z-index: 800;
-        padding: .8rem 0;
         min-width: 21.6rem;
         border: 1px solid $color.dim;
         border-radius: $borderRadius.base;
@@ -24,8 +24,7 @@
 
         li
             &.divider
-                margin: .4rem 0;
-                padding: 0 1.8rem;
+                @extend .mv1, .ph4;
                 background-color: $color.dim;
                 height: 1px;
                 width: 100%;
@@ -35,10 +34,10 @@
                 color: $textColor.heading;
                 font-weight: $fontWeight.bold;
                 font-size: $fontSize.body;
-                padding: .6rem 1.8rem;
+                @extend .pv2, .ph4;
 
             a
-                padding: .6rem 1.8rem;
+                @extend .pv2, .ph4;
 
             &:not(.header):not(.divider):hover
                 background-color: $color.snow;
@@ -61,7 +60,7 @@
 
     &.floating
         .menu
-            margin-top: 1.4rem;
+            @extend .mt3;
 
     &.right
         .menu
