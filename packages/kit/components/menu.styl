@@ -1,10 +1,10 @@
 .menu
     .item
-        line-height: $lineHeightBase;
+        line-height: $lineHeight.body;
         display: inline-block;
         font-weight: $fontWeight.semiBold;
-        @extends .link;
-        @extends .link.link-body;
+        @extend .link;
+        @extend .link.link-body;
 
         &.active
             color: $color.base;
@@ -43,8 +43,8 @@
             absolute: top 60px left;
 
         &.header
-            padding: .8rem 0 4rem 0;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))
+            padding: .8rem 0 4rem;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
 
             &.hasborder
                 box-shadow: none;
@@ -56,8 +56,8 @@
             padding: 0;
 
             img
-                height: 2rem;
-                relative: top 1.4rem;
+                height: 2.4rem;
+                relative: top 1.2rem;
 
         .dropdown .menu
             top: 3.2rem;
@@ -94,8 +94,8 @@
                 display: block;
                 font-size: $fontSize.sub;
                 padding: .2rem 0;
-                @extends .link;
-                @extends .link.link-light;
+                @extend .link;
+                @extend .link.link-light;
 
     &.scrollable
         white-space: nowrap;
@@ -122,5 +122,5 @@
                 & > a
                     font-size: $fontSize.body;
                     font-weight: $fontWeight.book;
-                    @extends .link;
-                    @extends .link.link-body;
+                    @extend .link;
+                    @extend .link.link-body;

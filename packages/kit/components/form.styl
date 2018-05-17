@@ -27,7 +27,7 @@
         text-align: left;
         font-size: $fontSize.body;
         font-family: $fontFamily.body;
-        line-height: $lineHeightBase;
+        line-height: $lineHeight.body;
         transition: border-color $animation-type-ease $animation-duration-m;
         order: 2;
 
@@ -67,6 +67,7 @@
         width: fit-content;
         width: -moz-max-content;
         user-select: none;
+
         & > .checkmark
             position: absolute;
             top: 0;
@@ -76,7 +77,8 @@
             background-color: $color.white;
             box-shadow: inset 0 0 0 1px $color.dim;
             border-radius: $borderRadius.small;
-            transition: box-shadow cubic-bezier(0.02, 0.49, 0.01, 0.97) 0.14s;
+            transition: box-shadow cubic-bezier(.02, .49, .01, .97) .14s;
+
             &::after
                 background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg width='16' height='13' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M0,5.29621511 L3.03029644,8.74041022 C3.192436,8.92469644 3.47326933,8.94264933 3.65755511,8.78050978 C3.66751911,8.77174311 3.67708489,8.76253511 3.68622489,8.75291244 L12,0' transform='translate(2 2)' stroke='%23FFF' stroke-width='2.5' fill='none' stroke-linecap='round'/%3e%3c/svg%3e");
                 width: 1.2rem;
@@ -86,17 +88,20 @@
                 background-size: cover;
                 absolute: top .56rem left .5rem;
                 transform: scale(0);
-                transition: transform cubic-bezier(0.02, 0.49, 0.01, 0.97) 0.14s 0.1s;
+                transition: transform cubic-bezier(.02, .49, .01, .97) .14s .1s;
 
         & > input[type='checkbox']
             position: absolute;
             opacity: 0;
+
             &:checked
                 & ~ .checkmark
                     border-color: $color.base;
                     box-shadow: inset 0 0 0 2rem @border-color;
+
                     &::after
                         transform: scale(1);
+
         &:hover
             .checkmark
                 box-shadow: inset 0 0 0 2rem $color.dim;

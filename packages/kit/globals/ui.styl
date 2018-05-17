@@ -8,22 +8,22 @@ html, body
 body
     margin: 0;
     padding: 0;
+    background-color: $color.white;
     color: $textColor.body;
-    background-color: #ffffff;
     font-family: $fontFamily.body;
     font-size: $fontSize.body;
-    line-height: $lineHeightBase;
+    line-height: $lineHeight.body;
     letter-spacing: .1px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-for h in (1 .. 5)
+for h in (1 .. 4)
     h{h}
         font-size: $fontSize['h' + h];
         font-family: $fontFamily.header;
         font-weight: $fontWeight.black;
         color: $textColor.heading;
-        line-height: $lineHeightBase;
+        line-height: $lineHeight.body;
 
         if (h < 4)
             letter-spacing: -.2px;

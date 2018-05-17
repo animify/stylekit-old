@@ -1,6 +1,6 @@
 $margin = 1.2rem 0 0 0;
 $padding = 0 0 0 1.6rem;
-$itemLineHeight = $lineHeightBase;
+$itemLineHeight = $lineHeight.body;
 $itemMargin = 0 0 1.2rem 0;
 $counterOpacity = .6;
 $counterMargin = 0 .4rem 0 0;
@@ -22,8 +22,8 @@ $dividedPadding = .8rem 0;
 
         a
             font-weight: $fontWeight.semiBold;
-            @extends .link;
-            @extends .link.link-body;
+            @extend .link;
+            @extend .link.link-body;
 
         &.header
             display: block;

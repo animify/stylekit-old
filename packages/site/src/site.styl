@@ -23,7 +23,6 @@
         font-weight: 500;
         color: $color.base;
         border-left: 2px solid;
-
         padding-left: 2.4rem;
 
         svg
@@ -44,9 +43,11 @@
 
     &-subsection
         border-top: 1px solid $color.dim;
-
         margin-top: 3.6rem;
         padding-top: 3.6rem;
+
+        & .guide-subsection-description > h4
+            margin-bottom: .4rem;
 
         .row + .row
             margin-top: 2.4rem;
@@ -110,7 +111,7 @@
                 border-radius: $borderRadius.small;
                 display: flex;
                 justify-content: space-between;
-                align-items: center
+                align-items: center;
                 padding: 1.4rem 1.6rem;
 
             .name
@@ -134,12 +135,15 @@
                     letter-spacing: .4px;
                     font-weight: $fontWeight.semiBold;
                     opacity: .6;
-                    line-height: $lineHeightBase;
+                    line-height: $lineHeight.body;
+
             &.dark
                 .style
                     box-shadow: inset 0 0 0 1px $color.dim;
+
                 .name, .about .var, .about .hex
                     color: $textColor.heading;
+
     &.shape
         .inner
             .style
@@ -150,11 +154,11 @@
                 border-radius: $borderRadius.medium;
                 border: 1px solid $color.dim;
 
-
             .about
                 display: flex;
                 flex-direction: column;
                 margin-top: .8rem;
+
                 strong
                     color: $textColor.heading;
 
@@ -166,7 +170,6 @@
                     font-weight: $fontWeight.bold;
 
     &.text
-
         .inner
             flex-direction: column;
 

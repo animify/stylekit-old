@@ -1,5 +1,6 @@
 messageStyle(type)
     border-color: $uiColor[type];
+
 .message
     margin: 1.2rem 0;
     padding: 1rem 1.6rem;
@@ -8,7 +9,7 @@ messageStyle(type)
     border-radius: $borderRadius.base;
     background-color: $color.dim;
     color: $textColor.body;
-    line-height: $lineHeightBase;
+    line-height: $lineHeight.body;
     font-size: $fontSize.sub;
 
     &.warning
@@ -26,8 +27,9 @@ messageStyle(type)
     strong
         color: $textColor.heading;
         font-size: $fontSize.body;
+
     a
-        @extends .link;
-        @extends .link.link-underline;
-        @extends .link.link-light;
-        @extends .link.link-light.link-underline;
+        @extend .link;
+        @extend .link.link-underline;
+        @extend .link.link-light;
+        @extend .link.link-light.link-underline;
