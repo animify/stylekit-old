@@ -10,7 +10,7 @@
             color: $color.base;
 
         & + .item
-            margin-left: 1.6rem;
+            @extend .ml4;
 
         &.header
             color: $textColor.heading;
@@ -18,20 +18,21 @@
 
     & > .dropdown, & > .item, & .float-right > .dropdown, & .float-right > .item, & .float-left > .dropdown, & .float-left > .item
         & + .dropdown, & + .item
-            margin: 0 0 0 3.6rem;
+            @extend .m0, .ml9;
 
     .container
         & > .item + .item
-            margin: 0 0 0 2.4rem;
+            @extend .m0, .ml6;
 
     &.basic
-        padding: 0 2.4rem;
+        @extend .ph6;
         background-color: $color.snow;
 
         .item
-            padding: 1.2rem 0;
+            @extend .pv3;
 
     &.nav
+        @extend .ph6;
         padding: 0 2.4rem;
         background-color: #fff;
         fixed: top left;
@@ -43,17 +44,17 @@
             absolute: top 60px left;
 
         &.header
-            padding: .8rem 0 4rem;
+            @extend .pt2, .pb10;
             background: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
 
             &.hasborder
                 box-shadow: none;
 
         .item
-            padding: 1.2rem 0;
+            @extend .pv3, .ph0;
 
         .logo
-            padding: 0;
+            @extend .p0;
 
             img
                 height: 2.4rem;
@@ -63,6 +64,7 @@
             top: 3.2rem;
 
     &.sidebar
+        @extend .pv3, .ph6;
         z-index: 3000;
         position: fixed;
         bottom: 0;
@@ -70,30 +72,28 @@
         left: 0;
         height: 100%;
         width: 300px;
-        padding: 1.2rem 2.4rem;
         background-color: $color.smoke;
 
         & > .item, & .options > .item
+            @extend .pv1, .ph0;
             display: block;
             font-weight: 500;
             color: $textColor.body;
-            padding: .4rem 0;
 
             &.active
                 font-weight: 600;
 
             & + .item
-                margin: 0;
+                @extend .m0;
 
         .list
-            padding: 0 0 0 1rem;
-            margin-bottom: .8rem;
+            @extend .pl3, .mb2;
 
             .item
+                @extend .pv1;
                 font-weight: 400;
                 display: block;
                 font-size: $fontSize.sub;
-                padding: .2rem 0;
                 @extend .link;
                 @extend .link.link-light;
 
@@ -109,11 +109,11 @@
             max-width: 100%;
 
             .item
+                @extend .p0;
                 display: block;
-                padding: 0;
 
                 & + .item
-                    margin-left: 0;
+                    @extend .ml0;
 
                 &.header
                     font-size: $fontSize.h6;

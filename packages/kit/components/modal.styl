@@ -48,34 +48,33 @@
         transition: transform 140ms ease, opacity 140ms ease;
 
         & > .header, & > .body, & > .footer
-            padding-right: 3.2rem;
-            padding-left: 3.2rem;
+            @extend .ph8;
 
         & > .header
-            padding-top: 2.4rem;
-            padding-bottom: 2.4rem;
+            @extend .pv6;
 
         & > .body
-            padding-bottom: 2.4rem;
+            @extend .pb6;
 
         & > .footer
-            padding-top: 2rem;
+            @extend .pv5;
             background-color: $color.snow;
-            padding-bottom: 2rem;
-            border-radius: 0 0 $borderRadius.base $borderRadius.base;
+            border-radius: 0 0 $borderRadius.base ((($borderRadius.base)));
+
             .subtext
-                display: block
-                margin-top: 2rem;
+                @extend .mt5;
+                display: block;
 
     &.overlay
         & > .modal
-            background-color: transparent
-            border-radius: 0
-            box-shadow: none
+            background-color: transparent;
+            border-radius: 0;
+            box-shadow: none;
+
             & > .footer
-                padding-top: 0;
-                background-color: transparent
-                border-radius: 0
+                @extend .pt0;
+                background-color: transparent;
+                border-radius: 0;
 
     &.open
         pointer-events: auto;
