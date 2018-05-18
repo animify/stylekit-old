@@ -9,24 +9,26 @@
         background-color: $color.gunmetal;
         content: ' ';
         opacity: 0;
-        transition: transform cubic-bezier(.02, .49, .01, .97) 140ms, opacity ease 70ms
+        transition: transform cubic-bezier(.02, .49, .01, .97) 140ms, opacity ease 70ms;
         transform: rotate(45deg) scale(0);
         transform-origin: center;
         will-change: transform, opacity;
         border-radius: 2px;
 
     &:after
+        @extend .pv1, .ph2;
         position: absolute;
         z-index: 20;
-        padding: .4em .8em;
         border-radius: $borderRadius.base;
         background-color: $color.gunmetal;
         color: $color.white;
+        font-size: $fontSize.small;
+        font-weight: $fontWeight.semiBold;
         content: attr(tooltip-text);
         text-align: left;
         white-space: nowrap;
         cursor: default;
-        transition: transform cubic-bezier(.02, .49, .01, .97) 140ms, opacity ease 70ms
+        transition: transform cubic-bezier(.02, .49, .01, .97) 140ms, opacity ease 70ms;
         transform: scale(0);
         pointer-events: none;
         will-change: transform, opacity;
@@ -58,20 +60,21 @@
 
     &:not([tooltip-position])
         &:before
+            @extend .mb1;
             absolute: bottom 100% left 1.2em;
-            margin-bottom: .4em;
+
         &:after
+            @extend .mb2;
             absolute: left 0 bottom 100%;
-            margin-bottom: .6em;
 
     &[tooltip-position~=top]
         &:before
+            @extend .mb1;
             bottom: 100%;
-            margin-bottom: .4em;
 
         &:after
+            @extend .mb2;
             bottom: 100%;
-            margin-bottom: .6em;
 
     &[tooltip-position~=left]
         &:before
@@ -83,12 +86,12 @@
 
     &[tooltip-position~=bottom]
         &:before
+            @extend .mt1;
             top: 100%;
-            margin-top: .4em;
 
         &:after
+            @extend .mt2;
             top: 100%;
-            margin-top: .6em;
 
     &[tooltip-position='top left']
         &:after
