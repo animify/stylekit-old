@@ -1,7 +1,9 @@
 $baseSpacing = .4rem; // 4px
+$negativeBaseSpacing = -.4rem;
 
 for $size in '0' '1' '2' '3' '4' '5' '6' '7' '8'
     $spacing = $baseSpacing * $size;
+    $negativeSpacing = $negativeBaseSpacing * $size;
 
     .p{$size}
         padding: $spacing;
@@ -48,3 +50,26 @@ for $size in '0' '1' '2' '3' '4' '5' '6' '7' '8'
     .mv{$size}
         margin-top: $spacing;
         margin-bottom: $spacing;
+
+    .n-m{$size}
+        margin: $negativeSpacing;
+
+    .n-mt{$size}
+        margin-top: $negativeSpacing;
+
+    .n-mr{$size}
+        margin-right: $negativeSpacing;
+
+    .n-ml{$size}
+        margin-left: $negativeSpacing;
+
+    .n-mb{$size}
+        margin-bottom: $negativeSpacing;
+
+    .n-mh{$size}
+        margin-left: $negativeSpacing;
+        margin-right: $negativeSpacing;
+
+    .n-mv{$size}
+        margin-top: $negativeSpacing;
+        margin-bottom: $negativeSpacing;

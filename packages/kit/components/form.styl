@@ -15,7 +15,7 @@
         resize: vertical;
 
     input[type='text'], input[type='number'], input[type='password'], input[type='email'], textarea
-        padding: .8rem 1.4rem;
+        @extend .ph3, .pv2;
         min-width: 21.6rem;
         outline: 0;
         border: 0;
@@ -32,6 +32,7 @@
         order: 2;
 
         & + label
+            @extend .mb1;
             margin-bottom: .4rem;
             order: 1;
             font-weight: $fontWeight.bold;
@@ -61,9 +62,8 @@
             font-family: $fontFamily.body;
 
     .checkbox
+        @extend .pl8, .m0;
         position: relative;
-        padding-left: 3.4rem;
-        margin: 0;
         width: fit-content;
         width: -moz-max-content;
         user-select: none;
@@ -108,8 +108,7 @@
 
     &.transparent
         input[type='text'], input[type='number'], input[type='password'], input[type='email'], textarea
-            margin: 0;
-            padding: 0;
+            @extend .m0, .p0;
             border: 0;
             box-shadow: none;
             background-color: transparent;
@@ -126,7 +125,7 @@
                 opacity: 1;
 
     & + .input
-        margin-top: 1.4rem;
+        @extend .mt3;
 
     &.full
         input[type='text'], input[type='number'], input[type='password'], input[type='email'], textarea

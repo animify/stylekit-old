@@ -1,23 +1,12 @@
-$margin = 1.2rem 0 0 0;
-$padding = 0 0 0 1.6rem;
-$itemLineHeight = $lineHeight.body;
-$itemMargin = 0 0 1.2rem 0;
-$counterOpacity = .6;
-$counterMargin = 0 .4rem 0 0;
-$bulletOpacity = .6;
-$bulletMargin = 0 0 0 -1.2rem;
-$dividedPadding = .8rem 0;
-
 .list
     & .list
-        margin: $margin;
-        padding: $padding;
+        @extend .m0, .p0, .mt3, .pl4;
 
     li, .item
-        margin: $itemMargin;
+        @extend .m0, .mb3;
         color: $textColor.body;
         font-size: $fontSize.body;
-        line-height: $itemLineHeight;
+        line-height: $lineHeight.body;
         transition: padding 140ms ease, border-left 140ms ease;
 
         a
@@ -46,10 +35,10 @@ $dividedPadding = .8rem 0;
             list-style: none;
 
             &:before
-                margin: $counterMargin;
+                @extend .mr1;
                 content: counters(orderedListItem, '.') ' ';
                 counter-increment: orderedListItem;
-                opacity: $counterOpacity;
+                opacity: .64;
 
         ol&
             li[value], .item[value]
@@ -58,16 +47,16 @@ $dividedPadding = .8rem 0;
                     content: attr(value);
 
     &.bulleted
-        padding-left: 1.2rem;
+        @extend .pl3;
 
         li, .item
             position: relative;
 
             &:before
+                @extend .n-ml3;
                 absolute: left auto top;
-                margin: $bulletMargin;
                 content: '\2022';
-                opacity: $bulletOpacity;
+                opacity: .64;
 
     &.divided
         max-width: 36rem;
@@ -77,8 +66,8 @@ $dividedPadding = .8rem 0;
             width: 100%;
 
         li, .item
+            @extend .pv2;
             margin: 0;
-            padding: $dividedPadding;
             border-bottom: 1px solid $color.dim;
 
             a
@@ -91,4 +80,4 @@ $dividedPadding = .8rem 0;
             margin: 0;
 
             & + li, & + .item
-                margin-left: 2.4rem;
+                @extend .ml6;

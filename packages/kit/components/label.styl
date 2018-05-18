@@ -1,9 +1,7 @@
-$padding = .4rem 1.2rem;
-
 .label
+    @extend .pv1, .ph3;
     position: relative;
     display: inline-block;
-    padding: $padding;
     border: 0;
     border-radius: $borderRadius.base;
     background-color: $color.base;
@@ -12,7 +10,7 @@ $padding = .4rem 1.2rem;
     font-size: $fontSize.sub;
 
     &.circular
-        padding: .4rem;
+        @extend .p1;
         border-radius: 50%;
         width: 2.4rem;
         height: 2.4rem;
@@ -20,24 +18,18 @@ $padding = .4rem 1.2rem;
         text-align: center;
 
     .detail
+        @extend .pv1, .ph3, .n-mv1, .n-mr3, .ml3;
         background-color: rgba(0, 0, 0, .1);
-        padding: .4rem 1.2rem;
         height: 100%;
-        margin: -.4rem -1.2rem -.4rem 1.2rem;
         border-radius: 0 $borderRadius.base $borderRadius.base 0;
         display: inline-block;
         font-weight: 500;
         vertical-align: top;
-        float: right;
         color: rgba(255, 255, 255, .7);
 
-    i
-        margin-right: .6rem;
-
     a
+        @extend .ml2, .pl2;
         color: #fff;
-        margin-left: .8rem;
-        padding-left: .8rem;
         font-weight: 600;
         text-transform: none;
         border-left: 2px solid rgba(0, 0, 0, .1);
@@ -55,12 +47,12 @@ $padding = .4rem 1.2rem;
         padding: 0;
 
     &.cross
+        @extend .p0;
         position: relative;
         width: 12px;
         height: 12px;
         border-radius: 0;
         background: none;
-        padding: 0;
 
         &::before, &::after
             width: 0;

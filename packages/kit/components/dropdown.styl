@@ -6,7 +6,7 @@
         user-select: none;
 
     .menu
-        @extend .pv1;
+        @extend .pv2;
         absolute: top 3.2rem left 0;
         z-index: 800;
         min-width: 21.6rem;
@@ -24,7 +24,7 @@
 
         li
             &.divider
-                @extend .mv1, .ph4;
+                @extend .mv2, .ph4;
                 background-color: $color.dim;
                 height: 1px;
                 width: 100%;
@@ -34,10 +34,10 @@
                 color: $textColor.heading;
                 font-weight: $fontWeight.bold;
                 font-size: $fontSize.body;
-                @extend .pv2, .ph4;
+                @extend .pv1, .ph4;
 
             a
-                @extend .pv2, .ph4;
+                @extend .pv1, .ph4;
 
             &:not(.header):not(.divider):hover
                 background-color: $color.snow;
