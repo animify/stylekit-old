@@ -57,10 +57,10 @@ It's pretty simple. Head over to `packages/site/src/Router.js` where you'll find
 The Site package comes with a ready script to create a production-ready site. Navigate to `packages/site` in your terminal and run `npm run build`
 
 ## Issues
-Found any issues with the build? Make sure you let me know by posting an issue.
+Found any issues with Stylekit? Make sure you post an issue!
 
 ###### Feel free to post enhancements in the Issues section
 
 ---
 
-Licensed under MIT - Copyright (c) Cindr.io 2017
+Licensed under MIT
